@@ -10,9 +10,7 @@ cd ./App && yarn run build
 cd ..
 
 #move everything to the right place
-cp  -R ./App/dist/ ./dist
-ls
-
+git subtree push --prefix App/dist src master
 
 #d o some cleanup
 
