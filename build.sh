@@ -10,7 +10,7 @@ cd ./App && yarn run build
 cd ..
 
 #move everything to the right place
-cp  -R ./App/dist/ ./Docs
+cp  -R ./App/dist/ ./dist
 ls
 
 
