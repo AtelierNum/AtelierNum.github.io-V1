@@ -4,22 +4,20 @@ echo 'Starting building ...'
 
 
 # build everything
-cd ../Api && yarn run build
+cd ./Api && yarn run build
+cd ..
 cd ./App && yarn run build
+cd ..
 
 #move everything to the right place
-pwd 
-cd ./dist/
-cp index.html ../../
+cp  -R ./App/dist/ ./Docs
 ls
 
 
 #d o some cleanup
 
 # deploy on github
-git add .
-git commit -m "new version"
-git push
+
 
 cd ..
 
