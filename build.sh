@@ -10,7 +10,9 @@ cd ./App && yarn run build
 cd ..
 
 #move everything to the right place
-cp ./App/dist/index.html ./
+git add .
+git commit -m "new build"
+git push origin `git subtree split --prefix App/dist src`:master --force  
 
 #d o some cleanup
 
