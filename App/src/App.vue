@@ -53,10 +53,10 @@
     </h2>
 
     <ul class="tag-list">
-      <li class="tag">Digital art</li>
-      <li class="tag">Processing</li>
-      <li class="tag">P5</li>
-      <li class="tag">Pure data</li>
+      <li class="tag"> <a href="">Digital art</a> </li>
+      <li class="tag"> <a href="">Processing </a></li>
+      <li class="tag"> <a href="">P5</a> </li>
+      <li class="tag"> <a href="">Pure data</a></li>
     </ul>
 
 
@@ -157,7 +157,10 @@ export default {
   }
 }
 
-
+a{
+  color: inherit;
+  text-decoration: none;
+}
 .section-title{
   max-width: 1150px;
   margin:auto;
@@ -169,6 +172,7 @@ export default {
 
 
 .card-project{
+  cursor: pointer;
   width: 350px;
   height:600px;
   position: relative;
