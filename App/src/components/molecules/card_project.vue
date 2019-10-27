@@ -95,6 +95,7 @@
     font-size: 18px;
     opacity: 60%;
     margin: 10px 0 0 0;
+    color:#373D4A;
     span{
       margin: 0 5px;
     }
