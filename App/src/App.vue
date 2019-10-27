@@ -136,16 +136,24 @@ export default {
 
 
 .tag-list{
-  margin:auto;
   display: flex;
+  max-width: 1150px;
+  justify-content: center;
+  margin: 50px auto 50px;
   .tag{
     list-style: none;
     height:60px;
     padding: 0 30px;
     background: #F7F7F7;
-    border-radius: 6px;
+    border-radius: 12px;
     font-size: 20px;
     font-family: 'Open Sans', sans-serif;
+    line-height: 60px;
+    margin: 0 5px;
+    &:hover{
+      background-color: #1C1C1C;
+      color: #F7F7F7;
+    }
   }
 }
 
@@ -156,6 +164,7 @@ export default {
   font-size: 40px;
   text-align:center;
   font-family: 'Open Sans', sans-serif;
+  color:#1C1C1C;
 }
 
 
@@ -185,6 +194,7 @@ export default {
     flex-direction: column;
   }
   .title{
+    color:#1C1C1C;
     font-family: 'Rubik', sans-serif;
     font-weight: 500;
     font-size: 22px;
@@ -247,7 +257,7 @@ export default {
           fill: #F7F7F7;
         }
         .bg{
-          fill: #373D4A;
+          fill: #1C1C1C;
         }
       }
     }
@@ -270,7 +280,7 @@ export default {
     transition: all .2s ease;  
     transform: translate(0,-50%);
     .arrow{
-      fill: #373D4A;
+      fill: #1C1C1C;
       transition: all .2s ease;  
     }
     .bg{
