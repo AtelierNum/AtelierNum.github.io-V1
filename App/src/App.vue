@@ -55,7 +55,7 @@
     </v-grid>
     
      
-    <v-header/>
+    <v-footer/>
     
 </div>
 </template>

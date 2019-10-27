@@ -10,7 +10,9 @@
     <p class="desc">Generative art experiment made during a one week seminar</p>
     <ul class="tags">
       <li>P5</li>
+      <span>-</span>
       <li>Processing</li>
+      <span>-</span>
       <li>Generative art</li>
     </ul>
   </div>
@@ -93,16 +95,17 @@
     font-size: 18px;
     opacity: 60%;
     margin: 10px 0 0 0;
+    span{
+      margin: 0 5px;
+    }
     li{
+      position: relative;
       list-style: none;
-      &:after{
-        content:"-";
-        margin: 0px 5px;
-      }
       &:last-child{
         &:after{display:none;}
       }
     }
+   
   }
 
   &.small{
