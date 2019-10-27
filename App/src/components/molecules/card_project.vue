@@ -151,7 +151,6 @@
       padding: initial;
       grid-column: span 2;
       max-width: 70%;
-       
     }
   }
   .action{

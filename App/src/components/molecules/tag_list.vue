@@ -16,5 +16,6 @@ export default {
   max-width: 1150px;
   justify-content: center;
   margin: 50px auto 50px;
+  flex-wrap: wrap;
 }
 </style>
