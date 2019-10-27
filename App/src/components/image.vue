@@ -105,21 +105,22 @@
   overflow: hidden;
   background: #f6f7f8;
   position: relative;
+  img {
+    //position: absolute;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    bottom:0;
+    right:0;
+    height: 100%;
+    width: 100%;
+    transition: 800ms all ease-in-out;
+  } 
+  .loaded img {
+    //transition : none;
+  }
 }
-.box-image img {
-  //position: absolute;
-  object-fit: cover;
-  top: 0;
-  left: 0;
-  bottom:0;
-  right:0;
-  height: 100%;
-  width: 100%;
-  transition: 800ms all ease-in-out;
-} 
-.box-image.loaded img {
-  //transition : none;
-}
+
 .blured {
   filter: blur(25px);
 }
