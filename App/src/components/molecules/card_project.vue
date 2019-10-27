@@ -102,9 +102,6 @@
     li{
       position: relative;
       list-style: none;
-      &:last-child{
-        &:after{display:none;}
-      }
     }
    
   }
