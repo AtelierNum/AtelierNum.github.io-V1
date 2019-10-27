@@ -4,6 +4,11 @@ import router from '@/router/router'
 import store from '@/store/store'
 import '@/registerServiceWorker'
 
+import image from '@/components/image.vue'
+
+
+Vue.component('v-lazy-image',image)
+
 Vue.config.productionTip = false
 
 new Vue({
