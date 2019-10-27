@@ -2,9 +2,7 @@
 <div id="app">
 
 
-    <header>
-
-    </header>
+    <v-header/>
 
     <div class="top">
       <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="947.695" viewBox="0 0 1920 947.695">
@@ -23,45 +21,41 @@
 
     <h2 class="section-title"> Projects </h2>
 
-    <ul class="tag-list">
-      <li class="tag"> <a href="">Digital art</a> </li>
-      <li class="tag"> <a href="">Processing </a></li>
-      <li class="tag"> <a href="">P5</a> </li>
-      <li class="tag"> <a href="">Pure data</a></li>
-    </ul>
+    <v-tag-list>
+      <v-tag>Digital art</v-tag>
+      <v-tag>Processing</v-tag>
+      <v-tag>P5</v-tag>
+      <v-tag>Pure data</v-tag>
+    </v-tag-list>
     
 
-    <div class="grid grid-3">
-      <v-projectCard v-for="i in 3" :key="i" />
-    </div>
+    <v-grid cols="3">
+      <v-projectCard v-for="i in 6" :key="i" />
+    </v-grid>
+     
+
 
     <h2 class="section-title"> Resources </h2>
 
-    <div class="grid grid-3">
-      <v-projectCard v-for="i in 3" :key="i" class="small"/>
-    </div>
-
+    <v-grid cols="3" >
+      <v-projectCard v-for="i in 5" :key="i" class="small"/>
+    </v-grid>
+      
     <h2 class="section-title"> Courses </h2>
 
-    <ul class="tag-list">
-      <li class="tag"> <a href="">Digital art</a> </li>
-      <li class="tag"> <a href="">Processing </a></li>
-      <li class="tag"> <a href="">P5</a> </li>
-      <li class="tag"> <a href="">Pure data</a></li>
-    </ul>
+    <v-tag-list>
+      <v-tag>P5</v-tag>
+      <v-tag>Digital art</v-tag>
+      <v-tag>Processing</v-tag>
+      <v-tag>Pure data</v-tag>
+    </v-tag-list>
 
-
-    <div class="grid ">
+    <v-grid>
       <v-projectCard v-for="i in 3" :key="i" has_action="true" class="long"/>
-    </div>
-
-
-
-    <div class="footer">
-      <svg  width="100%" height="554.81" viewBox="0 0 1920 554.81">
-        <path   d="M0,0H1920V335.688s-69.613-5.778-207.017,12.121c-292.152,46.17-703.646,207-1027.646,207C205.336,554.81,0,407.792,0,407.792Z" transform="translate(1920 554.81) rotate(180)" fill="#1c1c1c"/>
-      </svg>
-    </div>
+    </v-grid>
+    
+     
+    <v-header/>
     
 </div>
 </template>
@@ -100,17 +94,10 @@ export default {
     grid-template-columns: repeat(2,1fr);
   }
 }
+
 .scroll{
   display: block;
   margin: 100px auto 200px;
-}
-
-.tag-list{
-  display: flex;
-  max-width: 1150px;
-  justify-content: center;
-  margin: 50px auto 50px;
-  
 }
 
 a{
@@ -126,7 +113,5 @@ a{
   font-family: 'Open Sans', sans-serif;
   color:#1C1C1C;
 }
-
-
 
 </style>

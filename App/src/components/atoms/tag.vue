@@ -24,9 +24,13 @@ export default {
     &:hover{
         background-color: #1C1C1C;
         color: #F7F7F7;
+    }
+    a{
+
         height:60px;
         line-height: 60px;
         padding: 0 30px;
+        
     }
 }
 </style>
