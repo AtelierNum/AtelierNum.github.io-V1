@@ -96,6 +96,7 @@
     margin: 10px 0 0 0;
     color:#373D4A;
     opacity: 60% !important;
+    opacity: 60% !important;
     span{
       margin: 0 5px;
     }
