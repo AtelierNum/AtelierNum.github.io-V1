@@ -1,5 +1,9 @@
 <template>
 <div id="app">
+
+    <h2 class="section-title">
+      Projects
+    </h2>
     
 
     <div class="grid grid-3">
@@ -21,6 +25,11 @@
     </div>
 
 
+    <h2 class="section-title">
+      Resources
+    </h2>
+
+
     <div class="grid grid-3">
       <a v-for="i in 3" :key="i" class="card-project small">
         <div class="top">
@@ -38,6 +47,17 @@
       </a>
 
     </div>
+
+    <h2 class="section-title">
+      Courses
+    </h2>
+
+    <ul class="tag-list">
+      <li class="tag">Digital art</li>
+      <li class="tag">Processing</li>
+      <li class="tag">P5</li>
+      <li class="tag">Pure data</li>
+    </ul>
 
 
     <div class="grid ">
@@ -66,6 +86,15 @@
       </a>
 
     </div>
+
+
+
+    <div class="footer">
+      <svg  width="100%" height="554.81" viewBox="0 0 1920 554.81">
+        <path   d="M0,0H1920V335.688s-69.613-5.778-207.017,12.121c-292.152,46.17-703.646,207-1027.646,207C205.336,554.81,0,407.792,0,407.792Z" transform="translate(1920 554.81) rotate(180)" fill="#1c1c1c"/>
+    </svg>
+
+    </div>
     
 </div>
 </template>
@@ -92,7 +121,7 @@ export default {
   display: grid;
   grid-template-columns: repeat(1,1fr);
   grid-gap: 45px;
-  margin: 300px auto;
+  margin: 120px auto 300px auto;
   &.grid-3{
     grid-template-columns: repeat(3,1fr);
     @media screen and (max-width: 600px){
@@ -103,6 +132,30 @@ export default {
   &.grid-2{
     grid-template-columns: repeat(2,1fr);
   }
+}
+
+
+.tag-list{
+  margin:auto;
+  display: flex;
+  .tag{
+    list-style: none;
+    height:60px;
+    padding: 0 30px;
+    background: #F7F7F7;
+    border-radius: 6px;
+    font-size: 20px;
+    font-family: 'Open Sans', sans-serif;
+  }
+}
+
+
+.section-title{
+  max-width: 1150px;
+  margin:auto;
+  font-size: 40px;
+  text-align:center;
+  font-family: 'Open Sans', sans-serif;
 }
 
 
