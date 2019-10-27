@@ -103,7 +103,6 @@
       position: relative;
       list-style: none;
     }
-   
   }
 
   &.small{
