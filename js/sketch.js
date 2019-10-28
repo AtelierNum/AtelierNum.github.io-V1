@@ -14,7 +14,7 @@ let invertColors = false;
 
 function setup() {
     let elem = document.querySelector(".p5_container")
-    let canvas = createCanvas(window.innerWidth/3, window.innerHeight/3);
+    let canvas = createCanvas(window.innerWidth/2, window.innerHeight/2);
     
     canvas.parent(elem)
     canvas.style.width = "300px";
@@ -22,7 +22,7 @@ function setup() {
 
 
     nums = windowWidth * windowHeight / particleDensity;
-	backgroundColor = color(2, 2, 2);
+	backgroundColor = color(0);
     background(backgroundColor);
 
     for(var i = 0; i < nums; i++){
