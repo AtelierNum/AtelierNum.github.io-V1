@@ -57,6 +57,24 @@ export default {
         li{
             margin: 10px;
             list-style: none;
+            position: relative;
+             cursor: pointer;
+            &:after{
+                content: "";
+                position: absolute;
+                display: block;
+                width:0%;
+                height:2px;
+                border-radius: 1px;
+                background-color: #1C1C1C;
+                transition: all .3s ease;
+               
+            }
+            &:hover{
+                &:after{
+                    width:80%;
+                }
+            }
         }
     }
 }

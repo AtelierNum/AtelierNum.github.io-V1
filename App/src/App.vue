@@ -162,6 +162,6 @@ a{
 
 .p5Canvas{
   transform-origin: top left;
-  transform: scale(3,3)
+  transform: scale(2,2)
 }
 </style>
