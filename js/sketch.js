@@ -38,27 +38,23 @@ function setup() {
 function draw(){
 	noStroke();
 	
-	++fadeFrame;
+    ++fadeFrame;
+    
 	if(fadeFrame % 5 == 0){
-		if(invertColors){
-			blendMode(ADD);
-		} else {
-			blendMode(DIFFERENCE);
-		}
+		invertColors ? blendMode(ADD) : blendMode(DIFFERENCE);
+
 		fill(1, 1, 1);
 		rect(0,0,width,height);
 
-		if(invertColors){
-			blendMode(DARKEST);
-		} else {
-			blendMode(LIGHTEST);
-		}
+		invertColors ? blendMode(DARKEST) : blendMode(LIGHTEST);
+		
 		fill(backgroundColor);
 		rect(0,0,width,height);
 	}
 	
 	blendMode(BLEND);
-	smooth();
+    smooth();
+    
 	for(let i = 0; i < nums; i++){
 		let iterations = map(i,0,nums,5,1);
 		let radius = map(i,0,nums,1,2);			
@@ -68,16 +64,16 @@ function draw(){
 		
 		let alpha = 255;
 		let particleColor;
-		let fadeRatio;
+        let fadeRatio;
+        
 		fadeRatio = min(particles[i].life * 5 / maxLife, 1);
-		fadeRatio = min((maxLife - particles[i].life) * 5 / maxLife, fadeRatio);
-		let colorCase = visualMode;
-		if(visualMode == 0)
-		{
-			colorCase = int(particles[i].pos.x / width * 1) + 1;
-		}
-		switch(colorCase)
-		{
+        fadeRatio = min((maxLife - particles[i].life) * 5 / maxLife, fadeRatio);
+        
+        let colorCase = visualMode;
+        
+        if(visualMode == 0) colorCase = int(particles[i].pos.x / width * 1) + 1;
+        
+		switch(colorCase){
 			case 1:
 				let lifeRatioGrayscale = min(255, (255 * particles[i].life / maxLife) + red(backgroundColor));
 				particleColor = color(lifeRatioGrayscale, alpha * fadeRatio);
@@ -88,22 +84,24 @@ function draw(){
 			case 3:
 				particleColor = color(blue(particles[i].color) + 70, green(particles[i].color) + 20, red(particles[i].color) - 50);
 				break;
-		}
-		if(invertColors){
-			particleColor = color(255 - red(particleColor), 255 - green(particleColor), 255 - blue(particleColor));
-		}
+        }
+        
+		if(invertColors) particleColor = color(255 - red(particleColor), 255 - green(particleColor), 255 - blue(particleColor));
+		
 		fill(red(particleColor), green(particleColor), blue(particleColor), alpha * fadeRatio);
 		particles[i].display(radius);
 	} 
 }
 
 function Particle(){
-// member properties and initialization
+
 	this.vel = createVector(0, 0);
 	this.pos = createVector(random(0, width), random(0, height));
 	this.life = random(0, maxLife);
-	this.flip = int(random(0,2)) * 2 - 1;
-	let randColor = int(random(0,3));
+    this.flip = int(random(0,2)) * 2 - 1;
+    
+    let randColor = int(random(0,3));
+    
 	switch(randColor)
 	{
 		case 0:
@@ -118,9 +116,8 @@ function Particle(){
 	}
 	
 // member functions
-	this.move = function(iterations){
-		if((this.life -= 0.06667) < 0)
-			this.respawn();
+	this.move = (iterations) => {
+		if((this.life -= 0.06667) < 0) this.respawn();
 		while(iterations > 0){
 			let angle = noise(this.pos.x/noiseScale, this.pos.y/noiseScale)*TWO_PI*noiseScale*this.flip;
 			this.vel.x = cos(angle);
@@ -131,44 +128,37 @@ function Particle(){
 		}
 	}
 
-	this.checkEdge = function(){
-		if(this.pos.x > width || this.pos.x < 0 || this.pos.y > height || this.pos.y < 0){
-			this.respawn();
-		}
+	this.checkEdge = () => {
+		if(this.pos.x > width || this.pos.x < 0 || this.pos.y > height || this.pos.y < 0) this.respawn();
 	}
 	
-	this.respawn = function(){
+	this.respawn = () => {
 		this.pos.x = random(0, width);
 		this.pos.y = random(0, height);
 		this.life = maxLife;
 	}
 
-	this.display = function(r){
+	this.display = (r) => {
 		ellipse(this.pos.x, this.pos.y, r, r);
 	}
 }
 
-function advanceVisual()
-{
-	visualMode = ++visualMode % numModes;
+function advanceVisual(){
+    visualMode = ++visualMode % numModes;
+    
 	if(visualMode == 0){
 		invertColors = !invertColors;
 		backgroundColor = invertColors ? color(235, 235, 235) : color(20, 20, 20);
-	}
+    }
+    
 	noiseSeed(random()*Number.MAX_SAFE_INTEGER);
-	background(backgroundColor);
+    background(backgroundColor);
+    
 	for(let i = 0; i < nums; i++){
 		particles[i].respawn();
 		particles[i].life = random(0,maxLife);
-  }
+    }
 }
 
-function keyPressed()
-{
-	advanceVisual();
-}
 
-function touchStarted()
-{
-	advanceVisual();
-}
+
