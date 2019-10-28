@@ -6,7 +6,13 @@
 
     <div class="top">
       <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="947.695" viewBox="0 0 1920 947.695">
-        <path id="starlight-big" d="M0,0H1920V681.432s-69.613-11.73-207.017,24.6C1420.831,799.76,1008.557,947.7,684.557,947.7,204.557,947.7,0,827.8,0,827.8Z" fill="#000000"/>
+        <!-- <path  d="M0,0H1920V681.432s-69.613-11.73-207.017,24.6C1420.831,799.76,1008.557,947.7,684.557,947.7,204.557,947.7,0,827.8,0,827.8Z" fill="#000000"/> -->
+        <clipPath id="mask">
+          <path d="M0,0H1920V681.432s-69.613-11.73-207.017,24.6C1420.831,799.76,1008.557,947.7,684.557,947.7,204.557,947.7,0,827.8,0,827.8Z" fill="#000000"/>
+        </clipPath>
+        <foreignObject class="p5_container" clip-path="url(#mask)" width="100%" height="100%">
+  
+        </foreignObject>
       </svg>
     </div>
 
@@ -66,6 +72,15 @@ import card_project from '@/components/molecules/card_project'
 export default {
   components : {
     'v-projectCard' : card_project
+  },
+  mounted(){
+    let scripts = document.querySelector('.scripts')
+    let p5 = document.createElement('script')
+    p5.src = "/js/p5.min.js"
+    let sketch = document.createElement('script')
+    sketch.src = "/js/sketch.js"
+    scripts.appendChild(p5)
+    scripts.appendChild(sketch)
   }
 }
 </script>
@@ -77,6 +92,8 @@ export default {
   padding: 0;
   margin:0;
 }
+
+
 .grid{
   max-width: 1150px;
   display: grid;
@@ -114,4 +131,9 @@ a{
   color:#1C1C1C;
 }
 
+
+.p5Canvas{
+  transform-origin: top left;
+  transform: scale(2,2)
+}
 </style>
