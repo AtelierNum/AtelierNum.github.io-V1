@@ -14,7 +14,7 @@ let invertColors = false;
 
 function setup() {
     let elem = document.querySelector(".p5_container")
-    let canvas = createCanvas(window.innerWidth/2, window.innerHeight/2);
+    let canvas = createCanvas(window.innerWidth, window.innerHeight/2);
     
     canvas.parent(elem)
     canvas.style.width = "300px";

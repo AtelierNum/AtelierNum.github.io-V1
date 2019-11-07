@@ -1,5 +1,5 @@
 <template>
-<a  class="card-project ">
+<div  class="card-project " @click="card_action">
 
   <div class="top">
       <v-lazy-image src="https://source.unsplash.com/random" height="100%" width="100%"/>
@@ -26,7 +26,7 @@
     </svg>
   </span>
 
-</a>
+</div>
 </template>
 
 <script>
@@ -35,12 +35,23 @@
     props: {
       has_action: {
         type: Boolean,
-        required: true
+        default : () => false
+      },
+      r_action : {
+        type: String,
+        default : () => ''
       }
     },
     data () {
       return {
        
+      }
+    },
+    methods: {
+      card_action(){
+        if (this.r_action != ''){
+          this.$router.push('/' + this.r_action);
+        }
       }
     }
   }
