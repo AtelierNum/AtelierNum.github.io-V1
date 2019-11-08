@@ -20,7 +20,6 @@ function setup() {
     canvas.style.width = "300px";
     canvas.style.width = "300px";
 
-	visualMode = Math.floor(random(0,4))
 
     nums = windowWidth * windowHeight / particleDensity;
 	backgroundColor = color(0);
@@ -29,16 +28,10 @@ function setup() {
     for(var i = 0; i < nums; i++){
 		particles[i] = new Particle();
 	}
-
-	noiseSeed(random()*Number.MAX_SAFE_INTEGER);
-    background(backgroundColor);
-    
-	for(let i = 0; i < nums; i++){
-		particles[i].respawn();
-		particles[i].life = random(0,maxLife);
-    }
-	
 }
+
+
+
 
 
 
@@ -49,6 +42,7 @@ function draw(){
     
 	if(fadeFrame % 5 == 0){
 		invertColors ? blendMode(ADD) : blendMode(DIFFERENCE);
+
 		fill(1, 1, 1);
 		rect(0,0,width,height);
 
@@ -62,7 +56,6 @@ function draw(){
     smooth();
     
 	for(let i = 0; i < nums; i++){
-
 		let iterations = map(i,0,nums,5,1);
 		let radius = map(i,0,nums,1,2);			
 		
@@ -100,30 +93,30 @@ function draw(){
 	} 
 }
 
-class Particle{
+function Particle(){
 
-	constructor(){
-		this.vel = createVector(0, 0);
-		this.pos = createVector(random(0, width), random(0, height));
-		this.life = random(0, maxLife);
-		this.flip = int(random(0,2)) * 2 - 1;
-		
-		let randColor = int(random(0,3));
-
-		switch(randColor)
-		{
-			case 0:
-				this.color = color(110,57,204);
-				break;
-			case 1:
-				this.color = color(7,153,242);
-				break;
-			case 2:
-				this.color = color(255,255,255);
-				break;
-		}
+	this.vel = createVector(0, 0);
+	this.pos = createVector(random(0, width), random(0, height));
+	this.life = random(0, maxLife);
+    this.flip = int(random(0,2)) * 2 - 1;
+    
+    let randColor = int(random(0,3));
+    
+	switch(randColor)
+	{
+		case 0:
+			this.color = color(110,57,204);
+			break;
+		case 1:
+			this.color = color(7,153,242);
+			break;
+		case 2:
+			this.color = color(255,255,255);
+			break;
 	}
-	move(iterations){
+	
+// member functions
+	this.move = (iterations) => {
 		if((this.life -= 0.06667) < 0) this.respawn();
 		while(iterations > 0){
 			let angle = noise(this.pos.x/noiseScale, this.pos.y/noiseScale)*TWO_PI*noiseScale*this.flip;
@@ -135,17 +128,17 @@ class Particle{
 		}
 	}
 
-	checkEdge(){
+	this.checkEdge = () => {
 		if(this.pos.x > width || this.pos.x < 0 || this.pos.y > height || this.pos.y < 0) this.respawn();
 	}
 	
-	respawn(){
+	this.respawn = () => {
 		this.pos.x = random(0, width);
 		this.pos.y = random(0, height);
 		this.life = maxLife;
 	}
 
-	display(r){
+	this.display = (r) => {
 		ellipse(this.pos.x, this.pos.y, r, r);
 	}
 }
@@ -169,6 +162,3 @@ function advanceVisual(){
 
 
 
-document.addEventListener('click',()=>{
-	advanceVisual()
-})
