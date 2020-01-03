@@ -1,5 +1,5 @@
 <template>
-<div  class="card-project " @click.native="card_action">
+<div  class="card-project " @click="card_action">
 
   <div class="top">
       <v-lazy-image src="https://source.unsplash.com/random" height="100%" width="100%"/>
@@ -49,10 +49,8 @@
     },
     methods: {
       card_action(){
-        console.log('totptop')
         if (this.r_action != ''){
-          console.log('super')
-          this.$router.push('/' + this.rooter_action);
+          this.$router.push('/' + this.r_action);
         }
       }
     }

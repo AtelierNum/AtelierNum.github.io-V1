@@ -6,12 +6,14 @@
           <path d="M0,80.412H1920V681.432s-69.613-11.73-207.017,24.6C1420.831,799.76,1008.557,947.7,684.557,947.7,204.557,947.7,0,827.8,0,827.8Z" transform="translate(0 -80.412)"  fill="#000000"/>
         </clipPath>
         <foreignObject v-if="isP5" class="p5_container" clip-path="url(#mask)" width="100%" height="100%"/>
-        <image v-else :xlink:href="src" clip-path="url(#mask)" width="100%" />   
+        <image v-else :xlink:href="src" clip-path="url(#mask)" width="100%" /> 
       </svg>
   </div>
 </template>
 
 <script>
+import p5 from 'p5';
+
 export default {
     name: 'svgCurved',
     props: {
@@ -33,13 +35,15 @@ export default {
     },
     mounted(){
         if (this.isP5){
-            let scripts = document.querySelector('.scripts')
-            let p5 = document.createElement('script')
-            p5.src = "/js/p5.min.js"
-            let sketch = document.createElement('script')
-            sketch.src = "/js/sketch.js"
-            scripts.appendChild(p5)
-            scripts.appendChild(sketch)
+            // let scripts = document.querySelector('.scripts')
+            // let p5 = document.createElement('script')
+            // p5.src = "/js/p5.min.js"
+            // let sketch = document.createElement('script')
+            // sketch.src = "/js/sketch.js"
+            // scripts.appendChild(p5)
+            // scripts.appendChild(sketch)
+            let sketch = require('@/../public/js/sketch.js');
+            new p5(sketch.main);
         }
     }
 }
