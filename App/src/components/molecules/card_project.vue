@@ -6,14 +6,14 @@
   </div>
 
   <div class="bottom">
-    <h3 class="title">Workshop PCD 2019</h3>
-    <p class="desc">Generative art experiment made during a one week seminar</p>
+    <h3 class="title">{{title}}</h3>
+    <p class="desc">{{desc}}</p>
     <ul class="tags">
-      <li>P5</li>
+      <li>{{tags[0]}}</li>
       <span>-</span>
-      <li>Processing</li>
+      <li>{{tags[1]}}</li>
       <span>-</span>
-      <li>Generative art</li>
+      <li>{{tags[2]}}</li>
     </ul>
   </div>
 
@@ -40,17 +40,34 @@
       r_action : {
         type: String,
         default : () => ''
-      }
-    },
-    data () {
-      return {
-       
-      }
+      },
+      id : {
+        type:String,
+        default: () => '',
+        required: true
+      },
+      title : {
+        type:String,
+        default: () => '',
+        required: true
+      },
+      tags : {
+        type:Array,
+        default: () => '',
+        required: true
+      },
+      desc : {
+        type:String,
+        default: () => '',
+        required: true
+      },
     },
     methods: {
       card_action(){
         if (this.r_action != ''){
-          this.$router.push('/' + this.r_action);
+          this.$router.push('/' + this.r_action + '/' + this.id);
+
+          console.log(this.$route)
         }
       }
     }
@@ -68,6 +85,7 @@
   background-repeat: no-repeat;
   border-radius: 6px;
   transition: all .3s ease;  
+
   &:hover{
      background-position: 0 0;
   }
@@ -151,14 +169,47 @@
       }
     }
     .top{
+      display:grid;
       width:100%;
       height:100%;
     }
     .bottom{
-      align-self: center;
+      align-self: left;
       padding: initial;
       grid-column: span 2;
       max-width: 70%;
+    }
+  }
+
+  &.inversed{
+    grid-template-columns: auto 1fr 1fr;
+    background: linear-gradient(to left, rgba(255,255,255,0) 30% , rgba(255,255,255,0)) !important;
+
+    &:hover{
+      background: linear-gradient(to left, #ffffff 30% , #F7F7F7) !important;
+      .action{
+        transform: translate(50%, -50%)
+      }
+    }
+
+    .action{
+      grid-column:1/2;
+      left:0;
+    }
+    .bottom{ 
+      grid-column: span 2;
+      text-align:right;
+      justify-self:end;
+
+      *{ justify-self:right }
+      .tags{ justify-content: flex-end }
+    }
+    .top{ 
+      grid-row: 1/2;
+      grid-column: 3 /4;
+      margin-left: none !important;
+      display: block;
+      width:inherit;
     }
   }
   .action{

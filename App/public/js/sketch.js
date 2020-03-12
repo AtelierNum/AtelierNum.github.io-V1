@@ -20,7 +20,7 @@ export function main(p5){
 		canvas.parent(elem)
 		canvas.style.width = "300px";
 
-		nums = windowWidth * windowHeight / particleDensity;
+		nums = window.innerWidth * window.innerHeight / particleDensity;
 		backgroundColor = p5.color(0);
 		p5.background(backgroundColor);
 
@@ -70,7 +70,7 @@ export function main(p5){
 			
 			let colorCase = visualMode;
 			
-			if(visualMode == 0) colorCase = int(particles[i].pos.x / width * 1) + 1;
+			if(visualMode == 0) colorCase = p5.int(particles[i].pos.x / p5.width * 1) + 1;
 			
 			switch(colorCase){
 				case 1:
@@ -95,11 +95,11 @@ export function main(p5){
 	function Particle(){
 
 		this.vel = p5.createVector(0, 0);
-		this.pos = p5.createVector(random(0, p5.width), p5.random(0, p5.height));
+		this.pos = p5.createVector(p5.random(0, p5.width), p5.random(0, p5.height));
 		this.life = p5.random(0, maxLife);
-		this.flip = int(p5.random(0,2)) * 2 - 1;
+		this.flip = p5.int(p5.random(0,2)) * 2 - 1;
 		
-		let randColor = int(p5.random(0,3));
+		let randColor = p5.int(p5.random(0,3));
 		
 		switch(randColor)
 		{
@@ -118,7 +118,7 @@ export function main(p5){
 		this.move = (iterations) => {
 			if((this.life -= 0.06667) < 0) this.respawn();
 			while(iterations > 0){
-				let angle = p5.noise(this.pos.x/noiseScale, this.pos.y/noiseScale)*TWO_PI*noiseScale*this.flip;
+				let angle = p5.noise(this.pos.x/noiseScale, this.pos.y/noiseScale)* p5.TWO_PI * noiseScale*this.flip;
 				this.vel.x = p5.cos(angle);
 				this.vel.y = p5.sin(angle);
 				this.vel.mult(simulationSpeed);
@@ -133,7 +133,7 @@ export function main(p5){
 		
 		this.respawn = () => {
 			this.pos.x = p5.random(0, p5.width);
-			this.pos.y = p5.random(0, hp5.eight);
+			this.pos.y = p5.random(0, p5.height);
 			this.life = maxLife;
 		}
 
@@ -153,7 +153,7 @@ export function main(p5){
 		p5.noiseSeed(p5.random()*Number.MAX_SAFE_INTEGER);
 		p5.background(backgroundColor);
 		
-		for(let i = 0; i < nums; i++){
+		for (let i = 0; i < nums; i++){
 			particles[i].respawn();
 			particles[i].life = p5.random(0,maxLife);
 		}

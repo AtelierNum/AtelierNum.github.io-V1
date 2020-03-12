@@ -7,12 +7,35 @@
         <router-view></router-view>
       </div>
 
+      <random-pages v-if="whichPage.page" :title="whichPage.title" :type="whichPage.type"></random-pages>
+
       <v-footer/>
   </div>
 </template>
 
 <script>
+import randomPages from '@/components/organismes/randomPages'
 export default {
+  components:{
+    'random-pages' : randomPages
+  },
+  computed:{
+    whichPage(){
+      if (this.$route.path == '/course' || this.$route.path == '/project'){
+        return {
+          page: true,
+          title: 'Other ' + this.$route.path.split('/')[1] + 's',
+          type: this.$route.path
+        }
+      } else {
+        return {
+          page: false,
+          title: '',
+          type: ''
+        }
+      }
+    }
+  }
   
 }
 </script>

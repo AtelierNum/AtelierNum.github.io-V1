@@ -39,7 +39,13 @@
     
 
     <v-grid :cols="3">
-      <v-projectCard v-for="i in 6" :key="i" />
+      <v-projectCard v-for="(project, i) in pages.projects" :key="i" 
+        r_action="projects"
+        :title="project.name"
+        :id="project.id"
+        :desc="project.desc"
+        :tags="project.tags">
+        </v-projectCard>
     </v-grid>
      
 
@@ -47,7 +53,14 @@
     <h2 class="section-title"> Resources </h2>
 
     <v-grid :cols="3" >
-      <v-projectCard v-for="i in 5" :key="i" class="small"/>
+      <v-projectCard v-for="(ressource, i) in pages.ressources" :key="i" 
+        class="small"
+        r_action="ressources"
+        :title="ressource.name"
+        :id="ressource.id"
+        :desc="ressource.desc"
+        :tags="ressource.tags">
+      </v-projectCard>
     </v-grid>
       
     <h2 class="section-title"> Courses </h2>
@@ -60,7 +73,14 @@
     </v-tag-list>
 
     <v-grid>
-      <v-projectCard v-for="i in 3" :key="i" :has_action="true" r_action="course" class="long"/>
+      <v-projectCard v-for="(course, i) in pages.courses" :key="i" 
+        class="long"
+        r_action="courses"
+        :title="course.name"
+        :id="course.id"
+        :desc="course.desc"
+        :tags="course.tags">
+      </v-projectCard>
     </v-grid>
     
 </div>
@@ -69,11 +89,18 @@
 <script>
 import card_project from '@/components/molecules/card_project'
 import svgCurved from '@/components/atoms/svgCurved'
+import Pages from '../assets/coursesList.json'
 
 export default {
     components : {
         'v-projectCard' : card_project,
         'svg-curved' : svgCurved
+  },
+  computed: {
+    pages() {
+      console.log(this.$route)
+      return Pages
+    }
   }
 }
 </script>

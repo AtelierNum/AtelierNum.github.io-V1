@@ -42,7 +42,7 @@ export default {
             // sketch.src = "/js/sketch.js"
             // scripts.appendChild(p5)
             // scripts.appendChild(sketch)
-            let sketch = require('/js/sketch.js');
+            let sketch = require('@/../public/js/sketch.js');
             new p5(sketch.main);
         }
     }

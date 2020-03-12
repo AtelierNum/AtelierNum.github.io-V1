@@ -13,6 +13,9 @@
     "register-service-worker": "^1.6.2",
     "require": "^2.4.20",
     "vue": "^2.6.10",
+    "vue-content-loader": "^0.2.2",
+    "vue-loader": "^15.7.1",
+    "vue-markdown-loader": "^2.4.1",
     "vue-router": "^3.0.3",
     "vuex": "^3.0.1"
   },
