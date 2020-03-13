@@ -1,50 +1,11 @@
 <template>
-     <router-view />
-     <!-- <md-it-vue :class="mdLoaded" :content="markdown" /> -->
+     <router-view  class="contentmd mdReader" />
 </template>
 
 <script>
-import VueMarkdown from 'vue-markdown';
-import MarkdownItVue from 'markdown-it-vue'
-
-import mdfile from '../../assets/markdowns/projet.md'
 
 export default {
   name: 'markdownReader',
-  props : {
-      mdFileName : {
-        type: String,
-        default : () => 'projet'
-      }
-  },
-  data(){
-    return{
-      mdLoaded: '',
-      // markdown: mdfile
-    }
-  },
-  computed:{
-    markdown(){
-      console.log(mdfile.__file)
-      return '# oui'
-      // return import('../../assets/markdowns/projet.md');
-    }
-  },
-  components:{
-    'vue-md': VueMarkdown,
-    'md-it-vue' : MarkdownItVue
-
-  },
-  mounted(){
-    // import('../../assets/markdowns/' + this.mdFileName + '.md').then( md => {
-    //     this.markdown = md.default
-    //     console.log(md)
-    //     this.mdLoaded = 'mdReader'
-    // }).catch(() => {
-    //   console.warn('ouups, something wen"t wrong, couldn"t catch the markdown file')
-    // }) ;
-
-  }
 }
 </script>
 

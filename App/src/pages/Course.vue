@@ -30,8 +30,7 @@
 
     <div class="separator"></div>
 
-    <md-reader mdFileName="projet" class="contentmd mdReader"></md-reader>
-    <!-- <router-view /> -->
+    <md-reader></md-reader>
 
     <p class="last_update">Last update {{lastupdate}}</p>
   
