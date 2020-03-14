@@ -8,7 +8,7 @@ Vue.use(Router)
 let routes_courses = Object.keys(coursesList).map( type => ({
   path: type,
   name: type,
-  component: () => import('../pages/Course.vue'),
+  component: () => import('../pages/Documentation.vue'),
   children :
     coursesList[type].map( file => ({
       path: file.id,
@@ -17,13 +17,6 @@ let routes_courses = Object.keys(coursesList).map( type => ({
     }))
 })) 
 
-// const routes_courses = coursesList.courses.map( course => ({
-//   path : 'courses/' + course.id,
-//   name : course.name,
-//   component: () => import('../assets/markdowns/' + course.id + '.md')
-// }))
-
-// routes_courses = [ ...routes_courses[0].children, ...routes_courses[1].children, ...routes_courses[2].children ] ;
 
 export default new Router({
   mode: 'history',
@@ -35,9 +28,6 @@ export default new Router({
       component: () => import('../layout/AppLayout.vue'),
       children: [
         { path: '', name:'home', component: () => import('../pages/Index.vue') },
-        // { path: 'courses/projet', name:'projet', component: () => import('../pages/Course.vue') },
-        // { path: 'course', component: () => import('../pages/Course.vue') },
-        // { path: 'project', component: () => import('../pages/Project.vue') },
         ...routes_courses
       ]
     }

@@ -48,6 +48,7 @@
         :title="project.name"
         :id="project.id"
         :desc="project.desc"
+        :thumbnailUrl="project.thumbnail"
         :tags="project.tags">
         </v-projectCard>
     </v-grid>
@@ -63,6 +64,7 @@
         :title="ressource.name"
         :id="ressource.id"
         :desc="ressource.desc"
+        :thumbnailUrl="ressource.thumbnail"
         :tags="ressource.tags">
       </v-projectCard>
     </v-grid>
@@ -83,6 +85,7 @@
         :title="course.name"
         :id="course.id"
         :desc="course.desc"
+        :thumbnailUrl="course.thumbnail"
         :tags="course.tags">
       </v-projectCard>
     </v-grid>

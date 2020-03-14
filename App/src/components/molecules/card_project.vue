@@ -2,7 +2,7 @@
 <div  class="card-project " @click="card_action">
 
   <div class="top">
-      <v-lazy-image src="https://source.unsplash.com/random" height="100%" width="100%"/>
+      <v-lazy-image :src="thumbnailUrl" height="100%" width="100%"/>
   </div>
 
   <div class="bottom">
@@ -31,7 +31,7 @@
 
 <script>
 
-// import {getters} from Vuex ;
+import {mapActions} from 'vuex' ;
 
   export default {
     name: 'card_project',
@@ -64,18 +64,24 @@
         default: () => '',
         required: true
       },
+      thumbnailUrl: {
+        type: String,
+        default : () => 'https://source.unsplash.com/random',
+        required: false
+      }
     },
     methods: {
+      ...mapActions({
+        setContent : 'setContent'
+      }),
       card_action(){
         if (this.r_action != ''){
+          this.setContent(this.id);
+
           this.$router.push('/' + this.r_action + '/' + this.id);
-          // console.log(this.getContent);
         }
       }
     },
-    computed:{
-      // ...getters: {['getContent']}
-    }
   }
 </script>
 

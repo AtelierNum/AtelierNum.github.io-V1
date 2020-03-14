@@ -1,21 +1,20 @@
 <template>
 <div id ="page">
 
-  <svg-curved class="mask_thumbnail" content="image" src="https://source.unsplash.com/random"></svg-curved>
+  <svg-curved class="mask_thumbnail" content="image" :src="getContent.thumbnail"></svg-curved>
 
   <section class="introCourse">
-    <h1>Introduction Processing</h1>
-    <p>Processing - Dataviz</p>
+    <h1>{{getContent.name}}</h1>
+    <div>
+      <span v-for="(tag, i) in getContent.tags"  :key="i">{{tag}}</span>
+    </div>
 
-    <p>Lorem ipsum nec mergetur Lorem ipsum nec mergetur  Lorem ipsum nec mergetur  Lorem ipsum nec mergetur  Lorem ipsum nec mergetur  Lorem ipsum nec mergetur </p>
+    <p>{{getContent.desc}}</p>
   </section>  
 
   <section class="contentCourse">
     <div class="indexBar">
       <ul>
-        <!-- <li class="currentSection">
-          <li class="currentChapitre">msdfdsfoa_2</li> -->
-
         <li v-for="(section, i) in index" :key="i" @click="moveToSection(i, section.section)" :class="current.section == i ? 'currentSection' : 'top'">
           {{section.section}}
             <ul v-if="section.children.length > 0">
@@ -29,7 +28,7 @@
 
     <md-reader></md-reader>
 
-    <p class="last_update">Last update {{lastupdate}}</p>
+    <p class="last_update">Last update {{getContent.last_update}}</p>
   
   </section>  
 </div>
@@ -38,6 +37,7 @@
 <script>
 import svgCurved from '@/components/atoms/svgCurved'
 import mdReader from '@/components/atoms/markdownReader'
+import {mapGetters} from 'vuex';
 
 export default {
   name: 'CoursePage',
@@ -51,9 +51,7 @@ export default {
     }
   },
   computed : {
-    lastupdate(){
-      return '28/10/19';
-    }
+    ...mapGetters(['getContent']),
   },
   components:{
     'svg-curved' : svgCurved,
@@ -72,6 +70,8 @@ export default {
     }
   },
   mounted(){
+
+    console.log(this.getContent)
     
     let md_childs = Array.from(this.$children[1].$el.childNodes);
     let h1_sections = md_childs.filter( child => child.localName == 'h2');
@@ -125,25 +125,30 @@ export default {
 
   margin-bottom:20px;
 
-    & + p{
-      text-align: center;
+    & + div {
+      margin-bottom:30px; 
+
+      & > span {
+        text-align: center;
         font-family: 'Open Sans';
         font-weight:300;
         font-size:1.4em;
         letter-spacing: 0;
         color: #373D4A;
 
-        margin-bottom:20px; 
+        margin-right:20px;
+      }
+      
 
-        & + p{
-          text-align: center;
-          font-family: 'Open Sans';
-          font-weight:300;
-          font-size:1.2em;
-          color: #373D4A;
+      & + p{
+        text-align: center;
+        font-family: 'Open Sans';
+        font-weight:300;
+        font-size:1.2em;
+        color: #373D4A;
 
-          max-width:900px;
-        }
+        max-width:900px;
+      }
     }
 
   }
@@ -151,7 +156,7 @@ export default {
 
 .contentCourse {
   display: grid;
-  grid-template-columns: auto 12px 80%;
+  grid-template-columns: auto 12px 70%;
   margin-bottom:130px;
 }
 
@@ -250,6 +255,8 @@ export default {
 
 .contentmd{
   padding: 0px 50px;
+  max-width:1300px;
+  justify-self: center;
 }
 
 .last_update{
