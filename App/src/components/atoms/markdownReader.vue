@@ -19,34 +19,37 @@ export default {
       md_loaded : false
     }
   },
-  created(){
-      var xmlhttp;
+  // created(){
+  //     var xmlhttp;
       
-      if (window.XMLHttpRequest) { // code for IE7+, Firefox, Chrome, Opera, Safari
-        xmlhttp = new XMLHttpRequest();
-      } else { // code for IE6, IE5
-        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-      }
-      xmlhttp.onreadystatechange = function() {
-        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-          this.readme =  xmlhttp.responseText ;
-            console.log(this.readme)
-            this.md_loaded = true ;
-            // return xmlhttp.responseText;
-        }
-      }
+  //     if (window.XMLHttpRequest) { // code for IE7+, Firefox, Chrome, Opera, Safari
+  //       xmlhttp = new XMLHttpRequest();
+  //     } else { // code for IE6, IE5
+  //       xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+  //     }
+  //     xmlhttp.onreadystatechange = function() {
+  //       if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+  //         this.readme =  xmlhttp.responseText ;
+  //           console.log(this.readme)
+  //           this.md_loaded = true ;
+  //           // return xmlhttp.responseText;
+  //       }
+  //     }
 
-      xmlhttp.open("GET","https://raw.githubusercontent.com/R4ph3rd/workshop_alt_ctrl/master/README.md",true);
-      xmlhttp.send();
-  }
+  //     xmlhttp.open("GET","https://raw.githubusercontent.com/R4ph3rd/workshop_alt_ctrl/master/README.md",true);
+  //     xmlhttp.send();
+  // }
 }
 </script>
 
 <style lang="scss">
 
 .mdReader{
-  display:grid;
   margin-bottom:30px;
+
+  * {
+    max-width:100%;
+  }
 
   & h1 {
     text-align: left;
@@ -135,9 +138,9 @@ export default {
   text-align: left;
   font-family: 'Open Sans';
   font-weight:300;
-  font-size:1.2em;
+  font-size:18px;
   letter-spacing: 0;
-  line-height: 1.6em;
+  line-height: 26px;
   color: #373D4A;
   margin-bottom: 30px;
   }
@@ -205,11 +208,13 @@ export default {
 
   & img{
     display:block;
-    width:100%;
+    margin-right: auto;
+    margin-left: auto;
+    // width:100%;
     border-radius:4px;
-    box-shadow: 0px 3px 4px #00000029;
-    height:100%;
-    // object-fit: cover;
+    // box-shadow: 0px 3px 4px #00000029;
+    // height:100%;
+    object-fit: contain;
     justify-self: center;
   }
 
@@ -225,7 +230,7 @@ export default {
 
       font-family: 'Open Sans';
       font-weight:300;
-      font-size:1.2em;
+      font-size:18px;
       letter-spacing: 0;
       line-height: 1.6em;
       color: #373D4A;

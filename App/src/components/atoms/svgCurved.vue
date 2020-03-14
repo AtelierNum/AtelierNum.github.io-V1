@@ -1,6 +1,6 @@
 <template>
   <div class="top">
-    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="867.284" viewBox="0 0 1920 867.284">
+    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="631" viewBox="0 0 1920 631">
         <!-- <path  d="M0,0H1920V681.432s-69.613-11.73-207.017,24.6C1420.831,799.76,1008.557,947.7,684.557,947.7,204.557,947.7,0,827.8,0,827.8Z" fill="#000000"/> -->
         <clipPath id="mask">
           <path d="M0,80.412H1920V681.432s-69.613-11.73-207.017,24.6C1420.831,799.76,1008.557,947.7,684.557,947.7,204.557,947.7,0,827.8,0,827.8Z" transform="translate(0 -80.412)"  fill="#000000"/>
@@ -42,7 +42,7 @@ export default {
 }
 </script>
 
-<style>
+<style style="scss" scoped>
 .p5Canvas{
   transform-origin: top left;
   transform: scale(2,2)
@@ -51,5 +51,6 @@ export default {
 .image_container{
     width:100%;
 }
+
 
 </style>
