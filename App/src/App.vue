@@ -12,6 +12,9 @@
   --color-dark02 : #373D4A;
   
   --color-gray01 : #F7F7F7 ;
+
+  max-width:100vw;
+  overflow: hidden;
 }
 
 * {

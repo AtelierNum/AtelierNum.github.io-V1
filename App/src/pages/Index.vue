@@ -20,12 +20,16 @@
       </g>
     </svg>
 
-    <svg class="scroll"  width="77" height="77" viewBox="0 0 77 77">
-      <g transform="translate(-922 -945)">
-        <path  d="M38.5,0C8.692,0,0,8.692,0,38.5H0C0,68.308,8.692,77,38.5,77h0C68.308,77,77,68.308,77,38.5h0C77,8.692,68.308,0,38.5,0Z" transform="translate(922 945)" fill="#f7f7f7"/>
-        <path  d="M17.71,11.29l-5-5a1.034,1.034,0,0,0-1.42,0l-5,5a1,1,0,0,0,1.42,1.42L11,9.41V17a1,1,0,0,0,2,0V9.41l3.29,3.3a1,1,0,1,0,1.42-1.42Z" transform="translate(972.006 996) rotate(180)"/>
-      </g>
-    </svg>
+    <div class="spacerY">
+      <svg class="scroll"  width="77" height="77" viewBox="0 0 77 77">
+        <g transform="translate(-922 -945)">
+          <path  d="M38.5,0C8.692,0,0,8.692,0,38.5H0C0,68.308,8.692,77,38.5,77h0C68.308,77,77,68.308,77,38.5h0C77,8.692,68.308,0,38.5,0Z" transform="translate(922 945)" fill="#f7f7f7"/>
+          <path  d="M17.71,11.29l-5-5a1.034,1.034,0,0,0-1.42,0l-5,5a1,1,0,0,0,1.42,1.42L11,9.41V17a1,1,0,0,0,2,0V9.41l3.29,3.3a1,1,0,1,0,1.42-1.42Z" transform="translate(972.006 996) rotate(180)"/>
+        </g>
+      </svg>
+    </div>
+
+    
   <div/>
 
     <h2 class="section-title"> Projects </h2>
@@ -98,7 +102,6 @@ export default {
   },
   computed: {
     pages() {
-      console.log(this.$route)
       return Pages
     }
   }
@@ -119,6 +122,18 @@ export default {
   left: 50px;
 }
 
+.spacerY{
+  height:20%;
+  min-height:450px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+
+  .scroll{
+    display: block;
+    margin:0;
+  }
+}
 
 .grid{
   max-width: 1150px;
@@ -138,10 +153,7 @@ export default {
   }
 }
 
-.scroll{
-  display: block;
-  margin: 100px auto 200px;
-}
+
 
 a{
   color: inherit;

@@ -30,6 +30,9 @@
 </template>
 
 <script>
+
+// import {getters} from Vuex ;
+
   export default {
     name: 'card_project',
     props: {
@@ -66,10 +69,12 @@
       card_action(){
         if (this.r_action != ''){
           this.$router.push('/' + this.r_action + '/' + this.id);
-
-          console.log(this.$route)
+          // console.log(this.getContent);
         }
       }
+    },
+    computed:{
+      // ...getters: {['getContent']}
     }
   }
 </script>

@@ -25,6 +25,13 @@
         <li>sfssdfef</li>
         <li>hjhdsfdfgf</li>
         <li>ezdsdsff</li>
+
+        <li v-for="(section, i) in index" :key="i">
+          {{section.section}}
+            <ul v-if="section.children.length > 0">
+              <li v-for="(subsection,k) in section.children" :key="k">{{subsection.innerText}}</li>
+            </ul>  
+        </li>
       </ul>
     </div>
 
@@ -44,6 +51,11 @@ import mdReader from '@/components/atoms/markdownReader'
 
 export default {
   name: 'CoursePage',
+  data(){
+    return{
+      index: []
+    }
+  },
   computed : {
     lastupdate(){
       return '28/10/19';
@@ -53,6 +65,28 @@ export default {
     'svg-curved' : svgCurved,
     'md-reader' : mdReader
   },
+  mounted(){
+    
+    let md_childs = Array.from(this.$children[1].$el.childNodes);
+
+    let h1_sections = md_childs.filter( child => child.localName == 'h1');
+
+    for (let w = 1 ; w < h1_sections.length - 1; w ++){
+        // let child = h1_sections[w];
+        let i0 = md_childs.findIndex( (i) => i.innerText == h1_sections[w - 1].innerText);
+        let i1 = md_childs.findIndex( (i) => i.innerText == h1_sections[w].innerText);
+
+
+        let indexSection = {
+          section : h1_sections[w - 1].innerText,
+          children : md_childs.slice(i0 + 1, i1).filter( child => child.localName == 'h2')
+        }
+
+        // console.log(indexSection);
+
+        this.index.push(indexSection);
+    }
+  }
 }
 </script>
 

@@ -1,24 +1,38 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-import {
-  Module_test
-} from '@/store/modules/modules'
-
 
 Vue.use(Vuex)
 
-export default new Vuex.Store({
-  state: {
+const state = {
+  current_content : {}
+}
 
-  },
-  mutations: {
 
-  },
-  actions: {
-
-  },
-  modules : {
-    Module_test
+const mutations = {
+  setContent(state, payload){
+      state.current_content = payload ;
   }
+}
+
+const actions = {
+  setContent(context, payload){
+      context.commit('setContent', payload);
+  }
+}
+
+const getters = {
+  getContent(state){
+      return state.current_content ;
+  }
+}
+
+
+export default new Vuex.Store({
+  state,
+  getters,
+  mutations,
+  actions
 })
+
+

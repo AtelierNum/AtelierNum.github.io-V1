@@ -35,13 +35,6 @@ export default {
     },
     mounted(){
         if (this.isP5){
-            // let scripts = document.querySelector('.scripts')
-            // let p5 = document.createElement('script')
-            // p5.src = "/js/p5.min.js"
-            // let sketch = document.createElement('script')
-            // sketch.src = "/js/sketch.js"
-            // scripts.appendChild(p5)
-            // scripts.appendChild(sketch)
             let sketch = require('@/../public/js/sketch.js');
             new p5(sketch.main);
         }

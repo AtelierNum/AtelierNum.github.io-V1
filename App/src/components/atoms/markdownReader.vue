@@ -1,11 +1,44 @@
 <template>
      <router-view  class="contentmd mdReader" />
+
+     <!-- <markdown-it-vue class="contentmd mdReader" :key="getReadme" :content="readme" /> -->
 </template>
 
 <script>
 
+import MarkdownItVue from 'markdown-it-vue'
+
 export default {
   name: 'markdownReader',
+  components:{
+    MarkdownItVue
+  },
+  data(){
+    return{
+      readme: '# Un super titre'
+    }
+  },
+  computed:{
+    getReadme(){
+      var xmlhttp;
+      console.log('c"est top')
+      if (window.XMLHttpRequest) { // code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp = new XMLHttpRequest();
+      } else { // code for IE6, IE5
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+      }
+      xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+          this.readme =  xmlhttp.responseText ;
+            console.log(this.readme)
+            // return xmlhttp.responseText;
+        }
+      }
+
+      xmlhttp.open("GET","https://raw.githubusercontent.com/R4ph3rd/workshop_alt_ctrl/master/README.md",true);
+      xmlhttp.send();
+    }
+  }
 }
 </script>
 
