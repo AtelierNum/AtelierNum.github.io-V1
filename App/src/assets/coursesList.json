@@ -1,8 +1,8 @@
 {
     "courses" : [
-        { "name":"super cours de b2renger",
-            "id": "projet",
-            "tags": ["P5", "Generaive art", "Processing" ],
+        { "name":"Introduction Arduino",
+            "id": "Introduction_Arduino",
+            "tags": ["Arduino", "Electronics", "Processing" ],
             "desc":"Super description qui raconte l'histoire de la mort de Jules césar vue par les chaussettes",
             "url": "https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/README.md",
             "last_upadte": "28/10/19"
@@ -35,9 +35,9 @@
     ],
     "projects" : [
     { 
-        "name":"super projet",
-        "id": "projet",
-        "tags": ["P5", "Generaive art", "Processing" ],
+        "name":"Workshop Arcade Stamp It",
+        "id": "workshop_alt_ctrl",
+        "tags": ["arduino", "Electronics", "Processing" ],
         "desc":"Super description qui raconte l'histoire de la mort de Jules césar vue par les chaussettes",
         "url": "https://raw.githubusercontent.com/R4ph3rd/workshop_alt_ctrl/master/README.md",
         "last_upadte": "28/10/19"

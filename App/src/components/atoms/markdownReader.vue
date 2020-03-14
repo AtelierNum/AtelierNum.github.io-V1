@@ -1,7 +1,7 @@
 <template>
-     <router-view  class="contentmd mdReader" />
+     <!-- <router-view  class="contentmd mdReader" /> -->
 
-     <!-- <markdown-it-vue class="contentmd mdReader" :key="getReadme" :content="readme" /> -->
+     <markdown-it-vue class="contentmd mdReader" v-if="md_loaded" :content="readme" />
 </template>
 
 <script>
@@ -15,13 +15,13 @@ export default {
   },
   data(){
     return{
-      readme: '# Un super titre'
+      readme: '# Un super titre',
+      md_loaded : false
     }
   },
-  computed:{
-    getReadme(){
+  created(){
       var xmlhttp;
-      console.log('c"est top')
+      
       if (window.XMLHttpRequest) { // code for IE7+, Firefox, Chrome, Opera, Safari
         xmlhttp = new XMLHttpRequest();
       } else { // code for IE6, IE5
@@ -31,13 +31,13 @@ export default {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
           this.readme =  xmlhttp.responseText ;
             console.log(this.readme)
+            this.md_loaded = true ;
             // return xmlhttp.responseText;
         }
       }
 
       xmlhttp.open("GET","https://raw.githubusercontent.com/R4ph3rd/workshop_alt_ctrl/master/README.md",true);
       xmlhttp.send();
-    }
   }
 }
 </script>
