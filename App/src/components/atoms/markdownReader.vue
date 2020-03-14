@@ -1,7 +1,7 @@
 <template>
-     <!-- <router-view  class="contentmd mdReader" /> -->
+     <router-view  class="contentmd mdReader" />
 
-     <markdown-it-vue class="contentmd mdReader" v-if="md_loaded" :content="readme" />
+     <!-- <markdown-it-vue class="contentmd mdReader" v-if="md_loaded" :content="readme" /> -->
 </template>
 
 <script>
@@ -58,6 +58,7 @@ export default {
 
     position:relative;
     margin-bottom:50px;
+    margin-top:50px;
 
     &::after{
       content: ' ';
@@ -82,6 +83,7 @@ export default {
     color: #373D4A;
 
     margin-bottom:30px;
+    margin-top:30px;
   }
 
   & h3{
@@ -93,9 +95,54 @@ export default {
     color: #373D4A; 
 
     margin-bottom:20px;
+    margin-top:20px;
+  }
+  
+  & h4{
+    text-align: left;
+    font-family: 'Rubik';
+    font-weight:500;
+    font-size:1.7em;
+    color: #373D4A; 
+
+    margin-bottom:20px;
+    margin-top:20px;
+  }
+  
+  & h5{
+    text-align: left;
+    font-family: 'Rubik';
+    font-weight:500;
+    font-size:1.4em;
+    color: #373D4A; 
+
+    margin-bottom:20px;
+    margin-top:20px;
+  }
+  
+  & h6{
+    text-align: left;
+    font-family: 'Rubik';
+    font-weight:500;
+    font-size:1.2em;
+    color: #373D4A; 
+
+    margin-bottom:10px;
+    margin-top:10px;
   }
 
   & p {
+  text-align: left;
+  font-family: 'Open Sans';
+  font-weight:300;
+  font-size:1.2em;
+  letter-spacing: 0;
+  line-height: 1.6em;
+  color: #373D4A;
+  margin-bottom: 30px;
+  }
+  
+  & li {
   text-align: left;
   font-family: 'Open Sans';
   font-weight:300;
@@ -158,10 +205,11 @@ export default {
 
   & img{
     display:block;
+    width:100%;
     border-radius:4px;
     box-shadow: 0px 3px 4px #00000029;
     height:100%;
-    object-fit: cover;
+    // object-fit: cover;
     justify-self: center;
   }
 

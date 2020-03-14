@@ -1,6 +1,6 @@
 # Introduction Arduino
 
-Code for a creative coding class with arduino for designers. English wip : [here](https://github.com/b2renger/Introduction_Arduino/blob/master/https://github.com/b2renger/Introduction_Arduino/tree/english)
+Code for a creative coding class with arduino for designers. English wip : [here](https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/https://github.com/b2renger/Introduction_Arduino/tree/english)
 
 [Arduino](https://www.arduino.cc/) est une marque de cartes électroniques open hardware : c'est à dire des cartes dont les schémas sont disponibles librement et gratuitement.
 
@@ -91,7 +91,7 @@ Générer des courants permet de brancher des actuateurs et donc de faire tourne
 
 Une carte arduino ressemble à ceci :
 
-<img src="assets/carte_arduino_uno.png" width="360" height="480" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/assets/carte_arduino_uno.png" width="360" height="480" /><br>
 
 Essayez de répérer sur la partie de gauche les **entrées analogiques** numérotées de **A0** jusqu'à **A5**, sur la droite vous pourrez trouver les **pins digitales** numérotées de 0 à 13.
 
@@ -109,11 +109,11 @@ Le code s'écrit dans l'IDE (Integrated Development Environment) arduino, que vo
 
 Il faut prendre la version *Desktop* :
 
-<img src="assets/download_arduino.png" width="480" height="240" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/assets/download_arduino.png" width="480" height="240" /><br>
 
 Un fois téléchargé, installé et ouvert vous devrier vous retrouver devant une fenêtre ressemblant à cela :
 
-<img src="assets/arduino_ide.png" width="600" height="740" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/assets/arduino_ide.png" width="600" height="740" /><br>
 
 Nous allons donc taper du texte dans cette page pour programmer notre carte électronique.
 
@@ -148,7 +148,7 @@ Une fois le programme écrit il faut le **téléverser** sur la carte mais avant
 
 Pour cela il faut aller dans le menu *Outils* puis sélectionner *Arduino / Genuino Uno* pour le **type de carte** et choisir la bonne carte dans le menu **Port** (il faut bien sûr à ce stade que votre carte soit branchée à un port usb de votre ordinateur) :
 
-<img src="assets/arduino_ide_selection_carte.png" width="900" height="640" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/assets/arduino_ide_selection_carte.png" width="900" height="640" /><br>
 
 Une fois cela fait vous pouvez **vérifier** votre programme puis le **téléverser**.
 
@@ -190,18 +190,18 @@ Le capteur *tilt* permet de détecter des changement brusques de mouvement ou de
 
 Voici à quoi il ressemble : 
 
-<img src="assets/capteurs/tilt.jpg" width="270" height="270" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/assets/capteurs/tilt.jpg" width="270" height="270" /><br>
 
 Une patte reliée à la masse l'autre va être relié à du courant, si la bille et le corps du capteur rentrent en contact le courant passe et on peut donc le mesurer; on obtient donc soit un 1 soit un 0 en fonction de l'état du capteur.
 
 Exemple d'utilisation :
 
-<img src="assets/read_from_tilt.gif" width="480" height="270" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/assets/read_from_tilt.gif" width="480" height="270" /><br>
 
 
 Le circuit à réaliser :
 
-<img src="read_from_tilt/read_from_tilt.png" width="480" height="360" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/read_from_tilt/read_from_tilt.png" width="480" height="360" /><br>
 
 Ici nous utilisons un résistance de 10 kilo ohms, pour protéger notre capteur et notre carte : cela nous permet d'abaisser le courant circulant dans nos fils avant de le mesurer. 
 
@@ -235,13 +235,13 @@ Le capteur [*PIR*](https://en.wikipedia.org/wiki/Passive_infrared_sensor) est un
 
 Ces capteurs renvoient un 1 pendant un temps déterminé (ici 3 secondes) lorsqu'ils détectent une présence et 0 sinon. 
 
-<img src="assets/read_from_pir.gif" width="480" height="270" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/assets/read_from_pir.gif" width="480" height="270" /><br>
 
 Ici au lieu d'ouvir le **moniteur série**, le résultat est affiché dans le **traceur série** disponible via le menu *Outils* -> *Traceur série*.
 
 Le *PIR* est souvent accompagné d'un petit circuit imprimmé et il n'est donc pas nécessaire d'ajouter de résistance car cela a souvent déjà été fait sur la carte accompagnant le capteur.
 
-<img src="read_from_PIR/read_from_pir.png" width="480" height="360" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/read_from_PIR/read_from_pir.png" width="480" height="360" /><br>
 
 Le code est identique au code précédent si nous avons bien aussi branché le capteur *PIR* sur l'entrée 7 : 
 
@@ -263,9 +263,9 @@ void loop() {
 
 Le microswitch est de la même famille que les interupteurs ou les boutons. Lorsque l'on appuie dessus le circuit est fermé, on peut alors mesurer un 1 - sinon le circuit est ouvert et il n'y a pas de courant qui passe on mesure alors un 0.
 
-<img src="assets/read_from_microswitch.gif" width="480" height="270" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/assets/read_from_microswitch.gif" width="480" height="270" /><br>
 
-<img src="read_from_microswitch/read_from_microswitch.png" width="480" height="360" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/read_from_microswitch/read_from_microswitch.png" width="480" height="360" /><br>
 
 Encore une fois le code est identique sauf que notre composant est branché pour sur l'entrée digitale 2
 ```c
@@ -288,7 +288,7 @@ Les boutons peuvent apparaitrent aux premiers abords comme le composant le plus 
 
 Les boutons existent de différentes tailles et de différentes formes, ils peuvent avoir 2, 3 ou 4 pattes mais le principe est toujours le même : lorsque l'on appuie sur le bouton, le circuit se ferme et donc le courant peut passer. En mesurant ce courant sur une broche digitale on obtient soit un 0 (circuit ouvert = pas de courant) ou un 1 (circuit fermé = le courant passe). Il est possible d'obtenir des comportement plus complexes que cette simple lecture et de "reconnaitre" des doubles clicks, appuis longs etc. à l'aide d'une bibliothèque.
 
-<img src="assets/differents_boutons.jpg" width="480" height="360" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/assets/differents_boutons.jpg" width="480" height="360" /><br>
 
 Le bouton d'arcade dispose de 3 broches, le petit bouton en bas à droite de 4 et le bouton en bas à gauche dispose de 3 broches aussi (il s'agit d'un bouton capacitif). 
 
@@ -298,15 +298,15 @@ Le circuit électronique est sensiblement le même pour tous les boutons : il es
 
 ##### Le bouton capacitif
 
-<img src="read_from_button/read_from_button_grove.png" width="480" height="360" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/read_from_button/read_from_button_grove.png" width="480" height="360" /><br>
 
 ##### Le bouton "classique"
 
-<img src="read_from_button/read_from_button_classic.png" width="480" height="360" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/read_from_button/read_from_button_classic.png" width="480" height="360" /><br>
 
 ##### Le bouton d'arcade
 
-<img src="read_from_button/read_from_button_arcade.png" width="480" height="360" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/read_from_button/read_from_button_arcade.png" width="480" height="360" /><br>
 
 
 #### Code
@@ -314,7 +314,7 @@ Contrairement aux composants précédents il y aura deux exemples de code pour d
 - Le premier se contentera de lire les données sur la broche 2. La valeur lue vaudra donc 0 si le bouton n'est pas appuyé et 1 s'il l'est.
 - Le second manipulera une variable afin de la faire changer d'état. Ainsi à chaque fois que nous cliquerons sur le bouton (cela signifie ici appuyer et relacher), une variable changera d'état pour valoir soit 0 soit 1.
 
-<img src="assets/read_from_buttons.gif" width="480" height="360" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/assets/read_from_buttons.gif" width="480" height="360" /><br>
 
 #### Lire la valeur d'un bouton
 
@@ -397,11 +397,11 @@ Les entrées analogiques et capteurs analogiques contrairement aux entrée digit
 
 Le [*potentionmètre*](https://fr.wikipedia.org/wiki/Potentiom%C3%A8tre) est le grand classique de l'électronique : en fonction de sa position, sa résistance interne varier ce qui va permettre de mesurer un courant plus ou moins fort et encodé entre 0 et 1024.
 
-<img src="assets/read_from_pot.gif" width="480" height="270" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/assets/read_from_pot.gif" width="480" height="270" /><br>
 
 Le potentiomètre dispose de 3 pattes : les deux aux extrémités sont dédiées à son alimentation (une reliée à **GND** l'autre au **5V**, la patte centrale porte le signal que nous souhaitons lire et sera donc reliée à une **entrée analogique**.
 
-<img src="read_from_potentiometer/read_from_pot.png" width="480" height="360" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/read_from_potentiometer/read_from_pot.png" width="480" height="360" /><br>
 
 Le code est très similaire au code des capteurs logiques excepté que les pins analogiques sont forcément des entrées et il n'est donc pas nécessaire d'en préciser l'usage avec **pinMode()** et que nous lisons sur une entrée analogique en utilisant **analogRead()** à la place **digitaleRead()** :
 
@@ -425,11 +425,11 @@ Les micro le plus souvent utilisé en électronique sont des [microphones élect
 
 Il existe une multitude de micro certains possèdent des molettes de réglage pour calibrer leur sensibilité.
 
-<img src="assets/read_from_grove_mic.gif" width="480" height="270" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/assets/read_from_grove_mic.gif" width="480" height="270" /><br>
 
 Nous n'utiliserons que 3 des 4 broches du connecteur : deux pour l'alimentation et la troisième pour lire les données analogiques. Le wiki du fabricant nous précise les connexions disponnibles sur la broche : http://wiki.seeedstudio.com/Grove-Sound_Sensor/
 
-<img src="read_from_grove_mic/read_from_grove_mic.png" width="480" height="360" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/read_from_grove_mic/read_from_grove_mic.png" width="480" height="360" /><br>
 
 ```c
 void setup() {
@@ -449,11 +449,11 @@ void loop() {
 
 La [*photorésistance*](https://fr.wikipedia.org/wiki/Photor%C3%A9sistance) fait varier sa résistance en fonction de la luminosité qu'elle reçoit. Il en existe de toutes tailles et de toutes sensibilités.
 
-<img src="assets/read_from_photores.gif" width="480" height="270" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/assets/read_from_photores.gif" width="480" height="270" /><br>
 
 Pour protéger la lecture du courant sur notre entrée analogique nous allons une résistance de 10 kilo ohms. Nous retrouvons un montage assez similaire à celui d'un capteur logique tilt.
 
-<img src="read_from_photores/read_from_photores.png" width="480" height="360" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/read_from_photores/read_from_photores.png" width="480" height="360" /><br>
 
 Nous lisons le signal sur l'entrée analogique A0 : 
 
@@ -480,11 +480,11 @@ On peut donc s'en servir comme capteur de vibrations soit comme micro-contact, o
 
 Ici nous allons nous contenter de détecter des vibrations et d'en mesurer l'importance.
 
-<img src="assets/read_from_piezo.gif" width="480" height="270" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/assets/read_from_piezo.gif" width="480" height="270" /><br>
 
 Pour protéger notre entrée mais aussi parce que par rapport à une résistance de 10kOhms elle nous permettra d'avoir de meilleures valeurs en sortie, nous allons utiliser un résistance de 100kOhms.
 
-<img src="read_from_piezo/read_from_piezo.png" width="480" height="360" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/read_from_piezo/read_from_piezo.png" width="480" height="360" /><br>
 
 Le code lui reste le même tant que notre capteur est sur la même entrée.
 ```c
@@ -507,11 +507,11 @@ void loop() {
 
 Le *FSR* est un capteur de force : il va convertir le poids appliqué sur sa surface en un courant électrique mesurable.
 
-<img src="assets/read_from_fsr.gif" width="480" height="270" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/assets/read_from_fsr.gif" width="480" height="270" /><br>
 
 On retouve le même type de schéma que pour le capteur *tilt* ou que pour le *piezo* ou encore la *photorésistance*. Ici il est monté avec une résistance de 47 kOhms, mais vous pouvez essayer d'ajuster cette valeur pour affiner la précision utile.
 
-<img src="read_from_FSR/read_from_FSR.png" width="480" height="360" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/read_from_FSR/read_from_FSR.png" width="480" height="360" /><br>
 
 
 ```c
@@ -533,11 +533,11 @@ void loop() {
 
 Le *flex sensor* va convertir la courbure qu'il prend en valeur comprises entre 0 et 1023. Il faut noter que soumis à aucune contrainte la valeur lue doit être de l'ordre de 511, cela signifie que notre capteur peut détecter une torsion dans les deux sens.
 
-<img src="assets/read_from_flex.gif" width="480" height="270" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/assets/read_from_flex.gif" width="480" height="270" /><br>
 
 Ici il est monté avec une résistance de 47 kOhms, mais vous pouvez essayer d'ajuster cette valeur pour affiner la précision utile.
 
-<img src="read_from_flex/read_from_Flex.png" width="480" height="480" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/read_from_flex/read_from_Flex.png" width="480" height="480" /><br>
 
 ```c
 void setup() {
@@ -562,9 +562,9 @@ Il existe plusieurs méthodes pour calculer des distances : infra-rouge, ultra-s
 
 Le capteur infra-rouge va permettre avec un système de lentilles et d'équations trigonométrique d'estimer une distance. Le [modèle que nous utilisons](https://www.gotronic.fr/art-capteur-de-mesure-sharp-gp2y0a21yk0f-11539.htm) permet d'obtenir un estimation de la distance pour des distances comprises entre 10 et 80 cm et lire le résultat sur une entrée analogique.
 
-<img src="assets/read_from_irdistance.gif" width="480" height="270" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/assets/read_from_irdistance.gif" width="480" height="270" /><br>
 
-<img src="read_from_IRDistance/read_from_irdistance.png" width="480" height="360" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/read_from_IRDistance/read_from_irdistance.png" width="480" height="360" /><br>
 
 ```c
 void setup() {
@@ -588,7 +588,7 @@ Il existe différents types de capteurs à ultra-son pour mesurer les distances 
 - le [module grove](https://www.gotronic.fr/art-telemetre-a-ultrasons-grove-101020010-18976.htm) qui dispose de la connectique grove est d'une bibliothèque associée. Il est donc relativement plus simple à utiliser.
 
 Le principe de mesure de ces deux capteurs est le même et les résultats obtenus sont donc très similaires :
-<img src="assets/read_from_ultrasonic_distance.gif" width="480" height="270" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/assets/read_from_ultrasonic_distance.gif" width="480" height="270" /><br>
 
 
 #### Ultra-son-grove
@@ -597,7 +597,7 @@ Le principe de mesure de ces deux capteurs est le même et les résultats obtenu
 
 Le circuit ressemble à un circuit classique avec les composants grove :
 
-<img src="read_from_UltraSonic-Distance-grove/read_from_UltraSonic-Distance-grove.png" width="480" height="480" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/read_from_UltraSonic-Distance-grove/read_from_UltraSonic-Distance-grove.png" width="480" height="480" /><br>
 
 Le code nécessite d'installer une bibliothèque. Vous pouvez avoir accès au gestionnaire de bibliothèques d'arduino en cliquant sur le menu : *Croquis* -> *Inclure une bibliothèque* -> *Gérer les bibliothèques*. Il faut alors rechercher et installer la bibliothèque **Grove Ultrasonic ranger**.
 
@@ -629,7 +629,7 @@ Le branchement est un peu différent de ce que nous avons vu jusqu'à présent. 
 
 Les deux suivantes **trig** et **echo** aux entrées digitales 11 et 10 respectivement.
 
-<img src="read_from_UltraSonic_Distance/read_from_ultrasonic_distance.png" width="480" height="360" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/read_from_UltraSonic_Distance/read_from_ultrasonic_distance.png" width="480" height="360" /><br>
 
 Cela est du au fonctionnement intrinsèque du capteur. Nous allons en fait générer un courant sur la patte **trig** et mesurer un courant sur la patte **echo** : nous allons émettre des ultra-sons et écouter leur écho et en fonction du temps écoulé entre l'émission et la réception de l'écho nous pourrons déterminer une distance (car nous connaissons la vitesse du son).
 
@@ -704,11 +704,11 @@ Le code peut s'avérer complexe et fait souvent appel à l'usage de bibliothèqu
 
 Installer une bibliothèque se fait via une interface graphique dans l'IDE arduino. Il faut ouvrir le menu *Croquis* -> *Inclure une bibliothèque* -> *Gérer les bibliothèques*
 
-<img src="assets/arduino_bibliotheques.png" width="680" height="470" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/assets/arduino_bibliotheques.png" width="680" height="470" /><br>
 
 Qui vous permettra d'ouvrir cette fenêtre : 
 
-<img src="assets/arduino-gestionnaire-bibliotheque.png" width="680" height="370" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/assets/arduino-gestionnaire-bibliotheque.png" width="680" height="370" /><br>
 
 Vous avez alors un champ de recherche vous permettant de chercher et d'installer les bibliothèques dont vous avez besoin.
 
@@ -719,11 +719,11 @@ Généralement chaque bibliothèque vient avec sont lot d'exemples plus ou mois 
 
 L'[*accéléromètre*](https://fr.wikipedia.org/wiki/Acc%C3%A9l%C3%A9rom%C3%A8tre) permet de mesure l'accélération linéaire, soit la projection de la gravité sur chacun de ses trois axes.
 
-<img src="assets/read_fom_accelerometer.gif" width="480" height="270" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/assets/read_fom_accelerometer.gif" width="480" height="270" /><br>
 
 Le montage est tout ce qu'il y a de plus simple :
 
-<img src="read_from_accelerometer/read_from_3axisAccelerometer.png" width="480" height="360" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/read_from_accelerometer/read_from_3axisAccelerometer.png" width="480" height="360" /><br>
 
 Le code est lui assez complexe, il utilise la bibliothèque *ADXL345* spécialement dédiée à ce composant, elle ne sera donc pas utilisable avec tous les accéléromètres.
 
@@ -784,9 +784,9 @@ Un [*gyroscope*](https://fr.wikipedia.org/wiki/Gyroscope) permet de mesurer la r
 
 Sa mise en oeuvre est assez similaire à la mise en oeuvre de l'accéleromètre.
 
-<img src="assets/read_from_gyroscope.gif" width="480" height="270" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/assets/read_from_gyroscope.gif" width="480" height="270" /><br>
 
-<img src="read_from_gyroscope/read_from_3axisGyro.png" width="480" height="360" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/read_from_gyroscope/read_from_3axisGyro.png" width="480" height="360" /><br>
 
 La page de documentation du fabricant nous fournit les informations relative à son utilisation en terme de code : http://wiki.seeedstudio.com/Grove-3-Axis_Digital_Gyro/    
 
@@ -843,11 +843,11 @@ void loop(){
 
 Le dernier capteur que nous allons voir est un *capteur de gestes*. Il va nous permettre de pouvoi identifier jusqu'à 9 gestes :
 
-<img src="assets/read_from_gesture.gif" width="480" height="270" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/assets/read_from_gesture.gif" width="480" height="270" /><br>
 
 Ce capteur consiste en une série de photorésistances : lorsque l'on bouge devant, la luminosité reçue par chaque photorésistance change et une bibliothèque logicielle nous permettre de reconnaitre des patterns de mesure de courant relatifs à ces gestes.
 
-<img src="read_from_gesture_sensor/read_from_gesture.png" width="480" height="360" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/read_from_gesture_sensor/read_from_gesture.png" width="480" height="360" /><br>
 
 Selon la page du fabricant : http://wiki.seeedstudio.com/Grove-Gesture_v1.0/
 il faut utiliser la bibliothèque *paj7620* - * Gesture PAJ7620*
@@ -930,14 +930,14 @@ Deux modes d'interactions sont possibles avec ce type d'actuateur, on peut :
 
 Dans les deux cas le circuit sera le même :
 
-<img src="set_led_blink/set_led.png" width="480" height="360" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/set_led_blink/set_led.png" width="480" height="360" /><br>
 
 Il est important de savoir que la [led](https://fr.wikipedia.org/wiki/Diode_%C3%A9lectroluminescente) simple est un composant polarisé - c'est à dire qu'il a un sens. La petite patte correspond au moins et doit donc être reliée à la masse, la patte la plus longue correspond au plus et doit être reliée à une sortie digitale.
 Entre la masse et la patte moins de la led on insère une résistance de 220 ohms afin de protéger la led d'une éventuelle surtension qui risquerait de la griller.
 
 #### Faire clignoter une led
 
-<img src="assets/set_led_blink.gif" width="480" height="360" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/assets/set_led_blink.gif" width="480" height="360" /><br>
 
 Pour faire clignoter une led il suffit d'utiliser la fonction [**digitalWrite()**](https://www.arduino.cc/reference/en/language/functions/digital-io/digitalwrite/). Cette fonction prend deux arguments :
 - le premier est le numéro de la pin sur laquelle on doit envoyer un courant.
@@ -958,7 +958,7 @@ void loop() {
 
 #### Faire "pulser" une led
 
-<img src="assets/set_led_pulse.gif" width="480" height="360" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/assets/set_led_pulse.gif" width="480" height="360" /><br>
 
 Pour faire pulse une led il suffit d'utiliser la fonction [**analogWrite()**](https://www.arduino.cc/reference/en/language/functions/analog-io/analogwrite/). Cette fonction prend deux arguments :
 - le premier est le numéro de la pin sur laquelle on doit envoyer un courant.
@@ -986,13 +986,13 @@ void loop() {
 
 Pour le vibreur la logique est exactement que pour la led, le montage est très similaire :
 
-<img src="set_vibrator_onoff/set_vibrator.png" width="480" height="360" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/set_vibrator_onoff/set_vibrator.png" width="480" height="360" /><br>
 
 Et le code sera aussi similaire ...
 
 #### Vibreur on off
 
-<img src="assets/set_vibrator_blink.gif" width="480" height="360" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/assets/set_vibrator_blink.gif" width="480" height="360" /><br>
 
 ```c
 
@@ -1011,7 +1011,7 @@ void loop() {
 
 #### Vibreur pulse
 
-<img src="assets/set_vibrator_pulse.gif" width="480" height="360" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/assets/set_vibrator_pulse.gif" width="480" height="360" /><br>
 
 ```c
 float t = 0; // une variable pour stocker le temps
@@ -1036,7 +1036,7 @@ Nous avons vu que les entrées digitales permettait de mesurer des courants *HIG
 
 D'une manière générale tous les servomoteurs se branchent de le même façon :
 
-<img src="set_position_servo_classique/set_servo_position.png" width="480" height="360" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/set_position_servo_classique/set_servo_position.png" width="480" height="360" /><br>
 
 Le cable foncé est la masse (GND), le cable rouge est l'alimentation (5V), le dernier est généralement jaune ou orange on le relie à une sortie digitale d'une carte arduino, mais attention à une sortie PWM.
 
@@ -1053,7 +1053,7 @@ Les servos moteurs existe en une multitude de taille, de vitesse, et de puissanc
 
 Un servo classique va accepter comme paramètre un angle, les valeurs maximales et minimum peuvent varier en fonction des moteurs, de même que la vitesse qui leur permettra d'atteindre cet angle.
 
-<img src="assets/set_position_servo_classique.gif" width="480" height="270" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/assets/set_position_servo_classique.gif" width="480" height="270" /><br>
 
 Notre code va nous permettre de tester simplement le comportement du servomoteur, en le faisant changer d'état toutes les 1.5 secondes.
 
@@ -1095,7 +1095,7 @@ Un servomoteur à rotation continue va accepter comme paramètre dans sa fonctio
 
 Des valeurs autour de 90 le feront donc tourner plus ou moins vite dans un sens ou dans l'autre.
 
-<img src="assets/set_rotation_servo_continu.gif" width="480" height="270" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/assets/set_rotation_servo_continu.gif" width="480" height="270" /><br>
 
 ```c
 // inclure la bibliothèque servo
@@ -1128,7 +1128,7 @@ Vous pouvez essayer de changer les valeurs pour voir ce qu'il se passe.
 
 Le servomoteur linéaire va lui effectuer une translation. On précise entre les parenthèse de **write()** sa position.
 
-<img src="assets/set_position_servo_lineaire.gif" width="480" height="270" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/assets/set_position_servo_lineaire.gif" width="480" height="270" /><br>
 
 ```c
 // inclure la bibliothèque servo
@@ -1166,7 +1166,7 @@ Nous allons utiliser directement des rubans de leds. Ces rubans présentent des 
 
 Ils peuvent être découpés à la longueur souhaités et ne nécessitent que trois cables pour les contrôller : deux pour l'alimentation et un pour la donnée. Le schéma de montage sera toujours le même.
 
-<img src="set_neopixel_rgb/set_neopixels.png" width="480" height="270" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/set_neopixel_rgb/set_neopixels.png" width="480" height="270" /><br>
 
 En fonction du nombre de leds que vous voulez allumer mais aussi en fonction de la couleur ou de l'intensité, il vous faudra une puissance différente. Il peut parfois être nécessaire de faire appel à des alimentations externes - en dessous d'une dizaine de led par entrée une carte arduino devrait pouvoir alimenter sans recours à une source d'énergie externe. Une led consomera au maximum 60mA (allumée en blanc à l'intensité maximale). A des courants plus importants, il pourra être intéressant d'ajouter un condensateur en parallèle sur l'alimentation.
 
@@ -1183,7 +1183,7 @@ Ensuite on peut afficher des couleurs sur les leds en parcourant chaque led de n
 
 Ici nous allons créer une petite animation en faisant varier les composantes rouge et verte de chaque led.
 
-<img src="assets/set_neopixels_rgb.gif" width="480" height="270" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/assets/set_neopixels_rgb.gif" width="480" height="270" /><br>
 
 ```c 
 // inclure la bibliothèque fast-led
@@ -1232,7 +1232,7 @@ void loop(){
 #### Spécifier la couleur en HSV
 
 Le montage est le même : 
-<img src="assets/set_neopixels_hsb.gif" width="480" height="270" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/assets/set_neopixels_hsb.gif" width="480" height="270" /><br>
 
 Le code est quasiment le même sauf que l'on appelle la fonction **CHSV()** de la bibliothèque Fast-led. Même si dans la plupart des logiciels la teinte est représentée par une valeur entre 0 et 360 et la saturation ainsi que le luminosité sont représentées par des valeurs comprises entre 0 et 100, ici chacune des trois valeurs doit être comprise entre 0 et 255.
 
@@ -1285,13 +1285,13 @@ void loop(){
 
 Un afficheur à 4 digits permet d'afficher des chiffres et des lettres (de A à F) sur des digits (ensemble de 7 segments). Il y a 4 digits disponnibles pour afficher des chiffres.
 
-<img src="assets/set_four_digit_display.gif" width="480" height="270" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/assets/set_four_digit_display.gif" width="480" height="270" /><br>
 
 La page de documentation du fabricant du composant est disponnible ici : http://wiki.seeedstudio.com/Grove-4-Digit_Display/
 
 Le cablage est un cablage classique pour ce genre de périphérique.
 
-<img src="set_four_digit_display/set_four_digit_display.png" width="480" height="270" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/set_four_digit_display/set_four_digit_display.png" width="480" height="270" /><br>
 
 D'un point de vue logiciel il va vous falloir télécharger le bibliothèque **TM1637** /**Grove 4-digit display**.
 
@@ -1364,11 +1364,11 @@ int newval = map(val, 0, 1023, 0, 180); // notre valeur est comprise entre 0 et 
 
 Comment controller un servomoteur avec un potentiomètre ?
 
-<img src="assets/map_potentiometer_to_servo.gif" width="480" height="270" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/assets/map_potentiometer_to_servo.gif" width="480" height="270" /><br>
 
 Le montage est la réunion de deux montages déjà vu précédement : on branche un potentiomètre sur l'entrée analogique *A0*, et on branche un moteur sur la sortie digitale *D6*.
 
-<img src="map_potentiometer_to_servo/map_potentiometer_to_servo.png" width="480" height="270" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/map_potentiometer_to_servo/map_potentiometer_to_servo.png" width="480" height="270" /><br>
 
 Le code va aussi réunir deux bouts de code déjà existant, on va juste utiliser la fonction map pour faire le lien entre notre mesure de la valeur du potentiomètre et l'information que l'on va envoyer au servomoteur.
 
@@ -1403,11 +1403,11 @@ void loop() {
 
 L'objectif ici va être de contrôller la vitesse et le sens de rotation d'un servomoteur à l'aide d'un capteur de flexion :
 
-<img src="assets/map_flex_to_servo_continu.gif" width="480" height="270" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/assets/map_flex_to_servo_continu.gif" width="480" height="270" /><br>
 
 De la même manière que précédement, ce montage est la combinaison du montage permettant de récupérer l'information d'un capteur de flexion et du montage permettant de controller un servomoteur à rotation continue.
 
-<img src="map_flex_to_servo_continu/map_flex_to_servo_continu.png" width="480" height="560" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/map_flex_to_servo_continu/map_flex_to_servo_continu.png" width="480" height="560" /><br>
 
 Le code va reprendre le code permettant de mesurer la valeur d'un capteur de flexion et va le combiner avec le code permettant de faire tourner un moteur à rotation continue en mappant les valeur provenant du capteur de flexion vers des valeurs utiles pour faire tourner un moteur à rotation continu.
 
@@ -1443,11 +1443,11 @@ void loop() {
 
 Ici nous allons utiliser un capteur pour fixer la teinte de la lumière produite par un strip de leds rgb.
 
-<img src="assets/map_fsr_to_neopixels.gif" width="480" height="270" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/assets/map_fsr_to_neopixels.gif" width="480" height="270" /><br>
 
 Le cablage comporte un capteur de force avec un résistance 47kOhms branché sur l'entrée analogique A0, et un strip de led branché sur la pin digitale D6.
 
-<img src="map_fsr_to_neopixels/map_fsr_to_neopixels.png" width="480" height="270" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/map_fsr_to_neopixels/map_fsr_to_neopixels.png" width="480" height="270" /><br>
 
 Comme d'habitude nous allons récupérer une valeur analogique comprise entre 0 et 1023 et nous allons transformer les valeurs obtenues en valeurs comprises entre 0 et 255 pour pouvoir controller la teinte de nos leds.
 
@@ -1489,7 +1489,7 @@ Pour info USB signifie Universal Serial Bus, le port série est donc bien le por
 
 Le premier programme va utiliser un capteur de distance et la distance détectée par notre capteur servira à régler la vitesse de défilement d'une vidéo lue par un programme processing : 
 
-<img src="assets/serial_distance_to_movie_speed.gif" width="480" height="270" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/assets/serial_distance_to_movie_speed.gif" width="480" height="270" /><br>
 
 Pour rappel le cablage du capteur de distance ce fait comme ceci :
 
@@ -1732,7 +1732,7 @@ void serialEvent (Serial myPort) {
 
 La logique de cette animation est très similaire à la précédente. Nous allons remplacer le capteur de distance par une photorésistance et nous allons utiliser un exemple différent :
 
-<img src="assets/serial_photores_to_animation.gif" width="480" height="270" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/assets/serial_photores_to_animation.gif" width="480" height="270" /><br>
 
 Le cablage est celui d'une photorésistance classique branchée sur A0.
 <img src="read_from_photores/read_from_photores.png" width="480" height="270" /><br>
@@ -1956,7 +1956,7 @@ void branch(float h) {
 
 Ce troisième exemple va illustrer la communication inverse : nous allons envoyer des données de processing à arduino. En fonction de la position de la souris la couleur de la fenêtre sera affectée et ces positions de souris seront aussi envoyées à arduino pour controller l'allumage de leds.
 
-<img src="assets/serial_mouse_to_neopixels.gif" width="480" height="270" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/assets/serial_mouse_to_neopixels.gif" width="480" height="270" /><br>
 
 Le schéma électrique est simple : il s'agit de brancher un ruban de leds sur une carte arduino :
 
@@ -2078,7 +2078,7 @@ Dans notre cas nous allons enregistrer les données analogiques provenant de deu
 
 Le circuit est un circuit assez classique :
 
-<img src="serial_enregistrer_des_donnees_dans_un_fichier/read_from_photores_x2.png" width="480" height="360" /><br>
+<img src="https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/serial_enregistrer_des_donnees_dans_un_fichier/read_from_photores_x2.png" width="480" height="360" /><br>
 
 #### Code arduino
 

@@ -1,22 +1,22 @@
 <div align="center">
 <br>
-<img width="800" src="/assets/doc/Title.png" alt="totem-panic">
+<img width="800" src="https://raw.githubusercontent.com/R4ph3rd/workshop_alt_ctrl/master//assets/doc/Title.png" alt="totem-panic">
 <br>
-<img width="800" src="/assets/doc/Keyword.png" alt="totem-panic">
+<img width="800" src="https://raw.githubusercontent.com/R4ph3rd/workshop_alt_ctrl/master//assets/doc/Keyword.png" alt="totem-panic">
 <br>
-<img width="600" src="/assets/doc/Built.png" alt="built">
+<img width="600" src="https://raw.githubusercontent.com/R4ph3rd/workshop_alt_ctrl/master//assets/doc/Built.png" alt="built">
 <br>
-<img width="100" src="/assets/doc/Status.png" alt="status">
+<img width="100" src="https://raw.githubusercontent.com/R4ph3rd/workshop_alt_ctrl/master//assets/doc/Status.png" alt="status">
 <br>
 </div>
 
 # Introduction
 
-Ce projet a été réalisés par 4 étudiants d'interaction et game design de [L'Ecole de design Nantes Atlantique](https://github.com/R4ph3rd/workshop_alt_ctrl/blob/master/https://www.lecolededesign.com/) : 
+Ce projet a été réalisés par 4 étudiants d'interaction et game design de [L'Ecole de design Nantes Atlantique](https://raw.githubusercontent.com/R4ph3rd/workshop_alt_ctrl/master/https://www.lecolededesign.com/) : 
 [Emilie Schaffer](www.emilie-schaefer.com), [Riwan Madjitate](https://www.fichier-pdf.fr/2020/02/17/riwan-majidate-portfolio-2020/), [Théo Geiller](http://theogeiller.com/), [Raphaël Perraud](http://raphaelperraud.com/#/)
 
 
-![sample gif](https://github.com/R4ph3rd/workshop_alt_ctrl/blob/master/assets/sample.gif)
+![sample gif](https://raw.githubusercontent.com/R4ph3rd/workshop_alt_ctrl/master/assets/sample.gif)
 
 ## Narration
 
@@ -26,13 +26,13 @@ Dans une salle de classe morose, un des élèves a décroché du cours... Son es
 
 Le ou les deux joueurs sont placés face à un mobilier en bois qui prend la forme d'une borne d'arcade inspirée du pupitre d'école. Sur la partie haute se trouve un écran et sur la partie à plat se trouve une zone de contrôle et un tampon de chaque côté de celle-ci. Le but est de garder le plus longtemps possible une goutte d'encre à l'intérieur de l'écran. Pour la faire vivre et évoluer dans l'écran, le joueur doit imprimer des rectangles sur lesquels la goutte pourra rebondir, et ce, en pressant les tampons sur la zone de contrôle au bond endroit et avec la bonne inclinaison pour ne pas bloquer le goutte. Cependant, l'encre des tampons n'est pas illimitée et il faut recharger les tampons sur leur support respectif assez longtemps afin de pouvoir les utiliser à nouveau. En mode deux joueurs, le but est que la goutte rebondisse le plus souvent possible sur les rectangles imprimés par soi-même, tout en faisant vivre la goutte le plus longtemps possible.
 
-![principe du jeu](https://github.com/R4ph3rd/workshop_alt_ctrl/blob/master/assets/jeu.jpeg)
+![principe du jeu](https://raw.githubusercontent.com/R4ph3rd/workshop_alt_ctrl/master/assets/jeu.jpeg)
 
 ## Choix graphiques
 
 L'univers de ce jeu s'inspire de l'aspect d'une salle de classe d'école primaire des années 30. Nos références et veilles se sont donc intéressées à des films et livres comme *La guerre des boutons* et *Le petit Nicolas.* C'est pourquoi la borne, prenant la forme d'un pupitre, a été conçue en bois foncé, gravée, comme par des élèves s'ennuyant en classe. Les supports de chargement des tampons sont également conçus d'après la forme des étuis à matériel scolaire sur les bureaux des images de l'époque. Concernant l'écran du jeu, nous avons choisi de prioriser le noir, le blanc  et le gris, qui rappellent les photos que l'on a aujourd'hui de cette époque mais qui font surtout référence aux tons tristes et morose de la salle de classe de ce garçon. 
 
-![univers](https://github.com/R4ph3rd/workshop_alt_ctrl/blob/master/assets/univers.jpeg)
+![univers](https://raw.githubusercontent.com/R4ph3rd/workshop_alt_ctrl/master/assets/univers.jpeg)
 
 ## Matériel nécessaire
 
@@ -74,7 +74,7 @@ Voici le matériel requis pour construire la borne d'arcarde :
 3. Coller le manche à la plaque.
 4. Peindre de peinture conductrice et/ou recouvrir de scotch conducteur.
 
-![tampons](https://github.com/R4ph3rd/workshop_alt_ctrl/blob/master/assets/tampons.jpg)
+![tampons](https://raw.githubusercontent.com/R4ph3rd/workshop_alt_ctrl/master/assets/tampons.jpg)
 
 ### Supports de tampons
 1. Scier les plaques de bois aux dimensions indiquées ci-contre.
@@ -89,11 +89,11 @@ Voici le matériel requis pour construire la borne d'arcarde :
 3. Vernir la borne puis graver et écrire des notes d'écolier.
 4. Coller les supports de tampons sur la borne. 
 
-![borne](https://github.com/R4ph3rd/workshop_alt_ctrl/blob/master/assets/borne.jpg)
+![borne](https://raw.githubusercontent.com/R4ph3rd/workshop_alt_ctrl/master/assets/borne.jpg)
 
 
 ### Connections
-![schéma connnections](https://github.com/R4ph3rd/workshop_alt_ctrl/blob/master/assets/schema.jpg)
+![schéma connnections](https://raw.githubusercontent.com/R4ph3rd/workshop_alt_ctrl/master/assets/schema.jpg)
 
 ## Programme
 ### Données envoyées sur le port série

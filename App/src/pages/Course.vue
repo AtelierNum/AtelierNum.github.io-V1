@@ -74,7 +74,7 @@ export default {
   mounted(){
     
     let md_childs = Array.from(this.$children[1].$el.childNodes);
-    let h1_sections = md_childs.filter( child => child.localName == 'h1');
+    let h1_sections = md_childs.filter( child => child.localName == 'h2');
 
     for (let w = 0 ; w < h1_sections.length ; w ++){
 
@@ -83,14 +83,14 @@ export default {
         if (w == h1_sections.length - 1){
           var indexSection = {
             section : h1_sections[w].innerText,
-            children : md_childs.slice(i0 + 1, md_childs.length).filter( child => child.localName == 'h2')
+            children : md_childs.slice(i0 + 1, md_childs.length).filter( child => child.localName == 'h3')
           }
         } else {
           let i1 = md_childs.findIndex( (i) => i.innerText == h1_sections[w + 1].innerText);
   
           var indexSection = {
             section : h1_sections[w].innerText,
-            children : md_childs.slice(i0 + 1, i1).filter( child => child.localName == 'h2')
+            children : md_childs.slice(i0 + 1, i1).filter( child => child.localName == 'h3')
           }
         }
 
@@ -174,6 +174,7 @@ export default {
     position: sticky;
     top: 10vh;
     min-width:70%;
+    width:95%;
     height:min-content;
 
     &::before {
