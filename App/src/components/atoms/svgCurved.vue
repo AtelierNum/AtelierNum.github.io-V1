@@ -51,6 +51,88 @@ export default {
 .image_container{
     width:100%;
 }
+/* 
+/deep/ .p5Canvas{
+  transform-origin: top left;
+  transform: scale(1.5);
+}
+
+.image_container{
+    width:100%;
+}
+
+.top{
+    object-fit: cover;
+    height:800px;
+    width:100%;
+}
+
+@media (min-width:1800px){
+    .top{
+        height:900px;
+    }
+
+    /* /deep/ .mask{
+        transform: scale(2) !important;
+    } */
+
+    /*/deep/ .p5Canvas{
+        transform: scale(1.7);
+    }
+}
+
+/deep/ .p5Canvas{
+  transform-origin: top left;
+  transform: scale(1.5);
+}
+
+.image_container{
+    width:100%;
+}
+
+.top{
+    object-fit: cover;
+    height:800px;
+    width:100%;
+}
+
+@media (min-width:1800px){
+    .top{
+        height:900px;
+    }
+
+    /* /deep/ .mask{
+        transform: scale(2) !important;
+    } */
+
+  /*  /deep/ .p5Canvas{
+        transform: scale(1.7);
+    }
+}
+
+.mask{
+    height:100%;
+    width:100%;
+
+    transform-origin: top left;
+    transform: scale(1, 1);
+
+    -webkit-mask-size: 100% 100%; 
+    mask-size: 100% 100%;
+    mask: url('../../assets/masks/upper_wave_mask.svg') top left /100% 100%;
+} */
+/*
+.mask{
+    height:100%;
+    width:100%;
+
+    transform-origin: top left;
+    transform: scale(1, 1);
+
+    -webkit-mask-size: 100% 100%; 
+    mask-size: 100% 100%;
+    mask: url('../../assets/masks/upper_wave_mask.svg') top left /100% 100%;
+} */
 
 
 </style>

@@ -43,7 +43,7 @@
     
 
     <v-grid :cols="3">
-      <v-projectCard v-for="(project, i) in pages.projects" :key="i" 
+      <v-projectCard v-for="(project, i) in pages.projects.slice(0, max.projects)" :key="i" 
         r_action="projects"
         :title="project.name"
         :id="project.id"
@@ -52,13 +52,17 @@
         :tags="project.tags">
         </v-projectCard>
     </v-grid>
-     
+
+    <v-button :outlined="true" label="projects" :disabled="disabled.projects" @click.native="more('projects')">Load more</v-button>
+    
+
+    <div class="spacer_height"></div>     
 
 
     <h2 class="section-title"> Resources </h2>
 
     <v-grid :cols="3" >
-      <v-projectCard v-for="(ressource, i) in pages.ressources" :key="i" 
+      <v-projectCard v-for="(ressource, i) in pages.ressources.slice(0, max.ressources)" :key="i" 
         class="small"
         r_action="ressources"
         :title="ressource.name"
@@ -68,7 +72,12 @@
         :tags="ressource.tags">
       </v-projectCard>
     </v-grid>
+
+    <v-button label="ressources" :outlined="true" :disabled="disabled.ressources" @click.native="more('ressources')">Load more</v-button>
+    
       
+    <div class="spacer_height"></div>     
+
     <h2 class="section-title"> Courses </h2>
 
     <v-tag-list>
@@ -79,7 +88,7 @@
     </v-tag-list>
 
     <v-grid>
-      <v-projectCard v-for="(course, i) in pages.courses" :key="i" 
+      <v-projectCard v-for="(course, i) in pages.courses.slice(0, max.courses)" :key="i" 
         class="long"
         r_action="courses"
         :title="course.name"
@@ -89,6 +98,8 @@
         :tags="course.tags">
       </v-projectCard>
     </v-grid>
+
+    <v-button label="courses" :outlined="true" :disabled="disabled.courses" @click.native="more('courses')">Load more</v-button>
     
 </div>
 </template>
@@ -96,16 +107,40 @@
 <script>
 import card_project from '@/components/molecules/card_project'
 import svgCurved from '@/components/atoms/svgCurved'
+import Button from '@/components/atoms/button'
 import Pages from '../assets/coursesList.json'
 
 export default {
     components : {
         'v-projectCard' : card_project,
-        'svg-curved' : svgCurved
+        'svg-curved' : svgCurved,
+        'v-button' : Button
+  },
+  data(){
+    return {
+      max: {
+        courses: 3,
+        ressources: 3,
+        projects: 3
+      },
+      disabled: {
+        courses: false,
+        ressources: false,
+        projects: false
+      }
+    }
   },
   computed: {
     pages() {
       return Pages
+    },
+  },
+  methods: {
+    more(type){     
+      this.max[type] += 3;
+      if (this.max[type] > this.pages[type].length){
+        this.disabled[type] = true ;
+      }
     }
   }
 }
@@ -161,6 +196,11 @@ export default {
 a{
   color: inherit;
   text-decoration: none;
+}
+
+.spacer_height{
+  height:300px;
+  width:100%;
 }
 
 .section-title{

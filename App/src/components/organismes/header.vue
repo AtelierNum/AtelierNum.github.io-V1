@@ -58,14 +58,13 @@ export default {
     }
 
     .logo{
-        // position:absolute;
-        // top: calc(50% - 30px);
-        // left:50px;
-        width:30px;
-        height:30px;
+        width:100px;
+        height:100px;
 
-        border-radius:30px;
-        background-color:red;
+        border-radius:50px;
+        background-size: 100px 100px;
+        background-image: url('~/icons/logo/logo@1x.png');
+        box-shadow: 0 0 8px rgba(0, 0, 0, .08)
     }
 
     .nav{

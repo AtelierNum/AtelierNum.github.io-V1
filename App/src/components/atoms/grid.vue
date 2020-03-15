@@ -26,7 +26,7 @@ export default {
   display: grid;
   grid-template-columns: repeat(1,1fr);
   grid-gap: 45px;
-  margin: 120px auto 300px auto;
+  margin: 120px auto 80px auto;
   &.grid-3{
     grid-template-columns: repeat(3,1fr);
     @media screen and (max-width: 600px){

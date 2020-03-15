@@ -103,19 +103,21 @@ export default {
 <style scoped lang="scss">
 
 .mask_thumbnail{
-  background-color: rgb(235, 235, 235)
+  background-color: #f7f7f7;
 }
 
 .introCourse{
-  background-color: rgb(235, 235, 235);
+  background-color: #f7f7f7;
   text-align: center;
   display:grid;
   grid-auto-columns: auto;
   justify-items: center;
-  padding-bottom: 200px; 
+  padding-bottom: 100px; 
+  padding-top: 50px; 
   margin-bottom:50px;
 
-  // clip-path:path('M10 30 120 90 180 52')
+  clip-path: url('../assets/masks/top_content_mask.svg');
+  
   & h1 {
   text-align: center;
   font-family: 'Rubik';
@@ -223,9 +225,10 @@ export default {
     font-size:1.4em;
 
     &::after{
-      content:'v';
+      content:' ';
       position:relatve;
       color:#373D4A;
+      // mask-image: url('../assets/icons/triangle_right.svg');
 
       position: absolute;
       right:10px;

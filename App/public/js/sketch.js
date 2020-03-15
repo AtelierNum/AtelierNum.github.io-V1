@@ -15,7 +15,8 @@ export function main(p5){
 
 	p5.setup = _ =>{
 		let elem = document.querySelector(".p5_container")
-		let canvas = p5.createCanvas(window.innerWidth, window.innerHeight/2);
+		console.log(elem)
+		let canvas = p5.createCanvas(window.innerWidth, window.innerHeight /2);
 		
 		canvas.parent(elem)
 		canvas.style.width = "300px";
