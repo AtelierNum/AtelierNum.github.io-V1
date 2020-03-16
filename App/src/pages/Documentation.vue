@@ -15,10 +15,13 @@
   <section class="contentCourse">
     <div class="indexBar">
       <ul>
-        <li v-for="(section, i) in index" :key="i" @click="moveToSection(i, section.section)" :class="current.section == i ? 'currentSection' : 'top'">
+        <li v-for="(section, i) in index" 
+            :key="i" 
+            @click="moveToSection(i, section.section)" 
+            :class="current.section == i ? 'currentSection' : 'top'">
           {{section.section}}
             <ul v-if="section.children.length > 0">
-              <li v-for="(subsection,k) in section.children" :key="k">{{subsection.innerText}}</li>
+              <li v-for="(subsection,k) in section.children" :key="k" @click="moveToSection(i, subsection.innerText)" >{{subsection.innerText}}</li>
             </ul>  
         </li>
       </ul>
@@ -27,10 +30,8 @@
     <div class="separator"></div>
 
     <md-reader></md-reader>
-
-    <p class="last_update">Last update {{getContent.last_update}}</p>
-  
   </section>  
+  <p class="last_update">Last update {{getContent.last_update}}</p>
 </div>
 </template>
 
@@ -60,7 +61,9 @@ export default {
   methods:{
     moveToSection(index, el){
       this.current.section = index ; 
+      console.log(Array.from(this.$children[1].$el.childNodes), el)
       let scrollTarget = Array.from(this.$children[1].$el.childNodes).find( node => node.innerText == el) ;
+      
 
       window.scrollTo({
         left: 0,
@@ -70,8 +73,6 @@ export default {
     }
   },
   mounted(){
-
-    console.log(this.getContent)
     
     let md_childs = Array.from(this.$children[1].$el.childNodes);
     let h1_sections = md_childs.filter( child => child.localName == 'h2');
@@ -157,17 +158,18 @@ export default {
 }
 
 .contentCourse {
-  display: grid;
-  grid-template-columns: auto 12px 70%;
-  margin-bottom:130px;
+  display: flex;
+  margin-bottom:30px;
+
 }
 
 .separator{
   width:2px;
-  height:100%;
+  // height:100%;
   background-color:#373D4A;
   border-radius:4px;
 
+  align-self: stretch;
   justify-self: center;
 }
 
@@ -175,6 +177,8 @@ export default {
 .indexBar{
   display:flex;
   justify-content: center;
+  padding-left:20px;
+  width:calc(25% - 12px);
 
   & > ul{
     position: -webkit-sticky;
@@ -183,6 +187,10 @@ export default {
     min-width:70%;
     width:95%;
     height:min-content;
+
+    &:hover{
+      cursor:pointer;
+    }
 
     &::before {
       content : ' ';
@@ -220,7 +228,7 @@ export default {
 
   .currentSection{
     border-radius:8px;
-    background: linear-gradient(var(--color-gray01), 1.8em, rgba(255, 255, 255, 0) 2em 100%);
+    background: linear-gradient(var(--color-gray01), 100%, rgba(255, 255, 255, 0) 120%);
     font-weight: 700;
     font-size:1.4em;
 
@@ -236,9 +244,10 @@ export default {
     }
 
     & > ul{
-      display:initial;
+      display:block;
       transform: translateY(0);
       opacity: 1;
+      padding-left:20px;
 
       & > li {
         margin-top:10px;
@@ -260,12 +269,14 @@ export default {
   padding: 0px 50px;
   max-width:1300px;
   justify-self: center;
+  width:70%;
 }
 
 .last_update{
-  grid-column: 3/4;
-  justify-self: end;
-  margin-right: 50px;
+  display:block;
+  text-align:right;
+  margin-right: 62px;
+  margin-bottom: 130px;
 
   font-family: 'Open Sans';
   font-weight:300;

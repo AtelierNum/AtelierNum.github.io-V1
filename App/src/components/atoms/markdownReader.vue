@@ -45,7 +45,6 @@ export default {
 <style lang="scss">
 
 .mdReader{
-  margin-bottom:30px;
 
   * {
     max-width:100%;
@@ -239,6 +238,14 @@ export default {
 
 }
 
+
+@media (max-width:900px){
+  .mdReader{
+    & pre{
+      overflow-x: scroll;
+    }
+  }
+}
 
 
 </style>

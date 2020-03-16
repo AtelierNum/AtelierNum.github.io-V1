@@ -14,8 +14,7 @@ export function main(p5){
 
 
 	p5.setup = _ =>{
-		let elem = document.querySelector(".p5_container")
-		console.log(elem)
+		let elem = document.querySelector(".p5_container");
 		let canvas = p5.createCanvas(window.innerWidth, window.innerHeight /2);
 		
 		canvas.parent(elem)

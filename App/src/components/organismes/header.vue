@@ -10,10 +10,18 @@
                 <path id="Path_3" data-name="Path 3" d="M-3875.146,7769.736l53.707,139.393,617.355-15.24V7769.736Z" transform="translate(3875.146 -7769.736)" fill="#fff"/>
             </svg> -->
             <ul class="nav" >
-                <li>Projects</li>
-                <li>Courses</li>
-                <li>Tools</li>
-                <li>About</li>
+                <router-link to="/projects">
+                    <li>Projects</li>
+                </router-link>
+                <router-link to="/courses">
+                    <li>Courses</li>
+                </router-link>
+                <router-link to="/ressources">
+                    <li>Ressources</li>
+                </router-link>
+                <router-link to="/about">
+                    <li>About</li>
+                </router-link>
             </ul>
         </div>       
 
@@ -38,6 +46,7 @@ export default {
     align-items: center;
     padding-left:50px;
     padding-right:0;
+    
 
     .inner{
         position: relative;
@@ -78,7 +87,7 @@ export default {
         width:100%;
         justify-content: space-between;
         li{
-            margin: 10px;
+            margin: 10px 18px;
             list-style: none;
             position: relative;
              cursor: pointer;
