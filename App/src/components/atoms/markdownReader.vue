@@ -1,18 +1,11 @@
 <template>
      <router-view  class="contentmd mdReader" />
-
-     <!-- <markdown-it-vue class="contentmd mdReader" v-if="md_loaded" :content="readme" /> -->
 </template>
 
 <script>
 
-import MarkdownItVue from 'markdown-it-vue'
-
 export default {
   name: 'markdownReader',
-  components:{
-    MarkdownItVue
-  },
   data(){
     return{
       readme: '# Un super titre',

@@ -14,19 +14,15 @@ npm install
 ```
 
 Markdowns files of courses, projects, ressources repos are not imported from the web for now, so you need to download them before.
-Update the list of markdowns you want to display in **coursesList.json** :
+Update the list of markdowns you want to display in json files stored in **./lists**  :
 
 ``` 
-cd src/assets/
+cd src/assets/lists/
 ```
-execute the script to install the list of markdowns for courses in **./markdowns** :
+Then execute the script to install the list of markdowns for courses in **./markdowns** :
 
 ``` 
-node getCourses.js
-```
-
-Then execute the script to install the list of markdowns for projects in **./markdowns** :
-``` 
+cd ..
 node getContent.js
 ```
 
