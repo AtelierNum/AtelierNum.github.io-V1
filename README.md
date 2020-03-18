@@ -19,10 +19,15 @@ Update the list of markdowns you want to display in **coursesList.json** :
 ``` 
 cd src/assets/
 ```
-Then execute the script to install the list of markdowns in **./markdowns** :
+execute the script to install the list of markdowns for courses in **./markdowns** :
 
 ``` 
-node getReadme.js
+node getCourses.js
+```
+
+Then execute the script to install the list of markdowns for projects in **./markdowns** :
+``` 
+node getProjects.js
 ```
 
 Now you can open a local server of your project ( from App directory): 
