@@ -27,7 +27,7 @@ node getCourses.js
 
 Then execute the script to install the list of markdowns for projects in **./markdowns** :
 ``` 
-node getProjects.js
+node getContent.js
 ```
 
 Now you can open a local server of your project ( from App directory): 

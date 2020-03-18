@@ -1,9 +1,9 @@
 const fs = require('fs');
 const https = require('https');
 
-const courses = require('./coursesList.json');
-const ressources = require('./ressourcesList.json');
-const projects = require('./projectsList.json');
+const courses = require('./lists/coursesList.json');
+const ressources = require('./lists/ressourcesList.json');
+const projects = require('./lists/projectsList.json');
 
 
 // create global file

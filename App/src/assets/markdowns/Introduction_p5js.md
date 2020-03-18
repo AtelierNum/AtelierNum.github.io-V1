@@ -1718,7 +1718,7 @@ function mouseDragged() {
 }
 ```
 
-pour recevoir on utilise le même principe sauf qu'au lieu de passer un objet "data", on peut passer une fonction javascript. En javascript on peut même écrire la fonction directement entre les parenthèses :
+pour recevoir on utilise le même principe sauf qu'au lieu de passer un objet "data", on peut passer une fonction javascript. En javascript on peut même écrire la fonction directement entre les parenth��ses :
 
 ```javascript
 socket.on('params',function(data){
