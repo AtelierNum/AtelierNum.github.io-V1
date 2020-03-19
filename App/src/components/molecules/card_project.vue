@@ -7,7 +7,7 @@
 
   <div class="bottom">
     <h3 class="title">{{title}}</h3>
-    <p class="desc">{{desc}}</p>
+    <p class="desc">{{wrapDesc(desc)}}</p>
     <ul class="tags">
       <li>{{tags[0]}}</li>
       <span>-</span>
@@ -80,8 +80,16 @@ import {mapActions} from 'vuex' ;
 
           this.$router.push('/' + this.r_action + '/' + this.id);
         }
+      },
+      wrapDesc(desc){
+        if (desc.length > 123) {
+          console.log(this.$el)
+          return desc.slice(0, 128) + '...';
+        } else {
+          return desc ;
+        }
       }
-    },
+    }
   }
 </script>
 

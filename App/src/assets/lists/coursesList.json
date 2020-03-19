@@ -22,7 +22,7 @@
         },
         {
             "name":"Introduction à Pure-Data",
-            "id": "Introduction_Pure-Data",
+            "id": "Introduction_Pure_Data",
             "tags": ["Pure-Data", "Generative art", "Audio", "FR" ],
             "desc":"Une introduction à Pure-Data réalisée avec Pure-data. Pure-Data est le couteau suisse de l'audio temps réel et plus aussi.",
             "url": "https://raw.githubusercontent.com/b2renger/Introduction_Pure_Data/master/README.md",

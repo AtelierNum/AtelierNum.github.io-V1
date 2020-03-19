@@ -8,6 +8,13 @@ const projects = require('./lists/projectsList.json');
 
 // create global file
 let globalList = Object.assign(courses, ressources, projects);
+// write global json file
+fs.writeFile('./globalList.json', JSON.stringify(globalList), 'utf-8', function(err) {
+    if(err) {
+        return console.log(err);
+    }
+    console.log("The file was saved!");
+}); 
 
 for (let content in globalList){
     Array.from(globalList[content]).forEach( (plop) => {
