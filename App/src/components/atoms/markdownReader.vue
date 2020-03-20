@@ -1,31 +1,21 @@
 <template>
-     <!-- <router-view  class="contentmd mdReader" /> -->
-    <!-- <markdown-it v-if="md_loaded" :content="readme" class="contentmd mdReader"></markdown-it>   :prerender="this.$nextTick (() => { return readme })" --> 
-     <vue-markdown v-if="md_loaded" class="contentmd mdReader">{{readme}}</vue-markdown>
+    <vue-markdown v-if="md_loaded" class="contentmd mdReader">{{readme}}</vue-markdown>
 
 </template>
 
 <script>
-import MarkdownItVue from 'markdown-it-vue'
 import VueMarkdown from 'vue-markdown'
 import {mapGetters} from 'vuex'
 
 export default {
   name: 'markdownReader',
   components:{
-    'markdown-it': MarkdownItVue,
     'vue-markdown': VueMarkdown
   },
   data(){
     return{
       readme: '# Un super titre',
       md_loaded : false,
-      options: {
-        markdownIt: {
-          html: true,
-          linkify: true,
-        }
-      }
     }
   },
   computed:{
@@ -58,8 +48,6 @@ export default {
                     let newUrl = `https://raw.githubusercontent.com/${url.split('/')[3]}/${url.split('/')[4]}/master/${path[path.length - 1]}`;
                     
                     data = data.replace(string_to_replace, newUrl);
-                    
-                    console.log('img url', string_to_replace)
                 }
             })
 

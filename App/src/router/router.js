@@ -9,12 +9,6 @@ let routes_courses = Object.keys(globalList).map( type => ({
   path: `${type}/:content`,
   name: type,
   component: () => import('../pages/Documentation.vue'),
-  // children :
-  // globalList[type].map( file => ({
-  //     path: file.id,
-  //     name: file.name,
-  //     component: () => import('../assets/markdowns/' + file.id + '.md')
-  //   }))
 })) 
 
 

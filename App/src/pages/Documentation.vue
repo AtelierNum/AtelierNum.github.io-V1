@@ -5,6 +5,7 @@
 
   <section class="introCourse">
     <h1>{{getContent.name}}</h1>
+    <h2>{{getContent.author}}</h2>
     <div>
       <span v-for="(tag, i) in getContent.tags"  :key="i">{{tag}}</span>
     </div>
@@ -126,34 +127,44 @@ export default {
   font-weight:500;
   color: #373D4A;
 
-  margin-bottom:20px;
+  margin-bottom:12px;
 
-    & + div {
-      margin-bottom:30px; 
+    & + h2 {
+      text-align: center;
+      font-family: 'Rubik';
+      font-size:1.6em;
+      font-weight:500;
+      color: rgb(98, 105, 121);
 
-      & > span {
-        text-align: center;
-        font-family: 'Open Sans';
-        font-weight:300;
-        font-size:1.4em;
-        letter-spacing: 0;
-        color: #373D4A;
+      margin-bottom:20px;
 
-        margin-right:20px;
+      & + div {
+        margin-bottom:30px; 
+
+        & > span {
+          text-align: center;
+          font-family: 'Open Sans';
+          font-weight:300;
+          font-size:1.4em;
+          letter-spacing: 0;
+          color: #373D4A;
+
+          margin-right:20px;
+        }
+        
+
+        & + p{
+          text-align: center;
+          font-family: 'Open Sans';
+          font-weight:300;
+          font-size:1.2em;
+          color: #373D4A;
+
+          max-width:900px;
+        }
       }
-      
 
-      & + p{
-        text-align: center;
-        font-family: 'Open Sans';
-        font-weight:300;
-        font-size:1.2em;
-        color: #373D4A;
-
-        max-width:900px;
-      }
     }
-
   }
 }
 

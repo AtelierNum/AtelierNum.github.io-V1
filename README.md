@@ -19,7 +19,7 @@ Update the list of markdowns you want to display in json files stored in **./lis
 ``` 
 cd src/assets/lists/
 ```
-Then execute the script to install the list of markdowns for courses in **./markdowns** :
+Then execute the script to  update the list of markdowns in **./markdowns** :
 
 ``` 
 cd ..
