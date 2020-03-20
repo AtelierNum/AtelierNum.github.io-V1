@@ -54,7 +54,7 @@ export default {
             return data ;
     }
   },
-  mounted(){
+  created(){
       var xmlhttp;
       let _vue = this ;
       
@@ -67,6 +67,7 @@ export default {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
           _vue.readme = _vue.parseURL(xmlhttp.responseText, _vue.getContent.url) ;
           _vue.md_loaded = true ;
+          _vue.$emit('mdloaded', true)
         }
       }
 

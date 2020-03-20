@@ -30,7 +30,7 @@
 
     <div class="separator"></div>
 
-    <md-reader></md-reader>
+    <md-reader @mdloaded="createIndex"></md-reader>
   </section>  
   <p class="last_update">Last update {{getContent.last_update}}</p>
 </div>
@@ -71,32 +71,35 @@ export default {
         top: scrollTarget.offsetTop - 70,
         behaviour: 'smooth'
       })
-    }
-  },
-  mounted(){
-    
-    let md_childs = Array.from(this.$children[1].$el.childNodes);
-    let h1_sections = md_childs.filter( child => child.localName == 'h2');
+    },
+    createIndex(){
+      this.$nextTick( () => {
+        let md_childs = Array.from(this.$children[1].$el.childNodes);
+        console.log(md_childs)
+        let h1_sections = md_childs.filter( child => child.localName == 'h2');
 
-    for (let w = 0 ; w < h1_sections.length ; w ++){
+        for (let w = 0 ; w < h1_sections.length ; w ++){
 
-        let i0 = md_childs.findIndex( (i) => i.innerText == h1_sections[w].innerText);
+            let i0 = md_childs.findIndex( (i) => i.innerText == h1_sections[w].innerText);
 
-        if (w == h1_sections.length - 1){
-          var indexSection = {
-            section : h1_sections[w].innerText,
-            children : md_childs.slice(i0 + 1, md_childs.length).filter( child => child.localName == 'h3')
-          }
-        } else {
-          let i1 = md_childs.findIndex( (i) => i.innerText == h1_sections[w + 1].innerText);
-  
-          var indexSection = {
-            section : h1_sections[w].innerText,
-            children : md_childs.slice(i0 + 1, i1).filter( child => child.localName == 'h3')
-          }
+            if (w == h1_sections.length - 1){
+              var indexSection = {
+                section : h1_sections[w].innerText,
+                children : md_childs.slice(i0 + 1, md_childs.length).filter( child => child.localName == 'h3')
+              }
+            } else {
+              let i1 = md_childs.findIndex( (i) => i.innerText == h1_sections[w + 1].innerText);
+      
+              var indexSection = {
+                section : h1_sections[w].innerText,
+                children : md_childs.slice(i0 + 1, i1).filter( child => child.localName == 'h3')
+              }
+            }
+
+            this.index.push(indexSection);
         }
-
-        this.index.push(indexSection);
+      
+      })
     }
   }
 }
