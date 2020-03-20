@@ -6,15 +6,15 @@ import globalList from '../assets/globalList.json'
 Vue.use(Router)
 
 let routes_courses = Object.keys(globalList).map( type => ({
-  path: type,
+  path: `${type}/:content`,
   name: type,
   component: () => import('../pages/Documentation.vue'),
-  children :
-  globalList[type].map( file => ({
-      path: file.id,
-      name: file.name,
-      component: () => import('../assets/markdowns/' + file.id + '.md')
-    }))
+  // children :
+  // globalList[type].map( file => ({
+  //     path: file.id,
+  //     name: file.name,
+  //     component: () => import('../assets/markdowns/' + file.id + '.md')
+  //   }))
 })) 
 
 

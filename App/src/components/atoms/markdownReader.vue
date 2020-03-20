@@ -1,37 +1,59 @@
 <template>
-     <router-view  class="contentmd mdReader" />
+     <!-- <router-view  class="contentmd mdReader" /> -->
+    <!-- <markdown-it v-if="md_loaded" :content="readme" class="contentmd mdReader"></markdown-it>   :prerender="this.$nextTick (() => { return readme })" --> 
+     <vue-markdown v-if="md_loaded" class="contentmd mdReader">{{readme}}</vue-markdown>
+
 </template>
 
 <script>
+import MarkdownItVue from 'markdown-it-vue'
+import VueMarkdown from 'vue-markdown'
+import {mapGetters} from 'vuex'
 
 export default {
   name: 'markdownReader',
+  components:{
+    'markdown-it': MarkdownItVue,
+    'vue-markdown': VueMarkdown
+  },
   data(){
     return{
       readme: '# Un super titre',
-      md_loaded : false
+      md_loaded : false,
+      options: {
+        markdownIt: {
+          html: true,
+          linkify: true,
+        }
+      }
     }
   },
-  // created(){
-  //     var xmlhttp;
+  computed:{
+    ...mapGetters(['getContent'])
+  },
+  mounted(){
+      var xmlhttp;
+      let _vue = this ;
       
-  //     if (window.XMLHttpRequest) { // code for IE7+, Firefox, Chrome, Opera, Safari
-  //       xmlhttp = new XMLHttpRequest();
-  //     } else { // code for IE6, IE5
-  //       xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-  //     }
-  //     xmlhttp.onreadystatechange = function() {
-  //       if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-  //         this.readme =  xmlhttp.responseText ;
-  //           console.log(this.readme)
-  //           this.md_loaded = true ;
-  //           // return xmlhttp.responseText;
-  //       }
-  //     }
+      if (window.XMLHttpRequest) { // code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp = new XMLHttpRequest();
+      } else { // code for IE6, IE5
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+      }
+      xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+          // this.readme =  xmlhttp.responseText ;
+          // console.log(this.readme)
+          // Vue.nextTick (this.md_loaded = true );
+          _vue.readme = xmlhttp.responseText ;
+          _vue.md_loaded = true ;
+            // return xmlhttp.responseText;
+        }
+      }
 
-  //     xmlhttp.open("GET","https://raw.githubusercontent.com/R4ph3rd/workshop_alt_ctrl/master/README.md",true);
-  //     xmlhttp.send();
-  // }
+      xmlhttp.open("GET", this.getContent.url, true);
+      xmlhttp.send();
+  }
 }
 </script>
 

@@ -89,7 +89,7 @@
 <script>
 import card_project from '@/components/molecules/card_project'
 import svgCurved from '@/components/atoms/svgCurved'
-import Pages from '../assets/coursesList.json'
+import Pages from '../assets/globalList.json'
 
 export default {
     components : {
