@@ -31,6 +31,41 @@ export default {
   computed:{
     ...mapGetters(['getContent'])
   },
+  methods: {
+    parseURL(data, url){
+                  //  PARSE URL FOR CORRECT IMPORT IMAGES IN MARKDOWNS
+            let url_save = data.split('![')
+            
+            url_save.forEach( (string) => {
+                if (string.includes('](')){
+                    let string_to_replace = string.split('](')[1].split(')')[0];
+                    let path = string_to_replace.split('./')
+                    let newUrl = `https://raw.githubusercontent.com/${url.split('/')[3]}/${url.split('/')[4]}/master/${path[path.length - 1]}`;
+                    
+                    data = data.replace(string_to_replace, newUrl);
+                }
+            })
+
+
+            // PARSE URL FOR BAD PERSONS WHO USE HTML BALISE TO IMPORT IMAGES 
+
+            let img_url =  data.split('<img');
+
+            img_url.forEach( (string) => {
+                if (string.includes('src="')){
+                    let string_to_replace = string.split('src="')[1].split('"')[0];
+                    let path = string_to_replace.split('./')
+                    let newUrl = `https://raw.githubusercontent.com/${url.split('/')[3]}/${url.split('/')[4]}/master/${path[path.length - 1]}`;
+                    
+                    data = data.replace(string_to_replace, newUrl);
+                    
+                    console.log('img url', string_to_replace)
+                }
+            })
+
+            return data ;
+    }
+  },
   mounted(){
       var xmlhttp;
       let _vue = this ;
@@ -42,12 +77,8 @@ export default {
       }
       xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-          // this.readme =  xmlhttp.responseText ;
-          // console.log(this.readme)
-          // Vue.nextTick (this.md_loaded = true );
-          _vue.readme = xmlhttp.responseText ;
+          _vue.readme = _vue.parseURL(xmlhttp.responseText, _vue.getContent.url) ;
           _vue.md_loaded = true ;
-            // return xmlhttp.responseText;
         }
       }
 
