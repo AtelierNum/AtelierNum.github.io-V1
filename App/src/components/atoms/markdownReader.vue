@@ -211,7 +211,7 @@ export default {
 
     text-align: left;
     font-family: 'DejaVu Sans Mono';
-    font-size:1.2em;
+    font-size:16px;
     font-weight:400;
     letter-spacing: 0;
     color: #373D4A;
@@ -220,21 +220,21 @@ export default {
     border-radius:8px;
     padding:30px 40px 30px 40px;
     margin : 50px 0;
-
+    overflow-x: scroll;
 
     &::after{
-      position:absolute;
-      bottom: 20px;
-      right:20px;
-      content: '<> Copy the code';
-      padding: 10px 20px;
-      border-radius: 8px;
+      // position:absolute;
+      // bottom: 20px;
+      // right:20px;
+      // content: '<> Copy the code';
+      // padding: 10px 20px;
+      // border-radius: 8px;
 
-      text-align: center;
-      font-family:'Rubik';
-      font-size: 1em;
-      color: #F8F8F8;
-      background-color: #373D4A;
+      // text-align: center;
+      // font-family:'Rubik';
+      // font-size: 1em;
+      // color: #F8F8F8;
+      // background-color: #373D4A;
     }
   }
 

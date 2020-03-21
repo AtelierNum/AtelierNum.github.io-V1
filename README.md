@@ -19,7 +19,7 @@ Update the list of markdowns you want to display in json files stored in **./lis
 ``` 
 cd src/assets/lists/
 ```
-Then execute the script to  update the list of markdowns in **./markdowns** :
+Then execute the script to  update the list of markdowns in **globalList.json** :
 
 ``` 
 cd ..

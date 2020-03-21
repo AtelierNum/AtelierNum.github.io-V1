@@ -13,8 +13,7 @@
   
   --color-gray01 : #F7F7F7 ;
 
-  max-width:100vw;
-  overflow: hidden;
+  max-width:100vw;  
 }
 
 * {

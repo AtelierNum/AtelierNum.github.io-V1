@@ -30,7 +30,7 @@
 
     <div class="separator"></div>
 
-    <md-reader @mdloaded="createIndex"></md-reader>
+    <md-reader @mdloaded="waitingFunctions"></md-reader>
   </section>  
   <p class="last_update">Last update {{getContent.last_update}}</p>
 </div>
@@ -39,6 +39,7 @@
 <script>
 import svgCurved from '@/components/atoms/svgCurved'
 import mdReader from '@/components/atoms/markdownReader'
+// import VueClipboard from 'vue-clipboard2'
 import {mapGetters} from 'vuex';
 
 export default {
@@ -72,6 +73,10 @@ export default {
         behaviour: 'smooth'
       })
     },
+    waitingFunctions(){
+      this.createIndex();
+      // this.setCopyCodeButtons();
+    },
     createIndex(){
       this.$nextTick( () => {
         let md_childs = Array.from(this.$children[1].$el.childNodes);
@@ -99,6 +104,34 @@ export default {
             this.index.push(indexSection);
         }
       
+      })
+    },
+    setCopyCodeButtons(){
+      this.$nextTick( () => {
+        let md_childs = Array.from(this.$children[1].$el.childNodes);
+        let codesections = md_childs.filter( child => child.localName == 'pre');
+        for (let w = 0 ; w < codesections.length ; w ++){
+
+          let copycode = document.createElement('button');
+          copycode.innerText = '<> Copy the code' ;
+          copycode.classList.add('copycode');
+
+          // copycode.addEventListener('click', () => {
+          //   console.log(codesections[w].children[0], document.querySelector('code'))
+          //   // document.querySelector('code').select();
+          //   // document.execCommand('copy');
+
+          //   this.$copyText(codesections[w].children[0].innerText).then(function (e) {
+          //     alert('Copied')
+          //     console.log(e)
+          //   }, function (e) {
+          //     alert('Can not copy')
+          //     console.log(e)
+          //   })
+          // })
+
+          codesections[w].appendChild(copycode);
+        }
       })
     }
   }
@@ -193,14 +226,16 @@ export default {
   justify-content: center;
   padding-left:20px;
   width:calc(25% - 12px);
+  height:min-content;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 20vh;
 
   & > ul{
-    position: -webkit-sticky;
-    position: sticky;
-    top: 10vh;
     min-width:70%;
     width:95%;
     height:min-content;
+    position:relative;
 
     &:hover{
       cursor:pointer;
@@ -296,5 +331,26 @@ export default {
   font-weight:300;
   font-size:1em;
   color: #373D4A;
+}
+
+/deep/
+.copycode{
+  position:absolute;
+  bottom: 20px;
+  right:20px;
+  // content: '<> Copy the code';
+  padding: 10px 20px;
+  border-radius: 8px;
+  border:none;
+
+  text-align: center;
+  font-family:'Rubik';
+  font-size: 1em;
+  color: #F8F8F8;
+  background-color: #373D4A;
+
+  &:hover{
+    cursor:pointer;
+  }
 }
 </style>
