@@ -83,7 +83,6 @@ import {mapActions} from 'vuex' ;
       },
       wrapDesc(desc){
         if (desc.length > 123) {
-          console.log(this.$el)
           return desc.slice(0, 128) + '...';
         } else {
           return desc ;

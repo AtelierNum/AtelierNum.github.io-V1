@@ -265,12 +265,13 @@ export default {
     margin-bottom:10px;
     padding-left:30px;
     padding-right:30px;
+    transition: .2s ease-out;
 
     & > ul {
       display:none;
       transform:translateY(-10px);
       opacity: 0;
-      transition: .2s ease-out;
+      transition: .3s ease-out;
     }
   }
 
@@ -280,6 +281,7 @@ export default {
     background: linear-gradient(var(--color-gray01), 100%, rgba(255, 255, 255, 0) 120%);
     font-weight: 700;
     font-size:1.4em;
+    transition: .3s ease-out;
 
     &::after{
       content:' ';
@@ -297,6 +299,7 @@ export default {
       transform: translateY(0);
       opacity: 1;
       padding-left:20px;
+      transition: .3s ease-out;
 
       & > li {
         margin-top:10px;
@@ -305,11 +308,13 @@ export default {
         font-weight:400;
         font-size:.88em;
         color: #373D4A;
+        transition: .3s ease-out;
       }
     }
 
     .currentChapitre {
       font-weight: 600;
+      transition: .3s ease-out;
     }
   }
 }
