@@ -7,6 +7,17 @@
     </g>
     </svg>
 
+    <div class="infos">
+        <h2>L'Atelier numérique</h2>
+        <h3>from <a href="https://www.lecolededesign.com/">L'Ecole de design Nantes Atlantique</a></h3>
+
+        <div>
+            <div class="socials instagram"><a href="https://www.instagram.com/ateliernum/"></a></div>
+            <div class="socials discord"><a href="https://discord.gg/ThE5paD"></a></div>
+        </div>
+
+    </div>
+
 </div>
 </template>
 
@@ -19,9 +30,72 @@ export default {
 <style lang="scss" scoped>
 .footer {
     margin-top: 130px;
+    position: relative;
 
     & svg{
         max-width:100%;
     }
 }
+
+.infos {
+    position:absolute;
+    left:0;
+    bottom:32px;
+    width:100%;
+
+    display:grid;
+    justify-items: center;
+
+    & h2 {
+        color: var(--color-gray01);
+        font-family: 'Rubik';
+        font-size:1.9em;
+        font-weight:700;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    & h3 {
+        color: var(--color-gray01);
+        font-family: 'Open Sans';
+        font-size:17px;
+        font-weight: 300;
+        text-transform: uppercase;
+        text-align: center;
+
+        & a {
+            color : #e48174;
+        }
+    }
+
+    & > div {
+        width:200px;
+        display:flex;
+        justify-content: space-between;
+        margin-top:24px;
+    }
+}
+
+.socials {
+    display: inline-block;
+    width:32px;
+    height:32px;
+    fill: #ffffff;
+    background-size:100%;
+    background: no-repeat center 100%;
+        
+
+    & a {
+        display:inline-block;
+        width:100%;
+        height:100%;
+    }
+}
+
+.instagram {
+    background-image: url('~/icons/socials/instagram.svg');
+    background-size:82%; 
+    background-position: 0;
+}
+.discord { background-image: url('~/icons/socials/discord_logo.svg') }
 </style>
