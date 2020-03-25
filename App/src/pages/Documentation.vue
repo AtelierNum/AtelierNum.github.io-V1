@@ -63,7 +63,6 @@ export default {
   methods:{
     moveToSection(index, el){
       this.current.section = index ; 
-      console.log(Array.from(this.$children[1].$el.childNodes), el)
       let scrollTarget = Array.from(this.$children[1].$el.childNodes).find( node => node.innerText == el) ;
       
 
@@ -81,13 +80,15 @@ export default {
       this.$nextTick( () => {
         let md_childs = Array.from(this.$children[1].$el.childNodes);
         
-        let h1_sections = md_childs.filter( child => child.localName == 'h1');
         let higherTitle = 1 ;
+        let h1_sections = md_childs.filter( child => child.localName == `h${higherTitle}`);
 
-        if (h1_sections.length < 2){
-          h1_sections = md_childs.filter( child => child.localName == 'h2');
-          higherTitle = 2 ;
+        while (h1_sections.length < 2){
+          h1_sections = md_childs.filter( child => child.localName == `h${higherTitle}`);
+          higherTitle ++ ;
         }
+
+        console.log(h1_sections)
 
         for (let w = 0 ; w < h1_sections.length ; w ++){
 
@@ -140,6 +141,9 @@ export default {
         }
       })
     }
+  },
+  mounted(){
+    console.log(this.index)
   }
 }
 </script>

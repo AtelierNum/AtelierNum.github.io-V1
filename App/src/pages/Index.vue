@@ -44,6 +44,7 @@
 
     <v-grid :cols="3">
       <v-projectCard v-for="(project, i) in pages.projects.slice(0, max.projects)" :key="i" 
+        class="tall"
         r_action="projects"
         :title="project.name"
         :id="project.id"

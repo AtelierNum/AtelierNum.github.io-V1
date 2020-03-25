@@ -91,7 +91,7 @@ import {mapActions} from 'vuex' ;
       },
       wrapDesc(desc){
         if (desc.length > 123) {
-          return desc.slice(0, 128) + '...';
+          return desc.slice(0, 120) + '...';
         } else {
           return desc ;
         }
@@ -104,7 +104,7 @@ import {mapActions} from 'vuex' ;
 .card-project{
   cursor: pointer;
   width: 350px;
-  height:600px;
+  height:650px;
   position: relative;
   background: linear-gradient(to bottom, #ffffff 30% , #F7F7F7);
   background-position: 0 700px;
@@ -144,6 +144,7 @@ import {mapActions} from 'vuex' ;
     text-overflow: ellipsis;
   }
   .tags{
+    justify-self: flex-end;
     font-family: 'Open Sans', sans-serif;
     display: flex;
     font-weight: 200;
@@ -158,6 +159,12 @@ import {mapActions} from 'vuex' ;
       position: relative;
       list-style: none;
     }
+  }
+
+  &.tall .tags{
+    position:absolute;
+    left: 10px;
+    bottom: 10px;
   }
 
   &.small{
