@@ -69,6 +69,7 @@
         :id="ressource.id"
         :desc="ressource.desc"
         :thumbnailUrl="ressource.thumbnail"
+        :externalLink="ressource.url"
         :tags="ressource.tags">
       </v-projectCard>
     </v-grid>

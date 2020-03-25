@@ -68,6 +68,10 @@ import {mapActions} from 'vuex' ;
         type: String,
         default : () => 'https://source.unsplash.com/random',
         required: false
+      },
+      externalLink: {
+        type: String,
+        required: false
       }
     },
     methods: {
@@ -76,9 +80,13 @@ import {mapActions} from 'vuex' ;
       }),
       card_action(){
         if (this.r_action != ''){
-          this.setContent(this.id);
 
-          this.$router.push('/' + this.r_action + '/' + this.id);
+          if (this.externalLink){
+            location.href= this.externalLink;
+          } else {
+            this.setContent(this.id);
+            this.$router.push('/' + this.r_action + '/' + this.id);
+          }
         }
       },
       wrapDesc(desc){
