@@ -80,8 +80,14 @@ export default {
     createIndex(){
       this.$nextTick( () => {
         let md_childs = Array.from(this.$children[1].$el.childNodes);
-        console.log(md_childs)
-        let h1_sections = md_childs.filter( child => child.localName == 'h2');
+        
+        let h1_sections = md_childs.filter( child => child.localName == 'h1');
+        let higherTitle = 1 ;
+
+        if (h1_sections.length < 2){
+          h1_sections = md_childs.filter( child => child.localName == 'h2');
+          higherTitle = 2 ;
+        }
 
         for (let w = 0 ; w < h1_sections.length ; w ++){
 
@@ -90,7 +96,7 @@ export default {
             if (w == h1_sections.length - 1){
               var indexSection = {
                 section : h1_sections[w].innerText,
-                children : md_childs.slice(i0 + 1, md_childs.length).filter( child => child.localName == 'h3')
+                children : md_childs.slice(i0 + 1, md_childs.length).filter( child => child.localName == `h${higherTitle}`)
               }
             } else {
               let i1 = md_childs.findIndex( (i) => i.innerText == h1_sections[w + 1].innerText);
