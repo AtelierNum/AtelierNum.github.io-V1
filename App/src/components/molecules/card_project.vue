@@ -9,11 +9,13 @@
     <h3 class="title">{{title}}</h3>
     <p class="desc">{{wrapDesc(desc)}}</p>
     <ul class="tags">
-      <li>{{tags[0]}}</li>
+      <!-- <li>{{tags[0]}}</li>
       <span>-</span>
       <li>{{tags[1]}}</li>
       <span>-</span>
-      <li>{{tags[2]}}</li>
+      <li>{{tags[2]}}</li> -->
+
+      <li v-for="(tag, i) in tags" :key="i">{{tag + separator(i)}}</li>
     </ul>
   </div>
 
@@ -78,6 +80,13 @@ import {mapActions} from 'vuex' ;
       ...mapActions({
         setContent : 'setContent'
       }),
+      separator(i){
+        if (i != this.tags.length - 1){
+          return ' - ';
+        } else {
+          return '';
+        }
+      },
       card_action(){
         if (this.r_action != ''){
 
