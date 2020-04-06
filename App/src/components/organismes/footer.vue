@@ -16,7 +16,9 @@
             <div class="socials discord"><a href="https://discord.gg/ThE5paD"></a></div>
         </div>
 
+        <router-link class="legals" to="/mentions">Crédits et mentions légales</router-link>
     </div>
+
 
 </div>
 </template>
@@ -31,6 +33,7 @@ export default {
 .footer {
     margin-top: 130px;
     position: relative;
+    transform:translateY(5px);
 
     & svg{
         max-width:100%;
@@ -73,6 +76,17 @@ export default {
         display:flex;
         justify-content: space-between;
         margin-top:24px;
+    }
+
+    & .legals {
+        position: absolute;
+        right:22px;
+        bottom:0;
+        color:var(--color-gray01);
+        font-family: 'Open Sans';
+        font-size:16px;
+        font-weight: 300;
+        text-align: center;
     }
 }
 

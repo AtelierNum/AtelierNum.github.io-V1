@@ -88,8 +88,6 @@ export default {
           higherTitle ++ ;
         }
 
-        console.log(h1_sections)
-
         for (let w = 0 ; w < h1_sections.length ; w ++){
 
             let i0 = md_childs.findIndex( (i) => i.innerText == h1_sections[w].innerText);

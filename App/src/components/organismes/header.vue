@@ -11,10 +11,10 @@
             </svg> -->
             <ul class="nav" >
                 <router-link to="/projects">
-                    <li>Projects</li>
+                    <li>Projets</li>
                 </router-link>
                 <router-link to="/courses">
-                    <li>Courses</li>
+                    <li>Cours</li>
                 </router-link>
                 <router-link to="/ressources">
                     <li>Ressources</li>
