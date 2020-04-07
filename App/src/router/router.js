@@ -23,6 +23,7 @@ export default new Router({
       children: [
         { path: '', name:'home', component: () => import('../pages/Index.vue') },
         { path: '/mentions', name:'mentions', component: () => import('../pages/Mentions.vue') },
+        { path: '/about', name:'about', component: () => import('../pages/About.vue') },
         { path: '/courses', name:'courses', component: () => import('../pages/Category.vue') },
         { path: '/ressources', name:'ressources', component: () => import('../pages/Category.vue') },
         { path: '/projects', name:'projects', component: () => import('../pages/Category.vue') },
