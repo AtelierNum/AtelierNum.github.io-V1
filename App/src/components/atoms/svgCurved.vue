@@ -5,7 +5,7 @@
         <clipPath id="mask">
           <path d="M0,80.412H1920V681.432s-69.613-11.73-207.017,24.6C1420.831,799.76,1008.557,947.7,684.557,947.7,204.557,947.7,0,827.8,0,827.8Z" transform="translate(0 -80.412)"  fill="#000000"/>
         </clipPath>
-        <foreignObject v-if="isP5" class="p5_container" clip-path="url(#mask)" width="100%" height="100%"/>
+        <foreignObject v-if="isP5" class="p5_container" clip-path="url(#mask)" width="100%" height="100%" x="0" y="0"/>
         <image v-else :xlink:href="src" clip-path="url(#mask)" width="100%" /> 
       </svg>
   </div>
@@ -57,6 +57,12 @@ export default {
     transform:translateY(var(--ratio));
 }
 
+@media(min-width:1290px){
+    .p5_container{
+        --ratio: -24%;
+    }
+}
+
 @media (max-width:1290px){
     .p5_container{
         --ratio: -33%;
@@ -71,8 +77,9 @@ export default {
 
 @media (max-width:850px){
     .p5_container{
-        --ratio: -70%;
+        --ratio: -64%;
     }
-} 
+}
+
 
 </style>
