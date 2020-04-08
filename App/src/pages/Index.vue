@@ -35,15 +35,12 @@
     <h2 class="section-title"> Projets </h2>
 
     <v-tag-list>
-      <v-tag>Digital art</v-tag>
-      <v-tag>Processing</v-tag>
-      <v-tag>P5</v-tag>
-      <v-tag>Pure data</v-tag>
+      <v-tag v-for="tag in tags.projects" :key="tag" category="projects">{{tag}}</v-tag>
     </v-tag-list>
     
 
     <v-grid :cols="3">
-      <v-projectCard v-for="(project, i) in pages.projects.slice(0, max.projects)" :key="i" 
+      <v-projectCard v-for="(project, i) in getList.projects.slice(0, max.projects)" :key="i" 
         class="tall"
         r_action="projects"
         :title="project.name"
@@ -62,8 +59,12 @@
 
     <h2 class="section-title"> Ressources </h2>
 
+    <v-tag-list>
+      <v-tag v-for="tag in tags.ressources" :key="tag" category="courses">{{tag}}</v-tag>
+    </v-tag-list>
+
     <v-grid :cols="3" >
-      <v-projectCard v-for="(ressource, i) in pages.ressources.slice(0, max.ressources)" :key="i" 
+      <v-projectCard v-for="(ressource, i) in getList.ressources.slice(0, max.ressources)" :key="i" 
         class="small"
         r_action="ressources"
         :title="ressource.name"
@@ -83,14 +84,15 @@
     <h2 class="section-title"> Cours </h2>
 
     <v-tag-list>
-      <v-tag>P5</v-tag>
+      <!-- <v-tag category=>P5</v-tag>
       <v-tag>Digital art</v-tag>
       <v-tag>Processing</v-tag>
-      <v-tag>Pure data</v-tag>
+      <v-tag>Pure data</v-tag> -->
+      <v-tag v-for="tag in tags.courses" :key="tag" category="courses">{{tag}}</v-tag>
     </v-tag-list>
 
     <v-grid>
-      <v-projectCard v-for="(course, i) in pages.courses.slice(0, max.courses)" :key="i" 
+      <v-projectCard v-for="(course, i) in getList.courses.slice(0, max.courses)" :key="i" 
         class="long"
         r_action="courses"
         :title="course.name"
@@ -111,6 +113,7 @@ import card_project from '@/components/molecules/card_project'
 import svgCurved from '@/components/atoms/svgCurved'
 import Button from '@/components/atoms/button'
 import Pages from '../assets/globalList.json'
+import {mapGetters} from 'vuex'
 
 export default {
     components : {
@@ -129,10 +132,16 @@ export default {
         courses: false,
         ressources: false,
         projects: false
+      },
+      tags : {
+        projects : ['P5', 'Digital Art', 'Processing', 'P5JS', 'FR'],
+        courses : ['P5', 'Generative art', 'Processing', 'p5js', 'FR'],
+        ressources : ['P5', 'Digital Art', 'Processing', 'p5js', 'EN']
       }
     }
   },
   computed: {
+    ...mapGetters(['getList']),
     pages() {
       return Pages
     },

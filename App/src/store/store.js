@@ -21,12 +21,27 @@ const mutations = {
         return ;
       }
     }
+  },
+  filterContent(state, payload){
+    console.log(state.list[payload.category])
+    state.list[payload.category] = state.list[payload.category].filter( content => content.tags.includes(payload.tag))
+
+    console.log(state.list[payload.category])
+  },
+  resetFilters(state){
+    state.list = listJSON ;
   }
 }
 
 const actions = {
   setContent(context, payload){
       context.commit('setContent', payload);
+  },
+  filterContent(context, payload){
+    context.commit('filterContent', payload);
+  },
+  resetFilters(context){
+    context.commit('resetFilters');
   }
 }
 

@@ -1,14 +1,28 @@
 <template>
-    <li class="tag"> 
-        <a href="">
-            <slot/>
-        </a> 
+    <li class="tag" @click="filterTag()"> 
+        <slot/>
     </li>
 </template>
 
 <script>
+import {mapActions} from 'vuex';
 export default {
-    name : "tag"
+    name : "tag",
+    props : {
+        category : {
+            type: String,
+            required : true,
+            default : () => ''
+        }
+    },
+    methods : {
+        ...mapActions({
+            filterContent : 'filterContent'
+        }),
+        filterTag(){
+            this.filterContent({category : this.category, tag : this.$slots.default[0].text});
+        }
+    }
 }
 </script>
 
@@ -21,14 +35,16 @@ export default {
     font-family: 'Open Sans', sans-serif;
     margin: 5px;
     transition: background .3s ease, color .2s ease;
+    height:60px;
+    line-height: 60px;
+    padding: 0 30px;
+
     &:hover{
         background-color: #1C1C1C;
         color: #F7F7F7;
+        cursor: pointer;
     }
-    a{
-        height:60px;
-        line-height: 60px;
-        padding: 0 30px;
-    }
+
+
 }
 </style>
