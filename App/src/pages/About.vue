@@ -6,18 +6,20 @@
   <section>
     <h3>About</h3>
 
-    <p>Ce site a été développé par Bérenger Recoules, Simon Renault et Raphaël Perraud. 
+    <p>Ce site a été développé par Simon Renault, Raphaël Perraud et Bérenger Recoules. 
         Conçu pour présenter les travaux effectués à l'Atelier Numérique par les élèves de l'Ecole, il met 
         également à disposition des cours et des ressources externes à ceux-ci.
         Le code source de ce site est entièrement open-source, disponible sur <a href="https://github.com/AtelierNum/AtelierNum.github.io/tree/src">Github</a>.
     </p>
+
+    <p> Le programme d'accueil à été réalisé avec <a href="https://p5js.org">p5js</a> par <b>Simon Renault</b>. </p>
 
     <div class="faces">
         <div class="perso_card superpromaster"> 
             <a href="http://b2renger.github.io/">
                 <img src="" alt="">
                 <h4>Bérenger Recoules</h4>
-                <span>aka B2renger</span>
+                <span>aka b2renger</span>
                 <p>Responsable de l'Atelier Numérique</p>
                 <p class="roles">Prof - Responsable - Semi-Croustillant</p>
             </a>
