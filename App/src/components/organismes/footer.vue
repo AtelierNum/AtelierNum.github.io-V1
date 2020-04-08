@@ -13,7 +13,7 @@
 
         <div>
             <div class="socials instagram"><a href="https://www.instagram.com/ateliernum/"></a></div>
-            <div class="socials discord"><a href="https://discord.gg/ThE5paD"></a></div>
+            <div class="socials discord"><a href="https://discord.gg/tF6qz8v"></a></div>
         </div>
 
         <router-link class="legals" to="/mentions">Crédits et mentions légales</router-link>
