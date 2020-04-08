@@ -91,7 +91,7 @@
             "author": "b2renger"
         },
         {
-            "name": "Motifs génératigfs",
+            "name": "Motifs génératifs",
             "id": "generative_patterns",
             "tags": [
                 "P5js",
@@ -130,6 +130,32 @@
             "thumbnail": "https://raw.githubusercontent.com/b2renger/p5js_gestes_de_l_ennui/master/assets/realisation_finale_black.png",
             "last_update": "16/12/19",
             "author": "b2renger"
+        },
+        {
+            "name": "Workshop Processing community day - Processing",
+            "id": "pcd_processing",
+            "tags": [
+                "Processing",
+                "FR"
+            ],
+            "desc": "Un workshop d'une demie-journée donné à Stereolux par des étudiants pour découvrir le code créatif",
+            "url": "https://raw.githubusercontent.com/AtelierNum/workshop_processing_PCD2019/master/README.md",
+            "thumbnail": "https://raw.githubusercontent.com/AtelierNum/workshop_processing_PCD2019/master/assets/rosace2.png",
+            "last_update": "12/02/19",
+            "author": "Simon Renault, Raphaël Perraud, Théo Geiller, Meriem Gharbi et Luna Martel"
+        },
+        {
+            "name": "Workshop Processing community day - P5js",
+            "id": "pcd_processing",
+            "tags": [
+                "Processing",
+                "FR"
+            ],
+            "desc": "Un workshop d'une demie-journée donné à Stereolux par des étudiants pour découvrir le code créatif",
+            "url": "https://raw.githubusercontent.com/AtelierNum/workshop_p5js_PCD2019/master/README.md",
+            "thumbnail": "https://raw.githubusercontent.com/AtelierNum/workshop_p5js_PCD2019/master/Birds.png",
+            "last_update": "13/02/19",
+            "author": "Simon Renault, Raphaël Perraud, Théo Geiller, Meriem Gharbi et Luna Martel"
         },
         {
             "name": "Sound Design references et pratiques",
