@@ -126,7 +126,7 @@ export default {
     color: #373D4A;
 
     margin-bottom:30px;
-    margin-top:30px;
+    margin-top:40px;
   }
 
   & h3{
@@ -138,7 +138,7 @@ export default {
     color: #373D4A; 
 
     margin-bottom:20px;
-    margin-top:20px;
+    margin-top:30px;
   }
   
   & h4{
@@ -193,6 +193,10 @@ export default {
   letter-spacing: 0;
   line-height: 1.6em;
   color: #373D4A;
+
+    & p{
+      margin-bottom:12px;
+    }
   }
 
   a{
@@ -248,9 +252,9 @@ export default {
 
   & img{
     display:block;
-    margin-right: auto;
-    margin-left: auto;
-    margin-bottom:12px;
+    // margin-right: auto;
+    // margin-left: auto;
+    margin-bottom:12px auto;
     // width:100%;
     border-radius:4px;
     // box-shadow: 0px 3px 4px #00000029;

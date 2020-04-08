@@ -52,7 +52,34 @@
     </v-grid>
 
     <v-button :outlined="true" label="projects" :disabled="disabled.projects" @click.native="more('projects')"> Plus </v-button>
+          
+    <div class="spacer_height"></div> 
+
     
+    <h2 class="section-title"> Cours </h2>
+
+    <v-tag-list>
+      <!-- <v-tag category=>P5</v-tag>
+      <v-tag>Digital art</v-tag>
+      <v-tag>Processing</v-tag>
+      <v-tag>Pure data</v-tag> -->
+      <v-tag v-for="tag in tags.courses" :key="'courses-' + tag" category="courses">{{tag}}</v-tag>
+    </v-tag-list>
+
+    <v-grid>
+      <v-projectCard v-for="(course, i) in getList.courses.slice(0, max.courses)" :key="i" 
+        class="long"
+        r_action="courses"
+        :title="course.name"
+        :id="course.id"
+        :desc="course.desc"
+        :thumbnailUrl="course.thumbnail"
+        :tags="course.tags">
+      </v-projectCard>
+    </v-grid>
+
+    <v-button label="courses" :outlined="true" :disabled="disabled.courses" @click.native="more('courses')"> Plus </v-button>
+
 
     <div class="spacer_height"></div>     
 
@@ -77,33 +104,6 @@
     </v-grid>
 
     <v-button label="ressources" :outlined="true" :disabled="disabled.ressources" @click.native="more('ressources')"> Plus </v-button>
-    
-      
-    <div class="spacer_height"></div>     
-
-    <h2 class="section-title"> Cours </h2>
-
-    <v-tag-list>
-      <!-- <v-tag category=>P5</v-tag>
-      <v-tag>Digital art</v-tag>
-      <v-tag>Processing</v-tag>
-      <v-tag>Pure data</v-tag> -->
-      <v-tag v-for="tag in tags.courses" :key="'courses-' + tag" category="courses">{{tag}}</v-tag>
-    </v-tag-list>
-
-    <v-grid>
-      <v-projectCard v-for="(course, i) in getList.courses.slice(0, max.courses)" :key="i" 
-        class="long"
-        r_action="courses"
-        :title="course.name"
-        :id="course.id"
-        :desc="course.desc"
-        :thumbnailUrl="course.thumbnail"
-        :tags="course.tags">
-      </v-projectCard>
-    </v-grid>
-
-    <v-button label="courses" :outlined="true" :disabled="disabled.courses" @click.native="more('courses')"> Plus </v-button>
     
 </div>
 </template>

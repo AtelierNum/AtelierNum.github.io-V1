@@ -33,10 +33,10 @@ export default {
 .footer {
     margin-top: 130px;
     position: relative;
-    transform:translateY(5px);
 
     & svg{
         max-width:100%;
+        transform:translateY(5px);
     }
 }
 
