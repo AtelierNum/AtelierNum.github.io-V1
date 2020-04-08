@@ -1,10 +1,11 @@
 <template>
-    <vue-markdown v-if="md_loaded" class="contentmd mdReader">{{readme}}</vue-markdown>
+    <vue-markdown v-if="md_loaded"  class="contentmd mdReader">{{readme}}</vue-markdown>
 
 </template>
 
 <script>
 import VueMarkdown from 'vue-markdown'
+import 'prismjs'
 import {mapGetters} from 'vuex'
 
 export default {
@@ -68,6 +69,10 @@ export default {
           _vue.readme = _vue.parseURL(xmlhttp.responseText, _vue.getContent.url) ;
           _vue.md_loaded = true ;
           _vue.$emit('mdloaded', true)
+
+          _vue.$nextTick(() => {
+            Prism.highlightAll();
+          })
         }
       }
 
@@ -78,6 +83,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../../../node_modules/prismjs/themes/prism.css';
 
 .mdReader{
 
@@ -244,6 +250,7 @@ export default {
     display:block;
     margin-right: auto;
     margin-left: auto;
+    margin-bottom:12px;
     // width:100%;
     border-radius:4px;
     // box-shadow: 0px 3px 4px #00000029;

@@ -139,9 +139,6 @@ export default {
         }
       })
     }
-  },
-  mounted(){
-    console.log(this.index)
   }
 }
 </script>
