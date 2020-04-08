@@ -35,7 +35,7 @@
     <h2 class="section-title"> Projets </h2>
 
     <v-tag-list>
-      <v-tag v-for="tag in tags.projects" :key="tag" category="projects">{{tag}}</v-tag>
+      <v-tag v-for="tag in tags.projects" :key="'projects-' + tag" category="projects">{{tag}}</v-tag>
     </v-tag-list>
     
 
@@ -60,7 +60,7 @@
     <h2 class="section-title"> Ressources </h2>
 
     <v-tag-list>
-      <v-tag v-for="tag in tags.ressources" :key="tag" category="courses">{{tag}}</v-tag>
+      <v-tag v-for="tag in tags.ressources" :key="'ressources-' +tag" category="courses">{{tag}}</v-tag>
     </v-tag-list>
 
     <v-grid :cols="3" >
@@ -88,7 +88,7 @@
       <v-tag>Digital art</v-tag>
       <v-tag>Processing</v-tag>
       <v-tag>Pure data</v-tag> -->
-      <v-tag v-for="tag in tags.courses" :key="tag" category="courses">{{tag}}</v-tag>
+      <v-tag v-for="tag in tags.courses" :key="'courses-' + tag" category="courses">{{tag}}</v-tag>
     </v-tag-list>
 
     <v-grid>

@@ -6,8 +6,13 @@ import listJSON from '../assets/globalList.json'
 Vue.use(Vuex)
 
 const state = {
-  list : listJSON,
-  current_content : {}
+  list : Object.assign({}, listJSON),
+  current_content : {},
+  filters: {
+    courses : [],
+    ressources : [],
+    projects : []
+  }
 }
 
 
@@ -23,13 +28,22 @@ const mutations = {
     }
   },
   filterContent(state, payload){
-    console.log(state.list[payload.category])
-    state.list[payload.category] = state.list[payload.category].filter( content => content.tags.includes(payload.tag))
-
-    console.log(state.list[payload.category])
+    if (!state.filters[payload.category].includes(payload.tag)){
+      state.filters[payload.category].push(payload.tag) ;
+    }
   },
-  resetFilters(state){
-    state.list = listJSON ;
+  updateFilteredContent(state, payload){
+    state.list[payload] = listJSON[payload] ;
+
+      for (let filter of state.filters[payload]){
+        state.list[payload] = state.list[payload].filter( content => content.tags.includes(filter))
+      }
+  },
+  resetFilter(state, payload){
+    if (state.filters[payload.category].includes(payload.tag)){
+      let i = state.filters[payload.category].findIndex( filter => filter == payload.tag);
+      state.filters[payload.category].splice(i,1);
+    }
   }
 }
 
@@ -39,9 +53,11 @@ const actions = {
   },
   filterContent(context, payload){
     context.commit('filterContent', payload);
+    context.commit('updateFilteredContent', payload.category);
   },
-  resetFilters(context){
-    context.commit('resetFilters');
+  resetFilter(context, payload){
+    context.commit('resetFilter', payload);
+    context.commit('updateFilteredContent', payload.category);
   }
 }
 

@@ -1,5 +1,5 @@
 <template>
-    <li class="tag" @click="filterTag()"> 
+    <li class="tag" :class="activated ? 'activated' : '' " @click="activated ? resetTag() : filterTag()"> 
         <slot/>
     </li>
 </template>
@@ -8,6 +8,11 @@
 import {mapActions} from 'vuex';
 export default {
     name : "tag",
+    data(){
+        return {
+            activated:false
+        }
+    },
     props : {
         category : {
             type: String,
@@ -17,10 +22,16 @@ export default {
     },
     methods : {
         ...mapActions({
-            filterContent : 'filterContent'
+            filterContent : 'filterContent',
+            resetFilter : 'resetFilter'
         }),
         filterTag(){
+            this.activated = !this.activated;
             this.filterContent({category : this.category, tag : this.$slots.default[0].text});
+        },
+        resetTag(){
+            this.activated = !this.activated;
+            this.resetFilter({category : this.category, tag : this.$slots.default[0].text});
         }
     }
 }
@@ -41,10 +52,14 @@ export default {
 
     &:hover{
         background-color: #1C1C1C;
+        transition: background .3s ease, color .2s ease;
         color: #F7F7F7;
         cursor: pointer;
     }
+}
 
-
+.activated {
+    background-color: #1C1C1C;
+    color: #F7F7F7;
 }
 </style>
