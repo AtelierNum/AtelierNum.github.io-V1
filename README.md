@@ -34,3 +34,18 @@ npm run serve
 ```
 
 It will open a local server on a available port ( usually localhost:8080 or near).
+
+
+## How to write a compatible markdown file to be integrated in this website
+
+* Use only one **H1** in your file
+* Don't create anchors with hard-coded links in html. Do instead :
+```markdown
+## My title 
+
+[link to my title](My-title)
+```
+
+* When mention another README in order to be displayed in this website, point to the **github raw** url, not the repo.
+* When mention another repo, just point to the repo adress.
+* 

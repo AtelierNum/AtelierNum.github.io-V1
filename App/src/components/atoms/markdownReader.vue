@@ -35,14 +35,11 @@ export default {
 
                     data = data.replace(new RegExp(string_to_replace, 'g'), (correspondance, decalage) => {
                       if (data.substring(decalage - 2, decalage) == ']('){
-                        console.log('url md tag', newUrl);
                         return newUrl ;
                       } else {
                         return string_to_replace ;
                       }
-                      // console.log('corr:', correspondance, ' decalage:', decalage);
                     });
-                    // console.log(string_to_replace, newUrl)
                 }
             })
 
@@ -59,12 +56,10 @@ export default {
                     
                     data = data.replace(new RegExp(string_to_replace, 'g'), (correspondance, decalage) => {
                       if (data.substring(decalage - 5, decalage) == 'src="'){
-                        console.log('url html tag', newUrl);
                         return newUrl ;
                       } else {
                         return string_to_replace ;
                       }
-                      // console.log('corr:', correspondance, ' decalage:', decalage);
                     }); 
                 }
             })
