@@ -32,8 +32,14 @@ export default {
                     let string_to_replace = string.split('](')[1].split(')')[0];
                     let path = string_to_replace.split('./')
                     let newUrl = `https://raw.githubusercontent.com/${url.split('/')[3]}/${url.split('/')[4]}/master/${path[path.length - 1]}`;
-                    
-                    data = data.replace(string_to_replace, newUrl);
+
+                    data = data.replace(new RegExp(string_to_replace, 'g'), (correspondance, decalage) => {
+                      if (data.substring(decalage - 2, decalage) == ']('){
+                        return newUrl ;
+                      } else {
+                        return string_to_replace ;
+                      }
+                    });
                 }
             })
 
@@ -48,7 +54,13 @@ export default {
                     let path = string_to_replace.split('./')
                     let newUrl = `https://raw.githubusercontent.com/${url.split('/')[3]}/${url.split('/')[4]}/master/${path[path.length - 1]}`;
                     
-                    data = data.replace(string_to_replace, newUrl);
+                    data = data.replace(new RegExp(string_to_replace, 'g'), (correspondance, decalage) => {
+                      if (data.substring(decalage - 5, decalage) == 'src="'){
+                        return newUrl ;
+                      } else {
+                        return string_to_replace ;
+                      }
+                    }); 
                 }
             })
 
