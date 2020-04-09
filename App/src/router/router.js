@@ -29,7 +29,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name:'',
+      name:'layout',
       component: () => import('../layout/AppLayout.vue'),
       children: [
         { path: '', name:'home', component: () => import('../pages/Index.vue') },
@@ -41,6 +41,9 @@ export default new Router({
         ...routes_courses
       ]
     }
+  ],
+  scrollBehavior (to, from, savedPosition) {
+    return { x: 0, y: 0 }
+  }
   
-  ]
 })

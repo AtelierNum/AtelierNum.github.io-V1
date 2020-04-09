@@ -351,6 +351,15 @@ export default {
     border-radius:4px;
     object-fit: contain;
     justify-self: center;
+
+    & + p {
+      text-align:center;
+
+      & > * {
+        display:block;
+        text-align:center;
+      }
+    }
   }
 
   & ul {
