@@ -16,11 +16,9 @@
   <section class="contentCourse">
     <div class="indexBar">
       <ul>
-        <li v-for="(section, i) in index" 
-            :key="i" 
-            @click="moveToSection(i, section.section)" 
-            :class="current.section.index == i ? 'currentSection' : 'top'">
-          {{section.section}}
+        <li v-for="(section, i) in index" :key="i" :class="current.section.index == i ? 'currentSection' : 'top'" >        
+            <a @click="moveToSection(i, section.section)" 
+              :href="hrefAnchor(section.section)">{{section.section}}</a>
             <ul v-if="section.children.length > 0">
               <li 
               v-for="(subsection,k) in section.children" 
@@ -86,13 +84,14 @@ export default {
       })
     },
     waitingFunctions(){
-      this.createIndex();
-      // this.setCopyCodeButtons();
-    },
-    createIndex(){
       this.$nextTick( () => {
         let md_childs = Array.from(this.$children[1].$el.childNodes);
-        
+        this.createIndex(md_childs);
+        this.setAnchor(md_childs);
+        // this.setCopyCodeButtons();
+      })
+    },
+    createIndex(md_childs){
         let higherTitle = 1 ;
         let h1_sections = md_childs.filter( child => child.localName == `h${higherTitle}`);
 
@@ -125,10 +124,15 @@ export default {
         }
 
         window.addEventListener('scroll', this.handleScroll);    
-      })
+    },
+    hrefAnchor(title){
+      return title.split(' ').join('-'); 
+    },
+    setAnchor(md_childs){
+      let titles = md_childs.filter( child => ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].includes(child.localName));
+      titles.forEach( title => title.id = this.hrefAnchor(title.innerText));
     },
     setCopyCodeButtons(){
-      this.$nextTick( () => {
         let md_childs = Array.from(this.$children[1].$el.childNodes);
         let codesections = md_childs.filter( child => child.localName == 'pre');
         for (let w = 0 ; w < codesections.length ; w ++){
@@ -153,7 +157,6 @@ export default {
 
           codesections[w].appendChild(copycode);
         }
-      })
     },
     handleScroll(event){
 
