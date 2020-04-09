@@ -20,51 +20,59 @@ export default {
     }
   },
   computed:{
-    ...mapGetters(['getContent'])
+    ...mapGetters(['getContent', 'getList'])
   },
   methods: {
     parseURL(data, url){
-                  //  PARSE URL FOR CORRECT IMPORT IMAGES IN MARKDOWNS
-            let url_save = data.split('![')
-            
-            url_save.forEach( (string) => {
-                if (string.includes('](')){
-                    let string_to_replace = string.split('](')[1].split(')')[0];
-                    let path = string_to_replace.split('./')
-                    let newUrl = `https://raw.githubusercontent.com/${url.split('/')[3]}/${url.split('/')[4]}/master/${path[path.length - 1]}`;
 
-                    data = data.replace(new RegExp(string_to_replace, 'g'), (correspondance, decalage) => {
-                      if (data.substring(decalage - 2, decalage) == ']('){
-                        return newUrl ;
-                      } else {
-                        return string_to_replace ;
-                      }
-                    });
+      // parse intern paths 
+      // let intern_paths = Object.keys(this.getList).map( type => this.getList[type].map(content => content.url) )
+      // intern_paths = [...intern_paths[0], ...intern_paths[1], ...intern_paths[2]]
+
+      // let url_paths = data.split('](') ;
+      
+
+      //  PARSE URL FOR CORRECT IMPORT IMAGES IN MARKDOWNS
+      let url_md = data.split('![') // target only images
+      
+      url_md.forEach( (string) => {
+        if (string.includes('](')){
+            let string_to_replace = string.split('](')[1].split(')')[0];
+            let path = string_to_replace.split('./')
+            let newUrl = `https://raw.githubusercontent.com/${url.split('/')[3]}/${url.split('/')[4]}/master/${path[path.length - 1]}`;
+
+            data = data.replace(new RegExp(string_to_replace, 'g'), (correspondance, decalage) => {
+              if (data.substring(decalage - 2, decalage) == ']('){
+                return newUrl ;
+              } else {
+                return string_to_replace ;
+              }
+            });
+          }
+      })
+
+
+      // PARSE URL FOR BAD PERSONS WHO USE HTML BALISE TO IMPORT IMAGES 
+
+      let img_url =  data.split('<img');
+
+      img_url.forEach( (string) => {
+          if (string.includes('src="')){
+              let string_to_replace = string.split('src="')[1].split('"')[0];
+              let path = string_to_replace.split('./')
+              let newUrl = `https://raw.githubusercontent.com/${url.split('/')[3]}/${url.split('/')[4]}/master/${path[path.length - 1]}`;
+              
+              data = data.replace(new RegExp(string_to_replace, 'g'), (correspondance, decalage) => {
+                if (data.substring(decalage - 5, decalage) == 'src="'){
+                  return newUrl ;
+                } else {
+                  return string_to_replace ;
                 }
-            })
+              }); 
+          }
+      })
 
-
-            // PARSE URL FOR BAD PERSONS WHO USE HTML BALISE TO IMPORT IMAGES 
-
-            let img_url =  data.split('<img');
-
-            img_url.forEach( (string) => {
-                if (string.includes('src="')){
-                    let string_to_replace = string.split('src="')[1].split('"')[0];
-                    let path = string_to_replace.split('./')
-                    let newUrl = `https://raw.githubusercontent.com/${url.split('/')[3]}/${url.split('/')[4]}/master/${path[path.length - 1]}`;
-                    
-                    data = data.replace(new RegExp(string_to_replace, 'g'), (correspondance, decalage) => {
-                      if (data.substring(decalage - 5, decalage) == 'src="'){
-                        return newUrl ;
-                      } else {
-                        return string_to_replace ;
-                      }
-                    }); 
-                }
-            })
-
-            return data ;
+      return data ;
     }
   },
   created(){
