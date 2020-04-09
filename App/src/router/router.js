@@ -22,8 +22,6 @@ let routes_courses = Object.keys(globalList).map( type => ({
 
 // routes_courses = [...routes_courses[0], ...routes_courses[1]];
 
-console.log('routes courses : ', routes_courses);
-
 
 export default new Router({
   mode: 'history',

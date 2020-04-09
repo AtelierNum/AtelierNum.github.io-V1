@@ -291,12 +291,22 @@ export default {
   position: -webkit-sticky;
   position: sticky;
   top: 20vh;
+  max-height:75vh;
+  overflow-y:scroll;
+
+  /* invert side of scrollbar */
+  transform:rotateY(180deg);
+  -ms-transform:rotateY(180deg); /* IE 9 */
+  -webkit-transform:rotateY(180deg); /* Safari and Chrome */
 
   & > ul{
     min-width:70%;
     width:95%;
     height:min-content;
     position:relative;
+    transform:rotateY(-180deg);
+    -ms-transform:rotateY(180deg); /* IE 9 */
+    -webkit-transform:rotateY(180deg); /* Safari and Chrome */
 
     &:hover{
       cursor:pointer;
