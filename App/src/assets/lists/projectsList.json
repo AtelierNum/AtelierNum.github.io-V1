@@ -5,6 +5,7 @@
             "id": "wkshp_cc_2020",
             "tags": [
                 "Processing",
+                "Interaction",
                 "FR"
             ],
             "desc": "code et documentation du workshop code créatif @lecolededesign. Projets réalisé par des étudiants en deuxième année en bacholor interaction design.",
@@ -18,6 +19,7 @@
             "id": "gestes_de_lennui_1920",
             "tags": [
                 "P5js",
+                "Graphisme",
                 "Risographie",
                 "Arduino",
                 "FR"
@@ -33,8 +35,8 @@
             "id": "patatap_1920",
             "tags": [
                 "P5js",
+                "Interaction",
                 "Motion",
-                "Audio-reactive",
                 "FR"
             ],
             "desc": "Projets réalisés par les étudiants en deuxième année de design d'interaction @lecolededesign.",
@@ -62,6 +64,8 @@
             "id": "generative_patterns_2019",
             "tags": [
                 "P5js",
+                "Graphisme",
+                "Interaction",
                 "FR"
             ],
             "desc": "Projets réalisés par les étudiants en 3ème année de design graphic @lecolededesign.",
@@ -75,6 +79,7 @@
             "id": "wkshp_cc_2019",
             "tags": [
                 "Processing",
+                "Interaction",
                 "FR"
             ],
             "desc": "code et documentation du workshop code créatif @lecolededesign. Projets réalisé par des étudiants en deuxième année en bacholor interaction design.",
@@ -88,6 +93,7 @@
             "id": "elctronics_1819",
             "tags": [
                 "Arduino",
+                "Interaction",
                 "Game",
                 "FR"
             ],
@@ -103,7 +109,7 @@
             "tags": [
                 "P5js",
                 "Motion",
-                "Audio-reactive",
+                "Interaction",
                 "FR"
             ],
             "desc": "Projets réalisés par les étudiants en deuxième année de design d'interaction @lecolededesign.",

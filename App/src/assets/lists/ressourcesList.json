@@ -2,7 +2,11 @@
     "ressources": [
         {
             "name": "Cat like coding",
+<<<<<<< HEAD
             "id": "cat_like_coding",
+=======
+            "id": "clc",
+>>>>>>> f043e3ad2acb81f8617d63300c6c5c885a423fc9
             "tags": [
                 "Unity",
                 "C#",
@@ -18,7 +22,7 @@
             "id": "bos",
             "tags": [
                 "Shader",
-                "Creative coding",
+                "Creative Coding",
                 "EN"
             ],
             "desc": "Learn how to code powefull fragment shaders",
@@ -31,8 +35,8 @@
             "id": "p5js_shaders",
             "tags": [
                 "Shader",
-                "Creative coding",
-                "p5js",
+                "Creative Coding",
+                "P5js",
                 "EN"
             ],
             "desc": "Learn how to code fragment shaders for the web with p5js",
@@ -45,7 +49,7 @@
             "id": "cc_essentials",
             "tags": [
                 "Processing",
-                "Creative coding",
+                "Creative Coding",
                 "EN"
             ],
             "desc": "Creative coding courses by Tim Rodenbroeker",

@@ -5,7 +5,7 @@
             "id": "Introduction_Arduino",
             "tags": [
                 "Arduino",
-                "Electronics",
+                "Interaction",
                 "FR",
                 "EN"
             ],
@@ -19,9 +19,7 @@
             "name": "Introduction à p5js",
             "id": "Introduction_p5js",
             "tags": [
-                "P5",
-                "Generative art",
-                "Processing",
+                "P5js",
                 "Web",
                 "FR"
             ],
@@ -36,8 +34,7 @@
             "id": "Introduction_Pure_Data",
             "tags": [
                 "Pure-Data",
-                "Generative art",
-                "Audio",
+                "Sound Design",
                 "FR"
             ],
             "desc": "Une introduction à Pure-Data réalisée avec Pure-data. Pure-Data est le couteau suisse de l'audio temps réel et plus aussi.",
@@ -50,8 +47,9 @@
             "name": "Introduction à Processing",
             "id": "Introduction_Processing",
             "tags": [
-                "Generative art",
                 "Processing",
+                "Interaction",
+                "Graphisme",
                 "FR"
             ],
             "desc": "Une introduction à la programmation java avec Processing.",
@@ -65,7 +63,10 @@
             "id": "image_alteration",
             "tags": [
                 "P5js",
-                "Image",
+                "Graphisme",
+                "Interaction",
+                "Print",
+                "Web",
                 "FR"
             ],
             "desc": "Transformer une image en manipulant ses pixels. Utilisation de boutons et de sliders et exports svg / png",
@@ -78,10 +79,10 @@
             "name": "Generative Typography",
             "id": "p5js_typo",
             "tags": [
-                "Generative art",
-                "p5js",
-                "Typography",
-                "web",
+                "P5js",
+                "Typographie",
+                "Web",
+                "Interaction",
                 "EN"
             ],
             "desc": "Some example on how to work with typography in p5js",
@@ -95,6 +96,9 @@
             "id": "generative_patterns",
             "tags": [
                 "P5js",
+                "Interaction",
+                "Graphisme",
+                "Web",
                 "FR"
             ],
             "desc": "Utiliser des règles simples pour créer des motifs qui se répétent. Ce cours comporte une étude assez poussée des techniques de noise.",
@@ -108,6 +112,8 @@
             "id": "patatap",
             "tags": [
                 "P5js",
+                "Interaction",
+                "Web",
                 "FR"
             ],
             "desc": "Un cours d'introduction à p5js : chaque touche du clavier doit déclencher un son et un animation",
@@ -123,6 +129,8 @@
                 "P5js",
                 "Processing",
                 "Arduino",
+                "Graphisme",
+                "Print",
                 "FR"
             ],
             "desc": "Identifier, enregister et visualiser les gestes de l'ennui avec arduino, processing et p5js. La finalité étant de produire une image imprimmable par sérigraphie",
@@ -136,6 +144,7 @@
             "id": "pcd_processing",
             "tags": [
                 "Processing",
+                "Interaction",
                 "FR"
             ],
             "desc": "Un workshop d'une demie-journée donné à Stereolux par des étudiants pour découvrir le code créatif",
@@ -149,6 +158,11 @@
             "id": "pcd_p5js",
             "tags": [
                 "P5js",
+<<<<<<< HEAD
+=======
+                "Interaction",
+                "Web",
+>>>>>>> f043e3ad2acb81f8617d63300c6c5c885a423fc9
                 "FR"
             ],
             "desc": "Un workshop d'une demie-journée donné à Stereolux par des étudiants pour découvrir le code créatif",
@@ -162,6 +176,7 @@
             "id": "sound_design",
             "tags": [
                 "Sound Design",
+                "Théorie",
                 "FR"
             ],
             "desc": "Quelques références sur le sound design, l'acoustique, l'audition, les techniques audio, références historiques",
@@ -175,6 +190,7 @@
             "id": "game_from_scratch",
             "tags": [
                 "Processing",
+                "Interaction",
                 "Game",
                 "FR"
             ],
@@ -190,6 +206,7 @@
             "tags": [
                 "Processing",
                 "Arduino",
+                "Interaction",
                 "EN"
             ],
             "desc": "Processing and arduino together. This projects explores genetic algorithms to create flowers that can bread together, and bloom with a certain amount of light",
