@@ -17,8 +17,7 @@
     <div class="indexBar">
       <ul>
         <li v-for="(section, i) in index" :key="i" :class="current.section.index == i ? 'currentSection' : 'top'" >        
-            <a @click="moveToSection(i, section.section)" 
-              :href="hrefAnchor(section.section)">{{section.section}}</a>
+            <p @click="moveToSection(i, section.section)">{{section.section}}</p>
             <ul v-if="section.children.length > 0">
               <li 
               v-for="(subsection,k) in section.children" 
@@ -75,13 +74,8 @@ export default {
       let scrollTarget = Array.from(this.$children[1].$el.childNodes).find( node => node.innerText == el) ;
       this.current.section.index = index ; 
       this.current.section.offsetTop = scrollTarget ; 
-      
 
-      window.scrollTo({
-        left: 0,
-        top: scrollTarget.offsetTop - 70,
-        behaviour: 'smooth'
-      })
+      location.hash = '#' + this.hrefAnchor(el);
     },
     waitingFunctions(){
       this.$nextTick( () => {
@@ -161,36 +155,39 @@ export default {
     handleScroll(event){
 
       let currentnode = this.index.find( section => section.offsetTop > this.current.section.offsetTop);
-      if (window.scrollY - (window.innerHeight / 2) > currentnode.offsetTop){
-        this.current.section.index = this.index.findIndex( section => section == currentnode);
-        this.current.section.offsetTop = currentnode.offsetTop; 
-        
-        if (this.index[this.current.section.index].children.length > 0){
-          this.current.subsection.index = 0 ;
-        
-        } else {
-          this.current.subsection.index = undefined;
-        }
-
-      } 
-      else {
-        let section = this.index.find( section => section.offsetTop == this.current.section.offsetTop)
-
-        // console.log(section, currentSubnode)
-
-        if (section != undefined ){
-          let currentSubnode = section.children.find( sub => sub.offsetTop > this.current.subsection.offsetTop);
-
-          if (currentSubnode != undefined){
-            if (window.scrollY - (window.innerHeight / 2) > currentSubnode.offsetTop){
-              this.current.subsection.index = section.children.findIndex( sub => sub.offsetTop == currentSubnode.offsetTop);
-              this.current.subsection.offsetTop = currentSubnode.offsetTop ;
-            
-              console.log(this.current.subsection)
-            }
+      
+      if (currentnode != undefined){
+        if (window.scrollY - (window.innerHeight / 2) > currentnode.offsetTop){
+          this.current.section.index = this.index.findIndex( section => section == currentnode);
+          this.current.section.offsetTop = currentnode.offsetTop; 
+          
+          if (this.index[this.current.section.index].children.length > 0){
+            this.current.subsection.index = 0 ;
+          
+          } else {
+            this.current.subsection.index = undefined;
           }
-        }      
-      }  
+
+        } 
+        else {
+          let section = this.index.find( section => section.offsetTop == this.current.section.offsetTop)
+
+          // console.log(section, currentSubnode)
+
+          if (section != undefined ){
+            let currentSubnode = section.children.find( sub => sub.offsetTop > this.current.subsection.offsetTop);
+
+            if (currentSubnode != undefined){
+              if (window.scrollY - (window.innerHeight / 2) > currentSubnode.offsetTop){
+                this.current.subsection.index = section.children.findIndex( sub => sub.offsetTop == currentSubnode.offsetTop);
+                this.current.subsection.offsetTop = currentSubnode.offsetTop ;
+              
+                console.log(this.current.subsection)
+              }
+            }
+          }      
+        }  
+      }
     }
   }
 }
