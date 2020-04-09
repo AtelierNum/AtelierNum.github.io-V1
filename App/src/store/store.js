@@ -27,6 +27,16 @@ const mutations = {
       }
     }
   },
+  setByUrl(state, payload){
+    for (let type of [state.list.projects, state.list.courses]) {
+      let plop = type.find( content => content.url == payload );
+
+      if (plop != undefined){
+        state.current_content = plop;
+        return ;
+      }
+    }
+  },
   filterContent(state, payload){
     if (!state.filters[payload.category].includes(payload.tag)){
       state.filters[payload.category].push(payload.tag) ;
@@ -58,6 +68,9 @@ const actions = {
   resetFilter(context, payload){
     context.commit('resetFilter', payload);
     context.commit('updateFilteredContent', payload.category);
+  },
+  setByUrl(context, payload){
+    context.commit('setByUrl', payload);
   }
 }
 
@@ -67,6 +80,12 @@ const getters = {
   },
   getList(state){
     return state.list ;
+  },
+  getUrlofInternalContents(state){
+    return [
+      ...state.list.projects.map( project => project.url),
+      ...state.list.courses.map( course => course.url)
+    ]
   }
 }
 

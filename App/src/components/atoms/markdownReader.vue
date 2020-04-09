@@ -1,12 +1,15 @@
 <template>
-    <vue-markdown v-if="md_loaded"  class="contentmd mdReader">{{readme}}</vue-markdown>
+    <vue-markdown  :key="keyId" class="contentmd mdReader">{{readme}}</vue-markdown>
 
 </template>
 
 <script>
 import VueMarkdown from 'vue-markdown'
 import 'prismjs'
-import {mapGetters} from 'vuex'
+// import "prismjs/themes/prism-okaidia.css";  // theme
+// import 'prismjs/components/prism-go.min';  // language
+
+import {mapGetters, mapActions} from 'vuex'
 
 export default {
   name: 'markdownReader',
@@ -17,19 +20,82 @@ export default {
     return{
       readme: '# Un super titre',
       md_loaded : false,
+      keyId: 0,
+      internalLinks : []
     }
   },
   computed:{
-    ...mapGetters(['getContent', 'getList'])
+    ...mapGetters(['getContent', 'getList', 'getUrlofInternalContents'])
   },
   methods: {
+    ...mapActions({
+      setContent : 'setContent',
+      setByUrl : 'setByUrl'
+    }),
+    getReadmeFromExternal(){
+      var xmlhttp;
+      let _vue = this ;
+      
+      if (window.XMLHttpRequest) { // code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp = new XMLHttpRequest();
+      } else { // code for IE6, IE5
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+      }
+      xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+          _vue.readme = _vue.parseURL(xmlhttp.responseText, _vue.getContent.url) ;
+          _vue.md_loaded = true ;
+          _vue.keyId ++ ;
+          _vue.$emit('mdloaded', true)
+
+          _vue.$nextTick(() => {
+            Prism.highlightAll();
+            _vue.routerLinks(Array.from(_vue.$children[0].$el.childNodes));
+            // _vue.$emit('mdLoaded', true)
+          })
+        }
+      }
+
+      xmlhttp.open("GET", this.getContent.url, true);
+      xmlhttp.send();
+    },
     parseURL(data, url){
 
-      // parse intern paths 
-      // let intern_paths = Object.keys(this.getList).map( type => this.getList[type].map(content => content.url) )
-      // intern_paths = [...intern_paths[0], ...intern_paths[1], ...intern_paths[2]]
+      let urlSplited = url.split('/');
+      let author = urlSplited[3] ;
+      let repo = urlSplited[4] ;
 
-      // let url_paths = data.split('](') ;
+      // parse intern paths 
+      let intern_paths = this.getUrlofInternalContents;
+
+      let credentials_paths = intern_paths.map( path => ({
+        author : path.split('/')[3],
+        repo : path.split('/')[4],
+      }))
+
+      let repo_paths = data.split('](');
+
+      repo_paths.forEach( (path) => {
+        if (path.includes(')')){
+          let repopath = path.split(')')[0];
+          let correspondance = credentials_paths.find(teststring => (repopath.includes(teststring.author) && repopath.includes(teststring.repo)));
+            if (correspondance != undefined){
+              let targetrepo = `https://raw.githubusercontent.com/${correspondance.author}/${correspondance.repo}/master/README.md`  
+              
+              data = data.replace(new RegExp(repopath, 'g'), (correspondance, decalage) => {
+                if (data.substring(decalage - 2, decalage) == ']('){
+                  return targetrepo ;
+                } else {
+                  return repopath ;
+                }
+              });
+
+              if (!this.internalLinks.includes(targetrepo)){
+                this.internalLinks.push(targetrepo);
+              }
+          } 
+        }
+      })
       
 
       //  PARSE URL FOR CORRECT IMPORT IMAGES IN MARKDOWNS
@@ -39,7 +105,7 @@ export default {
         if (string.includes('](')){
             let string_to_replace = string.split('](')[1].split(')')[0];
             let path = string_to_replace.split('./')
-            let newUrl = `https://raw.githubusercontent.com/${url.split('/')[3]}/${url.split('/')[4]}/master/${path[path.length - 1]}`;
+            let newUrl = `https://raw.githubusercontent.com/${author}/${repo}/master/${path[path.length - 1]}`;
 
             data = data.replace(new RegExp(string_to_replace, 'g'), (correspondance, decalage) => {
               if (data.substring(decalage - 2, decalage) == ']('){
@@ -60,7 +126,7 @@ export default {
           if (string.includes('src="')){
               let string_to_replace = string.split('src="')[1].split('"')[0];
               let path = string_to_replace.split('./')
-              let newUrl = `https://raw.githubusercontent.com/${url.split('/')[3]}/${url.split('/')[4]}/master/${path[path.length - 1]}`;
+              let newUrl = `https://raw.githubusercontent.com/${author}/${repo}/master/${path[path.length - 1]}`;
               
               data = data.replace(new RegExp(string_to_replace, 'g'), (correspondance, decalage) => {
                 if (data.substring(decalage - 5, decalage) == 'src="'){
@@ -73,31 +139,40 @@ export default {
       })
 
       return data ;
+    },
+    routerLinks(array){
+      array.forEach( (node) => {
+        if (Array.from(node.childNodes).length > 0 && ['ul', 'li', 'ol', 'p'].includes(node.localName)){ // needed to avoid to much revursioin because of code sections or others unwanted
+          this.routerLinks(Array.from(node.childNodes));
+          
+        } else {
+          if (node.localName == 'a'){
+            let path = this.internalLinks.find(link => link == node.href);
+
+            if (path != undefined){
+              node.addEventListener('click', (event) => {
+                this.setByUrl(path);
+                this.$router.push('/' + this.$route.name.split('_content')[0] + '/' + this.getContent.id)
+                event.preventDefault();
+              })
+            }
+          }
+        }
+      })
+    }
+  },
+  watch: {
+    $route(newval, oldval){
+      console.log(oldval, newval)
+      console.log(this.$route)
+      this.getReadmeFromExternal();
+      
     }
   },
   created(){
-      var xmlhttp;
-      let _vue = this ;
-      
-      if (window.XMLHttpRequest) { // code for IE7+, Firefox, Chrome, Opera, Safari
-        xmlhttp = new XMLHttpRequest();
-      } else { // code for IE6, IE5
-        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-      }
-      xmlhttp.onreadystatechange = function() {
-        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-          _vue.readme = _vue.parseURL(xmlhttp.responseText, _vue.getContent.url) ;
-          _vue.md_loaded = true ;
-          _vue.$emit('mdloaded', true)
-
-          _vue.$nextTick(() => {
-            Prism.highlightAll();
-          })
-        }
-      }
-
-      xmlhttp.open("GET", this.getContent.url, true);
-      xmlhttp.send();
+    if (this.getContent.url != undefined){
+      this.getReadmeFromExternal();
+    }
   }
 }
 </script>

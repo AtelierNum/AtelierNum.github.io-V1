@@ -146,9 +146,9 @@
         },
         {
             "name": "Workshop Processing community day - P5js",
-            "id": "pcd_processing",
+            "id": "pcd_p5js",
             "tags": [
-                "Processing",
+                "P5js",
                 "FR"
             ],
             "desc": "Un workshop d'une demie-journée donné à Stereolux par des étudiants pour découvrir le code créatif",

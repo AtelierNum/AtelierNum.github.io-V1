@@ -17,7 +17,7 @@
     <div class="indexBar">
       <ul>
         <li v-for="(section, i) in index" :key="i" :class="current.section.index == i ? 'currentSection' : 'top'" >        
-            <p @click="moveToSection(i, section.section)">{{section.section}}</p>
+            <a @click="moveToSection(i, section.section)">{{section.section}}</a>
             <ul v-if="section.children.length > 0">
               <li 
               v-for="(subsection,k) in section.children" 
@@ -42,7 +42,7 @@
 import svgCurved from '@/components/atoms/svgCurved'
 import mdReader from '@/components/atoms/markdownReader'
 // import VueClipboard from 'vue-clipboard2'
-import {mapGetters} from 'vuex';
+import {mapGetters, mapActions} from 'vuex';
 
 export default {
   name: 'CoursePage',
@@ -70,6 +70,9 @@ export default {
     'md-reader' : mdReader
   },
   methods:{
+    ...mapActions({
+      setContent : 'setContent'
+    }),
     moveToSection(index, el){
       let scrollTarget = Array.from(this.$children[1].$el.childNodes).find( node => node.innerText == el) ;
       this.current.section.index = index ; 
@@ -181,13 +184,16 @@ export default {
               if (window.scrollY - (window.innerHeight / 2) > currentSubnode.offsetTop){
                 this.current.subsection.index = section.children.findIndex( sub => sub.offsetTop == currentSubnode.offsetTop);
                 this.current.subsection.offsetTop = currentSubnode.offsetTop ;
-              
-                console.log(this.current.subsection)
               }
             }
           }      
         }  
       }
+    }
+  },
+  created(){
+    if (this.getContent.url == undefined || this.getContent.id != this.$route.params.id){
+      this.setContent(this.$route.params.id);
     }
   }
 }

@@ -7,9 +7,22 @@ Vue.use(Router)
 
 let routes_courses = Object.keys(globalList).map( type => ({
   path: `${type}/:content`,
-  name: type,
+  name: type + '_content',
   component: () => import('../pages/Documentation.vue'),
 })) 
+
+// let routes_courses = Object.keys({'projects': globalList.projects, 'courses' : globalList.courses}).map( type => 
+//   globalList[type].map( content => ({
+//     path: type + '/' + content.id,
+//     name: content.id,
+//     type: type,
+//     component: () => import('../pages/Documentation.vue'),
+//   }))
+// ) 
+
+// routes_courses = [...routes_courses[0], ...routes_courses[1]];
+
+console.log('routes courses : ', routes_courses);
 
 
 export default new Router({
@@ -18,7 +31,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name:'layout',
+      name:'',
       component: () => import('../layout/AppLayout.vue'),
       children: [
         { path: '', name:'home', component: () => import('../pages/Index.vue') },

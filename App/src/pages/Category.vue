@@ -14,10 +14,7 @@
     <!-- <input type="text" v-model="keyterms" placeholder="This feature will be avalaible soon "> -->
 
     <v-tag-list>
-      <v-tag>Digital art</v-tag>
-      <v-tag>Processing</v-tag>
-      <v-tag>P5</v-tag>
-      <v-tag>Pure data</v-tag>
+      <v-tag v-for="tag in tags.projects" :key="'projects-' + tag" category="projects">{{tag}}</v-tag>
     </v-tag-list>
     
 
@@ -52,6 +49,11 @@ export default {
   },
   data(){
     return {
+      tags : {
+        projects : ['P5', 'Digital Art', 'Processing', 'P5JS', 'FR'],
+        courses : ['P5', 'Generative art', 'Processing', 'p5js', 'FR'],
+        ressources : ['P5', 'Digital Art', 'Processing', 'p5js', 'EN']
+      }
     }
   },
   computed: {
