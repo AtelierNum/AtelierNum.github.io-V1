@@ -19,10 +19,15 @@
         <li v-for="(section, i) in index" 
             :key="i" 
             @click="moveToSection(i, section.section)" 
-            :class="current.section == i ? 'currentSection' : 'top'">
+            :class="current.section.index == i ? 'currentSection' : 'top'">
           {{section.section}}
             <ul v-if="section.children.length > 0">
-              <li v-for="(subsection,k) in section.children" :key="k" @click="moveToSection(i, subsection.innerText)" >{{subsection.innerText}}</li>
+              <li 
+              v-for="(subsection,k) in section.children" 
+              :key="k" 
+              @click="moveToSection(i, subsection.innerText)" 
+              :class="current.subsection.index == i ? 'currentSubsection' : ''"
+              >{{subsection.innerText}}</li>
             </ul>  
         </li>
       </ul>
@@ -48,8 +53,15 @@ export default {
     return{
       index: [],
       current : {
-        section : 0,
-        subsection : 0
+        section : {
+          index : 0,
+          offsetTop : 0,
+        },
+        subsection : {
+          index : 0,
+          offsetTop : 0,
+        }
+
       }
     }
   },
@@ -62,8 +74,9 @@ export default {
   },
   methods:{
     moveToSection(index, el){
-      this.current.section = index ; 
       let scrollTarget = Array.from(this.$children[1].$el.childNodes).find( node => node.innerText == el) ;
+      this.current.section.index = index ; 
+      this.current.section.offsetTop = scrollTarget ; 
       
 
       window.scrollTo({
@@ -95,6 +108,7 @@ export default {
             if (w == h1_sections.length - 1){
               var indexSection = {
                 section : h1_sections[w].innerText,
+                offsetTop : h1_sections[w].offsetTop,
                 children : md_childs.slice(i0 + 1, md_childs.length).filter( child => child.localName == `h${higherTitle}`)
               }
             } else {
@@ -102,13 +116,15 @@ export default {
       
               var indexSection = {
                 section : h1_sections[w].innerText,
+                offsetTop : h1_sections[w].offsetTop,
                 children : md_childs.slice(i0 + 1, i1).filter( child => child.localName == 'h3')
               }
             }
 
             this.index.push(indexSection);
         }
-      
+
+        window.addEventListener('scroll', this.handleScroll);    
       })
     },
     setCopyCodeButtons(){
@@ -138,6 +154,40 @@ export default {
           codesections[w].appendChild(copycode);
         }
       })
+    },
+    handleScroll(event){
+
+      let currentnode = this.index.find( section => section.offsetTop > this.current.section.offsetTop);
+      if (window.scrollY - (window.innerHeight / 2) > currentnode.offsetTop){
+        this.current.section.index = this.index.findIndex( section => section == currentnode);
+        this.current.section.offsetTop = currentnode.offsetTop; 
+        
+        if (this.index[this.current.section.index].children.length > 0){
+          this.current.subsection.index = 0 ;
+        
+        } else {
+          this.current.subsection.index = undefined;
+        }
+
+      } 
+      else {
+        let section = this.index.find( section => section.offsetTop == this.current.section.offsetTop)
+
+        // console.log(section, currentSubnode)
+
+        if (section != undefined ){
+          let currentSubnode = section.children.find( sub => sub.offsetTop > this.current.subsection.offsetTop);
+
+          if (currentSubnode != undefined){
+            if (window.scrollY - (window.innerHeight / 2) > currentSubnode.offsetTop){
+              this.current.subsection.index = section.children.findIndex( sub => sub.offsetTop == currentSubnode.offsetTop);
+              this.current.subsection.offsetTop = currentSubnode.offsetTop ;
+            
+              console.log(this.current.subsection)
+            }
+          }
+        }      
+      }  
     }
   }
 }
@@ -264,7 +314,7 @@ export default {
     text-align: left;
     font-family: 'Open Sans';
     font-weight:600;
-    font-size:1.2em;
+    font-size:18px;
     color: #373D4A;
     position: relative;
     margin-bottom:10px;
@@ -285,7 +335,7 @@ export default {
     border-radius:8px;
     background: linear-gradient(var(--color-gray01), 100%, rgba(255, 255, 255, 0) 120%);
     font-weight: 700;
-    font-size:1.4em;
+    font-size:20px;
     transition: .3s ease-out;
 
     &::after{
@@ -317,8 +367,8 @@ export default {
       }
     }
 
-    .currentChapitre {
-      font-weight: 600;
+    .currentSubsection {
+      font-weight: 700;
       transition: .3s ease-out;
     }
   }

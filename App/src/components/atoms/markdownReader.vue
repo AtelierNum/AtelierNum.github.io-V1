@@ -252,13 +252,8 @@ export default {
 
   & img{
     display:block;
-    // margin-right: auto;
-    // margin-left: auto;
-    margin-bottom:12px auto;
-    // width:100%;
+    margin:12px auto;
     border-radius:4px;
-    // box-shadow: 0px 3px 4px #00000029;
-    // height:100%;
     object-fit: contain;
     justify-self: center;
   }
