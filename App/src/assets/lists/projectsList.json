@@ -123,6 +123,8 @@
             "id": "dis_information",
             "tags": [
                 "Arduino",
+                "Interaction", 
+                "Graphisme",
                 "FR"
             ],
             "desc": "Projet réalisé par les étudiant en troisième année de design graphique @lecolededesign. Introduction au code et à arduino.",

@@ -2,11 +2,7 @@
     "ressources": [
         {
             "name": "Cat like coding",
-<<<<<<< HEAD
-            "id": "cat_like_coding",
-=======
             "id": "clc",
->>>>>>> f043e3ad2acb81f8617d63300c6c5c885a423fc9
             "tags": [
                 "Unity",
                 "C#",
