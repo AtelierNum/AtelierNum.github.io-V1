@@ -17,7 +17,7 @@
             "name": "The book of shaders",
             "id": "bos",
             "tags": [
-                "Shader",
+                "Shaders",
                 "Creative Coding",
                 "EN"
             ],
@@ -30,7 +30,7 @@
             "name": "P5js shaders",
             "id": "p5js_shaders",
             "tags": [
-                "Shader",
+                "Shaders",
                 "Creative Coding",
                 "P5js",
                 "EN"
