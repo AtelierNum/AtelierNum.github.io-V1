@@ -4,12 +4,9 @@
   <svg-curved content="p5"></svg-curved>
 
 
-    <h2 class="section-title"> {{$route.name}} </h2>
+    <h2 class="section-title"> {{category_resume[$route.name].title}} </h2>
 
-    <p> Voici la description d'une catégorie. Il paraitrait que le covid peut s'annuler si l'on se frotte des oignons pelés sous l'aisselles après s'être préalablement
-        frotté celles-ci avec du papier à poncer à faible grain. Les propriétés analphogésiques des particules ainsi formées créent une protection antalgisante face à l'agression sans 
-        scrupule du virus sur nos pauvres petites cellules. 
-    </p>
+    <p>{{category_resume[$route.name].excerpt}}</p>
 
     <!-- <input type="text" v-model="keyterms" placeholder="This feature will be avalaible soon "> -->
 
@@ -49,6 +46,20 @@ export default {
   },
   data(){
     return {
+      category_resume: {
+        projects :{
+          title : "Projets",
+          excerpt: "Voici la description d'une catégorie. Il paraitrait que le covid peut s'annuler si l'on se frotte des oignons pelés sous l'aisselles après s'être préalablement frotté celles-ci avec du papier à poncer à faible grain. Les propriétés analphogésiques des particules ainsi formées créent une protection antalgisante face à l'agression sans scrupule du virus sur nos pauvres petites cellules. ",
+        },
+        courses :{
+          title : "Cours",
+          excerpt: "Voici la description d'une catégorie. Il paraitrait que le covid peut s'annuler si l'on se frotte des oignons pelés sous l'aisselles après s'être préalablement frotté celles-ci avec du papier à poncer à faible grain. Les propriétés analphogésiques des particules ainsi formées créent une protection antalgisante face à l'agression sans scrupule du virus sur nos pauvres petites cellules. ",
+        },
+        projects :{
+          title : "Ressources",
+          excerpt: "Voici la description d'une catégorie. Il paraitrait que le covid peut s'annuler si l'on se frotte des oignons pelés sous l'aisselles après s'être préalablement frotté celles-ci avec du papier à poncer à faible grain. Les propriétés analphogésiques des particules ainsi formées créent une protection antalgisante face à l'agression sans scrupule du virus sur nos pauvres petites cellules. ",
+        }
+      },
       tags : {
         projects : ['P5', 'Digital Art', 'Processing', 'P5JS', 'FR'],
         courses : ['P5', 'Generative art', 'Processing', 'p5js', 'FR'],

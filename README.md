@@ -46,6 +46,6 @@ It will open a local server on a available port ( usually localhost:8080 or near
 [link to my title](My-title)
 ```
 
-* When mention another README in order to be displayed in this website, point to the **github raw** url, not the repo.
+* When mention another README in order to be displayed in this website, use a relative path, never a global (www.adress.com) one.
 * When mention another repo, just point to the repo adress. But don't include the link inside another tag than **ul, ol, li or p**.
 * 

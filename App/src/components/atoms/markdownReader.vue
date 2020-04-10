@@ -51,7 +51,6 @@ export default {
           _vue.$nextTick(() => {
             Prism.highlightAll();
             _vue.routerLinks(Array.from(_vue.$children[0].$el.childNodes));
-            // _vue.$emit('mdLoaded', true)
           })
         }
       }
@@ -78,10 +77,12 @@ export default {
       repo_paths.forEach( (path) => {
         if (path.includes(')')){
           let repopath = path.split(')')[0];
+
+          // case path to another repo listed in projects or courses
           let correspondance = credentials_paths.find(teststring => (repopath.includes(teststring.author) && repopath.includes(teststring.repo)));
             if (correspondance != undefined){
               let targetrepo = `https://raw.githubusercontent.com/${correspondance.author}/${correspondance.repo}/master/README.md`  
-              
+            
               data = data.replace(new RegExp(repopath, 'g'), (correspondance, decalage) => {
                 if (data.substring(decalage - 2, decalage) == ']('){
                   return targetrepo ;
@@ -93,8 +94,18 @@ export default {
               if (!this.internalLinks.includes(targetrepo)){
                 this.internalLinks.push(targetrepo);
               }
-          } 
-        }
+            }
+          } else {
+            if (repopath.includes('https') || repopath.includes('www')){
+              console.log('external link', repopath);
+            } else {
+              if (repopath.includes('.md')){
+                console.log('should be recursive repo');
+              } else {
+                console.log('should be relative path to image');
+              }
+            }
+          }
       })
       
 
@@ -356,7 +367,7 @@ export default {
       text-align:center;
 
       & > * {
-        display:block;
+        display:inline-block;
         text-align:center;
       }
     }
