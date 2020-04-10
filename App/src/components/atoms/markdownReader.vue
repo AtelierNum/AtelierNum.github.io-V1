@@ -96,15 +96,16 @@ export default {
               }
             }
           } else {
-            if (repopath.includes('https') || repopath.includes('www')){
-              console.log('external link', repopath);
-            } else {
-              if (repopath.includes('.md')){
-                console.log('should be recursive repo');
-              } else {
-                console.log('should be relative path to image');
-              }
-            }
+            // if (repopath.includes('https') || repopath.includes('www')){
+            //   console.log('external link', repopath);
+            // } else {
+            //   if (repopath.includes('.md')){
+            //     console.log('should be recursive repo');
+            //   } else {
+            //     console.log('should be relative path to image');
+            //   }
+            // }
+            console.log('there is else')
           }
       })
       
