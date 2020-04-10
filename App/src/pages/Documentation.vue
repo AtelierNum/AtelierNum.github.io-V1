@@ -212,7 +212,7 @@ export default {
   grid-auto-columns: auto;
   justify-items: center;
   padding-bottom: 100px; 
-  padding-top: 50px; 
+  // padding-top: 50px; 
   margin-bottom:50px;
 
   clip-path: url('../assets/masks/top_content_mask.svg');
@@ -239,6 +239,7 @@ export default {
         margin-bottom:30px; 
 
         & > span {
+          display:inline-block;
           text-align: center;
           font-family: 'Open Sans';
           font-weight:300;
@@ -247,6 +248,9 @@ export default {
           color: #373D4A;
 
           margin-right:20px;
+          background-color:rgb(233, 233, 233);
+          border-radius: 12px;
+          padding: 12px 20px;
         }
         
 
