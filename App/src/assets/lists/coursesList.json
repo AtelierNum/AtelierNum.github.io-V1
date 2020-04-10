@@ -20,6 +20,7 @@
             "id": "Introduction_p5js",
             "tags": [
                 "P5js",
+                "Creative Coding",
                 "Web",
                 "FR"
             ],
@@ -48,6 +49,7 @@
             "id": "Introduction_Processing",
             "tags": [
                 "Processing",
+                "Creative Coding",
                 "Interaction",
                 "Graphisme",
                 "FR"
@@ -63,6 +65,7 @@
             "id": "image_alteration",
             "tags": [
                 "P5js",
+                "Creative Coding",
                 "Graphisme",
                 "Interaction",
                 "Print",
@@ -80,6 +83,7 @@
             "id": "p5js_typo",
             "tags": [
                 "P5js",
+                "Creative Coding",
                 "Typographie",
                 "Web",
                 "Interaction",
@@ -96,6 +100,7 @@
             "id": "generative_patterns",
             "tags": [
                 "P5js",
+                "Creative Coding",
                 "Interaction",
                 "Graphisme",
                 "Web",
@@ -112,7 +117,9 @@
             "id": "patatap",
             "tags": [
                 "P5js",
+                "Creative Coding",
                 "Interaction",
+                "Motion",
                 "Web",
                 "FR"
             ],
@@ -144,6 +151,7 @@
             "id": "pcd_processing",
             "tags": [
                 "Processing",
+                "Creative Coding",
                 "Interaction",
                 "FR"
             ],
@@ -158,6 +166,7 @@
             "id": "pcd_p5js",
             "tags": [
                 "P5js",
+                "Creative Coding",
                 "Interaction",
                 "Web",
                 "FR"
@@ -202,6 +211,7 @@
             "id": "entomologik_workshop",
             "tags": [
                 "Processing",
+                "Creative Coding",
                 "Arduino",
                 "Interaction",
                 "EN"
