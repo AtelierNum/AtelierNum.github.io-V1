@@ -107,8 +107,9 @@ export default {
               
 
             } else {
-              if (repopath.includes('https') || repopath.includes('www')){
+              if (repopath.includes('http') || repopath.includes('www') || repopath.slice(0,1) == '#'){
                 // if a global url is given, we guess it's because it was wanted to show it on external source
+                // same for anchors links
               } else {
                 if (repopath.includes('.md')){
                   let recursiveRepo = this.getContent.url.replace(/readme.md/i,repopath);
@@ -126,7 +127,7 @@ export default {
                   });
 
                 } else { // else should be recursive path to images
-                  //  PARSE URL FOR CORRECT IMPORT IMAGES IN MARKDOWNS
+                  //  PARSE URL FOR MARKDOWN-LIKE IMPORTS OF IMAGES
                     let image_path = repopath.split('./');
                     let newUrl = `https://raw.githubusercontent.com/${author}/${repo}/master/${image_path[image_path.length - 1]}`;
                     console.log(repopath, newUrl)
@@ -143,7 +144,7 @@ export default {
             }
         } 
       })
-      // PARSE URL FOR BAD PERSONS WHO USE HTML BALISE TO IMPORT IMAGES 
+      // PARSE URL FOR HTML IMPORTS OF IMAGES
       let img_url =  data.split('<img');
       img_url.forEach( (string) => {
           if (string.includes('src="')){
