@@ -8,15 +8,10 @@
   <div class="bottom">
     <h3 class="title">{{title}}</h3>
     <p class="desc">{{wrapDesc(desc)}}</p>
-    <ul class="tags">
-      <!-- <li>{{tags[0]}}</li>
-      <span>-</span>
-      <li>{{tags[1]}}</li>
-      <span>-</span>
-      <li>{{tags[2]}}</li> -->
-
+    <!-- <ul class="tags">
       <li v-for="(tag, i) in tags" :key="i">{{tag + separator(i)}}</li>
-    </ul>
+    </ul> -->
+    <p class="tags">{{tagsInString}}</p>
   </div>
 
   <span href="" class="action" v-if="has_action">
@@ -105,6 +100,16 @@ import {mapActions} from 'vuex' ;
           return desc ;
         }
       }
+    },
+    computed:{
+      tagsInString(){
+        let tagsString = '' ;
+        this.tags.forEach( (tag) => {
+          tagsString += tag + ' - '
+        })
+        
+        return tagsString.slice(0, tagsString.length - 3);;
+      }
     }
   }
 </script>
@@ -167,6 +172,8 @@ import {mapActions} from 'vuex' ;
     li{
       position: relative;
       list-style: none;
+      display:inline-block;
+      white-space:nowrap;
     }
   }
 

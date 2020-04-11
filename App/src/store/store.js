@@ -51,7 +51,7 @@ const mutations = {
     }
   },
   filterContent(state, payload){
-    if (!state.filters[payload.category].includesauto(payload.tag)){
+    if (!state.filters[payload.category].includes(payload.tag)){
       state.filters[payload.category].push(payload.tag) ;
     }
   },
@@ -103,7 +103,7 @@ const getters = {
       ...state.list.courses.map( course => course.url)
     ]
   },
-  getTagList(state){
+  getTagsList(state){
     return state.tagsFilters;
   }
 }

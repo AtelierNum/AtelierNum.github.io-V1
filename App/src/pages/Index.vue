@@ -39,7 +39,7 @@
     </h2>
 
     <v-tag-list>
-      <v-tag v-for="tag in tags.projects" :key="'projects-' + tag" category="projects">{{tag}}</v-tag>
+      <v-tag v-for="tag in getTagsList" :key="'projects-' + tag" category="projects">{{tag}}</v-tag>
     </v-tag-list>
     
 
@@ -67,11 +67,7 @@
     </h2>
 
     <v-tag-list>
-      <!-- <v-tag category=>P5</v-tag>
-      <v-tag>Digital art</v-tag>
-      <v-tag>Processing</v-tag>
-      <v-tag>Pure data</v-tag> -->
-      <v-tag v-for="tag in tags.courses" :key="'courses-' + tag" category="courses">{{tag}}</v-tag>
+      <v-tag v-for="tag in getTagsList" :key="'courses-' + tag" category="courses">{{tag}}</v-tag>
     </v-tag-list>
 
     <v-grid>
@@ -99,7 +95,7 @@
     </h2>
 
     <v-tag-list>
-      <v-tag v-for="tag in tags.ressources" :key="'ressources-' +tag" category="courses">{{tag}}</v-tag>
+      <v-tag v-for="tag in getTagsList" :key="'ressources-' +tag" category="courses">{{tag}}</v-tag>
     </v-tag-list>
 
     <v-grid :cols="3" >
@@ -143,75 +139,11 @@ export default {
         courses: false,
         ressources: false,
         projects: false
-      },
-      tags : {
-         projects: [
-                "Arduino",
-                "Processing",
-                "P5js",
-                "Pure-Data",
-                "Shaders",
-                "Unity",
-                "C#",
-                "Interaction",
-                "Graphisme",
-                "Game",
-                "Motion",
-                "Creative Coding", 
-                "Web",
-                "Print",
-                "Typographie",
-                "Risographie",
-                "Sound Design",
-                "Théorie",
-                "FR",
-                "EN"
-                ],
-        courses: ["Arduino",
-                "Processing",
-                "P5js",
-                "Pure-Data",
-                "Shaders",
-                "Unity",
-                "C#",
-                "Interaction",
-                "Graphisme",
-                "Game",
-                "Motion",
-                "Creative Coding", 
-                "Web",
-                "Print",
-                "Typographie",
-                "Risographie",
-                "Sound Design",
-                "Théorie",
-                "FR",
-                "EN"],
-        ressources: ["Arduino",
-                "Processing",
-                "P5js",
-                "Pure-Data",
-                "Shaders",
-                "Unity",
-                "C#",
-                "Interaction",
-                "Graphisme",
-                "Game",
-                "Motion",
-                "Creative Coding", 
-                "Web",
-                "Print",
-                "Typographie",
-                "Risographie",
-                "Sound Design",
-                "Théorie",
-                "FR",
-                "EN"]
       }
     }
   },
   computed: {
-    ...mapGetters(['getList'])
+    ...mapGetters(['getList', 'getTagsList'])
   },
   methods: {
     more(type){     

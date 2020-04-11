@@ -9,12 +9,12 @@
     <!-- <input type="text" v-model="keyterms" placeholder="This feature will be avalaible soon "> -->
 
     <v-tag-list>
-      <v-tag v-for="tag in tags.projects" :key="'projects-' + tag" category="projects">{{tag}}</v-tag>
+      <v-tag v-for="tag in getTagsList" :key="$route.name + tag" :category="$route.name">{{tag}}</v-tag>
     </v-tag-list>
 
     <v-grid :cols="3">
       <v-projectCard
-        v-for="(content, i) in pages[$route.name]"
+        v-for="(content, i) in getList[$route.name].slice(0, max)"
         :key="i"
         :r_action="$route.name"
         :title="content.name"
@@ -26,8 +26,8 @@
       ></v-projectCard>
     </v-grid>
 
-    <!-- <v-button :outlined="true" label="projects" :disabled="disabled.projects" @click.native="more('projects')">Load more</v-button>
-    -->
+    <v-button v-show="isDisplayed" :outlined="true" :label="$route.name"  @click.native="more()">Plus</v-button>
+
   </div>
 </template>
 
@@ -35,7 +35,7 @@
 import card_project from "@/components/molecules/card_project";
 import svgCurved from "@/components/atoms/svgCurved";
 import Button from "@/components/atoms/button";
-import Pages from "../assets/globalList.json";
+import { mapGetters } from 'vuex';
 
 export default {
   components: {
@@ -59,80 +59,24 @@ export default {
           excerpt: "Cette catégorie regroupe des ressources externes sélectionnées avec soin."
         }
       },
-      tags: {
-        projects: [
-                "Arduino",
-                "Processing",
-                "P5js",
-                "Pure-Data",
-                "Shaders",
-                "Unity",
-                "C#",
-                "Interaction",
-                "Graphisme",
-                "Game",
-                "Motion",
-                "Creative Coding", 
-                "Web",
-                "Print",
-                "Typographie",
-                "Risographie",
-                "Sound Design",
-                "Théorie",
-                "FR",
-                "EN"
-                ],
-        courses: ["Arduino",
-                "Processing",
-                "P5js",
-                "Pure-Data",
-                "Shaders",
-                "Unity",
-                "C#",
-                "Interaction",
-                "Graphisme",
-                "Game",
-                "Motion",
-                "Creative Coding", 
-                "Web",
-                "Print",
-                "Typographie",
-                "Risographie",
-                "Sound Design",
-                "Théorie",
-                "FR",
-                "EN"],
-        ressources: ["Arduino",
-                "Processing",
-                "P5js",
-                "Pure-Data",
-                "Shaders",
-                "Unity",
-                "C#",
-                "Interaction",
-                "Graphisme",
-                "Game",
-                "Motion",
-                "Creative Coding", 
-                "Web",
-                "Print",
-                "Typographie",
-                "Risographie",
-                "Sound Design",
-                "Théorie",
-                "FR",
-                "EN"]
-      }
+      max: 12,
+      isDisplayed : true
     };
   },
   computed: {
-    pages() {
-      return Pages;
-    },
-    category() {
-      return {
-        title: this
-      };
+    ...mapGetters(['getTagsList', 'getList'])
+  },
+  methods:{
+    more(){     
+      this.max += 3;
+      if (this.max > this.getList[this.$route.name].length){
+        this.isDisplayed = false ;
+      }
+    }
+  },
+  mounted(){
+    if (this.getList[this.$route.name].length < this.max){
+      this.isDisplayed = false;
     }
   }
 };
