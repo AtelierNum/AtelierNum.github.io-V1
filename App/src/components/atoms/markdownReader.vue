@@ -32,7 +32,7 @@ export default {
       setContent : 'setContent',
       setByUrl : 'setByUrl'
     }),
-    getReadmeFromExternal(){
+    getReadmeFromExternal(url){
       var xmlhttp;
       let _vue = this ;
       
@@ -43,7 +43,12 @@ export default {
       }
       xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-          _vue.readme = _vue.parseURL(xmlhttp.responseText, _vue.getContent.url) ;
+
+          if (url){
+            _vue.readme = _vue.parseURL(xmlhttp.responseText, url) ;
+          } else {
+            _vue.readme = _vue.parseURL(xmlhttp.responseText, _vue.getContent.url) ;
+          }
           _vue.md_loaded = true ;
           _vue.keyId ++ ;
           _vue.$emit('mdloaded', true)
@@ -85,49 +90,64 @@ export default {
             
               data = data.replace(new RegExp(repopath, 'g'), (correspondance, decalage) => {
                 if (data.substring(decalage - 2, decalage) == ']('){
+                  if (!this.internalLinks.includes(targetrepo)){
+                    this.internalLinks.push({path: targetrepo, recursive : false});
+                  }
                   return targetrepo ;
                 } else {
                   return repopath ;
                 }
               });
 
-              if (!this.internalLinks.includes(targetrepo)){
-                this.internalLinks.push(targetrepo);
+              
+
+            } else {
+              if (repopath.includes('https') || repopath.includes('www')){
+                // if a global url is given, we guess it's because it was wanted to show it on external source
+              } else {
+                if (repopath.includes('.md')){
+                  let recursiveRepo = this.getContent.url.replace(/readme.md/i,repopath);
+
+                  data = data.replace(new RegExp(repopath, 'g'), (correspondance, decalage) => {
+                    if (data.substring(decalage - 2, decalage) == ']('){
+                      if (!this.internalLinks.includes(recursiveRepo)){
+                        this.internalLinks.push({path: recursiveRepo, recursive : true});
+                      }
+                      return recursiveRepo ;
+
+                    } else {
+                      return repopath ;
+                    }
+                  });
+
+                  
+
+                }
+                // else should be recursive path to images
               }
             }
-          } else {
-            // if (repopath.includes('https') || repopath.includes('www')){
-            //   console.log('external link', repopath);
-            // } else {
-            //   if (repopath.includes('.md')){
-            //     console.log('should be recursive repo');
-            //   } else {
-            //     console.log('should be relative path to image');
-            //   }
-            // }
-            console.log('there is else')
-          }
+        } 
       })
       
 
       //  PARSE URL FOR CORRECT IMPORT IMAGES IN MARKDOWNS
-      let url_md = data.split('![') // target only images
+      // let url_md = data.split('![') // target only images
       
-      url_md.forEach( (string) => {
-        if (string.includes('](')){
-            let string_to_replace = string.split('](')[1].split(')')[0];
-            let path = string_to_replace.split('./')
-            let newUrl = `https://raw.githubusercontent.com/${author}/${repo}/master/${path[path.length - 1]}`;
+      // url_md.forEach( (string) => {
+      //   if (string.includes('](')){
+      //       let string_to_replace = string.split('](')[1].split(')')[0];
+      //       let path = string_to_replace.split('./')
+      //       let newUrl = `https://raw.githubusercontent.com/${author}/${repo}/master/${path[path.length - 1]}`;
 
-            data = data.replace(new RegExp(string_to_replace, 'g'), (correspondance, decalage) => {
-              if (data.substring(decalage - 2, decalage) == ']('){
-                return newUrl ;
-              } else {
-                return string_to_replace ;
-              }
-            });
-          }
-      })
+      //       data = data.replace(new RegExp(string_to_replace, 'g'), (correspondance, decalage) => {
+      //         if (data.substring(decalage - 2, decalage) == ']('){
+      //           return newUrl ;
+      //         } else {
+      //           return string_to_replace ;
+      //         }
+      //       });
+      //     }
+      // })
 
 
       // PARSE URL FOR BAD PERSONS WHO USE HTML BALISE TO IMPORT IMAGES 
@@ -156,17 +176,26 @@ export default {
       array.forEach( (node) => {
         if (Array.from(node.childNodes).length > 0 && ['ul', 'li', 'ol', 'p'].includes(node.localName)){ // needed to avoid to much revursioin because of code sections or others unwanted
           this.routerLinks(Array.from(node.childNodes));
-          
+        
         } else {
           if (node.localName == 'a'){
-            let path = this.internalLinks.find(link => link == node.href);
+            let path_test = this.internalLinks.find(link => link.path == node.href);
 
-            if (path != undefined){
-              node.addEventListener('click', (event) => {
-                this.setByUrl(path);
-                this.$router.push('/' + this.$route.name.split('_content')[0] + '/' + this.getContent.id)
-                event.preventDefault();
-              })
+            if (path_test.path != undefined){
+              if (path_test.recursive){
+                node.addEventListener('click', (event) => {
+                  console.log(path_test.path, this.$route)
+                  this.getReadmeFromExternal(path_test.path)
+                  this.$router.push('/' + this.$route.name.split('_content')[0] + '/' + this.getContent.id + '/' + 'something')
+                  event.preventDefault();
+                })
+              } else {
+                node.addEventListener('click', (event) => {
+                  this.setByUrl(path_test);
+                  this.$router.push('/' + this.$route.name.split('_content')[0] + '/' + this.getContent.id)
+                  event.preventDefault();
+                })
+              }
             }
           }
         }
@@ -175,12 +204,10 @@ export default {
   },
   watch: {
     $route(newval, oldval){
-      console.log(oldval, newval)
-      console.log(this.$route)
       this.getReadmeFromExternal();
       
     }
-  },
+  },  
   created(){
     if (this.getContent.url != undefined){
       this.getReadmeFromExternal();

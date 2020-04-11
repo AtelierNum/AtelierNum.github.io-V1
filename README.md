@@ -40,12 +40,32 @@ It will open a local server on a available port ( usually localhost:8080 or near
 
 * Use only one **H1** in your file
 * Don't create anchors with hard-coded links in html. Do instead :
+  
 ```markdown
 ## My title 
 
 [link to my title](My-title)
 ```
 
-* When mention another README in order to be displayed in this website, use a relative path, never a global (www.adress.com) one.
-* When mention another repo, just point to the repo adress. But don't include the link inside another tag than **ul, ol, li or p**.
+* When mention a README in order to be displayed in this website, use a relative path, never a global (www.adress.com) one.
+* When mention a readme you want to be displayed on github or another external source, use a global url.
+* When mention another internal repo, just point to the repo adress. But don't include the link inside another tag than **ul, ol, li or p** :
+  
+```markdown
+> authorized :
+* [a super link](github.com/[githubuser]/[repo_name])
+
+This is a super text where there is inside [a super link](github.com/[githubuser]/[repo_name]).
+
+> unauthorized :
+ ## [a super link](github.com/[githubuser]/[repo_name])
+
+ ```javascript
+    function superfunction(){
+        // content of my function
+    }
+    [a super link](github.com/[githubuser]/[repo_name])
+ ```
+```
+
 * 

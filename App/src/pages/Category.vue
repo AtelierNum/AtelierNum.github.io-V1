@@ -47,18 +47,15 @@ export default {
       category_resume: {
         projects: {
           title: "Projets",
-          excerpt:
-            "Vous pourrez trouver ici des rendus réalisés par les étudiants dans le cadre de cours ou workshops dispensés à l'atelier "
+          excerpt: "Vous pourrez trouver ici des rendus réalisés par les étudiants dans le cadre de cours ou workshops dispensés à l'atelier "
         },
         courses: {
           title: "Cours",
-          excerpt:
-            "Cette catégorie centralise des supports de cours et des ressouces internes à l'atelier sur divers sujets."
+          excerpt: "Cette catégorie centralise des supports de cours et des ressouces internes à l'atelier sur divers sujets."
         },
-        projects: {
+        ressources: {
           title: "Ressources",
-          excerpt:
-            "Cette catégorie regroupe des ressources externes sélectionnées avec soin."
+          excerpt: "Cette catégorie regroupe des ressources externes sélectionnées avec soin."
         }
       },
       tags: {

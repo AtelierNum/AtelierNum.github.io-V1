@@ -5,9 +5,15 @@ import globalList from '../assets/globalList.json'
 
 Vue.use(Router)
 
-let routes_courses = Object.keys(globalList).map( type => ({
+let repos = Object.keys(globalList).map( type => ({
   path: `${type}/:content`,
   name: type + '_content',
+  component: () => import('../pages/Documentation.vue'),
+})) 
+
+let subrepos = Object.keys(globalList).map( type => ({
+  path: `${type}/:content/:subcontent`,
+  name: type + '_subcontent',
   component: () => import('../pages/Documentation.vue'),
 })) 
 
@@ -33,12 +39,13 @@ export default new Router({
       component: () => import('../layout/AppLayout.vue'),
       children: [
         { path: '', name:'home', component: () => import('../pages/Index.vue') },
-        { path: '/mentions', name:'mentions', component: () => import('../pages/Mentions.vue') },
-        { path: '/about', name:'about', component: () => import('../pages/About.vue') },
-        { path: '/courses', name:'courses', component: () => import('../pages/Category.vue') },
-        { path: '/ressources', name:'ressources', component: () => import('../pages/Category.vue') },
-        { path: '/projects', name:'projects', component: () => import('../pages/Category.vue') },
-        ...routes_courses
+        { path: 'mentions', name:'mentions', component: () => import('../pages/Mentions.vue') },
+        { path: 'about', name:'about', component: () => import('../pages/About.vue') },
+        { path: 'courses', name:'courses', component: () => import('../pages/Category.vue') },
+        { path: 'ressources', name:'ressources', component: () => import('../pages/Category.vue') },
+        { path: 'projects', name:'projects', component: () => import('../pages/Category.vue') },
+        ...repos,
+        ...subrepos
       ]
     }
   ],

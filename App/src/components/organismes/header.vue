@@ -11,16 +11,16 @@
             </svg> -->
             <ul class="nav" >
                 <router-link to="/projects">
-                    <li>Projets</li>
+                    <li :class="$route.name == 'projects' ? 'activeCategory' : ''">Projets</li>
                 </router-link>
                 <router-link to="/courses">
-                    <li>Cours</li>
+                    <li :class="$route.name == 'courses' ? 'activeCategory' : ''">Cours</li>
                 </router-link>
                 <router-link to="/ressources">
-                    <li>Ressources</li>
+                    <li :class="$route.name == 'ressources' ? 'activeCategory' : ''">Ressources</li>
                 </router-link>
                 <router-link to="/about">
-                    <li>About</li>
+                    <li :class="$route.name == 'about' ? 'activeCategory' : ''">About</li>
                 </router-link>
             </ul>
         </div>       
@@ -91,6 +91,7 @@ export default {
             list-style: none;
             position: relative;
              cursor: pointer;
+
             &:after{
                 content: "";
                 position: absolute;
@@ -102,10 +103,17 @@ export default {
                 transition: all .3s ease;
                
             }
+
             &:hover{
                 &:after{
                     width:80%;
                 }
+            }
+        }
+
+        & .activeCategory {
+            &:after{
+                width:100%;
             }
         }
     }
