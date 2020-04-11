@@ -35,6 +35,10 @@ export default {
     getReadmeFromExternal(url){
       var xmlhttp;
       let _vue = this ;
+
+      if (_vue.md_loaded){
+        _vue.md_loaded = !_vue.md_loaded ;
+      }
       
       if (window.XMLHttpRequest) { // code for IE7+, Firefox, Chrome, Opera, Safari
         xmlhttp = new XMLHttpRequest();
@@ -44,7 +48,7 @@ export default {
       xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 
-          if (url){
+          if (url != undefined){
             _vue.readme = _vue.parseURL(xmlhttp.responseText, url) ;
           } else {
             _vue.readme = _vue.parseURL(xmlhttp.responseText, _vue.getContent.url) ;
@@ -60,7 +64,11 @@ export default {
         }
       }
 
-      xmlhttp.open("GET", this.getContent.url, true);
+      if (url != undefined){
+        xmlhttp.open("GET", url, true);
+      } else {
+        xmlhttp.open("GET", this.getContent.url, true);
+      }
       xmlhttp.send();
     },
     parseURL(data, url){
@@ -184,15 +192,18 @@ export default {
             if (path_test.path != undefined){
               if (path_test.recursive){
                 node.addEventListener('click', (event) => {
-                  console.log(path_test.path, this.$route)
                   this.getReadmeFromExternal(path_test.path)
-                  this.$router.push('/' + this.$route.name.split('_content')[0] + '/' + this.getContent.id + '/' + 'something')
+                  if (this.$route.params.subcontent){
+                    this.$router.push(this.$route.fullPath) ;
+                  } else {
+                    this.$router.push(this.$route.fullPath + '/something');
+                  }
                   event.preventDefault();
                 })
               } else {
                 node.addEventListener('click', (event) => {
                   this.setByUrl(path_test);
-                  this.$router.push('/' + this.$route.name.split('_content')[0] + '/' + this.getContent.id)
+                  this.$router.push(this.$route.fullPath + this.getContent.id)
                   event.preventDefault();
                 })
               }
@@ -202,12 +213,14 @@ export default {
       })
     }
   },
-  watch: {
-    $route(newval, oldval){
-      this.getReadmeFromExternal();
-      
+  watch :{
+    md_loaded(newval, oldval){
+      console.log('mdloaded : old', oldval, 'new', newval)
+    },
+    readme(newval, oldval){
+      console.log('readme : old', oldval, 'new', newval)
     }
-  },  
+  },
   created(){
     if (this.getContent.url != undefined){
       this.getReadmeFromExternal();
