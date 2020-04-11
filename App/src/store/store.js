@@ -12,7 +12,8 @@ const state = {
     courses : [],
     ressources : [],
     projects : []
-  }
+  },
+  tagsFilters : Object.assign({}, listJSON.tags)
 }
 
 
@@ -101,6 +102,9 @@ const getters = {
       ...state.list.projects.map( project => project.url),
       ...state.list.courses.map( course => course.url)
     ]
+  },
+  getTagList(state){
+    return state.tagsFilters;
   }
 }
 

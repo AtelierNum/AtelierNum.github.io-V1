@@ -124,7 +124,6 @@
 import card_project from '@/components/molecules/card_project'
 import svgCurved from '@/components/atoms/svgCurved'
 import Button from '@/components/atoms/button'
-import Pages from '../assets/globalList.json'
 import {mapGetters} from 'vuex'
 
 export default {
@@ -212,15 +211,12 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['getList']),
-    pages() {
-      return Pages
-    },
+    ...mapGetters(['getList'])
   },
   methods: {
     more(type){     
       this.max[type] += 3;
-      if (this.max[type] > this.pages[type].length){
+      if (this.max[type] > this.getList[type].length){
         this.disabled[type] = true ;
       }
     }
