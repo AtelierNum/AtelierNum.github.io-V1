@@ -128,10 +128,19 @@ export default {
 
                 } else { // else should be recursive path to images
                   //  PARSE URL FOR MARKDOWN-LIKE IMPORTS OF IMAGES
-                    let image_path = repopath.split('./');
-                    let newUrl = `https://raw.githubusercontent.com/${author}/${repo}/master/${image_path[image_path.length - 1]}`;
+                  let image_path = repopath.split('./');
+                  if (this.$route.params.subcontent != undefined){
+                    
+                    // https://raw.githubusercontent.com/AtelierNum/projet_jeu_electronique_1819/master/Punchers/images/coups.jpg
+                    // https://raw.githubusercontent.com/AtelierNum/projet_jeu_electronique_1819/master/images/PUNCHERS.gif
+                    console.log(repopath)
+                    var newUrl = `https://raw.githubusercontent.com/${author}/${repo}/master/${this.$route.params.subcontent}/${image_path[image_path.length - 1]}`;
+                  } else {
+                    var newUrl = `https://raw.githubusercontent.com/${author}/${repo}/master/${image_path[image_path.length - 1]}`;
                     // console.log(repopath, newUrl)
-                    data = data.replace(new RegExp(repopath, 'g'), (correspondance, decalage) => {
+                  }
+
+                  data = data.replace(new RegExp(repopath, 'g'), (correspondance, decalage) => {
                       if (data.substring(decalage - 2, decalage) == ']('){
                         return newUrl ;
                       } else {
@@ -199,7 +208,7 @@ export default {
                   if (this.$route.params.subcontent){
                     this.$router.push(this.$route.fullPath) ;
                   } else {
-                    this.$router.push(this.$route.fullPath + '/' + subcontentName.trim().toLowerCase());
+                    this.$router.push(this.$route.fullPath + '/' + subcontentName.trim());
                   }
                   event.preventDefault();
                 })
