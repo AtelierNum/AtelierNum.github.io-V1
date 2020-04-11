@@ -190,11 +190,6 @@ export default {
         }  
       }
     }
-  },
-  created(){
-    if (this.getContent.url == undefined || this.getContent.id != this.$route.params.id){
-      this.setContent(this.$route.params.id);
-    }
   }
 }
 </script>

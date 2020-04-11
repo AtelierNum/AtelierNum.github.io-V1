@@ -22,6 +22,7 @@
         :desc="content.desc"
         :thumbnailUrl="content.thumbnail"
         :tags="content.tags"
+        :externalLink=" $route.name == 'ressources' ? content.url : ''"
       ></v-projectCard>
     </v-grid>
 

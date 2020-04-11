@@ -91,7 +91,7 @@ import {mapActions} from 'vuex' ;
         if (this.r_action != ''){
 
           if (this.externalLink){
-            location.href= this.externalLink;
+            window.open(this.externalLink, '_blank');
           } else {
             this.setContent(this.id);
             this.$router.push('/' + this.r_action + '/' + this.id);

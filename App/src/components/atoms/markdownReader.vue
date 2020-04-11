@@ -25,7 +25,7 @@ export default {
     }
   },
   computed:{
-    ...mapGetters(['getContent', 'getList', 'getUrlofInternalContents'])
+    ...mapGetters(['getContent', 'getUrlofInternalContents'])
   },
   methods: {
     ...mapActions({
@@ -48,11 +48,8 @@ export default {
       xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 
-          if (url != undefined){
-            _vue.readme = _vue.parseURL(xmlhttp.responseText, url) ;
-          } else {
-            _vue.readme = _vue.parseURL(xmlhttp.responseText, _vue.getContent.url) ;
-          }
+          _vue.readme = _vue.parseURL(xmlhttp.responseText, url) ;
+
           _vue.md_loaded = true ;
           _vue.keyId ++ ;
           _vue.$emit('mdloaded', true)
@@ -128,12 +125,11 @@ export default {
                     }
                   });
 
-                  
-
-                } else {
-                    let image_path = repopath.split('./')
+                } else { // else should be recursive path to images
+                  //  PARSE URL FOR CORRECT IMPORT IMAGES IN MARKDOWNS
+                    let image_path = repopath.split('./');
                     let newUrl = `https://raw.githubusercontent.com/${author}/${repo}/master/${image_path[image_path.length - 1]}`;
-
+                    console.log(repopath, newUrl)
                     data = data.replace(new RegExp(repopath, 'g'), (correspondance, decalage) => {
                       if (data.substring(decalage - 2, decalage) == ']('){
                         return newUrl ;
@@ -142,37 +138,13 @@ export default {
                       }
                     });
                 }
-                // else should be recursive path to images
+                
               }
             }
         } 
       })
-      
-
-      //  PARSE URL FOR CORRECT IMPORT IMAGES IN MARKDOWNS
-      // let url_md = data.split('![') // target only images
-      
-      // url_md.forEach( (string) => {
-      //   if (string.includes('](')){
-      //       let string_to_replace = string.split('](')[1].split(')')[0];
-      //       let path = string_to_replace.split('./')
-      //       let newUrl = `https://raw.githubusercontent.com/${author}/${repo}/master/${path[path.length - 1]}`;
-
-      //       data = data.replace(new RegExp(string_to_replace, 'g'), (correspondance, decalage) => {
-      //         if (data.substring(decalage - 2, decalage) == ']('){
-      //           return newUrl ;
-      //         } else {
-      //           return string_to_replace ;
-      //         }
-      //       });
-      //     }
-      // })
-
-
       // PARSE URL FOR BAD PERSONS WHO USE HTML BALISE TO IMPORT IMAGES 
-
       let img_url =  data.split('<img');
-
       img_url.forEach( (string) => {
           if (string.includes('src="')){
               let string_to_replace = string.split('src="')[1].split('"')[0];
@@ -234,7 +206,13 @@ export default {
   },
   created(){
     if (this.getContent.url != undefined){
-      this.getReadmeFromExternal();
+      this.getReadmeFromExternal(this.getContent.url);
+    } else {
+      console.log('currentContent was not defined');
+      this.setContent(this.$route.params.content).then( () => {
+        console.log('current content should be defined now : ', this.getContent);
+        this.getReadmeFromExternal(this.getContent.url);
+      })
     }
   }
 }
