@@ -32,7 +32,11 @@
     
   <div/>
 
-    <h2 class="section-title"> Projets </h2>
+    <h2 class="section-title"> 
+      <router-link to="/projects">
+        Projets 
+      </router-link>
+    </h2>
 
     <v-tag-list>
       <v-tag v-for="tag in tags.projects" :key="'projects-' + tag" category="projects">{{tag}}</v-tag>
@@ -56,7 +60,11 @@
     <div class="spacer_height"></div> 
 
     
-    <h2 class="section-title"> Cours </h2>
+    <h2 class="section-title"> 
+      <router-link to="/courses">
+        Cours 
+      </router-link>
+    </h2>
 
     <v-tag-list>
       <!-- <v-tag category=>P5</v-tag>
@@ -84,7 +92,11 @@
     <div class="spacer_height"></div>     
 
 
-    <h2 class="section-title"> Ressources </h2>
+    <h2 class="section-title"> 
+      <router-link to="/ressources">
+        Ressources 
+      </router-link>
+    </h2>
 
     <v-tag-list>
       <v-tag v-for="tag in tags.ressources" :key="'ressources-' +tag" category="courses">{{tag}}</v-tag>

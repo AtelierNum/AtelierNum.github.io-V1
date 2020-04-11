@@ -177,6 +177,25 @@ export default {
               if (path_test.recursive){
                 node.addEventListener('click', (event) => {
                   this.getReadmeFromExternal(path_test.path)
+
+                  // let subcontentName = path_test.path.split('/');
+                  // subcontentName = subcontentName[subcontentName.length - 2];
+
+                  // let subthumbnail = this.readme.split('![')[1].split('](')[1].split(')')[0];
+
+                  // console.log(subcontentName, subthumbnail);
+
+                  // this.setContentByObject({
+                  //   author: this.getContent.author,
+                  //   url: path_test.path,
+                  //   tags: this.getContent.tags,
+                  //   name: subcontentName,
+                  //   id: subcontentName.trim().toLowerCase(),
+                  //   thumbnail: subthumbnail,
+                  //   lastupdate : this.getContent.lastupdate,
+                  //   desc: this.getContent.desc
+                  // })
+
                   if (this.$route.params.subcontent){
                     this.$router.push(this.$route.fullPath) ;
                   } else {

@@ -18,14 +18,26 @@ const state = {
 
 const mutations = {
   setContent(state, payload){
-    for (let type in state.list) {
-      let plop = state.list[type].find( content => content.id == payload );
+    for (let type of [state.list.projects, state.list.courses]) {
+      let plop = type.find( content => content.id == payload );
 
       if (plop != undefined){
         state.current_content = plop;
         return ;
       }
     }
+  },
+  setContentByObject(state, payload){
+    if (payload.url != undefined 
+      && payload.thumbnail != undefined 
+      && payload.author != undefined 
+      && payload.name != undefined 
+      && payload.tags != undefined
+      && payload.id != undefined
+      && payload.last_update != undefined
+      && payload.desc != undefined){
+        state.current_content = payload ;
+      }
   },
   setByUrl(state, payload){
     for (let type of [state.list.projects, state.list.courses]) {
@@ -38,7 +50,7 @@ const mutations = {
     }
   },
   filterContent(state, payload){
-    if (!state.filters[payload.category].includes(payload.tag)){
+    if (!state.filters[payload.category].includesauto(payload.tag)){
       state.filters[payload.category].push(payload.tag) ;
     }
   },
@@ -60,6 +72,9 @@ const mutations = {
 const actions = {
   setContent(context, payload){
       context.commit('setContent', payload);
+  },
+  setContentByObject(context, payload){
+    context.commit('setSubContent', payload)
   },
   filterContent(context, payload){
     context.commit('filterContent', payload);
