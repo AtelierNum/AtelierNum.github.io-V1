@@ -130,6 +130,17 @@ export default {
 
                   
 
+                } else {
+                    let image_path = repopath.split('./')
+                    let newUrl = `https://raw.githubusercontent.com/${author}/${repo}/master/${image_path[image_path.length - 1]}`;
+
+                    data = data.replace(new RegExp(repopath, 'g'), (correspondance, decalage) => {
+                      if (data.substring(decalage - 2, decalage) == ']('){
+                        return newUrl ;
+                      } else {
+                        return repopath ;
+                      }
+                    });
                 }
                 // else should be recursive path to images
               }
@@ -189,7 +200,7 @@ export default {
           if (node.localName == 'a'){
             let path_test = this.internalLinks.find(link => link.path == node.href);
 
-            if (path_test.path != undefined){
+            if (path_test != undefined){
               if (path_test.recursive){
                 node.addEventListener('click', (event) => {
                   this.getReadmeFromExternal(path_test.path)
@@ -215,10 +226,10 @@ export default {
   },
   watch :{
     md_loaded(newval, oldval){
-      console.log('mdloaded : old', oldval, 'new', newval)
+      // console.log('mdloaded : old', oldval, 'new', newval)
     },
     readme(newval, oldval){
-      console.log('readme : old', oldval, 'new', newval)
+      // console.log('readme : old', oldval, 'new', newval)
     }
   },
   created(){
