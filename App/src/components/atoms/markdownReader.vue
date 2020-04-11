@@ -130,7 +130,7 @@ export default {
                   //  PARSE URL FOR MARKDOWN-LIKE IMPORTS OF IMAGES
                     let image_path = repopath.split('./');
                     let newUrl = `https://raw.githubusercontent.com/${author}/${repo}/master/${image_path[image_path.length - 1]}`;
-                    console.log(repopath, newUrl)
+                    // console.log(repopath, newUrl)
                     data = data.replace(new RegExp(repopath, 'g'), (correspondance, decalage) => {
                       if (data.substring(decalage - 2, decalage) == ']('){
                         return newUrl ;
@@ -178,8 +178,8 @@ export default {
                 node.addEventListener('click', (event) => {
                   this.getReadmeFromExternal(path_test.path)
 
-                  // let subcontentName = path_test.path.split('/');
-                  // subcontentName = subcontentName[subcontentName.length - 2];
+                  let subcontentName = path_test.path.split('/');
+                  subcontentName = subcontentName[subcontentName.length - 2];
 
                   // let subthumbnail = this.readme.split('![')[1].split('](')[1].split(')')[0];
 
@@ -199,7 +199,7 @@ export default {
                   if (this.$route.params.subcontent){
                     this.$router.push(this.$route.fullPath) ;
                   } else {
-                    this.$router.push(this.$route.fullPath + '/something');
+                    this.$router.push(this.$route.fullPath + '/' + subcontentName.trim().toLowerCase());
                   }
                   event.preventDefault();
                 })

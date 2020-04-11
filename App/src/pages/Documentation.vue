@@ -89,6 +89,7 @@ export default {
       })
     },
     createIndex(md_childs){
+      this.index =  [];
         let higherTitle = 1 ;
         let h1_sections = md_childs.filter( child => child.localName == `h${higherTitle}`);
 
