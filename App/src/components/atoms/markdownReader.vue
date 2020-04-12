@@ -198,7 +198,6 @@ export default {
               }); 
           }
       })
-
       return data ;
     },
     routerLinks(array){
@@ -210,6 +209,7 @@ export default {
           if (node.localName == 'a'){
             let path_test = this.internalLinks.find(link => link.path == node.href);
 
+            // path to subrepos
             if (path_test != undefined){
               if (path_test.recursive){
                 node.addEventListener('click', (event) => {
@@ -232,8 +232,21 @@ export default {
                   event.preventDefault();
                 })
               }
+            } 
+          }
+
+          // change return home hard link to router links
+          if (this.$route.params.subcontent != undefined){
+
+            if (/..\/README.md/g.test(node.href)){
+              node.addEventListener('click', (event) => {
+                this.$router.push(this.$router.history.go(- 1));
+                console.log(this.$router)
+                event.preventDefault();
+              })
             }
           }
+
         }
       })
     }
