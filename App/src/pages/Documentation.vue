@@ -293,26 +293,29 @@ export default {
   top: 20vh;
   max-height:75vh;
   overflow-y:scroll;
-  scrollbar-width: none;
+  // scrollbar-width: none;
+  scrollbar-color :rgb(233, 233, 233)  #373D4A;
+  scrollbar-width: thin;
 
-  &::-webkit-scrollbar-thumb {
-    z-index:12;
+  // &::-webkit-scrollbar-thumb {
+  //   z-index:12;
 
-    position:absolute;
-    left: 0;
-    top: 0;
-    width: 12px;
-    height:100%;
-    background-color:#373D4A;
-    border-radius:4px;
-
-    background-color:rgb(233, 233, 233);
-  }
+  //   position:absolute;
+  //     left: 0;
+  //     top: 0;
+  //     width: 12px;
+  //     height:100%;
+  //     background-color:#373D4A;
+  //     border-radius:4px;
+  //   background-color:rgb(233, 233, 233);
+  // }
 
   /* invert side of scrollbar */
   transform:rotateY(180deg);
   -ms-transform:rotateY(180deg); /* IE 9 */
   -webkit-transform:rotateY(180deg); /* Safari and Chrome */
+
+  
 
   & > ul{
     min-width:70%;
@@ -338,6 +341,8 @@ export default {
       border-radius:4px;
       z-index:10;
     }
+
+    
   }
 
 
