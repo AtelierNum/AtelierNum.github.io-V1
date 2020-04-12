@@ -51,25 +51,11 @@ export default {
   name: 'DocumentationPage',
   data(){
     return{
-      index: [],
-      current : {
-        section : {
-          index : 0,
-          offsetTop : 0,
-        },
-        subsection : {
-          index : 0,
-          offsetTop : 0,
-        }
-
-      }
+      markdownChilds : []
     }
   },
   computed : {
-    ...mapGetters(['getContent']),
-    markdownChilds(){
-      return this.$children[1] ? Array.from(this.$children[1].$el.childNodes) : [];
-    }
+    ...mapGetters(['getContent'])
   },
   components:{
     'svg-curved' : svgCurved,
@@ -80,55 +66,13 @@ export default {
     ...mapActions({
       setContent : 'setContent'
     }),
-    moveToSection(index, el){
-      let scrollTarget = Array.from(this.$children[1].$el.childNodes).find( node => node.innerText == el) ;
-      this.current.section.index = index ; 
-      this.current.section.offsetTop = scrollTarget ; 
-
-      location.hash = '#' + this.hrefAnchor(el);
-    },
     waitingFunctions(){
       this.$nextTick( () => {
-        let md_childs = Array.from(this.$children[2].$el.childNodes);
-        this.$refs.indexnav.createIndex(md_childs);
-        this.setAnchor(md_childs);
+        this.markdownChilds = Array.from(this.$children[2].$el.childNodes);
+        this.$refs.indexnav.createIndex(this.markdownChilds);
+        this.setAnchor(this.markdownChilds);
         // this.setCopyCodeButtons();
       })
-    },
-    createIndex(md_childs){
-      this.index =  [];
-        let higherTitle = 1 ;
-        let h1_sections = md_childs.filter( child => child.localName == `h${higherTitle}`);
-
-        while (h1_sections.length < 2){
-          h1_sections = md_childs.filter( child => child.localName == `h${higherTitle}`);
-          higherTitle ++ ;
-        }
-
-        for (let w = 0 ; w < h1_sections.length ; w ++){
-
-            let i0 = md_childs.findIndex( (i) => i.innerText == h1_sections[w].innerText);
-
-            if (w == h1_sections.length - 1){
-              var indexSection = {
-                section : h1_sections[w].innerText,
-                offsetTop : h1_sections[w].offsetTop,
-                children : md_childs.slice(i0 + 1, md_childs.length).filter( child => child.localName == `h${higherTitle}`)
-              }
-            } else {
-              let i1 = md_childs.findIndex( (i) => i.innerText == h1_sections[w + 1].innerText);
-      
-              var indexSection = {
-                section : h1_sections[w].innerText,
-                offsetTop : h1_sections[w].offsetTop,
-                children : md_childs.slice(i0 + 1, i1).filter( child => child.localName == 'h3')
-              }
-            }
-
-            this.index.push(indexSection);
-        }
-
-        window.addEventListener('scroll', this.handleScroll);    
     },
     hrefAnchor(title){
       return title.split(' ').join('-'); 
@@ -162,41 +106,6 @@ export default {
 
           codesections[w].appendChild(copycode);
         }
-    },
-    handleScroll(event){
-
-      let currentnode = this.index.find( section => section.offsetTop > this.current.section.offsetTop);
-      
-      if (currentnode != undefined){
-        if (window.scrollY - (window.innerHeight / 2) > currentnode.offsetTop){
-          this.current.section.index = this.index.findIndex( section => section == currentnode);
-          this.current.section.offsetTop = currentnode.offsetTop; 
-          
-          if (this.index[this.current.section.index].children.length > 0){
-            this.current.subsection.index = 0 ;
-          
-          } else {
-            this.current.subsection.index = undefined;
-          }
-
-        } 
-        else {
-          let section = this.index.find( section => section.offsetTop == this.current.section.offsetTop)
-
-          // console.log(section, currentSubnode)
-
-          if (section != undefined ){
-            let currentSubnode = section.children.find( sub => sub.offsetTop > this.current.subsection.offsetTop);
-
-            if (currentSubnode != undefined){
-              if (window.scrollY - (window.innerHeight / 2) > currentSubnode.offsetTop){
-                this.current.subsection.index = section.children.findIndex( sub => sub.offsetTop == currentSubnode.offsetTop);
-                this.current.subsection.offsetTop = currentSubnode.offsetTop ;
-              }
-            }
-          }      
-        }  
-      }
     }
   }
 }
@@ -287,8 +196,6 @@ export default {
   align-self: stretch;
   justify-self: center;
 }
-
-
 
 .contentmd{
   padding: 0px 50px;

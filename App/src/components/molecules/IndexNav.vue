@@ -47,6 +47,7 @@ export default {
             this.current.section.index = index ; 
             this.current.section.offsetTop = scrollTarget ; 
 
+            console.log(scrollTarget);
             location.hash = '#' + this.hrefAnchor(el);
         },
         createIndex(md_childs){
