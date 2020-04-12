@@ -30,6 +30,7 @@ export default {
   methods: {
     ...mapActions({
       setContent : 'setContent',
+      setContentByObject : 'setContentByObject',
       setByUrl : 'setByUrl'
     }),
     getReadmeFromExternal(url){
@@ -57,6 +58,33 @@ export default {
           _vue.$nextTick(() => {
             Prism.highlightAll();
             _vue.routerLinks(Array.from(_vue.$children[0].$el.childNodes));
+
+            if (_vue.$route.params.subcontent != undefined){
+              let firstTitle = _vue.readme.slice(
+                _vue.readme.indexOf('#') + 2,
+                _vue.readme.indexOf('\n', _vue.readme.indexOf('#'))
+              );
+
+              // let subthumbnail = _vue.readme.slice(
+              //   _vue.readme.indexOf('!['),
+              //   _vue.readme.indexOf(')', _vue.readme.indexOf('!['))
+              // )
+
+              let subthumbnail = _vue.readme.split('![')[1].split('](')[1].split(')')[0];
+
+              console.log(firstTitle, subthumbnail);
+
+              _vue.setContentByObject({
+                author: _vue.getContent.author,
+                url: url,
+                tags: _vue.getContent.tags,
+                name: firstTitle,
+                id: firstTitle.trim(),
+                thumbnail: subthumbnail,
+                last_update : _vue.getContent.last_update,
+                desc: _vue.getContent.desc
+              })
+            }
           })
         }
       }
@@ -190,21 +218,6 @@ export default {
                   let subcontentName = path_test.path.split('/');
                   subcontentName = subcontentName[subcontentName.length - 2];
 
-                  // let subthumbnail = this.readme.split('![')[1].split('](')[1].split(')')[0];
-
-                  // console.log(subcontentName, subthumbnail);
-
-                  // this.setContentByObject({
-                  //   author: this.getContent.author,
-                  //   url: path_test.path,
-                  //   tags: this.getContent.tags,
-                  //   name: subcontentName,
-                  //   id: subcontentName.trim().toLowerCase(),
-                  //   thumbnail: subthumbnail,
-                  //   lastupdate : this.getContent.lastupdate,
-                  //   desc: this.getContent.desc
-                  // })
-
                   if (this.$route.params.subcontent){
                     this.$router.push(this.$route.fullPath) ;
                   } else {
@@ -226,11 +239,14 @@ export default {
     }
   },
   watch :{
-    md_loaded(newval, oldval){
-      // console.log('mdloaded : old', oldval, 'new', newval)
-    },
-    readme(newval, oldval){
-      // console.log('readme : old', oldval, 'new', newval)
+    $route(newval, oldval){
+      // reload readme on return (by browser feature)
+      if (newval.params.subcontent == undefined){
+        this.setContent(this.$route.params.content).then( () => {
+          console.log('route updated, readme should be also : ', this.getContent);
+          this.getReadmeFromExternal(this.getContent.url);
+        })
+      }
     }
   },
   created(){

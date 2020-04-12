@@ -75,7 +75,7 @@ const actions = {
       context.commit('setContent', payload);
   },
   setContentByObject(context, payload){
-    context.commit('setSubContent', payload)
+    context.commit('setContentByObject', payload)
   },
   filterContent(context, payload){
     context.commit('filterContent', payload);

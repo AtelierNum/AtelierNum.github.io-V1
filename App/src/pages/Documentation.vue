@@ -293,6 +293,21 @@ export default {
   top: 20vh;
   max-height:75vh;
   overflow-y:scroll;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar-thumb {
+    z-index:12;
+
+    position:absolute;
+    left: 0;
+    top: 0;
+    width: 12px;
+    height:100%;
+    background-color:#373D4A;
+    border-radius:4px;
+
+    background-color:rgb(233, 233, 233);
+  }
 
   /* invert side of scrollbar */
   transform:rotateY(180deg);
