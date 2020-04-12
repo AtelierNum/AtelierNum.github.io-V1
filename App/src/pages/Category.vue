@@ -26,6 +26,11 @@
       ></v-projectCard>
     </v-grid>
 
+    <div v-show="getList[$route.name].length == 0 ? true : false" class="placeholder_nocards">
+      <img src="@/../public/img/roi_loth_gif.gif" alt="citation latine du roi loth, kaamelott">
+      <p> Ce qui ne veut rien dire, mais et si on essayait de retirer un filtre ?</p>
+    </div>
+
     <v-button v-show="isDisplayed" :outlined="true" :label="$route.name"  @click.native="more()">Plus</v-button>
 
   </div>
@@ -126,6 +131,28 @@ export default {
   }
   &.grid-2 {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.placeholder_nocards{
+  margin-left:auto;
+  margin-right:auto;
+  text-align:center;
+
+  display:inline_block;
+  max-width:max-content;
+  padding:50px 50px;
+  // background: linear-gradient(to bottom, #ffffff 30% , #F7F7F7);
+  background-color: #F7F7F7;
+  border-radius:12px;
+
+  & p {
+    margin-top:30px;
+    font-family: 'Open Sans';
+    font-size:18px;
+    font-weight:400;
+    color:rgb(131, 130, 138);
+    max-width:280px;
   }
 }
 
