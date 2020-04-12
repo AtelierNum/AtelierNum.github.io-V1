@@ -14,7 +14,7 @@
   </section>  
 
   <section class="contentCourse">
-    <div class="indexBar">
+    <!-- <div class="indexBar">
       <ul>
         <li v-for="(section, i) in index" :key="i" :class="current.section.index == i ? 'currentSection' : 'top'" >        
             <a @click="moveToSection(i, section.section)">{{section.section}}</a>
@@ -28,7 +28,9 @@
             </ul>  
         </li>
       </ul>
-    </div>
+    </div> -->
+
+    <index-nav ref="indexnav" :parentChilds="markdownChilds"></index-nav>
 
     <div class="separator"></div>
 
@@ -41,11 +43,12 @@
 <script>
 import svgCurved from '@/components/atoms/svgCurved'
 import mdReader from '@/components/atoms/markdownReader'
+import indexNav from '@/components/molecules/IndexNav.vue'
 // import VueClipboard from 'vue-clipboard2'
 import {mapGetters, mapActions} from 'vuex';
 
 export default {
-  name: 'CoursePage',
+  name: 'DocumentationPage',
   data(){
     return{
       index: [],
@@ -64,10 +67,14 @@ export default {
   },
   computed : {
     ...mapGetters(['getContent']),
+    markdownChilds(){
+      return this.$children[1] ? Array.from(this.$children[1].$el.childNodes) : [];
+    }
   },
   components:{
     'svg-curved' : svgCurved,
-    'md-reader' : mdReader
+    'md-reader' : mdReader,
+    'index-nav' : indexNav
   },
   methods:{
     ...mapActions({
@@ -82,8 +89,8 @@ export default {
     },
     waitingFunctions(){
       this.$nextTick( () => {
-        let md_childs = Array.from(this.$children[1].$el.childNodes);
-        this.createIndex(md_childs);
+        let md_childs = Array.from(this.$children[2].$el.childNodes);
+        this.$refs.indexnav.createIndex(md_childs);
         this.setAnchor(md_childs);
         // this.setCopyCodeButtons();
       })
@@ -282,133 +289,6 @@ export default {
 }
 
 
-.indexBar{
-  display:flex;
-  justify-content: center;
-  padding-left:20px;
-  width:calc(25% - 12px);
-  height:min-content;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 20vh;
-  max-height:75vh;
-  overflow-y:scroll;
-  // scrollbar-width: none;
-  scrollbar-color :rgb(233, 233, 233)  #373D4A;
-  scrollbar-width: thin;
-
-  // &::-webkit-scrollbar-thumb {
-  //   z-index:12;
-
-  //   position:absolute;
-  //     left: 0;
-  //     top: 0;
-  //     width: 12px;
-  //     height:100%;
-  //     background-color:#373D4A;
-  //     border-radius:4px;
-  //   background-color:rgb(233, 233, 233);
-  // }
-
-  /* invert side of scrollbar */
-  transform:rotateY(180deg);
-  -ms-transform:rotateY(180deg); /* IE 9 */
-  -webkit-transform:rotateY(180deg); /* Safari and Chrome */
-
-  
-
-  & > ul{
-    min-width:70%;
-    width:95%;
-    height:min-content;
-    position:relative;
-    transform:rotateY(-180deg);
-    -ms-transform:rotateY(180deg); /* IE 9 */
-    -webkit-transform:rotateY(180deg); /* Safari and Chrome */
-
-    &:hover{
-      cursor:pointer;
-    }
-
-    &::before {
-      content : ' ';
-      position:absolute;
-      left: 0;
-      top: 0;
-      width: 12px;
-      height:100%;
-      background-color:#373D4A;
-      border-radius:4px;
-      z-index:10;
-    }
-
-    
-  }
-
-
-  & > ul > li {
-    text-align: left;
-    font-family: 'Open Sans';
-    font-weight:600;
-    font-size:18px;
-    color: #373D4A;
-    position: relative;
-    margin-bottom:10px;
-    padding-left:30px;
-    padding-right:30px;
-    transition: .2s ease-out;
-
-    & > ul {
-      display:none;
-      transform:translateY(-10px);
-      opacity: 0;
-      transition: .3s ease-out;
-    }
-  }
-
-
-  .currentSection{
-    border-radius:8px;
-    background: linear-gradient(var(--color-gray01), 100%, rgba(255, 255, 255, 0) 120%);
-    font-weight: 700;
-    font-size:20px;
-    transition: .3s ease-out;
-
-    &::after{
-      content:' ';
-      position:relatve;
-      color:#373D4A;
-      // mask-image: url('../assets/icons/triangle_right.svg');
-
-      position: absolute;
-      right:10px;
-      top:0;
-    }
-
-    & > ul{
-      display:block;
-      transform: translateY(0);
-      opacity: 1;
-      padding-left:20px;
-      transition: .3s ease-out;
-
-      & > li {
-        margin-top:10px;
-        text-align: left;
-        font-family: 'Open Sans';
-        font-weight:400;
-        font-size:.88em;
-        color: #373D4A;
-        transition: .3s ease-out;
-      }
-    }
-
-    .currentSubsection {
-      font-weight: 700;
-      transition: .3s ease-out;
-    }
-  }
-}
 
 .contentmd{
   padding: 0px 50px;
