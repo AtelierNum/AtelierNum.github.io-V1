@@ -65,14 +65,7 @@ export default {
                 _vue.readme.indexOf('\n', _vue.readme.indexOf('#'))
               );
 
-              // let subthumbnail = _vue.readme.slice(
-              //   _vue.readme.indexOf('!['),
-              //   _vue.readme.indexOf(')', _vue.readme.indexOf('!['))
-              // )
-
               let subthumbnail = _vue.readme.split('![')[1].split('](')[1].split(')')[0];
-
-              console.log(firstTitle, subthumbnail);
 
               _vue.setContentByObject({
                 author: _vue.getContent.author,
@@ -91,7 +84,7 @@ export default {
 
       if (url != undefined){
         xmlhttp.open("GET", url, true);
-      } else {
+      } else { // to avoid erros
         xmlhttp.open("GET", this.getContent.url, true);
       }
       xmlhttp.send();
@@ -148,7 +141,6 @@ export default {
                         this.internalLinks.push({path: recursiveRepo, recursive : true});
                       }
                       return recursiveRepo ;
-
                     } else {
                       return repopath ;
                     }
@@ -158,14 +150,9 @@ export default {
                   //  PARSE URL FOR MARKDOWN-LIKE IMPORTS OF IMAGES
                   let image_path = repopath.split('./');
                   if (this.$route.params.subcontent != undefined){
-                    
-                    // https://raw.githubusercontent.com/AtelierNum/projet_jeu_electronique_1819/master/Punchers/images/coups.jpg
-                    // https://raw.githubusercontent.com/AtelierNum/projet_jeu_electronique_1819/master/images/PUNCHERS.gif
-                    console.log(repopath)
                     var newUrl = `https://raw.githubusercontent.com/${author}/${repo}/master/${this.$route.params.subcontent}/${image_path[image_path.length - 1]}`;
                   } else {
                     var newUrl = `https://raw.githubusercontent.com/${author}/${repo}/master/${image_path[image_path.length - 1]}`;
-                    // console.log(repopath, newUrl)
                   }
 
                   data = data.replace(new RegExp(repopath, 'g'), (correspondance, decalage) => {
@@ -181,6 +168,7 @@ export default {
             }
         } 
       })
+
       // PARSE URL FOR HTML IMPORTS OF IMAGES
       let img_url =  data.split('<img');
       img_url.forEach( (string) => {
@@ -228,7 +216,7 @@ export default {
               } else {
                 node.addEventListener('click', (event) => {
                   this.setByUrl(path_test);
-                  this.$router.push(this.$route.fullPath + this.getContent.id)
+                  this.$router.push(this.$route.fullPath.slice(0, this.$route.fullPath.lastIndexOf('/')) + this.getContent.id)
                   event.preventDefault();
                 })
               }
@@ -237,11 +225,9 @@ export default {
 
           // change return home hard link to router links
           if (this.$route.params.subcontent != undefined){
-
-            if (/..\/README.md/g.test(node.href)){
+            if (/..\/README.md/ig.test(node.href)){
               node.addEventListener('click', (event) => {
                 this.$router.push(this.$router.history.go(- 1));
-                console.log(this.$router)
                 event.preventDefault();
               })
             }
@@ -256,7 +242,6 @@ export default {
       // reload readme on return (by browser feature)
       if (newval.params.subcontent == undefined){
         this.setContent(this.$route.params.content).then( () => {
-          console.log('route updated, readme should be also : ', this.getContent);
           this.getReadmeFromExternal(this.getContent.url);
         })
       }
@@ -266,9 +251,7 @@ export default {
     if (this.getContent.url != undefined){
       this.getReadmeFromExternal(this.getContent.url);
     } else {
-      console.log('currentContent was not defined');
       this.setContent(this.$route.params.content).then( () => {
-        console.log('current content should be defined now : ', this.getContent);
         this.getReadmeFromExternal(this.getContent.url);
       })
     }

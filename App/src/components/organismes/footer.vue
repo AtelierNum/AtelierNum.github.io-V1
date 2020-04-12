@@ -14,6 +14,7 @@
         <div>
             <div class="socials instagram"><a href="https://www.instagram.com/ateliernum/"></a></div>
             <div class="socials discord"><a href="https://discord.gg/tF6qz8v"></a></div>
+            <div class="socials github"><a href="https://github.com/AtelierNum"></a></div>
         </div>
 
         <router-link class="legals" to="/mentions">Crédits et mentions légales</router-link>
@@ -112,4 +113,8 @@ export default {
     background-position: 0;
 }
 .discord { background-image: url('~/icons/socials/discord_logo.svg') }
+.github{ 
+    background-size:100%;
+    background-image: url('~/icons/socials/github_logo.svg');
+}
 </style>

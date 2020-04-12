@@ -20,5 +20,7 @@
   text-decoration: none;
   list-style: none;
   margin-left:0;
+
+  scrollbar-color :#373D4A  #1C1C1C;
 }
 </style>

@@ -51,7 +51,7 @@ export default {
     padding: 0 30px;
 
     &:hover{
-        background-color: #1C1C1C;
+        background-color: rgb(126, 126, 145);
         transition: background .3s ease, color .2s ease;
         color: #F7F7F7;
         cursor: pointer;
@@ -59,7 +59,7 @@ export default {
 }
 
 .activated {
-    background-color: #1C1C1C;
-    color: #F7F7F7;
+    background-color: #1C1C1C !important;
+    color: #F7F7F7 !important;
 }
 </style>
