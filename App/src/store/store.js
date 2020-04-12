@@ -44,6 +44,8 @@ const mutations = {
     for (let type of [state.list.projects, state.list.courses]) {
       let plop = type.find( content => content.url == payload );
 
+      console.log(payload, plop)
+
       if (plop != undefined){
         state.current_content = plop;
         return ;

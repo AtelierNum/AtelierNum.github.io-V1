@@ -201,7 +201,7 @@ export default {
             if (path_test != undefined){
               if (path_test.recursive){
                 node.addEventListener('click', (event) => {
-                  this.getReadmeFromExternal(path_test.path)
+                  this.getReadmeFromExternal(path_test.path);
 
                   let subcontentName = path_test.path.split('/');
                   subcontentName = subcontentName[subcontentName.length - 2];
@@ -215,8 +215,8 @@ export default {
                 })
               } else {
                 node.addEventListener('click', (event) => {
-                  this.setByUrl(path_test);
-                  this.$router.push(this.$route.fullPath.slice(0, this.$route.fullPath.lastIndexOf('/')) + this.getContent.id)
+                  this.setByUrl(path_test.path);
+                  this.$router.push(this.$route.fullPath.slice(0, this.$route.fullPath.lastIndexOf('/') + 1) + this.getContent.id)
                   event.preventDefault();
                 })
               }
