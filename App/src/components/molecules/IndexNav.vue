@@ -9,7 +9,9 @@
             :key="k" 
             @click="moveToSection(i, subsection.innerText)" 
             :class="current.subsection.index == i ? 'currentSubsection' : ''"
-            >{{subsection.innerText}}</li>
+            >
+            <a @click="moveToSection(i, subsection.innerText)">{{subsection.innerText}}</a>
+            </li>
         </ul>  
     </li>
     </ul>
@@ -46,8 +48,6 @@ export default {
             let scrollTarget = this.parentChilds.find( node => node.innerText == el) ;
             this.current.section.index = index ; 
             this.current.section.offsetTop = scrollTarget ; 
-
-            console.log(scrollTarget);
             location.hash = '#' + this.hrefAnchor(el);
         },
         createIndex(md_childs){
