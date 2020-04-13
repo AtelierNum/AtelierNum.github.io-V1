@@ -7,10 +7,8 @@
             <li 
             v-for="(subsection,k) in section.children" 
             :key="k" 
-            @click="moveToSection(i, subsection.innerText)" 
-            :class="current.subsection.index == i ? 'currentSubsection' : ''"
-            >
-            <a @click="moveToSection(i, subsection.innerText)">{{subsection.innerText}}</a>
+            :class="current.subsection.index == k ? 'currentSubsection' : ''">
+                <a @click="moveToSection(i, section.section, k, subsection.innerText)" >{{subsection.innerText}}</a>
             </li>
         </ul>  
     </li>
@@ -44,11 +42,21 @@ export default {
         }
     },
     methods : {
-        moveToSection(index, el){
-            let scrollTarget = this.parentChilds.find( node => node.innerText == el) ;
-            this.current.section.index = index ; 
-            this.current.section.offsetTop = scrollTarget ; 
-            location.hash = '#' + this.hrefAnchor(el);
+        moveToSection(i, el, k, sub_el){
+            if (sub_el != undefined){
+                if (k == 0){ // in case user open the dropdown and click directly on a subsection, we have to set also the parent one
+                    this.current.section.index = i ; 
+                    this.current.section.offsetTop = this.parentChilds.find( node => node.innerText == el) ; 
+                }
+                this.current.subsection.index = k;
+                this.current.subsection.offsetTop = this.parentChilds.find( node => node.innerText == sub_el) ;
+                location.hash = '#' + this.hrefAnchor(sub_el);
+
+            } else {
+                this.current.section.index = i ; 
+                this.current.section.offsetTop = this.parentChilds.find( node => node.innerText == el) ; 
+                location.hash = '#' + this.hrefAnchor(el);
+            }
         },
         createIndex(md_childs){
             this.index =  [];
