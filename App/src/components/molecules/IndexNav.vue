@@ -1,8 +1,10 @@
 <template>
 <div class="indexBar">
     <ul>
-    <li v-for="(section, i) in index" :key="i" :class="current.section.index == i ? 'currentSection' : 'top'" >        
+    <li v-for="(section, i) in index" :key="i" :class="current.section.index == i ? 'currentSection' : openedSections.includes(i) ? 'openedSection' : 'top'" >        
         <a @click="moveToSection(i, section.section)">{{section.section}}</a>
+        <div v-if="section.children.length > 0" class="triangle" @click="openSection(i)"></div>
+
         <ul v-if="section.children.length > 0">
             <li 
             v-for="(subsection,k) in section.children" 
@@ -38,10 +40,23 @@ export default {
                     index : 0,
                     offsetTop : 0,
                 }
-            }
+            },
+            openedSections : []
+        }
+    },
+    computed: {
+        sectionClasses(){
+
         }
     },
     methods : {
+        openSection(index){
+            if(this.openedSections.includes(index)){
+                this.openedSections.splice(this.openedSections.indexOf(index), 1);
+            } else {
+                this.openedSections.push(index)
+            }
+        },
         moveToSection(i, el, k, sub_el){
             if (sub_el != undefined){
                 if (k == 0){ // in case user open the dropdown and click directly on a subsection, we have to set also the parent one
@@ -133,7 +148,6 @@ export default {
 .indexBar{
   display:flex;
   justify-content: center;
-  padding-left:20px;
   width:calc(25% - 12px);
   height:min-content;
   position: -webkit-sticky;
@@ -204,40 +218,25 @@ export default {
     margin-bottom:10px;
     padding-left:30px;
     padding-right:30px;
+    border-radius:8px;
     transition: .2s ease-out;
+
+    & .triangle{
+      background: no-repeat center / contain  url('~/icons/triangle_right.svg');
+
+      position: absolute;
+      right:5px;
+      top:2px;
+      width:22px;
+      height:22px;
+      transition: .2s ease-out;
+    }
 
     & > ul {
       display:none;
       transform:translateY(-10px);
-      opacity: 0;
-      transition: .3s ease-out;
-    }
-  }
-
-
-  .currentSection{
-    border-radius:8px;
-    background: linear-gradient(var(--color-gray01), 100%, rgba(255, 255, 255, 0) 120%);
-    font-weight: 700;
-    font-size:20px;
-    transition: .3s ease-out;
-
-    &::after{
-      content:' ';
-      position:relatve;
-      color:#373D4A;
-      // mask-image: url('../assets/icons/triangle_right.svg');
-
-      position: absolute;
-      right:10px;
-      top:0;
-    }
-
-    & > ul{
-      display:block;
-      transform: translateY(0);
-      opacity: 1;
       padding-left:20px;
+      opacity: 0;
       transition: .3s ease-out;
 
       & > li {
@@ -249,6 +248,42 @@ export default {
         color: #373D4A;
         transition: .3s ease-out;
       }
+    }
+  }
+
+  .openedSection{
+    transition: .3s ease-out;
+
+    & .triangle {
+        transform:rotate(90deg);
+        transition: .2s ease-out;
+    }
+
+    & > ul{
+      display:block;
+      transform: translateY(0);
+      opacity: 1;
+      transition: .3s ease-out;    
+    }
+  }
+
+
+  .currentSection{
+    background: linear-gradient(var(--color-gray01), 100%, rgba(255, 255, 255, 0) 120%);
+    font-weight: 700;
+    font-size:20px;
+    transition: .3s ease-out;
+
+    & .triangle {
+        transform:rotate(90deg);
+        transition: .2s ease-out;
+    }
+
+    & > ul{
+      display:block;
+      transform: translateY(0);
+      opacity: 1;
+      transition: .3s ease-out;    
     }
 
     .currentSubsection {
