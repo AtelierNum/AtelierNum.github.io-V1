@@ -1,7 +1,7 @@
 <template>
 <div class="indexBar">
     <ul>
-    <li v-for="(section, i) in index" :key="i" :class="current.section.index == i ? 'currentSection' : openedSections.includes(i) ? 'openedSection' : 'top'" >        
+    <li v-for="(section, i) in index" :key="i" :class="sectionClasses(i)" >        
         <a @click="moveToSection(i, section.section)">{{section.section}}</a>
         <div v-if="section.children.length > 0" class="triangle" @click="openSection(i)"></div>
 
@@ -44,30 +44,43 @@ export default {
             openedSections : []
         }
     },
-    computed: {
-        sectionClasses(){
-
-        }
-    },
     methods : {
+        sectionClasses(i){
+            if (this.current.section.index == i){
+                if (this.openedSections.includes(i)){
+                    return 'currentSection openedSection';
+                } else {
+                    return 'currentSection';
+                }
+            } else {
+                if (this.openedSections.includes(i)){
+                    return 'openedSection';
+                } else {
+                    return 'top';
+                }
+            }
+        },
         openSection(index){
             if(this.openedSections.includes(index)){
                 this.openedSections.splice(this.openedSections.indexOf(index), 1);
             } else {
-                this.openedSections.push(index)
+                this.openedSections.push(index);
             }
         },
         moveToSection(i, el, k, sub_el){
             if (sub_el != undefined){
-                if (k == 0){ // in case user open the dropdown and click directly on a subsection, we have to set also the parent one
+                 // in case user open the dropdown and click directly on a subsection, we have to set also the parent one
+                if (this.current.section.index != i){
                     this.current.section.index = i ; 
-                    this.current.section.offsetTop = this.parentChilds.find( node => node.innerText == el) ; 
+                    this.current.section.offsetTop = this.parentChilds.find( node => node.innerText == el) ;
                 }
+
                 this.current.subsection.index = k;
                 this.current.subsection.offsetTop = this.parentChilds.find( node => node.innerText == sub_el) ;
                 location.hash = '#' + this.hrefAnchor(sub_el);
 
             } else {
+                this.openSection(i); // in case of sub_el defined, it means that user already open the section, so ne need to do it again
                 this.current.section.index = i ; 
                 this.current.section.offsetTop = this.parentChilds.find( node => node.innerText == el) ; 
                 location.hash = '#' + this.hrefAnchor(el);
@@ -273,18 +286,6 @@ export default {
     font-weight: 700;
     font-size:20px;
     transition: .3s ease-out;
-
-    & .triangle {
-        transform:rotate(90deg);
-        transition: .2s ease-out;
-    }
-
-    & > ul{
-      display:block;
-      transform: translateY(0);
-      opacity: 1;
-      transition: .3s ease-out;    
-    }
 
     .currentSubsection {
       font-weight: 700;
