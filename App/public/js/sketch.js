@@ -56,7 +56,7 @@ export function main(p5){
 		canvas.style.width = "1920px";
 
         p5.noFill()
-        p5.background(255)
+        p5.background(0)
         p5.colorMode(p5.HSB)
         p5.stroke(290, 82, 78)
 	}
@@ -66,11 +66,12 @@ export function main(p5){
 		//push()
 		//fill(255,15)
 		//rect(-width/2,-height/2,width,height)
-		//pop()
+        //pop()
 
 		p5.push()
-		p5.fill(267, 9, 13, .03)
-		p5.rotate(p5.map(p5.sin(hueVal), -1, 1, 0, p5.TWO_PI * 4))
+        p5.fill(267, 9, 13, .03)
+        p5.noStroke();
+		// p5.rotate(p5.map(p5.sin(hueVal), -1, 1, 0, p5.TWO_PI * 4))
 		p5.box(1000)
 		//box(map(cos(hueVal * 6), -1, 1, 0, 1000))
 		p5.pop()
@@ -78,7 +79,8 @@ export function main(p5){
 
 		hueVal += 0.02;
 		let hue = p5.map(p5.cos(hueVal), -1, 1, 290, 360)
-		p5.stroke(hue, 82, 78)
+        p5.stroke(hue, 82, 78)
+        p5.noFill();
 		
 
 		for (let obj of objects){

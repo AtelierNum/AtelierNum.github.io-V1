@@ -45,7 +45,12 @@ export default {
 <style>
 .p5Canvas{
   transform-origin: top left;
-  transform: scale(2,2)
+}
+
+canvas{
+    width:100% !important;
+    height:100% !important;
+    background-color: rgb(28,28,30);
 }
 
 .image_container{
