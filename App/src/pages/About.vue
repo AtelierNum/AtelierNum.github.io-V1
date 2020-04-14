@@ -12,7 +12,7 @@
         Le code source de ce site est entièrement open-source, disponible sur <a href="https://github.com/AtelierNum/AtelierNum.github.io/tree/src">Github</a>.
     </p>
 
-    <p> Le programme d'accueil à été réalisé avec <a href="https://p5js.org">p5js</a> par <b>Simon Renault</b>. </p>
+    <p> Le programme d'accueil à été réalisé avec <a href="https://p5js.org">p5js</a> par <a href="www.raphaelperraud.com">Raphaël Perraud</a>. </p>
 
     <div class="faces">
         <div class="perso_card superpromaster"> 
