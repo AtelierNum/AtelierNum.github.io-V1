@@ -2,7 +2,7 @@
     "ressources": [
         {
             "name": "Cat like coding",
-            "id": "clc",
+            "id": "cat_like_coding",
             "tags": [
                 "Unity",
                 "C#",
@@ -15,7 +15,7 @@
         },
         {
             "name": "The book of shaders",
-            "id": "bos",
+            "id": "book_of_shaders",
             "tags": [
                 "Shaders",
                 "Creative Coding",
@@ -42,7 +42,7 @@
         },
         {
             "name": "Creative coding essentials",
-            "id": "cc_essentials",
+            "id": "creative_coding_essentials",
             "tags": [
                 "Processing",
                 "Creative Coding",
