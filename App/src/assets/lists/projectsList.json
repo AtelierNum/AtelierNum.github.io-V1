@@ -2,7 +2,7 @@
     "projects": [
         {
             "name": "Workshop Code Créatif 2020",
-            "id": "wkshp_cc_2020",
+            "id": "workshop_code_creatif_1920",
             "tags": [
                 "Processing",
                 "Interaction",
@@ -17,7 +17,7 @@
         },
         {
             "name": "Projet gestes de l'ennui 2019-2020",
-            "id": "gestes_de_lennui_1920",
+            "id": "projet_gestes_de_l_ennui_1920",
             "tags": [
                 "P5js",
                 "Graphisme",
@@ -33,7 +33,7 @@
         },
         {
             "name": "Projet patatap 2019-2020",
-            "id": "patatap_1920",
+            "id": "projet_patatap_1920",
             "tags": [
                 "P5js",
                 "Creative Coding",
@@ -49,7 +49,7 @@
         },
         {
             "name": "Workshop game from scratch 2019",
-            "id": "game_from_scratch_19",
+            "id": "workshop_gamefromscratch_2019",
             "tags": [
                 "Processing",
                 "Game",
@@ -63,7 +63,7 @@
         },
         {
             "name": "Projet motifs génératifs 2019",
-            "id": "generative_patterns_2019",
+            "id": "projet_generative-patterns_2019",
             "tags": [
                 "P5js",
                 "Creative Coding",
@@ -79,7 +79,7 @@
         },
         {
             "name": "Workshop Code Créatif 2019",
-            "id": "wkshp_cc_2019",
+            "id": "workshop_code_creatif_1819",
             "tags": [
                 "Processing",
                 "Creative Coding",
@@ -94,7 +94,7 @@
         },
         {
             "name": "Projet jeux électroniques 2018-2019",
-            "id": "electronics_1819",
+            "id": "projet_jeu_electronique_1819",
             "tags": [
                 "Arduino",
                 "Interaction",
@@ -109,7 +109,7 @@
         },
         {
             "name": "Projet patatap 2018-2019",
-            "id": "patatap_1820",
+            "id": "projet_patatap_1819",
             "tags": [
                 "P5js",
                 "Creative Coding",
@@ -125,7 +125,7 @@
         },
         {
             "name": "Dis-information signal 2018",
-            "id": "dis_information",
+            "id": "projet_dis-information_signals_1819",
             "tags": [
                 "Arduino",
                 "Interaction", 
@@ -140,7 +140,7 @@
         },
         {
             "name": "Workshop game from scratch 2018",
-            "id": "game_from_scratch_18",
+            "id": "workshop_gamefromscratch_2018",
             "tags": [
                 "Processing",
                 "Game",

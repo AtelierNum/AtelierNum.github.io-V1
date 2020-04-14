@@ -2,7 +2,7 @@
     "courses": [
         {
             "name": "Introduction Arduino",
-            "id": "Introduction_Arduino",
+            "id": "introduction_arduino",
             "tags": [
                 "Arduino",
                 "Interaction",
@@ -17,7 +17,7 @@
         },
         {
             "name": "Introduction à p5js",
-            "id": "Introduction_p5js",
+            "id": "introduction_p5js",
             "tags": [
                 "P5js",
                 "Creative Coding",
@@ -32,7 +32,7 @@
         },
         {
             "name": "Introduction à Pure-Data",
-            "id": "Introduction_Pure_Data",
+            "id": "introduction_pure_pata",
             "tags": [
                 "Pure-Data",
                 "Sound Design",
@@ -46,7 +46,7 @@
         },
         {
             "name": "Introduction à Processing",
-            "id": "Introduction_Processing",
+            "id": "introduction_processing",
             "tags": [
                 "Processing",
                 "Creative Coding",
@@ -62,7 +62,7 @@
         },
         {
             "name": "Transformation d'images",
-            "id": "image_alteration",
+            "id": "p5js_image_alteration",
             "tags": [
                 "P5js",
                 "Creative Coding",
@@ -97,7 +97,7 @@
         },
         {
             "name": "Motifs génératifs",
-            "id": "generative_patterns",
+            "id": "p5js-designing-interactive-patterns",
             "tags": [
                 "P5js",
                 "Creative Coding",
@@ -114,7 +114,7 @@
         },
         {
             "name": "Patatap",
-            "id": "patatap",
+            "id": "p5js_codecreatif",
             "tags": [
                 "P5js",
                 "Creative Coding",
@@ -131,7 +131,7 @@
         },
         {
             "name": "Gestes de l'ennui",
-            "id": "boredom_gestures",
+            "id": "p5js_gestes_de_l_ennui",
             "tags": [
                 "P5js",
                 "Processing",
@@ -148,7 +148,7 @@
         },
         {
             "name": "Workshop Processing community day - Processing",
-            "id": "pcd_processing",
+            "id": "workshop_processing_PCD2019",
             "tags": [
                 "Processing",
                 "Creative Coding",
@@ -163,7 +163,7 @@
         },
         {
             "name": "Workshop Processing community day - P5js",
-            "id": "pcd_p5js",
+            "id": "workshop_p5js_PCD2019",
             "tags": [
                 "P5js",
                 "Creative Coding",
@@ -179,7 +179,7 @@
         },
         {
             "name": "Sound Design references et pratiques",
-            "id": "sound_design",
+            "id": "sound_design_references_practices",
             "tags": [
                 "Sound Design",
                 "Théorie",
@@ -193,7 +193,7 @@
         },
         {
             "name": "Game From Scratch",
-            "id": "game_from_scratch",
+            "id": "processing_physics_game_workshop",
             "tags": [
                 "Processing",
                 "Interaction",
@@ -208,7 +208,7 @@
         },
         {
             "name": "Ressource for Entomologik workshop ",
-            "id": "entomologik_workshop",
+            "id": "workshop_entomologik_processing-arduino",
             "tags": [
                 "Processing",
                 "Creative Coding",
