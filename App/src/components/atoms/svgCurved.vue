@@ -44,12 +44,15 @@ export default {
 
 <style>
 .p5Canvas{
-  transform-origin: top left;
+    z-index:-1;
+    position:relative;
+    transform-origin: top left;
 }
 
 canvas{
     width:100% !important;
     height:100% !important;
+    min-height: 870px;
     background-color: rgb(28,28,30);
 }
 
