@@ -171,6 +171,7 @@ export default {
   position: absolute;
   top: 340px;
   left: 50px;
+  z-index:10
 }
 
 .spacerY{

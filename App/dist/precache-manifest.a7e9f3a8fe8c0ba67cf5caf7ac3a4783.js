@@ -12,12 +12,12 @@ self.__precacheManifest = [
     "url": "robots.txt"
   },
   {
-    "revision": "df84ac63d2e2aa9a1194acdd10a1aeac",
-    "url": "js/sketchs/sketch.js"
-  },
-  {
     "revision": "bc9c71d4d774beb1959eb38429889342",
     "url": "js/sketchs/index.html"
+  },
+  {
+    "revision": "df84ac63d2e2aa9a1194acdd10a1aeac",
+    "url": "js/sketchs/sketch.js"
   },
   {
     "revision": "a11d1f548a9bd8f99a674ce99e820d2c",
@@ -88,16 +88,16 @@ self.__precacheManifest = [
     "url": "js/chunk-3a165d58.becd4986.js"
   },
   {
+    "revision": "1c8a54f25d101bdc607cec7228247a9a",
+    "url": "icons/socials/discord_logo.svg"
+  },
+  {
     "revision": "4df7f120f2d9952d54911aaf89042cb6",
     "url": "icons/socials/github_logo.svg"
   },
   {
     "revision": "5b5846090d932223c9d39ec4d32133c9",
     "url": "icons/socials/instagram.svg"
-  },
-  {
-    "revision": "1c8a54f25d101bdc607cec7228247a9a",
-    "url": "icons/socials/discord_logo.svg"
   },
   {
     "revision": "084e6118b7302c403739be96c6c194ac",
