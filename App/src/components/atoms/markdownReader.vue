@@ -113,9 +113,9 @@ export default {
 
             let repopath = path.split(')')[0];
 
-            // case path to another repo listed in projects or courses
-            let correspondance = credentials_paths.find(teststring => (repopath.includes(teststring.author) && repopath.includes(teststring.repo)));
-              if (correspondance != undefined){
+            // case path to another repo listed in projects or courses, 'includes github.com' to be sure to target repos, not github pages
+            let correspondance = credentials_paths.find(teststring => (repopath.includes(teststring.author) && repopath.includes(teststring.repo) && repopath.includes('github.com')));
+              if (correspondance != undefined){ 
                 let targetrepo = `https://raw.githubusercontent.com/${correspondance.author}/${correspondance.repo}/master/README.md`  
               
                 data = data.replace(new RegExp(repopath, 'g'), (correspondance, decalage) => {
