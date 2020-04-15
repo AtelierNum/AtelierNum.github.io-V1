@@ -72,8 +72,8 @@ export default {
 
         border-radius:50px;
         background-size: 100px 100px;
-        background-image: url('~/icons/logo/logo@1x.png');
-        box-shadow: 0 0 8px rgba(0, 0, 0, .08)
+        background-image: url('~/img/logo_ateliernum.png');
+        box-shadow: 0 0 8px rgba(0, 0, 0, .32)
     }
 
     .nav{
