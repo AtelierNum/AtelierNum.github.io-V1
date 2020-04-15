@@ -44,28 +44,53 @@ It will open a local server on a available port ( usually localhost:8080 or near
 ```markdown
 ## My title 
 
-[link to my title](My-title)
+[link to my title](#My-title)
 ```
 
-* When mention a README in order to be displayed in this website, use a relative path, never a global (www.adress.com) one.
-* When mention a readme you want to be displayed on github or another external source, use a global url.
-* When mention another internal repo, just point to the repo adress. But don't include the link inside another tag than **ul, ol, li or p** :
-  
+* You can go from one readme to another by creating relative links :
+
 ```markdown
+[go to this page inside another folder](anotherFolder/anotherReadme.md)
+```
+
+```markdown
+[go up to home page](../Readme.md)
+```
+
+
+* When mention a README in order to be displayed in this website, use a relative path, never a global (www.address.com) one.
+
+* When mention a readme you want to be displayed on github or another external source, use a global url.
+
+* When mention another internal repo, just point to the repo address. But don't include the link inside another tag than **ul, ol, li or p** :
+
 > authorized :
+```markdown
+
 * [a super link](github.com/[githubuser]/[repo_name])
 
 This is a super text where there is inside [a super link](github.com/[githubuser]/[repo_name]).
+````
 
 > unauthorized :
+```markdown
  ## [a super link](github.com/[githubuser]/[repo_name])
+```
 
  ```javascript
     function superfunction(){
         // content of my function
     }
     [a super link](github.com/[githubuser]/[repo_name])
- ```
-```
 
-* 
+ ```
+
+
+* Feature enable for iframes :
+you have to write in a parent div with a video_container class. Remove default sizes given by Youtube or Vimeo :
+```html
+<div class="video_container">
+   <iframe ></iframe>
+</div>
+```
+It will display it with the maximum width of the parent component ( aka markdownReader ), conserving the 16/9 ratio. Tested with a Vimeo Iframe.
