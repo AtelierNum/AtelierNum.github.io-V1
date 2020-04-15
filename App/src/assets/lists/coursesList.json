@@ -6,11 +6,24 @@
             "tags": [
                 "Arduino",
                 "Interaction",
-                "FR",
+                "FR"
+            ],
+            "desc": "Ressource arduino sous forme de cookbook : connecter des capteurs, faire bouger des choses et alumer des lumières",
+            "url": "https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/README.md",
+            "thumbnail": "https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/assets/set_neopixels_rgb.gif",
+            "last_update": "28/10/19",
+            "author": "b2renger"
+        },
+        {
+            "name": "Introduction Arduino",
+            "id": "introduction_arduino",
+            "tags": [
+                "Arduino",
+                "Interaction",
                 "EN"
             ],
             "desc": "Cookbook style resssource for arduino, learn how to connect sensors, move and lights up things !",
-            "url": "https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/README.md",
+            "url": "https://raw.githubusercontent.com/b2renger/Introduction_Arduino/english/README.md",
             "thumbnail": "https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/assets/set_neopixels_rgb.gif",
             "last_update": "28/10/19",
             "author": "b2renger"
