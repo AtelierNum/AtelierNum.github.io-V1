@@ -225,18 +225,28 @@ export default {
                   event.preventDefault();
                 })
               }
-            } 
-          }
-
-          // change return home hard link to router links
-          if (this.$route.params.subcontent != undefined){
-            if (/..\/README.md/ig.test(node.href)){
+            }
+            
+            // change return home hard link to router links
+            if (this.$route.params.subcontent != undefined){
+              if (/..\/README.md/ig.test(node.href)){
+                node.addEventListener('click', (event) => {
+                  this.$router.push(this.$router.history.go(- 1));
+                  event.preventDefault();
+                })
+              }
+            }
+            
+            // avoid hard replacement of hash in location because we use hash mode now
+            if (node.href.includes('#')){
               node.addEventListener('click', (event) => {
-                this.$router.push(this.$router.history.go(- 1));
-                event.preventDefault();
-              })
+                  this.$router.replace(this.$route.path + '#' + node.href.split('#')[1] );
+                  event.preventDefault();
+                })
             }
           }
+
+          
 
         }
       })

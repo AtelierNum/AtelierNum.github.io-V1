@@ -77,13 +77,13 @@ export default {
 
                 this.current.subsection.index = k;
                 this.current.subsection.offsetTop = this.parentChilds.find( node => node.innerText == sub_el) ;
-                location.hash = '#' + this.hrefAnchor(sub_el);
+                this.$router.replace(this.$route.path + '#' + this.hrefAnchor(sub_el) );
 
             } else {
                 this.openSection(i); // in case of sub_el defined, it means that user already open the section, so ne need to do it again
                 this.current.section.index = i ; 
                 this.current.section.offsetTop = this.parentChilds.find( node => node.innerText == el) ; 
-                location.hash = '#' + this.hrefAnchor(el);
+                this.$router.replace(this.$route.path + '#' + this.hrefAnchor(el) );
             }
         },
         createIndex(md_childs){

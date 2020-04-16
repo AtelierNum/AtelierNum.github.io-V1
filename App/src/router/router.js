@@ -30,7 +30,7 @@ let subrepos = Object.keys(globalList).map( type => ({
 
 
 export default new Router({
-  mode: 'history',
+  mode: 'hash',
   base: process.env.BASE_URL,
   routes: [
     {
