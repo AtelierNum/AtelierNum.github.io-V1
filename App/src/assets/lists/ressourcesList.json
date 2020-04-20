@@ -1,6 +1,239 @@
 {
     "ressources": [
         {
+            "name": "Picular",
+            "id": "picular",
+            "tags": [
+                "Graphisme",
+                "Theorie",
+                "Outil",
+                "Couleur",
+                "EN"
+            ],
+            "desc": "Like google but for colors",
+            "url": "https://picular.co/",
+            "thumbnail": "data:image/png;base64,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",
+            "last_update": "20/04/20"
+        },
+        {
+            "name": "Learning Synths",
+            "id": "learning_synths",
+            "tags": [
+                "Sound Design",
+                "Theorie",
+                "EN"
+            ],
+            "desc": "Abbleton Live in browser introduction to sound synthesis ! e.g. How to build synths. ",
+            "url": "https://learningsynths.ableton.com/",
+            "thumbnail": "https://ableton-production.imgix.net/help/learning-synths.jpg",
+            "last_update": "20/04/20"
+        },
+        {
+            "name": "Learning Music",
+            "id": "learning_music",
+            "tags": [
+                "Sound Design",
+                "Theorie",
+                "EN"
+            ],
+            "desc": "Abbleton Live in browser introduction to making electronic music ! ",
+            "url": "https://learningmusic.ableton.com/",
+            "thumbnail": "https://ableton-learningmusic.imgix.net/kick.jpg",
+            "last_update": "20/04/20"
+        },
+        {
+            "name": "Poly",
+            "id": "poly",
+            "tags": [
+                "Graphisme",
+                "3D",
+                "EN"
+            ],
+            "desc": "Colaborative bank of 3D models by google",
+            "url": "https://poly.google.com/",
+            "thumbnail": "https://www.gstatic.com/vr/poly/logo_cropped.svg",
+            "last_update": "20/04/20"
+        },
+        {
+            "name": "ZMorph academy",
+            "id": "zmorph_academy",
+            "tags": [
+                "3D",
+                "Fabrication",
+                "EN"
+            ],
+            "desc": "Learn how to use the zmorph from the workshop with this online ressource. 3D printing, laser engraving or CNC milling.",
+            "url": "https://academy.zmorph3d.com/",
+            "thumbnail": "https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=width:705/https://www.filepicker.io/api/file/iVG8mAaQtGiZ2c6bXghh",
+            "last_update": "20/04/20"
+        },
+        {
+            "name": "AI Education by MIT",
+            "id": "ai_education_by_mit",
+            "tags": [
+                "Machine Learning",
+                "Theorie",
+                "EN"
+            ],
+            "desc": "Theorical ressources and desambiguation about machine learning and artificial intelligence",
+            "url": "https://aieducation.mit.edu/",
+            "thumbnail": "https://aieducation.mit.edu/images/banner2.jpg",
+            "last_update": "20/04/20"
+        },
+        {
+            "name": "RunwayML",
+            "id": "runwayml",
+            "tags": [
+                "Machine Learning",
+                "EN"
+            ],
+            "desc": "The swiss knife of machine learning. No code needed but it might help in some cases...",
+            "url": "https://runwayml.com/",
+            "thumbnail": "https://runwayml.com/static/dir-d118dd3456be5087dffc6d0eb1278da3.jpg",
+            "last_update": "20/04/20"
+        },
+        {
+            "name": "ml5js",
+            "id": "ml5js",
+            "tags": [
+                "Web",
+                "Interaction",
+                "Machine Learning",
+                "Creative Coding",
+                "EN"
+            ],
+            "desc": "Friendly Machine Learning for the web. Probably the simplest way to get started with interaction design projects using ML.",
+            "url": "https://ml5js.org/",
+            "thumbnail": "https://learn.ml5js.org/docs/_media/reference__header-neural-network.png",
+            "last_update": "20/04/20"
+        },
+        {
+            "name": "Machine Learning for Artists",
+            "id": "machine_learning_for_artists",
+            "tags": [
+                "Interaction",
+                "Machine Learning",
+                "Creative Coding",
+                "EN"
+            ],
+            "desc": "ml4a is a collection of free educational resources devoted to machine learning for artists.",
+            "url": "https://ml4a.github.io/",
+            "thumbnail": "https://ml4a.github.io/images/classes/opendot/thumbnail_06.png",
+            "last_update": "20/04/20"
+        },
+        {
+            "name": "Axidraw + Processing by Julien V3ga",
+            "id": "axidraw_processing",
+            "tags": [
+                "Processing",
+                "Graphisme",
+                "Print",
+                "Creative Coding",
+                "EN"
+            ],
+            "desc": "A tutorial on how to use a axidraw with processing to print beautiful generative artworks.",
+            "url": "https://www.generativehut.com/post/axidraw-processing",
+            "thumbnail": "https://static.wixstatic.com/media/895a2e_e3ed935dc7d742e485aefb270540d02c~mv2.jpg/v1/fill/w_1480,h_1973,al_c,q_90,usm_0.66_1.00_0.01/895a2e_e3ed935dc7d742e485aefb270540d02c~mv2.webp",
+            "last_update": "20/04/20"
+        },
+        {
+            "name": "Processing for Raspberry PI",
+            "id": "processing_for_raspberry_pi",
+            "tags": [
+                "Processing",
+                "Interaction",
+                "Creative Coding",
+                "EN"
+            ],
+            "desc": "Create projects with processing on the raspberry pi handheld computer. ",
+            "url": "https://pi.processing.org/tutorial/",
+            "thumbnail": "https://pi.processing.org/tutorial/capacitive-touch-interface/processing-capacitive-touch-simple.jpg",
+            "last_update": "20/04/20"
+        },
+        {
+            "name": "Tyler Hobbs essays about creative coding",
+            "id": "solving_sol",
+            "tags": [
+                "Graphisme",
+                "Creative Coding",
+                "Theorie",
+                "EN"
+            ],
+            "desc": "Tyler Hobbs is a generative artist producing images from code, and he writes essays about it !",
+            "url": "https://tylerxhobbs.com/essays",
+            "thumbnail": "https://images.squarespace-cdn.com/content/v1/5c12933f365f02733c923e4e/1580787598903-OJPZSN9XO14MTLBIKCHB/ke17ZwdGBToddI8pDm48kC-8L_lcZHTLXY62uC4ZxftZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpzazLHhqnYQpFtlWcKkzEhkoXATh7P0KMQhcqcm-FSwhyseGc75yFc6Zmv6P6wBNeo/banner.jpg?format=1500w",
+            "last_update": "20/04/20"
+        },
+        {
+            "name": "Solving sol",
+            "id": "solving_sol",
+            "tags": [
+                "Web",
+                "Graphisme",
+                "Creative Coding",
+                "EN"
+            ],
+            "desc": " An open project to implement Sol LeWitt's instructions in JavaScript. Sol LeWitt was an American artist often regarded as the founder of Conceptual and Minimal art. Some of his most famous works were wall drawings for which he only provided instructions.",
+            "url": "http://solvingsol.com/",
+            "thumbnail": "http://solvingsol.com/screenshots/thumbs/797-doolittle-index.html.png",
+            "last_update": "20/04/20"
+        },
+        {
+            "name": "Generative Artistry",
+            "id": "generative_artistry",
+            "tags": [
+                "Web",
+                "Graphisme",
+                "Creative Coding",
+                "EN"
+            ],
+            "desc": "Learn how to code generative visual with pure javascript",
+            "url": "https://generativeartistry.com/tutorials/",
+            "thumbnail": "https://generativeartistry.com/img/06-circle-packing.png",
+            "last_update": "20/04/20"
+        },
+        {
+            "name": "Sketching with maths and quasi physics",
+            "id": "sketching_with_maths_and_quasi_physics",
+            "tags": [
+                "P5js",
+                "Interaction",
+                "Creative Coding",
+                "EN"
+            ],
+            "desc": "Kynd's tutorials on maths and physics for the web with p5js with interactive examples and code samples.",
+            "url": "https://kynd.github.io/p5sketches/index.html",
+            "thumbnail": "https://pbs.twimg.com/tweet_video_thumb/DCxfsYRXcAM3I_f.jpg",
+            "last_update": "20/04/20"
+        },
+        {
+            "name": "The Nature of Code",
+            "id": "the_nature_of_code",
+            "tags": [
+                "Processing",
+                "Interaction",
+                "Creative Coding",
+                "EN"
+            ],
+            "desc": "Daniel Shiffman's nature of code online book. Learn how to code with maths, physics system and even neural networks. ",
+            "url": "https://natureofcode.com/",
+            "thumbnail": "https://natureofcode.com/book/imgs/chapter08/ch08_01.png",
+            "last_update": "20/04/20"
+        },
+        {
+            "name": "Arduino remote learning",
+            "id": "arduino_remote_learning",
+            "tags": [
+                "Arduino",
+                "Interaction",
+                "EN"
+            ],
+            "desc": "Arduino official learning center",
+            "url": "https://www.arduino.cc/remotelearning",
+            "thumbnail": "https://www.datocms-assets.com/25112/1586963646-icons.png",
+            "last_update": "20/04/20"
+        },
+        {
             "name": "Cat like coding",
             "id": "cat_like_coding",
             "tags": [
