@@ -84,14 +84,6 @@ self.__precacheManifest = [
     "url": "img/roi_loth_gif.gif"
   },
   {
-    "revision": "a574348589bf998ac3e3767bdabbd80c",
-    "url": "icons/logo/lgo@2x.png"
-  },
-  {
-    "revision": "a11d1f548a9bd8f99a674ce99e820d2c",
-    "url": "js/sketch.js"
-  },
-  {
     "revision": "1c8a54f25d101bdc607cec7228247a9a",
     "url": "icons/socials/discord_logo.svg"
   },
@@ -100,12 +92,20 @@ self.__precacheManifest = [
     "url": "icons/logo/logo@1x.png"
   },
   {
-    "revision": "4df7f120f2d9952d54911aaf89042cb6",
-    "url": "icons/socials/github_logo.svg"
+    "revision": "a11d1f548a9bd8f99a674ce99e820d2c",
+    "url": "js/sketch.js"
+  },
+  {
+    "revision": "a574348589bf998ac3e3767bdabbd80c",
+    "url": "icons/logo/lgo@2x.png"
   },
   {
     "revision": "5b5846090d932223c9d39ec4d32133c9",
     "url": "icons/socials/instagram.svg"
+  },
+  {
+    "revision": "4df7f120f2d9952d54911aaf89042cb6",
+    "url": "icons/socials/github_logo.svg"
   },
   {
     "revision": "084e6118b7302c403739be96c6c194ac",
@@ -124,16 +124,16 @@ self.__precacheManifest = [
     "url": "img/logo_ateliernum.png"
   },
   {
-    "revision": "b6216d61c03e6ce0c9aea6ca7808f7ca",
-    "url": "robots.txt"
-  },
-  {
     "revision": "df84ac63d2e2aa9a1194acdd10a1aeac",
     "url": "js/sketchs/sketch.js"
   },
   {
     "revision": "bc9c71d4d774beb1959eb38429889342",
     "url": "js/sketchs/index.html"
+  },
+  {
+    "revision": "b6216d61c03e6ce0c9aea6ca7808f7ca",
+    "url": "robots.txt"
   },
   {
     "revision": "b4653a5fac810b436dd985c5569116fa",
