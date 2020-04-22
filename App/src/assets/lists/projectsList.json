@@ -1,6 +1,21 @@
 {
     "projects": [
         {
+            "name": "Projet jeux électroniques 2019-2020",
+            "id": "projet_jeu_electronique_1920",
+            "tags": [
+                "Arduino",
+                "Interaction",
+                "Game",
+                "FR"
+            ],
+            "desc": "Projets réalisés par les étudiants en troisième année de design d'interaction @lecolededesign. Code et documentation. ",
+            "url": "https://raw.githubusercontent.com/AtelierNum/projet_jeu_electronique_1920/master/README.md",
+            "thumbnail": "https://raw.githubusercontent.com/AtelierNum/projet_jeu_electronique_1920/master/Witching_Hour/gif.gif",
+            "last_update": "22/04/20",
+            "author": "étudiants en design d'interaction"
+        },
+        {
             "name": "Workshop Code Créatif 2020",
             "id": "workshop_code_creatif_1920",
             "tags": [
@@ -25,7 +40,7 @@
                 "Arduino",
                 "FR"
             ],
-            "desc": "Projets réalisés par les étudiants en 3ème année de design graphic @lecolededesign.",
+            "desc": "Projets réalisés par les étudiants en 3ème année de design graphique @lecolededesign.",
             "url": "https://raw.githubusercontent.com/AtelierNum/projet_gestes_de_l_ennui_1920/master/README.MD",
             "thumbnail": "https://raw.githubusercontent.com/AtelierNum/projet_gestes_de_l_ennui_1920/master/CORNIER_VICTOR_KAAN_NICOLAS/screen.png",
             "last_update": "23/03/20",
@@ -71,7 +86,7 @@
                 "Interaction",
                 "FR"
             ],
-            "desc": "Projets réalisés par les étudiants en 3ème année de design graphic @lecolededesign.",
+            "desc": "Projets réalisés par les étudiants en 3ème année de design graphique @lecolededesign.",
             "url": "https://raw.githubusercontent.com/AtelierNum/projet_generative-patterns_2019/master/README.md",
             "thumbnail": "https://raw.githubusercontent.com/AtelierNum/projet_generative-patterns_2019/master/Gillet_Pauline/GIF.gif",
             "last_update": "12/09/19",
