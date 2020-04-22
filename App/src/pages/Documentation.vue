@@ -75,7 +75,7 @@ export default {
       })
     },
     hrefAnchor(title){
-      return title.split(' ').join('-'); 
+      return title.split(' ').join('-');
     },
     setAnchor(md_childs){
       let titles = md_childs.filter( child => ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].includes(child.localName));

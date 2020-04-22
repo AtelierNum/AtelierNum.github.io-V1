@@ -180,15 +180,25 @@ export default {
           if (string.includes('src="')){
               let string_to_replace = string.split('src="')[1].split('"')[0];
               let path = string_to_replace.split('./')
-              let newUrl = `https://raw.githubusercontent.com/${author}/${repo}/master/${path[path.length - 1]}`;
-              
-              data = data.replace(new RegExp(string_to_replace, 'g'), (correspondance, decalage) => {
-                if (data.substring(decalage - 5, decalage) == 'src="'){
-                  return newUrl ;
+
+              if (!path[path.length-1].includes("http") || !path[path.length-1] .includes('www')){
+
+                if (this.$route.params.subcontent != undefined){
+                  var newUrl = `https://raw.githubusercontent.com/${author}/${repo}/master/${this.$route.params.subcontent}/${path[path.length - 1]}`;
                 } else {
-                  return string_to_replace ;
+                  var newUrl = `https://raw.githubusercontent.com/${author}/${repo}/master/${path[path.length - 1]}`;
                 }
-              }); 
+
+                console.log(path, newUrl)
+                
+                data = data.replace(new RegExp(string_to_replace, 'g'), (correspondance, decalage) => {
+                  if (data.substring(decalage - 5, decalage) == 'src="'){
+                    return newUrl ;
+                  } else {
+                    return string_to_replace ;
+                  }
+                }); 
+              }  
           }
       })
       return data ;
@@ -212,16 +222,16 @@ export default {
                   subcontentName = subcontentName[subcontentName.length - 2];
 
                   if (this.$route.params.subcontent){
-                    this.$router.push(this.$route.fullPath) ;
+                    this.$router.push(this.$route.path) ;
                   } else {
-                    this.$router.push(this.$route.fullPath + '/' + subcontentName.trim());
+                    this.$router.push(this.$route.path + '/' + subcontentName.trim());
                   }
                   event.preventDefault();
                 })
               } else {
                 node.addEventListener('click', (event) => {
                   this.setByUrl(path_test.path);
-                  this.$router.push(this.$route.fullPath.slice(0, this.$route.fullPath.lastIndexOf('/') + 1) + this.getContent.id)
+                  this.$router.push(this.$route.path.slice(0, this.$route.path.lastIndexOf('/') + 1) + this.getContent.id)
                   event.preventDefault();
                 })
               }
