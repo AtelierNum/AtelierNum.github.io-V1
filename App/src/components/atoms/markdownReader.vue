@@ -265,6 +265,7 @@ export default {
   watch :{
     $route(newval, oldval){
       // reload readme on return (by browser feature)
+      console.log(newval)
       if (newval.params.subcontent == undefined){
         this.setContent(this.$route.params.content).then( () => {
           this.getReadmeFromExternal(this.getContent.url);

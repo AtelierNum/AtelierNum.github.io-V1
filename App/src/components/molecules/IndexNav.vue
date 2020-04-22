@@ -120,7 +120,7 @@ export default {
             window.addEventListener('scroll', this.handleScroll);    
         },
         hrefAnchor(title){
-            return title.split(' ').join('-') 
+            return title.split(/[^\w]/g).join('_') ;
         },
         handleScroll(event){
             let currentnode = this.index.find( section => section.offsetTop > this.current.section.offsetTop);
