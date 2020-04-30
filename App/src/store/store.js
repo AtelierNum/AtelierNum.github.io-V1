@@ -28,6 +28,31 @@ const mutations = {
       }
     }
   },
+  setByUrl(state, payload){
+    for (let type of [state.list.projects, state.list.courses]) {
+      let plop = type.find( content => content.url == payload );
+      
+      if (plop != undefined){
+        state.current_content = plop;
+
+        return ;
+      }
+    }
+  },
+  setSubContent(state, payload){
+    for (let type of [state.list.projects, state.list.courses]) {
+      let plop = type.find( content => content.id == payload.id );
+      
+      if (plop != undefined){
+        state.current_content = plop;
+        let newurl = state.current_content.url.split('/')
+        newurl.splice(newurl.length - 1, 0, payload.subcontent)
+        state.current_content.url = newurl.join('/')
+
+        return ;
+      }
+    }
+  },
   setContentByObject(state, payload){
     if (payload.url != undefined 
       && payload.thumbnail != undefined 
@@ -39,18 +64,6 @@ const mutations = {
       && payload.desc != undefined){
         state.current_content = payload ;
       }
-  },
-  setByUrl(state, payload){
-    for (let type of [state.list.projects, state.list.courses]) {
-      let plop = type.find( content => content.url == payload );
-
-      console.log(payload, plop)
-
-      if (plop != undefined){
-        state.current_content = plop;
-        return ;
-      }
-    }
   },
   filterContent(state, payload){
     if (!state.filters[payload.category].includes(payload.tag)){
@@ -74,7 +87,10 @@ const mutations = {
 
 const actions = {
   setContent(context, payload){
-      context.commit('setContent', payload);
+    context.commit('setContent', payload);
+  },
+  setSubContent(context, payload){
+    context.commit('setSubContent', payload);
   },
   setContentByObject(context, payload){
     context.commit('setContentByObject', payload)

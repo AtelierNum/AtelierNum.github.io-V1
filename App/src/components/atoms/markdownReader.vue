@@ -30,6 +30,7 @@ export default {
   methods: {
     ...mapActions({
       setContent : 'setContent',
+      setSubContent : 'setSubContent',
       setContentByObject : 'setContentByObject',
       setByUrl : 'setByUrl'
     }),
@@ -136,38 +137,39 @@ export default {
                   // if a global url is given, we guess it's because it was wanted to show it on external source
                   // same for anchors links
                 } else {
-                  if (repopath.includes('.md')){
-                    let recursiveRepo = this.getContent.url.replace(/readme.md/i,repopath);
+                  if (!repopath.includes('..')){
+                    if (repopath.includes('.md')){
+                      let recursiveRepo = this.getContent.url.replace(/readme.md/i,repopath);
 
-                    data = data.replace(new RegExp(repopath, 'g'), (correspondance, decalage) => {
-                      if (data.substring(decalage - 2, decalage) == ']('){
-                        if (!this.internalLinks.includes(recursiveRepo)){
-                          this.internalLinks.push({path: recursiveRepo, recursive : true});
-                        }
-                        return recursiveRepo ;
-                      } else {
-                        return repopath ;
-                      }
-                    });
-
-                  } else { // else should be recursive path to images
-                    //  PARSE URL FOR MARKDOWN-LIKE IMPORTS OF IMAGES
-                    let image_path = repopath.split('./');
-                    if (this.$route.params.subcontent != undefined){
-                      var newUrl = `https://raw.githubusercontent.com/${author}/${repo}/master/${this.$route.params.subcontent}/${image_path[image_path.length - 1]}`;
-                    } else {
-                      var newUrl = `https://raw.githubusercontent.com/${author}/${repo}/master/${image_path[image_path.length - 1]}`;
-                    }
-
-                    data = data.replace(new RegExp(repopath, 'g'), (correspondance, decalage) => {
+                      data = data.replace(new RegExp(repopath, 'g'), (correspondance, decalage) => {
                         if (data.substring(decalage - 2, decalage) == ']('){
-                          return newUrl ;
+                          if (!this.internalLinks.includes(recursiveRepo)){
+                            this.internalLinks.push({path: recursiveRepo, recursive : true});
+                          }
+                          return recursiveRepo ;
                         } else {
                           return repopath ;
                         }
                       });
+
+                    } else { // else should be recursive path to images
+                      //  PARSE URL FOR MARKDOWN-LIKE IMPORTS OF IMAGES
+                      let image_path = repopath.split('./');
+                      if (this.$route.params.subcontent != undefined){
+                        var newUrl = `https://raw.githubusercontent.com/${author}/${repo}/master/${this.$route.params.subcontent}/${image_path[image_path.length - 1]}`;
+                      } else {
+                        var newUrl = `https://raw.githubusercontent.com/${author}/${repo}/master/${image_path[image_path.length - 1]}`;
+                      }
+
+                      data = data.replace(new RegExp(repopath, 'g'), (correspondance, decalage) => {
+                          if (data.substring(decalage - 2, decalage) == ']('){
+                            return newUrl ;
+                          } else {
+                            return repopath ;
+                          }
+                        });
+                    }
                   }
-                  
                 }
               }
           }
@@ -188,8 +190,6 @@ export default {
                 } else {
                   var newUrl = `https://raw.githubusercontent.com/${author}/${repo}/master/${path[path.length - 1]}`;
                 }
-
-                console.log(path, newUrl)
                 
                 data = data.replace(new RegExp(string_to_replace, 'g'), (correspondance, decalage) => {
                   if (data.substring(decalage - 5, decalage) == 'src="'){
@@ -277,9 +277,16 @@ export default {
     if (this.getContent.url != undefined){
       this.getReadmeFromExternal(this.getContent.url);
     } else {
-      this.setContent(this.$route.params.content).then( () => {
-        this.getReadmeFromExternal(this.getContent.url);
-      })
+      console.log(this.$route)
+      if (this.$route.params.subcontent != undefined){
+        this.setSubContent({'id' : this.$route.params.content, 'subcontent' : this.$route.params.subcontent}).then( () => {
+          this.getReadmeFromExternal(this.getContent.url);
+        })
+      } else {
+        this.setContent(this.$route.params.content).then( () => {
+          this.getReadmeFromExternal(this.getContent.url);
+        })
+      }
     }
   }
 }
