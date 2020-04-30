@@ -4,9 +4,12 @@ echo 'Starting building ...'
 
 
 # build everything
-cd ./Api && yarn run build
-cd ..
-cd ./App && yarn run build
+#cd ./Api && yarn run build
+#cd ..
+#cd ./App && yarn run build
+#cd ..
+
+cd ./App && npm run build
 cd ..
 
 #move everything to the right place
