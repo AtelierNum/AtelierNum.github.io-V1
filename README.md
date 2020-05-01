@@ -4,7 +4,9 @@ AtelierNum showcases works by students at l'Ecole de design Nantes Atlantique, a
 
 Created by [Simon Renault](http://www.simon-renault.com), [Raphaël Perraud](http://www.raphaelperraud.com) and [Bérenger Recoules](http://b2renger.github.io/)
 
-## To build the project
+Everything happens codewise in the "src" branch and all the instructions below should happe with this branch checkedout. The master branch only holds the last build of the website.
+
+## To test locally the project
 
 The **API** is not functional for now, so we just need to install the **App** part. This project is build with webpack, so it needs NPM ( and Nodes.js for few actions on alpha).
 
@@ -34,6 +36,16 @@ npm run serve
 ```
 
 It will open a local server on a available port ( usually localhost:8080 or near).
+
+## To publish a new build
+
+```
+bash build.sh "my commit message"
+```
+
+this will build the projects running 'getContent.js' from /App/src/assets, 'npm run build' from /App and create a commit to the master branch using [git subtree](https://github.com/git/git/blob/master/contrib/subtree/git-subtree.txt).
+
+afterwads you can synch with the repo whith whatever method you see fit.
 
 
 ## How to write a compatible markdown file to be integrated in this website
