@@ -1,6 +1,21 @@
 {
     "projects": [
         {
+            "name": "Workshop Intallations Interactives 2020",
+            "id": "workshop_installation_interactive_2020",
+            "tags": [
+                "Touch Designer",
+                "Interaction",
+                "Scénographie",
+                "FR"
+            ],
+            "desc": "Workshop orienté sur l'apprentissage de Touch Designer @lecolededesign. L'objectif est de concevoir en 4 jours, une installation interactive, d'imaginer ses usages et sa scénographie et de prototyper le rendu visuel. Code et documentation. ",
+            "url": "https://raw.githubusercontent.com/AtelierNum/workshop_installation_interactive_2020/master/README.md",
+            "thumbnail": "https://github.com/AtelierNum/workshop_installation_interactive_2020/raw/master/Scratch_massive/scratch_massive.gif",
+            "last_update": "18/05/20",
+            "author": "étudiants en design d'interaction"
+        },
+        {
             "name": "Workshop ALT-CTRL 2019-2020",
             "id": "workshop_alt_ctrl_1920",
             "tags": [
@@ -11,7 +26,7 @@
                 "Processing",
                 "FR"
             ],
-            "desc": "Workshop transdisciplinaire entre filières Game et Interaction @lecolededesign. L'objetctif est de concevoir en 5 jour un controleur alternatif et un jeu d'arcade de l'idéation à la réalisation ! Code et documentation. ",
+            "desc": "Workshop transdisciplinaire entre filières Game et Interaction @lecolededesign. L'objectif est de concevoir en 5 jours un controleur alternatif et un jeu d'arcade de l'idéation à la réalisation ! Code et documentation. ",
             "url": "https://raw.githubusercontent.com/AtelierNum/workshop_alt_ctrl_1920/master/README.md",
             "thumbnail": "https://raw.githubusercontent.com/AtelierNum/workshop_alt_ctrl_1920/master/Shaolin_Dragon/gif.gif",
             "last_update": "30/04/20",
