@@ -9,7 +9,7 @@
 
     <div class="infos">
         <h2>L'Atelier numérique</h2>
-        <h3>from <a href="https://www.lecolededesign.com/">L'Ecole de design Nantes Atlantique</a></h3>
+        <h3>by <a href="https://www.lecolededesign.com/">L'École de design Nantes Atlantique</a></h3>
 
         <div>
             <div class="socials instagram"><a href="https://www.instagram.com/ateliernum/"></a></div>

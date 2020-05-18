@@ -7,7 +7,7 @@
     <h3>About</h3>
 
     <p>Ce site a été développé par Simon Renault, Raphaël Perraud et Bérenger Recoules. 
-        Conçu pour présenter les travaux effectués à l'Atelier Numérique par les élèves de l'Ecole, il met 
+        Conçu pour présenter les travaux effectués à l'Atelier Numérique par les élèves de l'École de design Nantes Atlantique, il met 
         également à disposition des cours et des ressources externes à ceux-ci.
         Le code source de ce site est entièrement open-source, disponible sur <a href="https://github.com/AtelierNum/AtelierNum.github.io/tree/src">Github</a>.
     </p>
