@@ -1,5 +1,19 @@
 {
     "ressources": [
+
+        {
+            "name": "Happy Codding",
+            "id": "happy_codding",
+            "tags": [
+                "Interaction",
+                "Tutorials",
+                "EN"
+            ],
+            "desc": "Tutorials and ressources on how to get started with coding in java (processing), js etc.",
+            "url": "https://happycoding.io/",
+            "thumbnail": "https://happycoding.io/tutorials/java-server/images/client-server-7.png",
+            "last_update": "07/05/20"
+        },
         {
             "name": "Picular",
             "id": "picular",

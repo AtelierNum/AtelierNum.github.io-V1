@@ -1,6 +1,20 @@
 {
     "courses": [
         {
+            "name": "Introduction Touch Designer",
+            "id": "introduction_touch_designer",
+            "tags": [
+                "Touch Designer",
+                "Interaction",
+                "FR"
+            ],
+            "desc": "Introduction à Touch designer sous la forme d'une playlist de vidéos.",
+            "url": "https://raw.githubusercontent.com/benjarier/Introduction_TouchDesigner/master/README.md",
+            "thumbnail": "https://raw.githubusercontent.com/benjarier/Introduction_TouchDesigner/master/assets/TD1.gif",
+            "last_update": "18/05/20",
+            "author": "Benjamin Carrier"
+        },
+        {
             "name": "Introduction Arduino",
             "id": "introduction_arduino",
             "tags": [
