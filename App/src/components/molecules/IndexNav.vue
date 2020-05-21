@@ -3,7 +3,7 @@
     <ul>
     <li v-for="(section, i) in index" :key="i" :class="sectionClasses(i)" >        
         <a @click="moveToSection(i, section.section)">{{section.section}}</a>
-        <div v-if="section.children.length > 0" class="triangle" @click="openSection(i)"></div>
+        <div v-if="section.children.length > 0" class="toggleSection" @click="openSection(i)">+</div>
 
         <ul v-if="section.children.length > 0">
             <li 
@@ -230,19 +230,24 @@ export default {
     position: relative;
     margin-bottom:10px;
     padding-left:30px;
-    padding-right:30px;
+    padding-right:35px;
     border-radius:8px;
     transition: .2s ease-out;
 
-    & .triangle{
-      background: no-repeat center / contain  url('~/icons/triangle_right.svg');
-
-      position: absolute;
-      right:5px;
-      top:2px;
-      width:22px;
-      height:22px;
-      transition: .2s ease-out;
+    & .toggleSection{
+    //   background: no-repeat center / contain  url('~/icons/triangle_right.svg');
+        position: absolute;
+        right:5px;
+        top:0;
+        // width:22px;
+        // height:22px;
+        transition: .2s ease-out;
+        font-weight:700;
+        font-size:24px;
+        transform-origin: center;
+        display:inline;
+        line-height:22px;
+        text-align:center;
     }
 
     & > ul {
@@ -267,7 +272,7 @@ export default {
   .openedSection{
     transition: .3s ease-out;
 
-    & .triangle {
+    & .toggleSection {
         transform:rotate(90deg);
         transition: .2s ease-out;
     }
