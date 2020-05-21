@@ -110,68 +110,70 @@ export default {
         if (path.includes(')')){
           
           let beforePath = repo_paths[repo_paths.findIndex( p => p == path) - 1];
-          if (beforePath.slice(beforePath.length - 6, beforePath.length) != 'github'){
+          if (beforePath != undefined){
+            if (beforePath.slice(beforePath.length - 6, beforePath.length) != 'github'){
 
-            let repopath = path.split(')')[0];
+              let repopath = path.split(')')[0];
 
-            // case path to another repo listed in projects or courses, 'includes github.com' to be sure to target repos, not github pages
-            let correspondance = credentials_paths.find(teststring => (repopath.includes(teststring.author) && repopath.includes(teststring.repo) && repopath.includes('github.com')));
-              if (correspondance != undefined){ 
-                let targetrepo = `https://raw.githubusercontent.com/${correspondance.author}/${correspondance.repo}/master/README.md`  
-              
-                data = data.replace(new RegExp(repopath, 'g'), (correspondance, decalage) => {
-                  if (data.substring(decalage - 2, decalage) == ']('){
-                    if (!this.internalLinks.includes(targetrepo)){
-                      this.internalLinks.push({path: targetrepo, recursive : false});
-                    }
-                    return targetrepo ;
-                  } else {
-                    return repopath ;
-                  }
-                });
-
+              // case path to another repo listed in projects or courses, 'includes github.com' to be sure to target repos, not github pages
+              let correspondance = credentials_paths.find(teststring => (repopath.includes(teststring.author) && repopath.includes(teststring.repo) && repopath.includes('github.com')));
+                if (correspondance != undefined){ 
+                  let targetrepo = `https://raw.githubusercontent.com/${correspondance.author}/${correspondance.repo}/master/README.md`  
                 
-
-              } else {
-                if (repopath.includes('http') || repopath.includes('www') || repopath.slice(0,1) == '#'){
-                  // if a global url is given, we guess it's because it was wanted to show it on external source
-                  // same for anchors links
-                } else {
-                  if (!repopath.includes('..')){
-                    if (repopath.includes('.md')){
-                      let recursiveRepo = this.getContent.url.replace(/readme.md/i,repopath);
-
-                      data = data.replace(new RegExp(repopath, 'g'), (correspondance, decalage) => {
-                        if (data.substring(decalage - 2, decalage) == ']('){
-                          if (!this.internalLinks.includes(recursiveRepo)){
-                            this.internalLinks.push({path: recursiveRepo, recursive : true});
-                          }
-                          return recursiveRepo ;
-                        } else {
-                          return repopath ;
-                        }
-                      });
-
-                    } else { // else should be recursive path to images
-                      //  PARSE URL FOR MARKDOWN-LIKE IMPORTS OF IMAGES
-                      let image_path = repopath.split('./');
-                      if (this.$route.params.subcontent != undefined){
-                        var newUrl = `https://raw.githubusercontent.com/${author}/${repo}/master/${this.$route.params.subcontent}/${image_path[image_path.length - 1]}`;
-                      } else {
-                        var newUrl = `https://raw.githubusercontent.com/${author}/${repo}/master/${image_path[image_path.length - 1]}`;
+                  data = data.replace(new RegExp(repopath, 'g'), (correspondance, decalage) => {
+                    if (data.substring(decalage - 2, decalage) == ']('){
+                      if (!this.internalLinks.includes(targetrepo)){
+                        this.internalLinks.push({path: targetrepo, recursive : false});
                       }
+                      return targetrepo ;
+                    } else {
+                      return repopath ;
+                    }
+                  });
 
-                      data = data.replace(new RegExp(repopath, 'g'), (correspondance, decalage) => {
+                  
+
+                } else {
+                  if (repopath.includes('http') || repopath.includes('www') || repopath.slice(0,1) == '#'){
+                    // if a global url is given, we guess it's because it was wanted to show it on external source
+                    // same for anchors links
+                  } else {
+                    if (!repopath.includes('..')){
+                      if (repopath.includes('.md')){
+                        let recursiveRepo = this.getContent.url.replace(/readme.md/i,repopath);
+
+                        data = data.replace(new RegExp(repopath, 'g'), (correspondance, decalage) => {
                           if (data.substring(decalage - 2, decalage) == ']('){
-                            return newUrl ;
+                            if (!this.internalLinks.includes(recursiveRepo)){
+                              this.internalLinks.push({path: recursiveRepo, recursive : true});
+                            }
+                            return recursiveRepo ;
                           } else {
                             return repopath ;
                           }
                         });
+
+                      } else { // else should be recursive path to images
+                        //  PARSE URL FOR MARKDOWN-LIKE IMPORTS OF IMAGES
+                        let image_path = repopath.split('./');
+                        if (this.$route.params.subcontent != undefined){
+                          var newUrl = `https://raw.githubusercontent.com/${author}/${repo}/master/${this.$route.params.subcontent}/${image_path[image_path.length - 1]}`;
+                        } else {
+                          var newUrl = `https://raw.githubusercontent.com/${author}/${repo}/master/${image_path[image_path.length - 1]}`;
+                        }
+
+                        data = data.replace(new RegExp(repopath, 'g'), (correspondance, decalage) => {
+                            if (data.substring(decalage - 2, decalage) == ']('){
+                              return newUrl ;
+                            } else {
+                              return repopath ;
+                            }
+                          });
+                      }
                     }
                   }
                 }
-              }
+            }
           }
         } 
       })
