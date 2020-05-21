@@ -8,14 +8,14 @@
       <g id="Group_156" data-name="Group 156" transform="translate(-56 -357.489)">
         <path id="Path_165" data-name="Path 165" d="M-4794.871,11130.057c-243.148,38.48-518.707,520.771-367.411,643.055s880.741,6.842,972.594-153.922S-4551.722,11091.576-4794.871,11130.057Z" transform="translate(5261.513 -10769.759)" fill="#191a1a"/>
         <g id="Group_152" data-name="Group 152" transform="translate(0 19)">
-          <text id="telierNum" transform="translate(351 529)" fill="#fff" font-size="77" font-family="AvenirNext-Bold, Avenir Next" font-weight="700"><tspan x="0" y="77">telierNum</tspan></text>
-          <text id="AtelierNum_showcases_works_by_students_at_l_école_de_design_and_some_ressources_available_to_them._" data-name="AtelierNum showcases works by students at l’école de design, and some ressources available to them. " transform="translate(293 712)" fill="#fff" font-size="22" font-family="HKGrotesk-Medium, HK Grotesk" font-weight="500" opacity="0.77"><tspan x="0" y="20">AtelierNum présente des travaux d’étudiants de l’Ecole de </tspan> <tspan x = "0" y = "48"> design et quelques ressources à leur disposition.</tspan></text>
-          <text id="L_école_de_design_Nantes_Atlantique" data-name="L’école de design Nantes Atlantique" transform="translate(293 638)" fill="#fff" font-size="23" font-family="HKGrotesk-LightItalic, HK Grotesk" font-weight="300" font-style="italic" opacity="0.77"><tspan x="0" y="21">L’Ecole de design Nantes Atlantique</tspan></text>
+          <text id="telierNum" transform="translate(293 529)" fill="#fff" font-size="77" font-family="Rubik-Bold, Rubik" font-weight="700"><tspan x="0" y="77">AtelierNum</tspan></text>
+          <text id="AtelierNum_showcases_works_by_students_at_l_école_de_design_and_some_ressources_available_to_them._" data-name="AtelierNum showcases works by students at l’école de design, and some ressources available to them. " transform="translate(293 712)" fill="#fff" font-size="22" font-family="Open Sans-Light, Open Sans" font-weight="300" opacity="0.77"><tspan x="0" y="20">AtelierNum présente des travaux d’étudiants de l’Ecole de </tspan> <tspan x = "0" y = "48"> design et quelques ressources à leur disposition.</tspan></text>
+          <text id="L_école_de_design_Nantes_Atlantique" data-name="L’école de design Nantes Atlantique" transform="translate(293 638)" fill="#fff" font-size="23" font-family="Rubik-Light, Rubik" font-weight="300" font-style="italic" opacity="0.77"><tspan x="0" y="21">L’Ecole de design Nantes Atlantique</tspan></text>
           <g id="Group_151" data-name="Group 151" transform="translate(-1194 -1097)" @click="githubAteliernum()">
             <path id="Path_7" data-name="Path 7" d="M21.9,0C4.945,0,0,4.945,0,21.9H0C0,38.86,4.945,43.8,21.9,43.8h0c16.957,0,21.9-4.945,21.9-21.9h0C43.8,4.945,38.86,0,21.9,0Z" transform="translate(1486.598 1974.402) rotate(-90)" fill="#f7f7f7"/>
             <path id="arrow-up" d="M17.71,11.29l-5-5a1.034,1.034,0,0,0-1.42,0l-5,5a1,1,0,0,0,1.42,1.42L11,9.41V17a1,1,0,0,0,2,0V9.41l3.29,3.3a1,1,0,1,0,1.42-1.42Z" transform="translate(1521 1940.994) rotate(90)"/>
           </g>
-          <path id="Path_169" data-name="Path 169" d="M42.581,77,38.346,66.3h-21.1l-4,10.7H-1.078L21.791,22.484H34.573L57.211,77ZM27.951,37.037l-6.93,18.711H34.727Z" transform="translate(294 531)" fill="#fff"/>
+          <!-- <path id="Path_169" data-name="Path 169" d="M42.581,77,38.346,66.3h-21.1l-4,10.7H-1.078L21.791,22.484H34.573L57.211,77ZM27.951,37.037l-6.93,18.711H34.727Z" transform="translate(294 531)" fill="#fff"/> -->
         </g>
       </g>
     </svg>

@@ -41,7 +41,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Rubik:300,400,500,500i,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Rubik:300,300i,400,500,500i,700&display=swap');
 *,*:before,*:after{
   box-sizing: border-box;
   padding: 0;
