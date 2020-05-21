@@ -117,7 +117,7 @@ export default {
 
               // case path to another repo listed in projects or courses, 'includes github.com' to be sure to target repos, not github pages
               let correspondance = credentials_paths.find(teststring => (repopath.includes(teststring.author) && repopath.includes(teststring.repo) && repopath.includes('github.com')));
-                if (correspondance != undefined){ 
+                if (correspondance != undefined && !repopath.includes('pdf')){ 
                   let targetrepo = `https://raw.githubusercontent.com/${correspondance.author}/${correspondance.repo}/master/README.md`  
                 
                   data = data.replace(new RegExp(repopath, 'g'), (correspondance, decalage) => {
@@ -131,10 +131,9 @@ export default {
                     }
                   });
 
-                  
-
                 } else {
-                  if (repopath.includes('http') || repopath.includes('www') || repopath.slice(0,1) == '#'){
+                  if (repopath.includes('http') || repopath.includes('www') || repopath.slice(0,1) == '#' || repopath.includes('pdf')){
+                    // console.log(data.)
                     // if a global url is given, we guess it's because it was wanted to show it on external source
                     // same for anchors links
                   } else {
