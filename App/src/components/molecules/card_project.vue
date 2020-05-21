@@ -118,7 +118,7 @@ import {mapActions} from 'vuex' ;
 .card-project{
   cursor: pointer;
   width: 350px;
-  height:650px;
+  height:660px;
   position: relative;
   background: linear-gradient(to bottom, #ffffff 30% , #F7F7F7);
   background-position: 0 700px;
@@ -160,15 +160,21 @@ import {mapActions} from 'vuex' ;
   .tags{
     justify-self: flex-end;
     font-family: 'Open Sans', sans-serif;
-    display: flex;
+    // display: flex;
     font-weight: 200;
     font-size: 18px;
     margin: 10px 0 0 0;
     color:#373D4A;
     opacity: 0.6 ;
+    width: 95%;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+
     span{
       margin: 0 5px;
     }
+
     li{
       position: relative;
       list-style: none;
