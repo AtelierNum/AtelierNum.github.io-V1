@@ -442,20 +442,20 @@ export default {
     margin : 50px 0;
     overflow-x: scroll;
 
-    &::after{
-      // position:absolute;
-      // bottom: 20px;
-      // right:20px;
-      // content: '<> Copy the code';
-      // padding: 10px 20px;
-      // border-radius: 8px;
+    // &::after{
+    //   // position:absolute;
+    //   // bottom: 20px;
+    //   // right:20px;
+    //   // content: '<> Copy the code';
+    //   // padding: 10px 20px;
+    //   // border-radius: 8px;
 
-      // text-align: center;
-      // font-family:'Rubik';
-      // font-size: 1em;
-      // color: #F8F8F8;
-      // background-color: #373D4A;
-    }
+    //   // text-align: center;
+    //   // font-family:'Rubik';
+    //   // font-size: 1em;
+    //   // color: #F8F8F8;
+    //   // background-color: #373D4A;
+    // }
   }
 
 

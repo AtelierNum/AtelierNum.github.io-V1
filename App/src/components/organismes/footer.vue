@@ -8,8 +8,11 @@
     </svg>
 
     <div class="infos">
-        <h2>L'Atelier numérique</h2>
-        <h3>from <a href="https://www.lecolededesign.com/">L'Ecole de design Nantes Atlantique</a></h3>
+        <div class="edna">
+            <img src="../../../public/img/logo_edna_white.png" alt="logo of l'ecole de design nantes atlantique">
+            <h2>L'Atelier numérique</h2>
+            <h3>from <a href="https://www.lecolededesign.com/">L'Ecole de design Nantes Atlantique</a></h3>
+        </div>
 
         <div>
             <div class="socials instagram"><a href="https://www.instagram.com/ateliernum/"></a></div>
@@ -53,19 +56,21 @@ export default {
     & h2 {
         color: var(--color-gray01);
         font-family: 'Rubik';
-        font-size:1.9em;
+        font-size:1.98em;
         font-weight:700;
         text-transform: uppercase;
-        text-align: center;
+        text-align: left;
+        grid-row:1/2;
     }
 
     & h3 {
         color: var(--color-gray01);
         font-family: 'Open Sans';
-        font-size:17px;
+        font-size:16px;
         font-weight: 300;
         text-transform: uppercase;
-        text-align: center;
+        text-align: left;
+        grid-row: 2/ 3;
 
         & a {
             color : #e48174;
@@ -104,6 +109,22 @@ export default {
         display:inline-block;
         width:100%;
         height:100%;
+    }
+}
+
+.edna {
+    display: grid !important;
+    width: unset !important;
+    grid-template-columns: 32px auto;
+    grid-template-rows: 1.9em 20px ;
+    grid-column-gap:20px;
+    grid-row-gap:8px;
+
+    & img {
+        grid-column: 1 / 2;
+        grid-row: 1 / 3;
+        height:100%;
+        // width:100%;
     }
 }
 
