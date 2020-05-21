@@ -14,7 +14,7 @@
 
     <v-grid :cols="3">
       <v-projectCard
-        v-for="(content, i) in getList[$route.name].slice(0, max)"
+        v-for="(content, i) in getListByDate[$route.name].slice(0, max)"
         :key="i"
         :r_action="$route.name"
         :title="content.name"
@@ -26,7 +26,7 @@
       ></v-projectCard>
     </v-grid>
 
-    <div v-show="getList[$route.name].length == 0 ? true : false" class="placeholder_nocards">
+    <div v-show="getListByDate[$route.name].length == 0 ? true : false" class="placeholder_nocards">
       <img src="@/../public/img/roi_loth_gif.gif" alt="citation latine du roi loth, kaamelott">
       <p> Ce qui ne veut rien dire, mais et si on essayait de retirer un filtre ?</p>
     </div>
@@ -69,18 +69,18 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(['getTagsList', 'getList'])
+    ...mapGetters(['getTagsList', 'getListByDate'])
   },
   methods:{
     more(){     
       this.max += 3;
-      if (this.max > this.getList[this.$route.name].length){
+      if (this.max > this.getListByDate[this.$route.name].length){
         this.isDisplayed = false ;
       }
     }
   },
   mounted(){
-    if (this.getList[this.$route.name].length < this.max){
+    if (this.getListByDate[this.$route.name].length < this.max){
       this.isDisplayed = false;
     }
   }

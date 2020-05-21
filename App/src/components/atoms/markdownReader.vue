@@ -121,7 +121,7 @@ export default {
                   let targetrepo = `https://raw.githubusercontent.com/${correspondance.author}/${correspondance.repo}/master/README.md`  
                 
                   data = data.replace(new RegExp(repopath, 'g'), (correspondance, decalage) => {
-                    if (data.substring(decalage - 2, decalage) == ']('){
+                    if (data.substring(decalage - 2, decalage) == '](' && data.substring(decalage + correspondance.length, decalage + correspondance.length + 1) == ')'){
                       if (!this.internalLinks.includes(targetrepo)){
                         this.internalLinks.push({path: targetrepo, recursive : false});
                       }
@@ -133,16 +133,16 @@ export default {
 
                 } else {
                   if (repopath.includes('http') || repopath.includes('www') || repopath.slice(0,1) == '#' || repopath.includes('pdf')){
-                    // console.log(data.)
                     // if a global url is given, we guess it's because it was wanted to show it on external source
                     // same for anchors links
+                    // console.log(repopath)
                   } else {
                     if (!repopath.includes('..')){
                       if (repopath.includes('.md')){
                         let recursiveRepo = this.getContent.url.replace(/readme.md/i,repopath);
 
                         data = data.replace(new RegExp(repopath, 'g'), (correspondance, decalage) => {
-                          if (data.substring(decalage - 2, decalage) == ']('){
+                          if (data.substring(decalage - 2, decalage) == '](' && data.substring(decalage + correspondance.length, decalage + correspondance.length + 1) == ')'){
                             if (!this.internalLinks.includes(recursiveRepo)){
                               this.internalLinks.push({path: recursiveRepo, recursive : true});
                             }
@@ -185,7 +185,6 @@ export default {
               let path = string_to_replace.split('./')
 
               if (!path[path.length-1].includes("http") || !path[path.length-1] .includes('www')){
-
                 if (this.$route.params.subcontent != undefined){
                   var newUrl = `https://raw.githubusercontent.com/${author}/${repo}/master/${this.$route.params.subcontent}/${path[path.length - 1]}`;
                 } else {
@@ -266,7 +265,7 @@ export default {
   watch :{
     $route(newval, oldval){
       // reload readme on return (by browser feature)
-      console.log(newval)
+      // console.log(newval)
       if (newval.params.subcontent == undefined){
         this.setContent(this.$route.params.content).then( () => {
           this.getReadmeFromExternal(this.getContent.url);
@@ -278,7 +277,7 @@ export default {
     if (this.getContent.url != undefined){
       this.getReadmeFromExternal(this.getContent.url);
     } else {
-      console.log(this.$route)
+      // console.log(this.$route)
       if (this.$route.params.subcontent != undefined){
         this.setSubContent({'id' : this.$route.params.content, 'subcontent' : this.$route.params.subcontent}).then( () => {
           this.getReadmeFromExternal(this.getContent.url);

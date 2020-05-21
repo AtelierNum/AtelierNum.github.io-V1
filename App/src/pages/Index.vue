@@ -44,7 +44,7 @@
     
 
     <v-grid :cols="3">
-      <v-projectCard v-for="(project, i) in getList.projects.slice(0, max.projects)" :key="i" 
+      <v-projectCard v-for="(project, i) in getListByDate.projects.slice(0, max.projects)" :key="i" 
         class="tall"
         r_action="projects"
         :title="project.name"
@@ -71,7 +71,7 @@
     </v-tag-list>
 
     <v-grid>
-      <v-projectCard v-for="(course, i) in getList.courses.slice(0, max.courses)" :key="i" 
+      <v-projectCard v-for="(course, i) in getListByDate.courses.slice(0, max.courses)" :key="i" 
         class="long"
         r_action="courses"
         :title="course.name"
@@ -99,7 +99,7 @@
     </v-tag-list>
 
     <v-grid :cols="3" >
-      <v-projectCard v-for="(ressource, i) in getList.ressources.slice(0, max.ressources)" :key="i" 
+      <v-projectCard v-for="(ressource, i) in getListByDate.ressources.slice(0, max.ressources)" :key="i" 
         class="small"
         r_action="ressources"
         :title="ressource.name"
@@ -143,12 +143,12 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['getList', 'getTagsList'])
+    ...mapGetters(['getListByDate', 'getTagsList'])
   },
   methods: {
     more(type){     
       this.max[type] += 3;
-      if (this.max[type] > this.getList[type].length){
+      if (this.max[type] > this.getListByDate[type].length){
         this.disabled[type] = true ;
       }
     },
