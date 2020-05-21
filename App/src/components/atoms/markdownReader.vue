@@ -63,7 +63,7 @@ export default {
           _vue.$nextTick(() => {
             Prism.highlightAll();
             _vue.routerLinks(Array.from(_vue.$children[0].$el.childNodes));
-            _vue.createCopyCode(Array.from(_vue.$children[0].$el.childNodes));
+            // _vue.createCopyCode(Array.from(_vue.$children[0].$el.childNodes));
 
             if (_vue.$route.params.subcontent != undefined){
               let firstTitle = _vue.readme.slice(
@@ -265,7 +265,22 @@ export default {
     },
     createCopyCode(nodesArray){
       nodesArray.filter( (node) => node.localName == 'pre').forEach( (preNode) => {
-        console.log(preNode)
+        let copyCodeButton = document.createElement('div');
+        copyCodeButton.classList.add('copyCode')
+        copyCodeButton.innerHTML = `<p> Copy code </p>`;
+        copyCodeButton.addEventListener('click', function(event){
+          let copyCodeNode = this.parentNode.children[0];
+          let correspondingCodeNodes = document.querySelectorAll('code.' + copyCodeNode.className.trim());
+          // Array.from(correspondingCodeNodes)
+          //     .find( (codeNode) => codeNode.innerText == copyCodeNode.innerText)
+          //     .select();
+          document.querySelector('code.' + copyCodeNode.className.trim()).select()
+          document.execCommand('copy');
+
+
+        })
+
+        preNode.appendChild(copyCodeButton);
       })
     }
   },
@@ -464,6 +479,27 @@ export default {
     //   // color: #F8F8F8;
     //   // background-color: #373D4A;
     // }
+
+    & .copyCode {
+      position: absolute;
+      top:20px;
+      right:20px;
+      width:max-content;
+      height:max-content;
+      background-color:#373D4A;
+      border-radius:8px;
+      padding:14px 30px;
+
+      & p {
+        color:var(--color-gray01);
+        font-weight:700;
+        margin:0;
+      }
+
+      &:hover{
+        cursor:pointer;
+      }
+    }
   }
 
 

@@ -29,13 +29,31 @@ export default {
   margin: 120px auto 80px auto;
   &.grid-3{
     grid-template-columns: repeat(3,1fr);
-    @media screen and (max-width: 600px){
-      grid-template-columns: repeat(1,1fr);
-      max-width: 80vw;
-    }
+    justify-content: center;
   }
   &.grid-2{
     grid-template-columns: repeat(2,1fr);
+  }
+}
+
+
+@media (max-width:1300px){
+  .grid{
+    grid-gap:20px;
+    margin-left:7%;
+    margin-right:7%;
+    height:max-content;
+
+    &.grid-3{
+      grid-template-columns: repeat(3, 30%);
+    }
+  }
+}
+
+@media (max-width:1300px){
+  .grid-3{
+      grid-template-columns: repeat(1,1fr) !important;
+      max-width: 80vw;
   }
 }
 </style>
