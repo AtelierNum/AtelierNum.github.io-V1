@@ -24,6 +24,7 @@
     "@vue/cli-plugin-babel": "^3.11.0",
     "@vue/cli-plugin-pwa": "^3.11.0",
     "@vue/cli-service": "^3.11.0",
+    "babel-plugin-prismjs": "^2.0.1",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.1.0",
     "vue-template-compiler": "^2.6.10"

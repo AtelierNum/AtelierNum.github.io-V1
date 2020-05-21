@@ -5,11 +5,15 @@
 
 <script>
 import VueMarkdown from 'vue-markdown'
-import 'prismjs'
+import Prism from 'prismjs';
+// import 'prismjs/components/'
 // import "prismjs/themes/prism-okaidia.css";  // theme
 // import 'prismjs/components/prism-go.min';  // language
 
 import {mapGetters, mapActions} from 'vuex'
+
+
+// loadLanguages(['js', 'processing', 'py', 'java', 'json', 'c', 'cpp', 'md', 'scss', 'regex', ]) 
 
 export default {
   name: 'markdownReader',
@@ -59,6 +63,7 @@ export default {
           _vue.$nextTick(() => {
             Prism.highlightAll();
             _vue.routerLinks(Array.from(_vue.$children[0].$el.childNodes));
+            _vue.createCopyCode(Array.from(_vue.$children[0].$el.childNodes));
 
             if (_vue.$route.params.subcontent != undefined){
               let firstTitle = _vue.readme.slice(
@@ -203,8 +208,8 @@ export default {
       })
       return data ;
     },
-    routerLinks(array){
-      array.forEach( (node) => {
+    routerLinks(nodesArray){
+      nodesArray.forEach( (node) => {
         if (Array.from(node.childNodes).length > 0 && ['ul', 'li', 'ol', 'p'].includes(node.localName)){ // needed to avoid to much revursioin because of code sections or others unwanted
           this.routerLinks(Array.from(node.childNodes));
         
@@ -255,17 +260,18 @@ export default {
                 })
             }
           }
-
-          
-
         }
+      })
+    },
+    createCopyCode(nodesArray){
+      nodesArray.filter( (node) => node.localName == 'pre').forEach( (preNode) => {
+        console.log(preNode)
       })
     }
   },
   watch :{
     $route(newval, oldval){
       // reload readme on return (by browser feature)
-      // console.log(newval)
       if (newval.params.subcontent == undefined){
         this.setContent(this.$route.params.content).then( () => {
           this.getReadmeFromExternal(this.getContent.url);
@@ -277,7 +283,6 @@ export default {
     if (this.getContent.url != undefined){
       this.getReadmeFromExternal(this.getContent.url);
     } else {
-      // console.log(this.$route)
       if (this.$route.params.subcontent != undefined){
         this.setSubContent({'id' : this.$route.params.content, 'subcontent' : this.$route.params.subcontent}).then( () => {
           this.getReadmeFromExternal(this.getContent.url);
@@ -288,12 +293,14 @@ export default {
         })
       }
     }
+
+    console.log(Prism)
   }
 }
 </script>
 
 <style lang="scss">
-@import '../../../node_modules/prismjs/themes/prism.css';
+@import '../../../node_modules/prismjs/themes/prism-okaidia.css';
 
 .mdReader{
 
@@ -434,13 +441,14 @@ export default {
     font-size:16px;
     font-weight:400;
     letter-spacing: 0;
-    color: #373D4A;
+    //color: #373D4A;
 
-    background-color:#F8F8F8;
+    // background-color:#F8F8F8;
     border-radius:8px;
     padding:30px 40px 30px 40px;
     margin : 50px 0;
     overflow-x: scroll;
+    scrollbar-color:#1C1C1C rgb(73, 80, 95);
 
     // &::after{
     //   // position:absolute;
