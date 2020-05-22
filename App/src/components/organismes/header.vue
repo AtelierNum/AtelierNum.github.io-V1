@@ -66,6 +66,7 @@ export default {
         position: fixed;
         top:15px;
         left:50px;
+        z-index:9999;
 
         @media(max-width: 880px){
             top:20px;

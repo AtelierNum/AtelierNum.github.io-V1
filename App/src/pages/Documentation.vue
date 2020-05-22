@@ -123,11 +123,11 @@ export default {
   display:grid;
   grid-auto-columns: auto;
   justify-items: center;
-  padding-bottom: 100px; 
-  // padding-top: 50px; 
+  padding-bottom: 250px; 
   margin-bottom:50px;
 
-  clip-path: url('../assets/masks/top_content_mask.svg');
+  mask: url('../assets/masks/top_content_mask.svg');
+  mask-position:bottom;
   
   & h1 {
   text-align: center;

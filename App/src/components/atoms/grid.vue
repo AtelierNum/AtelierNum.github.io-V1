@@ -40,8 +40,6 @@ export default {
 @media (max-width:1300px){
   .grid{
     grid-gap:20px;
-    margin-left:7%;
-    margin-right:7%;
     height:max-content;
 
     &.grid-3{
@@ -54,6 +52,7 @@ export default {
   .grid-3{
       grid-template-columns: repeat(1,1fr) !important;
       max-width: 80vw;
+      grid-gap:60px;
   }
 }
 </style>

@@ -25,5 +25,11 @@
   scrollbar-color :#373D4A  #1C1C1C;
 }
 
+*,*:before,*:after{
+  box-sizing: border-box;
+  padding: 0;
+  margin:0;
+}
+
 
 </style>

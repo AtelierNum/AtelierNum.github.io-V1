@@ -153,12 +153,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
-*,*:before,*:after{
-  box-sizing: border-box;
-  padding: 0;
-  margin:0;
-}
+<style scoped lang="scss">
 
 .grid{
   max-width: 1150px;
