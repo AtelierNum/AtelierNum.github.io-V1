@@ -6,9 +6,16 @@
        </router-link>
 
         <div class="burgerNum" :class="burgerOpened ? 'opened' : ''" @click="openBurger()">
-            <span></span>
-            <span></span>
-            <span></span>
+            <svg width="191" height="53" viewBox="0 0 191 53" class="burgerLine" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M175.5 26.5C175.5 32.8513 170.351 38 164 38C157.649 38 152.5 32.8513 152.5 26.5C152.5 20.1487 157.649 15 164 15C170.351 15 175.5 20.1487 175.5 26.5ZM190.5 26.5C190.5 41.1355 178.636 53 164 53C152.153 53 142.121 45.2255 138.729 34.5L7.5 34.5C3.35786 34.5 0 31.1421 0 27C0 22.8579 3.35786 19.5 7.5 19.5L138.434 19.5C141.504 8.26112 151.788 0 164 0C178.636 0 190.5 11.8645 190.5 26.5Z"/>
+            </svg>
+            <svg width="191" height="53" viewBox="0 0 191 53" class="burgerLine" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M175.5 26.5C175.5 32.8513 170.351 38 164 38C157.649 38 152.5 32.8513 152.5 26.5C152.5 20.1487 157.649 15 164 15C170.351 15 175.5 20.1487 175.5 26.5ZM190.5 26.5C190.5 41.1355 178.636 53 164 53C152.153 53 142.121 45.2255 138.729 34.5L7.5 34.5C3.35786 34.5 0 31.1421 0 27C0 22.8579 3.35786 19.5 7.5 19.5L138.434 19.5C141.504 8.26112 151.788 0 164 0C178.636 0 190.5 11.8645 190.5 26.5Z"/>
+            </svg>
+            <svg width="191" height="53" viewBox="0 0 191 53" class="burgerLine" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M175.5 26.5C175.5 32.8513 170.351 38 164 38C157.649 38 152.5 32.8513 152.5 26.5C152.5 20.1487 157.649 15 164 15C170.351 15 175.5 20.1487 175.5 26.5ZM190.5 26.5C190.5 41.1355 178.636 53 164 53C152.153 53 142.121 45.2255 138.729 34.5L7.5 34.5C3.35786 34.5 0 31.1421 0 27C0 22.8579 3.35786 19.5 7.5 19.5L138.434 19.5C141.504 8.26112 151.788 0 164 0C178.636 0 190.5 11.8645 190.5 26.5Z"/>
+            </svg>
+
         </div>
         
         <div class="inner" :class="burgerOpened ? 'opened' : ''">
@@ -85,6 +92,8 @@ export default {
     .logo{
         width:100px;
         height:100px;
+        min-width:54px;
+        min-height:54px;
 
         border-radius:50px;
         background-size: 100px 100px;
@@ -143,22 +152,22 @@ export default {
 
 .opened{
     transition: .3s ease-out;
-    span{
-        transform:translateY(100%) rotate(45deg) ;
+    .burgerLine{
+        transform:translateY(100%) rotate(45deg) !important ;
         transition: .2s ease-out;
 
         &:nth-child(2){
-            transform: translateX(-20px) ;
+            transform: translateX(-20px) !important;
             opacity:0;
         }
         &:last-child{
-            transform:translateY(-100%) rotate(-45deg) ;
+            transform:translateY(-100%) rotate(-45deg) !important;
         }
     }
 
     .nav{
         transform: translateX(0);
-        transition: .7s ease-out .3s;
+        transition: transform .3s ease-out .3s;
     }
 }
 
@@ -185,24 +194,41 @@ export default {
         top:30px;
         right:40px;
         transition: .2s ease-out;
+        // filter:saturate(30) hue-rotate(20deg);
+        // mix-blend-mode: difference;
 
-        span {
+        .burgerLine {
             display:block;
             width:36px;
             height:10px;
             background-position: center;
             background-size: 100%;
-            background-image: url('../../assets/icons/burgerLineNum.svg');
             transition: .3s ease-out;
+            fill:#1C1C1C;
+            mix-blend-mode:screen;
+            stroke:#fff;
+            stroke-width:1px;
 
             &:nth-child(2){
                 transform:rotate(180deg);
                 transition: .2s ease-out;
             }
+            
         }
 
         &:hover{
             cursor:pointer;
+
+            .burgerLine{
+                transform:translateX(5px);
+                transition: .2s ease-out;
+
+                &:nth-child(2){transform: translateX(-5px) rotate(180deg)}
+            }
+
+        }
+        &.no-svg{
+            background-image: url('../../assets/icons/burgerLineNum.svg');
         }
     }
 
@@ -220,6 +246,7 @@ export default {
             width:max-content;
             transform: translateX(10px);
             transition: .3s ease-out;
+            margin:auto 25%;
         }
 
         &.opened{
@@ -228,5 +255,11 @@ export default {
         }
     }
 }
+}
+
+@media (max-width:520px){
+    .inner{
+        width:70vw !important;
+    }
 }
 </style>
