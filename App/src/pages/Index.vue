@@ -3,31 +3,23 @@
 
   <svg-curved content="p5"></svg-curved>
 
-
-    <svg  class="test_desc" xmlns="http://www.w3.org/2000/svg" width="1027.917" height="696.966" viewBox="0 0 1027.917 696.966">
-      <g id="Group_156" data-name="Group 156" transform="translate(-56 -357.489)">
-        <path id="Path_165" data-name="Path 165" d="M-4794.871,11130.057c-243.148,38.48-518.707,520.771-367.411,643.055s880.741,6.842,972.594-153.922S-4551.722,11091.576-4794.871,11130.057Z" transform="translate(5261.513 -10769.759)" fill="#191a1a"/>
-        <g id="Group_152" data-name="Group 152" transform="translate(0 19)">
-          <text id="telierNum" transform="translate(293 529)" fill="#fff" font-size="77" font-family="Rubik-Bold, Rubik" font-weight="700"><tspan x="0" y="77">AtelierNum</tspan></text>
-          <text id="AtelierNum_showcases_works_by_students_at_l_école_de_design_and_some_ressources_available_to_them._" data-name="AtelierNum showcases works by students at l’école de design, and some ressources available to them. " transform="translate(293 712)" fill="#fff" font-size="22" font-family="Open Sans-Light, Open Sans" font-weight="300" opacity="0.77"><tspan x="0" y="20">AtelierNum présente des travaux d’étudiants de l’ &#201;cole de </tspan> <tspan x = "0" y = "48"> design et quelques ressources à leur disposition.</tspan></text>
-          <text id="L_école_de_design_Nantes_Atlantique" data-name="L’école de design Nantes Atlantique" transform="translate(293 638)" fill="#fff" font-size="23" font-family="Rubik-Light, Rubik" font-weight="300" font-style="italic" opacity="0.77"><tspan x="0" y="21">L’	&#201;cole de design Nantes Atlantique</tspan></text>
-          <g id="Group_151" data-name="Group 151" transform="translate(-1194 -1097)" @click="githubAteliernum()">
-            <path id="Path_7" data-name="Path 7" d="M21.9,0C4.945,0,0,4.945,0,21.9H0C0,38.86,4.945,43.8,21.9,43.8h0c16.957,0,21.9-4.945,21.9-21.9h0C43.8,4.945,38.86,0,21.9,0Z" transform="translate(1486.598 1974.402) rotate(-90)" fill="#f7f7f7"/>
-            <path id="arrow-up" d="M17.71,11.29l-5-5a1.034,1.034,0,0,0-1.42,0l-5,5a1,1,0,0,0,1.42,1.42L11,9.41V17a1,1,0,0,0,2,0V9.41l3.29,3.3a1,1,0,1,0,1.42-1.42Z" transform="translate(1521 1940.994) rotate(90)"/>
-          </g>
-          <!-- <path id="Path_169" data-name="Path 169" d="M42.581,77,38.346,66.3h-21.1l-4,10.7H-1.078L21.791,22.484H34.573L57.211,77ZM27.951,37.037l-6.93,18.711H34.727Z" transform="translate(294 531)" fill="#fff"/> -->
-        </g>
-      </g>
-    </svg>
-
-    <div class="spacerY">
+    <section>
+      <div class="alternativeShape">
+        <h1>AtelierNum</h1>
+        <h2>L’	&#201;cole de design Nantes Atlantique</h2>
+        <p>AtelierNum présente des travaux d’étudiants de l’ &#201;cole de design et quelques ressources à leur disposition.</p>
+      </div>
       <svg class="scroll"  width="77" height="77" viewBox="0 0 77 77">
         <g transform="translate(-922 -945)">
           <path  d="M38.5,0C8.692,0,0,8.692,0,38.5H0C0,68.308,8.692,77,38.5,77h0C68.308,77,77,68.308,77,38.5h0C77,8.692,68.308,0,38.5,0Z" transform="translate(922 945)" fill="#f7f7f7"/>
           <path  d="M17.71,11.29l-5-5a1.034,1.034,0,0,0-1.42,0l-5,5a1,1,0,0,0,1.42,1.42L11,9.41V17a1,1,0,0,0,2,0V9.41l3.29,3.3a1,1,0,1,0,1.42-1.42Z" transform="translate(972.006 996) rotate(180)"/>
         </g>
       </svg>
-    </div>
+    </section>
+
+    
+
+    <div class="spacerY"></div>
 
     
   <div/>
@@ -143,7 +135,10 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['getListByDate', 'getTagsList'])
+    ...mapGetters(['getListByDate', 'getTagsList']),
+    windowWidth(){
+      return window.innerWidth;
+    }
   },
   methods: {
     more(type){     
@@ -171,7 +166,16 @@ export default {
   position: absolute;
   top: 340px;
   left: 50px;
-  z-index:-1
+  z-index:-1;
+
+  max-width:90%;
+
+  @media(max-width:1200px){
+    top:20vw;
+    min-width:800px;
+    --ratio:calc(1vh / 1vw);
+    left:calc(50px - var(--ratio));
+  }
 }
 
 .spacerY{
@@ -181,9 +185,16 @@ export default {
   align-items: center;
   justify-content: center;
 
-  .scroll{
-    display: block;
-    margin:0;
+  
+
+  @media(max-width:1200px){
+    height:80vh;
+    min-height:unset;
+
+    .scroll{
+      width:5vw;
+      min-width:44px;
+    }
   }
 }
 
@@ -228,6 +239,97 @@ a{
   text-align:center;
   font-family: 'Open Sans', sans-serif;
   color:#1C1C1C;
+}
+
+section{
+  position: absolute;
+  top:20vw;
+  left:0;
+  width:100%;
+
+  .alternativeShape{
+    background-color: #191a1a;
+    margin-left:50px;
+    padding:220px 20vw 180px 12vw;
+    mask: url('../assets/masks/mask_1.svg') no-repeat;
+    mask-size:contain;
+    width: 70vw;
+    max-width:1028px;
+    max-height:697px;
+
+    // transform: translateX(50px) translateY(-25vw);
+
+    h1 {
+      font-family:'Rubik';
+      font-weight: 700;
+      font-size:11vw;
+      color: #fff;
+
+      & + h2 {
+        font-family:'Open Sans';
+        font-weight: 300;
+        font-size:1.2em;
+        font-style:italic;
+        color: #fff;
+
+        & + p {
+          margin-top:50px;
+          font-family:'Open Sans';
+          font-weight: 300;
+          font-size:1.2em;
+          color: #fff;
+        }
+      }
+    }
+
+    @media(max-width:1220px){
+      // mask: url('../assets/masks/top_content_mask.svg') no-repeat;
+      padding:15vw 20vw 180px 14vw;
+    }
+
+    @media(min-width:800px){
+      h1{ font-size:78px }
+      h2{ font-size:24px }
+      p { font-size:22px }
+
+      // margin-left:
+    }
+  }
+
+  @media(max-width: 1000px){
+      top:0;
+      z-index:-999;
+      
+      .alternativeShape{
+        margin-left:0;
+        width:100%;
+        mask:url('../assets/masks/top_content_mask.svg');
+        mask-position-y:bottom;
+        mask-size:cover;
+        padding-top:40vh;
+        padding-bottom:230px;
+        max-height:unset;
+      }
+
+      .scroll{
+        position:absolute;
+        bottom:90px;
+        left:calc(50% - 54px);
+      }
+    }
+
+
+  .scroll{
+      display: block;
+      margin:0 auto;
+      
+
+      @media(max-width:1200px){
+        width:5vw;
+        min-width:54px;
+      }
+  }
+
 }
 
 </style>

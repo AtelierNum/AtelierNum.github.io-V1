@@ -44,7 +44,7 @@ export default {
 
 <style>
 .p5Canvas{
-    z-index:-1;
+    z-index:-9;
     position:relative;
     transform-origin: top left;
 }
@@ -54,6 +54,7 @@ canvas{
     height:100% !important;
     min-height: 870px;
     background-color: rgb(28,28,30);
+    z-index:-9;
 }
 
 .image_container{
