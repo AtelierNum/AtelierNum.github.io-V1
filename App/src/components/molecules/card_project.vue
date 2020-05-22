@@ -125,6 +125,7 @@ import {mapActions} from 'vuex' ;
   background-repeat: no-repeat;
   border-radius: 6px;
   transition: all .3s ease;  
+  z-index:-1;
 
   &:hover{
      background-position: 0 0;

@@ -94,6 +94,7 @@ export default {
         height:100px;
         min-width:54px;
         min-height:54px;
+        z-index:999999;
 
         border-radius:50px;
         background-size: 100px 100px;
@@ -240,6 +241,8 @@ export default {
         opacity: 0;
         transform: translateX(50px);
         transition: .3s ease-out;
+        visibility:hidden;
+        transition: visibilty 0, opacity transform .2 ease-out;
 
         .nav{
             flex-direction:column;
@@ -252,6 +255,8 @@ export default {
         &.opened{
             opacity: 1;
             transform: translateY(0);
+            visibility:visible;
+            transition: visibilty 0, opacity transform .2 ease-out;
         }
     }
 }
