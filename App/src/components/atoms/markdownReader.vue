@@ -63,6 +63,7 @@ export default {
           _vue.$nextTick(() => {
             Prism.highlightAll();
             _vue.routerLinks(Array.from(_vue.$children[0].$el.childNodes));
+            _vue.transformMainTitle(Array.from(_vue.$children[0].$el.childNodes));
             // _vue.createCopyCode(Array.from(_vue.$children[0].$el.childNodes));
 
             if (_vue.$route.params.subcontent != undefined){
@@ -208,6 +209,10 @@ export default {
       })
       return data ;
     },
+    transformMainTitle(childrenArray){
+      let mainTitle = childrenArray.find( node => node.localName == 'h1');
+      mainTitle.innerText = mainTitle.innerText.split('_').join(' ');
+    },
     routerLinks(nodesArray){
       nodesArray.forEach( (node) => {
         if (Array.from(node.childNodes).length > 0 && ['ul', 'li', 'ol', 'p'].includes(node.localName)){ // needed to avoid to much revursioin because of code sections or others unwanted
@@ -309,7 +314,7 @@ export default {
       }
     }
 
-    console.log(Prism)
+    // console.log(Prism)
   }
 }
 </script>
@@ -330,10 +335,15 @@ export default {
     font-size:3.0em;
     letter-spacing: 0;
     color: #373D4A;
+    text-transform:capitalize;
 
     position:relative;
     margin-bottom:50px;
     margin-top:50px;
+
+    @media(max-width:880px){
+      font-size:290%;
+    }
 
     &::after{
       content: ' ';

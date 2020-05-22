@@ -30,18 +30,24 @@
       </ul>
     </div> -->
 
-    <index-nav ref="indexnav" :parentChilds="markdownChilds"></index-nav>
+    <index-nav ref="indexnav" :parentChilds="markdownChilds" v-show="windowWidth > 880"></index-nav>
 
-    <div class="separator"></div>
+    <div class="separator" :class="windowWidth > 880 ? '' : 'indexSlider'">
+      <div v-show="windowWidth < 880" class="nodeSlider" :style="{'top': sliderOffset + 'px'}">{{sliderSection}}</div>
+    </div>
 
-    <md-reader @mdloaded="waitingFunctions"></md-reader>
+    <md-reader @mdloaded="waitingFunctions">
+      <v-loader v-for="i in 12" :key="i + '-loader'" v-show="!loaded"></v-loader>
+    </md-reader>
   </section>  
   <p class="last_update">Last update {{getContent.last_update}}</p>
+  
 </div>
 </template>
 
 <script>
 import svgCurved from '@/components/atoms/svgCurved'
+import loader from '@/components/atoms/loader'
 import mdReader from '@/components/atoms/markdownReader'
 import indexNav from '@/components/molecules/IndexNav.vue'
 // import VueClipboard from 'vue-clipboard2'
@@ -51,16 +57,32 @@ export default {
   name: 'DocumentationPage',
   data(){
     return{
-      markdownChilds : []
+      markdownChilds : [],
+      loaded : false
     }
   },
   computed : {
-    ...mapGetters(['getContent'])
+    ...mapGetters(['getContent']),
+    windowWidth(){
+      return window.innerWidth;
+    },
+    sliderSection(){
+      this.$children.forEach( el => {
+        console.log('section')
+      })
+      console.log('section le,gth', this.$children);
+      return 'Ab';
+    },
+    sliderOffset(){
+      console.log('offset', window.scrollY);
+      return '5'
+    },
   },
   components:{
     'svg-curved' : svgCurved,
     'md-reader' : mdReader,
-    'index-nav' : indexNav
+    'index-nav' : indexNav,
+    'v-loader' : loader
   },
   methods:{
     ...mapActions({
@@ -68,6 +90,7 @@ export default {
     }),
     waitingFunctions(){
       this.$nextTick( () => {
+        this.loaded = !this.loaded ;
         this.markdownChilds = Array.from(this.$children[2].$el.childNodes);
         this.$refs.indexnav.createIndex(this.markdownChilds);
         this.setAnchor(this.markdownChilds);
@@ -79,7 +102,7 @@ export default {
     },
     setAnchor(md_childs){
       let titles = md_childs.filter( child => ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].includes(child.localName));
-      titles.forEach( title => title.id = this.hrefAnchor(title.innerText));
+      titles.forEach(title => title.id = this.hrefAnchor(title.innerText));
     },
     setCopyCodeButtons(){
         let md_childs = Array.from(this.$children[1].$el.childNodes);
@@ -122,7 +145,7 @@ export default {
   text-align: center;
   display:grid;
   grid-auto-columns: auto;
-  justify-items: center;
+  justify-items: centechildrenr;
   padding-bottom: 250px; 
   margin-bottom:50px;
 
@@ -137,6 +160,9 @@ export default {
   color: #373D4A;
 
   margin-bottom:12px;
+  max-width:90%;
+  margin-left:auto;
+  margin-right:auto;
 
     & + h2 {
       text-align: center;
@@ -146,9 +172,15 @@ export default {
       color: rgb(98, 105, 121);
 
       margin-bottom:20px;
+      max-width:90%;
+      margin-left:auto;
+      margin-right:auto;
 
       & + div {
         margin-bottom:30px; 
+        max-width:80%;
+        margin-left:auto;
+        margin-right:auto;
 
         & > span {
           display:inline-block;
@@ -163,6 +195,7 @@ export default {
           background-color:rgb(233, 233, 233);
           border-radius: 12px;
           padding: 12px 20px;
+          margin-bottom:12px;
         }
         
 
@@ -174,6 +207,9 @@ export default {
           color: #373D4A;
 
           max-width:900px;
+          max-width:80%;
+          margin-left:auto;
+          margin-right:auto;
         }
       }
 
@@ -185,9 +221,14 @@ export default {
   display: flex;
   margin-bottom:30px;
 
+  @media(max-width:880px){
+    width:100%;
+  }
+
 }
 
 .separator{
+  position:relative;
   width:2px;
   // height:100%;
   background-color:#373D4A;
@@ -195,6 +236,33 @@ export default {
 
   align-self: stretch;
   justify-self: center;
+  flex-shrink: 0;
+
+  &.indexSlider{
+    margin-left:20px;
+
+    .nodeSlider{
+      position:absolute;
+      left:-12px;
+
+      width:max-content;
+      height:max-content;
+      padding:4px;
+      border-radius: 4px;
+      background-color: var(--color-dark02);
+      box-shadow: 0 0 8px 2px rgba(0,0,0, .16);
+      color: var(--color-gray01);
+      font-family:'Rubik';
+      font-weight:500;
+      font-size:14px;
+    }
+  }
+
+  @media(max-width:880px){
+    position:sticky;
+    top:120px;
+    max-height:80vh;
+  }
 }
 
 .contentmd{
@@ -202,6 +270,10 @@ export default {
   max-width:1300px;
   justify-self: center;
   width:70%;
+
+  @media(max-width:880px){
+    width:unset;
+  }
 }
 
 .last_update{
