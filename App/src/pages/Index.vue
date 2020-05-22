@@ -17,13 +17,10 @@
       </svg>
     </section>
 
-    
-
-    <div class="spacerY"></div>
+    <v-spacer height="20%" class="spacerY"></v-spacer>
 
     
   <div/>
-
     <h2 class="section-title"> 
       <router-link to="/projects">
         Projets 
@@ -112,13 +109,15 @@
 import card_project from '@/components/molecules/card_project'
 import svgCurved from '@/components/atoms/svgCurved'
 import Button from '@/components/atoms/button'
+import spacer from '@/components/atoms/spacer'
 import {mapGetters} from 'vuex'
 
 export default {
     components : {
         'v-projectCard' : card_project,
         'svg-curved' : svgCurved,
-        'v-button' : Button
+        'v-button' : Button,
+        'v-spacer' : spacer
   },
   data(){
     return {
@@ -155,47 +154,10 @@ export default {
 </script>
 
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Rubik:300,400,500,500i,700&display=swap');
 *,*:before,*:after{
   box-sizing: border-box;
   padding: 0;
   margin:0;
-}
-
-.test_desc{
-  position: absolute;
-  top: 340px;
-  left: 50px;
-  z-index:-1;
-
-  max-width:90%;
-
-  @media(max-width:1200px){
-    top:20vw;
-    min-width:800px;
-    --ratio:calc(1vh / 1vw);
-    left:calc(50px - var(--ratio));
-  }
-}
-
-.spacerY{
-  height:20%;
-  min-height:450px;
-  display:flex;
-  align-items: center;
-  justify-content: center;
-
-  
-
-  @media(max-width:1200px){
-    height:80vh;
-    min-height:unset;
-
-    .scroll{
-      width:5vw;
-      min-width:44px;
-    }
-  }
 }
 
 .grid{
@@ -214,17 +176,6 @@ export default {
   &.grid-2{
     grid-template-columns: repeat(2,1fr);
   }
-}
-
-#Group_151{
-  &:hover{
-    cursor:pointer;
-  }
-}
-
-a{
-  color: inherit;
-  text-decoration: none;
 }
 
 .spacer_height{
@@ -330,6 +281,24 @@ section{
       }
   }
 
+}
+
+.spacerY{
+  min-height:450px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+
+  
+
+  @media(max-width:1200px){
+    height:70vh !important;
+
+    .scroll{
+      width:5vw;
+      min-width:44px;
+    }
+  }
 }
 
 </style>
