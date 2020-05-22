@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import listJSON from '../assets/globalList.json'
+import listJSON from '../../public/data/globalList.json'
 
 
 Vue.use(Vuex)

@@ -66,6 +66,10 @@ export default {
         position: fixed;
         top:15px;
         left:50px;
+
+        @media(max-width: 880px){
+            top:20px;
+        }
     }
 
     .inner{
@@ -90,6 +94,7 @@ export default {
     }
 
     .logo{
+        position:relative;
         width:100px;
         height:100px;
         min-width:54px;
@@ -100,7 +105,7 @@ export default {
         background-size: 100px 100px;
         background-position: center;
         background-image: url('~/img/logo_ateliernum.png');
-        box-shadow: 0 0 8px rgba(0, 0, 0, .32)
+        box-shadow: 0 0 8px rgba(0, 0, 0, .32);
     }
 
     .nav{

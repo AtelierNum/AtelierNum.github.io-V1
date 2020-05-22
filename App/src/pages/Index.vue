@@ -46,7 +46,7 @@
 
     <v-button :outlined="true" label="projects" :disabled="disabled.projects" @click.native="more('projects')"> Plus </v-button>
           
-    <div class="spacer_height"></div> 
+    <v-spacer width="100%" height="300px"></v-spacer>
 
     
     <h2 class="section-title"> 
@@ -74,7 +74,7 @@
     <v-button label="courses" :outlined="true" :disabled="disabled.courses" @click.native="more('courses')"> Plus </v-button>
 
 
-    <div class="spacer_height"></div>     
+    <v-spacer width="100%" height="300px"></v-spacer>   
 
 
     <h2 class="section-title"> 
@@ -178,11 +178,6 @@ export default {
   }
 }
 
-.spacer_height{
-  height:300px;
-  width:100%;
-}
-
 .section-title{
   max-width: 1150px;
   margin:auto;
@@ -208,8 +203,6 @@ section{
     max-width:1028px;
     max-height:697px;
 
-    // transform: translateX(50px) translateY(-25vw);
-
     h1 {
       font-family:'Rubik';
       font-weight: 700;
@@ -234,7 +227,6 @@ section{
     }
 
     @media(max-width:1220px){
-      // mask: url('../assets/masks/top_content_mask.svg') no-repeat;
       padding:15vw 20vw 180px 14vw;
     }
 
@@ -243,7 +235,6 @@ section{
       h2{ font-size:24px }
       p { font-size:22px }
 
-      // margin-left:
     }
   }
 
@@ -257,7 +248,7 @@ section{
         mask:url('../assets/masks/top_content_mask.svg');
         mask-position-y:bottom;
         mask-size:cover;
-        padding-top:40vh;
+        padding-top:30vh;
         padding-bottom:230px;
         max-height:unset;
       }

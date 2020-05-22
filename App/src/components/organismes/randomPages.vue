@@ -18,7 +18,6 @@
 
 <script>
   import card_project from '@/components/molecules/card_project'
-  import Pages from '../../assets/globalList.json'
 
   export default {
     name: 'RandomPages',

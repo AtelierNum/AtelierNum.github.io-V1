@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import globalList from '../assets/globalList.json'
+import globalList from '../../public/data/globalList.json'
 
 
 Vue.use(Router)
