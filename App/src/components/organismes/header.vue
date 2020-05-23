@@ -53,6 +53,11 @@ export default {
         openBurger(){
             this.burgerOpened = !this.burgerOpened;
         }
+    },
+    watch: {
+        $route(newval){
+            this.burgerOpened = false ;
+        }
     }
 }
 </script>

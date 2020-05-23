@@ -33,7 +33,9 @@
     <index-nav ref="indexnav" :parentChilds="markdownChilds" v-show="windowWidth > 880"></index-nav>
 
     <div class="separator" :class="windowWidth > 880 ? '' : 'indexSlider'">
-      <div v-show="windowWidth < 880" class="nodeSlider" :style="{'top': sliderOffset + 'px'}">{{sliderSection}}</div>
+      <!-- <div v-show="windowWidth < 880" class="sliderInput" :class="sliderOffset">{{sliderSection}}</div> -->
+      <!-- :style="{'top': sliderOffset + 'px'} -->
+      <input v-on:click="dragSlider()" orient="vertical" type="range" min="0" max="100" v-model="sliderValue" v-show="windowWidth < 880" class="sliderInput">
     </div>
 
     <md-reader @mdloaded="waitingFunctions">
@@ -58,25 +60,18 @@ export default {
   data(){
     return{
       markdownChilds : [],
-      loaded : false
+      loaded : false,
+      sliderValue : 5,
+      windowTop: 0,
+      beingDragged: false,
+      contentRect : {}
     }
   },
   computed : {
     ...mapGetters(['getContent']),
     windowWidth(){
       return window.innerWidth;
-    },
-    sliderSection(){
-      this.$children.forEach( el => {
-        console.log('section')
-      })
-      console.log('section le,gth', this.$children);
-      return 'Ab';
-    },
-    sliderOffset(){
-      console.log('offset', window.scrollY);
-      return '5'
-    },
+    }
   },
   components:{
     'svg-curved' : svgCurved,
@@ -94,6 +89,7 @@ export default {
         this.markdownChilds = Array.from(this.$children[2].$el.childNodes);
         this.$refs.indexnav.createIndex(this.markdownChilds);
         this.setAnchor(this.markdownChilds);
+        this.contentRect = this.$children[2].$el.getBoundingClientRect();
         // this.setCopyCodeButtons();
       })
     },
@@ -129,6 +125,40 @@ export default {
 
           codesections[w].appendChild(copycode);
         }
+    },
+    onScroll(e) {
+      this.windowTop = window.top.scrollY ;
+      this.beingDragged = false;
+    },
+    dragSlider(){
+      this.beingDragged = true ;
+      console.log('dragSLider', this.beingDragged)
+    },
+    map(value, x1, y1, x2, y2){
+      return (value - x1) * (y2 - x2) / (y1 - x1) + x2;
+    }
+  },
+  mounted() {
+    window.addEventListener("scroll", this.onScroll);
+  },
+  beforeDestroy() {
+    window.removeEventListener("scroll", this.onScroll)
+  },
+  watch: {
+    sliderValue(newval, oldval){
+      if(this.$children[2] && this.beingDragged){
+        let scrollHeight = this.map(newval, 0, 100, this.contentRect.top, this.contentRect.bottom);
+        // let scrollHeight = (newval - 0) / (100 - 0) * (this.contentRect.height - this.contentRect.top) + this.contentRect.top + (window.innerHeight / 2);
+        window.scrollTo(0,scrollHeight);
+      }
+    },
+    windowTop(newval, oldval){
+      if(newval > this.contentRect.top && !this.beingDragged){
+        this.sliderValue = this.map(newval, this.contentRect.top,  this.contentRect.bottom, 0, 100);
+      }
+    },
+    beingDragged(newval, oldval){
+      console.log('beingdrag', newval)
     }
   }
 }
@@ -238,23 +268,122 @@ export default {
   justify-self: center;
   flex-shrink: 0;
 
+  @media(max-width:880px){
+    background-color:unset;
+  }
+
   &.indexSlider{
     margin-left:20px;
+    scroll-snap-type: y mandatory;
 
-    .nodeSlider{
+    &:hover{
+      cursor:pointer;
+    }
+
+
+    .sliderInput{
       position:absolute;
-      left:-12px;
+      left:-3px;
+      // transform: rotate(90deg);
+      writing-mode: bt-lr; /* IE */
+      -webkit-appearance: slider-vertical; /* WebKit */
+      -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+      background: transparent; /* Otherwise white in Chrome */
+      transform: rotate(180deg);
 
-      width:max-content;
-      height:max-content;
-      padding:4px;
+      width:2px;
+      height:100%;
+      max-height:80vh;
+      // padding:4px;
+      // padding-top:0;
+      
       border-radius: 4px;
-      background-color: var(--color-dark02);
+      // background-color: var(--color-dark01);
       box-shadow: 0 0 8px 2px rgba(0,0,0, .16);
       color: var(--color-gray01);
       font-family:'Rubik';
       font-weight:500;
       font-size:14px;
+
+      --rad : 4px;
+      --bgrnd : var(--color-dark02);
+      --pad : 0 4px 4px 4px;
+      --shad : 0 0 8px 2px rgba(0,0,0, .16);
+      --col : var(--color-gray01);
+      --wh : 16px;
+      --border : none ;
+
+      &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        height: var(--wh);
+        width: var(--wh);
+        border: var(--border);
+        border-radius: var(--rad);
+        background: var(--bgrnd);;
+        cursor: pointer;
+        margin-top: -14px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+        box-shadow: var(--shad);
+      }
+
+      &::-moz-range-thumb {
+        box-shadow: var(--shad);
+        border:var(--border);
+        height: var(--wh);
+        width: var(--wh);
+        border-radius: var(--rad);
+        background: var(--bgrnd);
+        cursor: pointer;
+      }
+
+      &::-ms-thumb {
+        box-shadow: var(--shad);
+        border:var(--border);
+        height: var(--wh);
+        width: var(--wh);
+        border-radius: var(--rad);
+        background: var(--bgrnd);
+        cursor: pointer;
+      }
+
+      &::-webkit-slider-runnable-track {
+        width: 2px;
+        cursor: pointer;
+        border:none;
+        border-radius: 4px;
+        background-color:var(--color-dark01);
+      }
+
+      &::-moz-range-track {
+        width: 2px;
+        cursor: pointer;
+        border: none;
+        border-radius: 4px;
+        background-color:var(--color-dark01);
+      }
+
+      &::-ms-track {
+        width: 2px;
+        cursor: pointer;
+        background: var(--color-dark01);
+        border:none;
+        border-radius: 4px;
+      }
+
+
+      &:focus {
+        outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+      }
+
+      &::-ms-track {
+        width: 100%;
+        cursor: pointer;
+
+        /* Hides the slider so custom styles can be added */
+        background: transparent; 
+        border-color: transparent;
+        color: transparent;
+}
+      
     }
   }
 
