@@ -63,9 +63,21 @@ export default {
             background-image: url('../../assets/masks/footer_front_mask.svg');
             background-size:100% 100%;
             background-position: bottom;
+        }       
+        
+    }
+
+    @media(max-width:880px){
+        padding-top:300px;
+
+        .waves{
+            background-size:300% 100%;
+
+            .wave_front{
+                background-position-x: -20vw;
+                background-size:200% 100%;
+            }
         }
-        
-        
     }
 }
 
@@ -80,6 +92,8 @@ export default {
     padding-bottom:50px;
     padding-top:30px;
 
+    max-width:80vw;
+
 
     & h2 {
         color: var(--color-gray01);
@@ -89,6 +103,10 @@ export default {
         text-transform: uppercase;
         text-align: left;
         grid-row:1/2;
+
+        @media(max-width:720px){
+            font-size:6vw;
+        }
     }
 
     & h3 {
@@ -103,6 +121,10 @@ export default {
         & a {
             color : #e48174;
         }
+
+        @media(max-width:720px){
+            max-width:90%;
+        }
     }
 
     & > div {
@@ -110,11 +132,15 @@ export default {
         display:flex;
         justify-content: space-between;
         margin-top:24px;
+        
+        @media(max-width:480px){
+            margin-top:50px;
+        }
     }
 
     & .legals {
         position: absolute;
-        right:22px;
+        right:-8%;
         bottom:50px;
         color:var(--color-gray01);
         font-family: 'Open Sans';
@@ -127,6 +153,11 @@ export default {
             left:0;
             bottom:0;
             margin:30px auto 20px auto;
+        }
+
+        @media(max-width:480px){
+            margin-top:30px;
+            margin-bottom:0px;
         }
     }
 }
@@ -145,21 +176,33 @@ export default {
         width:100%;
         height:100%;
     }
+
+    @media(max-width:720px){
+        grid-template-columns: 6vw auto;
+    }
 }
 
 .edna {
     display: grid !important;
     width: unset !important;
-    grid-template-columns: 32px auto;
-    grid-template-rows: 1.9em 20px ;
+    grid-template-columns: 40px auto;
+    grid-auto-rows: auto ;
     grid-column-gap:20px;
     grid-row-gap:8px;
+
+    @media(max-width:480px){
+        grid-template-columns: 6vw auto;
+    }
 
     & img {
         grid-column: 1 / 2;
         grid-row: 1 / 3;
         height:100%;
+        max-width:100%;
+        object-fit: contain;
+        object-position: left top;
         // width:100%;
+        
     }
 }
 
