@@ -17,10 +17,12 @@
     <index-nav ref="indexnav" :parentChilds="markdownChilds" v-show="windowWidth > 880"></index-nav>
 
     <div class="separator" :class="windowWidth > 880 ? '' : 'indexSlider'">
-      <!-- <div v-show="windowWidth < 880" class="sliderInput" :class="sliderOffset">{{sliderSection}}</div> -->
-      <!-- :style="{'top': sliderOffset + 'px'} -->
-      <!-- <input :oninput="dragSlider()" :onchange="dragSlider()" orient="vertical" type="range" min="0" max="100" v-model="sliderValue" v-show="windowWidth < 880" class="sliderInput"> -->
-      <v-scrollSlider v-if="loaded" v-show="windowWidth < 880" :scrollingContentRect="contentRect"></v-scrollSlider>
+      <v-scrollSlider 
+        ref="sliderScroll" 
+        v-if="loaded" 
+        v-show="windowWidth < 880" 
+        :scrollingContentRect="contentRect"
+        :scrolling.sync="scrollingIndex"></v-scrollSlider>
     </div>
 
     <md-reader @mdloaded="waitingFunctions">
@@ -47,7 +49,8 @@ export default {
     return{
       markdownChilds : [],
       loaded : false,
-      contentRect: new DOMRect()
+      contentRect: new DOMRect(),
+      scrollingIndex : false
     }
   },
   computed : {
@@ -109,6 +112,11 @@ export default {
 
           codesections[w].appendChild(copycode);
         }
+    }
+  },
+  watch: {
+    scrollingIndex(newval, oldval){
+      console.log(newval)
     }
   }
 }

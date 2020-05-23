@@ -52,6 +52,9 @@ export default {
             if(this.beingDragged){
                 let scrollHeight = this.map(newval, 0, 100, this.scrollingContentRect.top, this.scrollingContentRect.bottom + (window.innerHeight / 2));
                 window.scrollTo(0,scrollHeight);
+                this.$emit('update:scrolling', true);
+            } else {
+                this.$emit('update:scrolling', false);
             }
         },
         windowTop(newval, oldval){

@@ -1,11 +1,14 @@
 <template>
 <div class="footer">
-   <svg  width="1920.065" height="585" viewBox="0 0 1920.065 585">
+   <!-- <svg  width="1920.065" height="585" viewBox="0 0 1920.065 585">
     <g id="Group_155" data-name="Group 155" transform="translate(0.065 -6452.833)">
         <path  d="M0,908.328H1920V255.2s-55.829,75.461-364.69,11.661S959.582,114.914,635.582,114.914c-480,0-635.647,126.167-635.647,126.167Z" transform="translate(0 6337.918)" fill="#e48174"/>
         <path  d="M0,0H1920V335.688s-69.613-5.778-207.017,12.121c-292.152,46.17-703.646,207-1027.646,207C205.336,554.81,0,407.792,0,407.792Z" transform="translate(1920 7246.246) rotate(180)" fill="#1c1c1c"/>
     </g>
-    </svg>
+    </svg> -->
+    <div class="waves">
+        <div class="wave_front"></div>
+    </div>
 
     <div class="infos">
         <div class="edna">
@@ -37,21 +40,46 @@ export default {
 .footer {
     margin-top: 130px;
     position: relative;
+    padding-top:250px;
 
-    & svg{
-        max-width:100%;
-        transform:translateY(5px);
+    & .waves{
+        z-index:1;
+        position:absolute;
+        bottom:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background-image: url('../../assets/masks/footer_back_mask.svg');
+        background-size:100% 100%;
+        background-position: right;
+
+        .wave_front{
+            position:absolute;
+            bottom:0;
+            left:0;
+            width:100%;
+            height:70%;
+            z-index:2;
+            background-image: url('../../assets/masks/footer_front_mask.svg');
+            background-size:100% 100%;
+            background-position: bottom;
+        }
+        
+        
     }
 }
 
 .infos {
-    position:absolute;
-    left:0;
-    bottom:32px;
+    position:relative;
     width:100%;
+    margin:auto;
+    z-index:10;
 
     display:grid;
     justify-items: center;
+    padding-bottom:50px;
+    padding-top:30px;
+
 
     & h2 {
         color: var(--color-gray01);
@@ -87,12 +115,19 @@ export default {
     & .legals {
         position: absolute;
         right:22px;
-        bottom:0;
+        bottom:50px;
         color:var(--color-gray01);
         font-family: 'Open Sans';
         font-size:16px;
         font-weight: 300;
         text-align: center;
+
+        @media(max-width:880px){
+            position:relative;
+            left:0;
+            bottom:0;
+            margin:30px auto 20px auto;
+        }
     }
 }
 
