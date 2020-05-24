@@ -40,16 +40,22 @@ export default {
   .grid{
     grid-gap:20px;
     height:max-content;
+    max-width: 90vw;
 
     &.grid-3{
         grid-template-columns: repeat(1,1fr) !important;
-        max-width: 80vw;
         grid-gap:60px;
 
         &.smallGrid{
-          max-width:60vw;
+          max-width:70vw;
         }
     }
+  }
+}
+
+@media(max-width:480px){
+  .smallGrid{
+    max-width:90vw !important;
   }
 }
 </style>

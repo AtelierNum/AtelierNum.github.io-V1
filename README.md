@@ -19,9 +19,9 @@ Markdowns files of courses, projects, ressources repos are not imported from the
 Update the list of markdowns you want to display in json files stored in **./lists**  :
 
 ``` 
-cd src/assets/lists/
+cd public/data/lists/
 ```
-Then execute the script to  update the list of markdowns in **globalList.json** :
+Then execute the script **getContent.js** to  update the list of markdowns in **globalList.json** :
 
 ``` 
 cd ..
@@ -31,7 +31,7 @@ node getContent.js
 Now you can open a local server of your project ( from App directory): 
 
 ``` 
-cd ../../
+cd ../..
 npm run serve
 ```
 

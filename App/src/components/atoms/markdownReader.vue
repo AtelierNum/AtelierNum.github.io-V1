@@ -324,6 +324,10 @@ export default {
 
 .mdReader{
 
+  @media(max-width:620px){
+    padding:0 20px;
+  }
+
   * {
     max-width:100%;
   }

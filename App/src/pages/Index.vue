@@ -57,9 +57,9 @@
       <v-tag v-for="tag in getTagsList" :key="'courses-' + tag" category="courses">{{tag}}</v-tag>
     </v-tag-list>
 
-    <v-grid>
+    <v-grid :cols=" windowWidth > 800 ? 1 : 3">
       <v-projectCard v-for="(course, i) in getListByDate.courses.slice(0, max.courses)" :key="i" 
-        class="long"
+        :class=" windowWidth > 620 ? 'long' : 'tall'"
         r_action="courses"
         :title="course.name"
         :id="course.id"
@@ -128,14 +128,12 @@ export default {
         courses: false,
         ressources: false,
         projects: false
-      }
+      },
+      windowWidth: window.innerWidth
     }
   },
   computed: {
-    ...mapGetters(['getListByDate', 'getTagsList']),
-    windowWidth(){
-      return window.innerWidth;
-    }
+    ...mapGetters(['getListByDate', 'getTagsList'])
   },
   methods: {
     more(type){     
@@ -147,6 +145,11 @@ export default {
     githubAteliernum(){
       window.open('https://github.com/AtelierNum', '_blank');
     }
+  },
+  mounted(){
+    window.addEventListener('resize', () => {
+      this.windowWidth = window.innerWidth;
+    })
   }
 }
 </script>

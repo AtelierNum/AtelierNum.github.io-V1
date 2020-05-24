@@ -290,6 +290,8 @@ import {mapActions} from 'vuex' ;
   .tall{
     width:unset !important;
     height:unset !important;
+    max-width: 100%;
+    overflow:auto;
 
     .top{height:650px}
     .title{ font-size:20px }
@@ -305,10 +307,23 @@ import {mapActions} from 'vuex' ;
 
   .small{
     width:100% !important;
+    overflow:auto;
 
     .desc{
       white-space: unset !important;
     }
+  }
+}
+
+@media(max-width:820px){
+  .tall .top{
+    height:400px;
+  }
+}
+
+@media(max-width:480px){
+  .tall .top{
+    height:300px;
   }
 }
 
