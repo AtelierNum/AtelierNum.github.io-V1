@@ -8,7 +8,7 @@
         <foreignObject v-if="isP5" class="childContainer" clip-path="url(#mask)" width="100%" height="100%" x="0" y="0"/>
         <image v-else :xlink:href="src" class="childContainer" clip-path="url(#mask)" width="100%" /> 
       </svg> -->
-        <div v-if="isP5" width="100%" height="100%" x="0" y="0" class="childContainer"></div>
+        <div v-if="isP5" width="100%" height="100%" x="0" y="0" class="childContainer p5"></div>
         <img v-else class="childContainer thumbnail" width="100%" height="100%" x="0" y="0"  :src="src"/>
          
     </div>
@@ -40,15 +40,14 @@ export default {
         if (this.isP5){
             let sketch = require('@/../public/js/sketch.js');
             new p5(sketch.main);
-        } else {
-            console.log(this)
-        }
+        } 
     }
 }
 </script>
 
 <style lang="scss" scoped>
 /deep/.p5Canvas{
+    height:40vh;
     z-index:-9;
     position:relative;
     transform-origin: top left;
@@ -61,17 +60,42 @@ export default {
 }             
 
 .childContainer {
-    --ratio: - 25%;
-    height: calc(100% - (var(--ratio) * 1.3));
-    transform:translateY(var(--ratio));
     mask: url('../../assets/masks/footer_front_mask.svg') no-repeat;
-    mask-size: contain;
+    mask-size: 100% 90%;
     mask-position-y: bottom;
     transform:rotate(180deg);
+    height:40vh;
 
-    @media (max-width:1200px) {
-        mask-size: 120% 70%;
+    &.p5{
+        background-color: rgb(28,28,30);
+
+        &::before{
+            content:' ';
+            z-index:-10;
+            display: block;
+            position: absolute;
+            left: -150px;
+            top: 0;
+            height: 100%;
+            width: 150px;
+            background: linear-gradient(to right, transparent 0%, rgb(44, 44, 48) 50%, transparent 100%);
+            animation: load 1.5s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
+        }
+
+        @keyframes load {
+            from {
+                left: -150px;
+            }
+            to   {
+                left: 100%;
+            }
+        }
     }
+
+    @media (max-width:480px) {
+        mask-size: 190% 40%;
+    }
+
     @media (max-width:1000px) {
         mask-size:cover;
         mask-size: 120% 40%;
@@ -81,28 +105,16 @@ export default {
         }
     }
 
-    @media (max-width:480px) {
-        mask-size: 190% 40%;
+    @media (max-width:1200px) {
+        mask-size: 120% 70%;
     }
 
-    @media(min-width:1290px){
-    --ratio: -24%;
+    @media (min-width:1000px) {
+        height:50vh;
     }
 
-    @media (max-width:1290px){
-        --ratio: -33%;
-    } 
-
-    @media (max-width:1170px){
-        --ratio: -55%;
-    } 
-
-    @media (max-width:850px){
-        --ratio: -64%;
-
-        &.thumbnail{
-            height: 40vh;
-        }
+    @media(min-width:1920px){
+        height: 70vh;
     }
 }
 

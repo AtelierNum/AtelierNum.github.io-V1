@@ -50,7 +50,7 @@ export default {
     watch: {
         sliderValue(newval, oldval){
             if(this.beingDragged){
-                let scrollHeight = this.map(newval, 0, 100, this.scrollingContentRect.top, this.scrollingContentRect.bottom + (window.innerHeight / 2));
+                let scrollHeight = this.map(newval, 0, 100, this.scrollingContentRect.top + (window.innerHeight / 2), this.scrollingContentRect.bottom + (window.innerHeight / 2));
                 window.scrollTo(0,scrollHeight);
                 this.$emit('update:scrolling', true);
             } else {
