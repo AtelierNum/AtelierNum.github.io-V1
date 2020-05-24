@@ -79,7 +79,6 @@ input{
     &.sliderInput{
       position:absolute;
       left:-3px;
-      // transform: rotate(90deg);
       writing-mode: bt-lr; /* IE */
       -webkit-appearance: slider-vertical; /* WebKit */
       -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
@@ -89,11 +88,8 @@ input{
       width:2px;
       height:100%;
       max-height:80vh;
-      // padding:4px;
-      // padding-top:0;
       
       border-radius: 4px;
-      // background-color: var(--color-dark01);
       box-shadow: 0 0 8px 2px rgba(0,0,0, .16);
       color: var(--color-gray01);
       font-family:'Rubik';

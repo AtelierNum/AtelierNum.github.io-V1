@@ -1,11 +1,9 @@
 <template>
-  <div id="app">
+  <div id="layout">
      <v-header/>
 
       <!-- this is where the Pages are injected -->
-      <div>
-        <router-view></router-view>
-      </div>
+      <router-view></router-view>
 
       <random-pages v-if="whichPage.page" :title="whichPage.title" :type="whichPage.type"></random-pages>
 

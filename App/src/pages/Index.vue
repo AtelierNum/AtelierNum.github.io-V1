@@ -17,10 +17,8 @@
       </svg>
     </section>
 
-    <v-spacer height="20%" class="spacerY"></v-spacer>
+    <v-spacer height="5%" class="spacerY"></v-spacer>
 
-    
-  <div/>
     <h2 class="section-title"> 
       <router-link to="/projects">
         Projets 
@@ -87,7 +85,7 @@
       <v-tag v-for="tag in getTagsList" :key="'ressources-' +tag" category="courses">{{tag}}</v-tag>
     </v-tag-list>
 
-    <v-grid :cols="3" >
+    <v-grid :cols="3" class="smallGrid">
       <v-projectCard v-for="(ressource, i) in getListByDate.ressources.slice(0, max.ressources)" :key="i" 
         class="small"
         r_action="ressources"
@@ -154,24 +152,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
-.grid{
-  max-width: 1150px;
-  display: grid;
-  grid-template-columns: repeat(1,1fr);
-  grid-gap: 45px;
-  margin: 120px auto 300px auto;
-  &.grid-3{
-    grid-template-columns: repeat(3,1fr);
-    @media screen and (max-width: 600px){
-      grid-template-columns: repeat(1,1fr);
-      max-width: 80vw;
-    }
-  }
-  &.grid-2{
-    grid-template-columns: repeat(2,1fr);
-  }
-}
 
 .section-title{
   max-width: 1150px;
@@ -243,7 +223,7 @@ section{
         mask:url('../assets/masks/top_content_mask.svg');
         mask-position-y:bottom;
         mask-size:cover;
-        padding-top:30vh;
+        padding-top:45vh;
         padding-bottom:230px;
         max-height:unset;
       }
@@ -263,7 +243,7 @@ section{
 
       @media(max-width:1200px){
         width:5vw;
-        min-width:54px;
+        min-width:44px;
       }
   }
 
@@ -277,13 +257,14 @@ section{
 
   
 
-  @media(max-width:1200px){
-    height:70vh !important;
-
-    .scroll{
-      width:5vw;
-      min-width:44px;
-    }
+  @media(max-width:880px){
+    min-height:60vh;
+  }
+  @media(max-width:520px){
+    min-height:70vh;
+  }
+  @media(max-width:5420px){
+    min-height:90vh;
   }
 }
 

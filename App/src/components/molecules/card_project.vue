@@ -287,10 +287,11 @@ import {mapActions} from 'vuex' ;
 
 
 @media (max-width:1300px){
-  .card-project{
+  .tall{
     width:unset !important;
     height:unset !important;
 
+    .top{height:650px}
     .title{ font-size:20px }
     .desc{ font-size:16px }
     .bottom{ padding: 10px 3px 0 3px}
@@ -301,22 +302,30 @@ import {mapActions} from 'vuex' ;
       left:0 !important;
     }
   }
+
+  .small{
+    width:100% !important;
+
+    .desc{
+      white-space: unset !important;
+    }
+  }
 }
 
-@media (max-width:700){
-  // .card-project{
-  //   width:unset !important;
-  //   height:unset !important;
+// @media (max-width:700px){
+//   // .card-project{
+//   //   width:unset !important;
+//   //   height:unset !important;
 
-  //   .title{ font-size:20px }
-  //   .desc{ font-size:16px }
-  //   .bottom{ padding: 10px 3px 0 3px}
-  //   .tags{
-  //     font-size:17px;
-  //     position:relative !important;
-  //     bottom:0 !important;
-  //     left:0 !important;
-  //   }
-  // }
-}
+//   //   .title{ font-size:20px }
+//   //   .desc{ font-size:16px }
+//   //   .bottom{ padding: 10px 3px 0 3px}
+//   //   .tags{
+//   //     font-size:17px;
+//   //     position:relative !important;
+//   //     bottom:0 !important;
+//   //     left:0 !important;
+//   //   }
+//   // }
+// }
 </style>
