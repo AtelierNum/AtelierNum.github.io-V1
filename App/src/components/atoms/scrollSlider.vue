@@ -1,5 +1,5 @@
 <template>
-  <input :oninput="dragSlider()" :onchange="dragSlider()" orient="vertical" type="range" :min="min" :max="max" v-model="sliderValue" class="sliderInput">
+  <input :oninput="dragSlider()" :onchange="dragSlider()"  orient="vertical" type="range" :min="min" :max="max" v-model="sliderValue" class="sliderInput">
 </template>
 
 <script>
@@ -80,10 +80,12 @@ input{
       position:absolute;
       left:-3px;
       writing-mode: bt-lr; /* IE */
-      -webkit-appearance: slider-vertical; /* WebKit */
       -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
-      background: transparent; /* Otherwise white in Chrome */
+      -webkit-appearance: slider-vertical; /* WebKit */
       transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      -webkit-transform: rotate(180deg);
+      background-color:var(--color-dark01);
 
       width:2px;
       height:100%;
@@ -106,6 +108,7 @@ input{
 
       &::-webkit-slider-thumb {
         -webkit-appearance: none;
+        -webkit-transform: translateX(7px);
         height: var(--wh);
         width: var(--wh);
         border: var(--border);

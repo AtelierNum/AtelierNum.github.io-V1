@@ -50,14 +50,12 @@ export default {
       markdownChilds : [],
       loaded : false,
       contentRect: new DOMRect(),
-      scrollingIndex : false
+      scrollingIndex : false,
+      windowWidth: window.innerWidth
     }
   },
   computed : {
-    ...mapGetters(['getContent']),
-    windowWidth(){
-      return window.innerWidth;
-    }
+    ...mapGetters(['getContent'])
   },
   components:{
     'svg-curved' : svgCurved,
@@ -114,10 +112,15 @@ export default {
         }
     }
   },
-  watch: {
-    scrollingIndex(newval, oldval){
-      console.log(newval)
-    }
+  // watch: {
+  //   scrollingIndex(newval, oldval){
+  //     console.log(newval)
+  //   }
+  // },
+  mounted(){
+    window.addEventListener('resize', () => {
+      this.windowWidth = window.innerWidth;
+    })
   }
 }
 </script>

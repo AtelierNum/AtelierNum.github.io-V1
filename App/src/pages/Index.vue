@@ -177,6 +177,8 @@ section{
     padding:220px 20vw 180px 12vw;
     mask: url('../assets/masks/mask_1.svg') no-repeat;
     mask-size:contain;
+    -webkit-mask-size:contain;
+    -ms-mask-size:contain;
     width: 70vw;
     max-width:1028px;
     max-height:697px;
@@ -225,7 +227,11 @@ section{
         width:100%;
         mask:url('../assets/masks/top_content_mask.svg');
         mask-position-y:bottom;
+        -webkit-mask-position-y:bottom;
+        -ms-mask-position-y:bottom;
         mask-size:cover;
+        -webkit-mask-size:cover;
+        -ms-mask-size:cover;
         padding-top:45vh;
         padding-bottom:230px;
         max-height:unset;

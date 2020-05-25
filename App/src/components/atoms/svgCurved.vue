@@ -63,7 +63,12 @@ export default {
     mask: url('../../assets/masks/footer_front_mask.svg') no-repeat;
     mask-size: 100% 90%;
     mask-position-y: bottom;
+    -webkit-mask-position-y: bottom;
+    -ms-mask-position-y: bottom;
     transform:rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+
     height:40vh;
 
     &.p5{
