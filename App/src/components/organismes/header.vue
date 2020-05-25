@@ -94,18 +94,19 @@ export default {
         .bg{
             position: absolute;
             top:0;
-            right:0;
-           
+            right:0;   
         }
     }
 
     .logo{
-        position:relative;
+        position:fixed;
         width:100px;
         height:100px;
         min-width:54px;
         min-height:54px;
         z-index:999999;
+        top:20px;
+        left:20px; 
 
         border-radius:50px;
         background-size: 100px 100px;
@@ -204,7 +205,7 @@ export default {
         display:block;
         position:fixed;
         top:30px;
-        right:40px;
+        right:30px;
         transition: .2s ease-out;
         // filter:saturate(30) hue-rotate(20deg);
         // mix-blend-mode: difference;
@@ -250,7 +251,7 @@ export default {
         margin:0;
         box-shadow:-2px 0 8px 2px rgba(0, 0, 0, .32);
         opacity: 0;
-        transform: translateX(50px);
+        // transform: translateX(50px);
         transition: .3s ease-out;
         visibility:hidden;
         transition: visibilty 0, opacity transform .2 ease-out;
@@ -258,7 +259,7 @@ export default {
         .nav{
             flex-direction:column;
             width:max-content;
-            transform: translateX(10px);
+            // transform: translateX(10px);
             transition: .3s ease-out;
             margin:auto 25%;
         }

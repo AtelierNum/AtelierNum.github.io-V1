@@ -8,7 +8,7 @@
         <foreignObject v-if="isP5" class="childContainer" clip-path="url(#mask)" width="100%" height="100%" x="0" y="0"/>
         <image v-else :xlink:href="src" class="childContainer" clip-path="url(#mask)" width="100%" /> 
       </svg> -->
-        <div v-if="isP5" width="100%" height="100%" x="0" y="0" class="childContainer p5"></div>
+        <div v-if="isP5" width="100%" height="100%" x="0" y="0" class="childContainer p5" :class="loaded ? '' : 'loading'"></div>
         <img v-else class="childContainer thumbnail" width="100%" height="100%" x="0" y="0"  :src="src"/>
          
     </div>
@@ -19,6 +19,11 @@ import p5 from 'p5';
 
 export default {
     name: 'svgCurved',
+    data(){
+        return{
+            loaded: false
+        }
+    },
     props: {
         content : {
             type: String,
@@ -40,7 +45,12 @@ export default {
         if (this.isP5){
             let sketch = require('@/../public/js/sketch.js');
             new p5(sketch.main);
-        } 
+
+            setTimeout( () =>{
+                this.loaded = true;
+                console.log(this.loaded)
+            }, 6000) // better to do
+        }
     }
 }
 </script>
@@ -73,6 +83,10 @@ export default {
 
     &.p5{
         background-color: rgb(28,28,30);
+    }
+
+    &.loading{
+        overflow:hidden;
 
         &::before{
             content:' ';
@@ -86,14 +100,14 @@ export default {
             background: linear-gradient(to right, transparent 0%, rgb(44, 44, 48) 50%, transparent 100%);
             animation: load 1.5s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
         }
+    }
 
-        @keyframes load {
-            from {
-                left: -150px;
-            }
-            to   {
-                left: 100%;
-            }
+    @keyframes load {
+        from {
+            left: -150px;
+        }
+        to   {
+            left: 100%;
         }
     }
 

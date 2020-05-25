@@ -25,9 +25,8 @@
         :scrolling.sync="scrollingIndex"></v-scrollSlider>
     </div>
 
-    <md-reader @mdloaded="waitingFunctions">
-      <v-loader v-for="i in 12" :key="i + '-loader'" v-show="!loaded"></v-loader>
-    </md-reader>
+    <md-reader @mdloaded="waitingFunctions"></md-reader>
+    <v-loader v-for="i in 12" :key="i + '-loader'" v-show="!loaded"></v-loader>
   </section>  
   <p class="last_update">Last update {{getContent.last_update}}</p>
   
@@ -155,6 +154,11 @@ export default {
   margin-left:auto;
   margin-right:auto;
 
+  @media(max-width:480px){
+    word-break:word-break;
+    font-size:12vw;
+  }
+
     & + h2 {
       text-align: center;
       font-family: 'Rubik';
@@ -230,6 +234,7 @@ export default {
   flex-shrink: 0;
 
   @media(max-width:880px){
+    width:0;
     background-color:unset;
   }
 
@@ -247,7 +252,8 @@ export default {
   width:70%;
 
   @media(max-width:880px){
-    width:unset;
+    width:100%;
+    padding:0 10px 0 40px;
   }
 }
 
@@ -261,6 +267,10 @@ export default {
   font-weight:300;
   font-size:1em;
   color: #373D4A;
+
+  @media(max-width:480px){
+    margin-right: 10px;
+  }
 }
 
 /deep/

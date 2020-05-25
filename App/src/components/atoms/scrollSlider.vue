@@ -70,6 +70,7 @@ export default {
 input{
     margin-left:20px;
     scroll-snap-type: y mandatory;
+    padding:0;
 
     &:hover{
       cursor:pointer;
@@ -88,6 +89,7 @@ input{
       background-color:var(--color-dark01);
 
       width:2px;
+      max-width:2px;
       height:100%;
       max-height:80vh;
       
@@ -169,7 +171,7 @@ input{
       }
 
       &::-ms-track {
-        width: 100%;
+        width: 2px;
         cursor: pointer;
 
         /* Hides the slider so custom styles can be added */

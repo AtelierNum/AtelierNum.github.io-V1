@@ -347,6 +347,7 @@ export default {
 
     @media(max-width:880px){
       font-size:290%;
+      word-break: break-word;
     }
 
     &::after{
@@ -373,6 +374,11 @@ export default {
 
     margin-bottom:30px;
     margin-top:40px;
+
+    @media(max-width:880px){
+      font-size:220%;
+      word-break: break-word;
+    }
   }
 
   & h3{
@@ -385,6 +391,11 @@ export default {
 
     margin-bottom:20px;
     margin-top:30px;
+
+    @media(max-width:880px){
+      font-size:190%;
+      word-break: break-word;
+    }
   }
   
   & h4{
@@ -396,6 +407,11 @@ export default {
 
     margin-bottom:20px;
     margin-top:20px;
+
+    @media(max-width:880px){
+      font-size:160%;
+      word-break: break-word;
+    }
   }
   
   & h5{
@@ -407,6 +423,11 @@ export default {
 
     margin-bottom:20px;
     margin-top:20px;
+
+    @media(max-width:880px){
+      font-size:130%;
+      word-break: break-word;
+    }
   }
   
   & h6{
@@ -429,6 +450,7 @@ export default {
   line-height: 26px;
   color: #373D4A;
   margin-bottom: 30px;
+  word-break:break-word;
   }
   
   & li {
@@ -447,6 +469,7 @@ export default {
 
   a{
     position:relative;
+    word-break:break-word;
 
     &::after{
       content: ' ';
