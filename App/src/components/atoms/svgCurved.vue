@@ -48,7 +48,6 @@ export default {
 
             setTimeout( () =>{
                 this.loaded = true;
-                console.log(this.loaded)
             }, 6000) // better to do
         }
     }

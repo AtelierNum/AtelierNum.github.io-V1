@@ -12,8 +12,9 @@
       <v-tag v-for="tag in getTagsList" :key="$route.name + tag" :category="$route.name">{{tag}}</v-tag>
     </v-tag-list>
 
-    <v-grid :cols="3">
+    <v-grid :cols=" windowWidth < 800 ? 1 : 3">
       <v-projectCard
+        class="tall"
         v-for="(content, i) in getListByDate[$route.name].slice(0, max)"
         :key="i"
         :r_action="$route.name"
@@ -65,7 +66,8 @@ export default {
         }
       },
       max: 12,
-      isDisplayed : true
+      isDisplayed : true,
+      windowWidth: window.innerWidth
     };
   },
   computed: {
@@ -83,6 +85,9 @@ export default {
     if (this.getListByDate[this.$route.name].length < this.max){
       this.isDisplayed = false;
     }
+    window.addEventListener('resize', () => {
+      this.windowWidth = window.innerWidth;
+    })
   }
 };
 </script>
