@@ -9,7 +9,10 @@
         <image v-else :xlink:href="src" class="childContainer" clip-path="url(#mask)" width="100%" /> 
       </svg> -->
         <div v-if="isP5" width="100%" height="100%" x="0" y="0" class="childContainer p5" :class="loaded ? '' : 'loading'"></div>
-        <img v-else class="childContainer thumbnail" width="100%" height="100%" x="0" y="0"  :src="src"/>
+        <div v-else class="childContainer">
+            <img  class="thumbnail" width="100%" height="100%" x="0" y="0"  :src="src"/>
+        </div>
+        
          
     </div>
 </template>
@@ -66,7 +69,11 @@ export default {
     height:100% !important;
     background-color: rgb(28,28,30);
     z-index:-9;
-}             
+}  
+
+.thumbnail{
+    transform:rotate(180deg)
+}
 
 .childContainer {
     mask: url('../../assets/masks/footer_front_mask.svg') no-repeat;
