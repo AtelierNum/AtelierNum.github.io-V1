@@ -52,8 +52,7 @@ export function main(p5){
 	p5.setup = () => {	
 		let elem = document.querySelector(".childContainer");
 		let canvas = p5.createCanvas(window.innerWidth, window.innerHeight /2, p5.WEBGL);
-        canvas.parent(elem)
-        elem.classList.remove('loading');
+		canvas.parent(elem)
 		canvas.style.width = "1920px";
 
         p5.noFill()
