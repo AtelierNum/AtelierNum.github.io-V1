@@ -26,7 +26,6 @@
     </div>
 
     <md-reader @mdloaded="waitingFunctions"></md-reader>
-    <v-loader v-for="i in 12" :key="i + '-loader'" v-show="!loaded"></v-loader>
   </section>  
   <p class="last_update">Last update {{getContent.last_update}}</p>
   

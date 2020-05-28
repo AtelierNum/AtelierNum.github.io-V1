@@ -126,7 +126,7 @@ export default {
             let currentnode = this.index.find( section => section.offsetTop > this.current.section.offsetTop);
             
             if (currentnode != undefined){
-                if (window.scrollY - (window.innerHeight / 2) > currentnode.offsetTop){
+                if (window.scrollY > currentnode.offsetTop){
                 this.current.section.index = this.index.findIndex( section => section == currentnode);
                 this.current.section.offsetTop = currentnode.offsetTop; 
                 

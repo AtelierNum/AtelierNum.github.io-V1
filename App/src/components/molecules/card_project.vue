@@ -192,13 +192,13 @@ import {mapActions} from 'vuex' ;
 
   &.small{
     width: 350px;
-    height:250px;
+    height:300px;
     .top{
       height: 120px;
     }
     .desc{
-      height:1.5em;
-       white-space: nowrap;
+      height:100%;
+      //  white-space: nowrap;
     }
   }
 

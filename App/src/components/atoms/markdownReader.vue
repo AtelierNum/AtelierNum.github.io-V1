@@ -6,14 +6,8 @@
 <script>
 import VueMarkdown from 'vue-markdown'
 import Prism from 'prismjs';
-// import 'prismjs/components/'
-// import "prismjs/themes/prism-okaidia.css";  // theme
-// import 'prismjs/components/prism-go.min';  // language
 
 import {mapGetters, mapActions} from 'vuex'
-
-
-// loadLanguages(['js', 'processing', 'py', 'java', 'json', 'c', 'cpp', 'md', 'scss', 'regex', ]) 
 
 export default {
   name: 'markdownReader',
@@ -343,7 +337,7 @@ export default {
 
     position:relative;
     margin-bottom:50px;
-    margin-top:50px;
+    padding-top:50px;
 
     @media(max-width:880px){
       font-size:290%;
@@ -373,7 +367,7 @@ export default {
     color: #373D4A;
 
     margin-bottom:30px;
-    margin-top:40px;
+    padding-top:40px;
 
     @media(max-width:880px){
       font-size:220%;
@@ -390,7 +384,7 @@ export default {
     color: #373D4A; 
 
     margin-bottom:20px;
-    margin-top:30px;
+    padding-top:30px;
 
     @media(max-width:880px){
       font-size:190%;
@@ -406,7 +400,7 @@ export default {
     color: #373D4A; 
 
     margin-bottom:20px;
-    margin-top:20px;
+    padding-top:20px;
 
     @media(max-width:880px){
       font-size:160%;
@@ -422,7 +416,7 @@ export default {
     color: #373D4A; 
 
     margin-bottom:20px;
-    margin-top:20px;
+    padding-top:20px;
 
     @media(max-width:880px){
       font-size:130%;
