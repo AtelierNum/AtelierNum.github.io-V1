@@ -28,7 +28,7 @@ cd ..
 node getContent.js
 ```
 
-Now you can open a local server of your project ( from App directory): 
+Now you can open a local server of your project ( from App directory) to test your modification locally: 
 
 ``` 
 cd ../..
@@ -40,10 +40,10 @@ It will open a local server on a available port ( usually localhost:8080 or near
 ## To publish a new build
 
 ```
-bash build.sh "my commit message"
+bash build.sh
 ```
 
-this will build the projects running 'getContent.js' from /App/src/assets, 'npm run build' from /App and create a commit to the master branch using [git subtree](https://github.com/git/git/blob/master/contrib/subtree/git-subtree.txt).
+this will build the projects running 'getContent.js' from public/data/lists/, 'npm run build' from /App and create a commit to the master branch using [git subtree](https://github.com/git/git/blob/master/contrib/subtree/git-subtree.txt).
 
 afterwads you can synch with the repo whith whatever method you see fit.
 
