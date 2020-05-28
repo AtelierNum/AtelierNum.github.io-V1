@@ -7,7 +7,7 @@
       <div class="alternativeShape">
         <h1>AtelierNum</h1>
         <h2>L’	&#201;cole de design Nantes Atlantique</h2>
-        <p>AtelierNum présente des travaux d’étudiants de l’ &#201;cole de design et quelques ressources à leur disposition.</p>
+        <p>AtelierNum regroupe des travaux d’étudiants de l’ &#201;cole de design et quelques ressources à leur disposition.</p>
       </div>
       <svg class="scroll"  width="77" height="77" viewBox="0 0 77 77">
         <g transform="translate(-922 -945)">

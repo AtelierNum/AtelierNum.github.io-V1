@@ -14,7 +14,7 @@
         <div class="edna">
             <img src="../../../public/img/logo_edna_white.png" alt="logo of l'ecole de design nantes atlantique">
             <h2>L'Atelier numérique</h2>
-            <h3>from <a href="https://www.lecolededesign.com/">L'&#201;cole de design Nantes Atlantique</a></h3>
+            <h3>by <a href="https://www.lecolededesign.com/">L'&#201;cole de design Nantes Atlantique</a></h3>
         </div>
 
         <div>
