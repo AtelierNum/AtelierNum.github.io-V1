@@ -1,13 +1,30 @@
+
 {
     "ressources": [
+
+        {
+            "name": "Règle des bases de l'ux design",
+            "id": "regles_ux_desig",
+            "tags": [
+                "Interaction",
+                "UX/UI",
+                "Web",
+                "Theorie",
+                "FR"
+            ],
+            "desc": "Article théorique présentant quelques règle de base de l'UX design.",
+            "url": "https://www.projet.io/blog/regles-de-base-de-l-ux-design-user-experience",
+            "thumbnail": "https://user-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/1951763/547664_145051.png",
+            "last_update": "09/06/20"
+        },
         {
             "name": "Unreal online learning",
             "id": "unreal_online_learning",
             "tags": [
-                "Unreal Engin",
+                "Unreal Engine",
                 "3D",
                 "Game",
-                "Tutorials",
+                "Tuto",
                 "EN"
             ],
             "desc": "Tutorials and ressources on how to get started with unreal engine",
@@ -21,7 +38,7 @@
             "tags": [
                 "Blender",
                 "3D",
-                "Tutorials",
+                "Tuto",
                 "EN"
             ],
             "desc": "Tutorials and ressources on how to get started with 3D modelling in Blender",
@@ -35,7 +52,7 @@
             "tags": [
                 "Blender",
                 "3D",
-                "Tutorials",
+                "Tuto",
                 "EN"
             ],
             "desc": "Tutorials and ressources on how to get started with 3D modelling in Blender",
@@ -48,7 +65,7 @@
             "id": "happy_codding",
             "tags": [
                 "Interaction",
-                "Tutorials",
+                "Tuto",
                 "EN"
             ],
             "desc": "Tutorials and ressources on how to get started with coding in java (processing), js etc.",
@@ -77,6 +94,7 @@
             "tags": [
                 "Sound Design",
                 "Theorie",
+                "Tuto",
                 "EN"
             ],
             "desc": "Abbleton Live in browser introduction to sound synthesis ! e.g. How to build synths. ",
@@ -90,6 +108,7 @@
             "tags": [
                 "Sound Design",
                 "Theorie",
+                "Tuto",
                 "EN"
             ],
             "desc": "Abbleton Live in browser introduction to making electronic music ! ",
@@ -103,6 +122,7 @@
             "tags": [
                 "Graphisme",
                 "3D",
+                "Outil",
                 "EN"
             ],
             "desc": "Colaborative bank of 3D models by google",
@@ -116,6 +136,7 @@
             "tags": [
                 "3D",
                 "Fabrication",
+                "Tuto",
                 "EN"
             ],
             "desc": "Learn how to use the zmorph from the workshop with this online ressource. 3D printing, laser engraving or CNC milling.",
@@ -141,6 +162,7 @@
             "id": "runwayml",
             "tags": [
                 "Machine Learning",
+                "Outil",
                 "EN"
             ],
             "desc": "The swiss knife of machine learning. No code needed but it might help in some cases...",
@@ -156,6 +178,7 @@
                 "Interaction",
                 "Machine Learning",
                 "Creative Coding",
+                "Exemples",
                 "EN"
             ],
             "desc": "Friendly Machine Learning for the web. Probably the simplest way to get started with interaction design projects using ML.",
@@ -170,6 +193,7 @@
                 "Interaction",
                 "Machine Learning",
                 "Creative Coding",
+                "Outil",
                 "EN"
             ],
             "desc": "ml4a is a collection of free educational resources devoted to machine learning for artists.",
@@ -185,6 +209,7 @@
                 "Graphisme",
                 "Print",
                 "Creative Coding",
+                "Tuto",
                 "EN"
             ],
             "desc": "A tutorial on how to use a axidraw with processing to print beautiful generative artworks.",
@@ -199,6 +224,7 @@
                 "Processing",
                 "Interaction",
                 "Creative Coding",
+                "Tuto",
                 "EN"
             ],
             "desc": "Create projects with processing on the raspberry pi handheld computer. ",
@@ -227,6 +253,7 @@
                 "Web",
                 "Graphisme",
                 "Creative Coding",
+                "Exemples",
                 "EN"
             ],
             "desc": " An open project to implement Sol LeWitt's instructions in JavaScript. Sol LeWitt was an American artist often regarded as the founder of Conceptual and Minimal art. Some of his most famous works were wall drawings for which he only provided instructions.",
@@ -241,6 +268,7 @@
                 "Web",
                 "Graphisme",
                 "Creative Coding",
+                "Tuto",
                 "EN"
             ],
             "desc": "Learn how to code generative visual with pure javascript",
@@ -255,6 +283,7 @@
                 "P5js",
                 "Interaction",
                 "Creative Coding",
+                "Exemples",
                 "EN"
             ],
             "desc": "Kynd's tutorials on maths and physics for the web with p5js with interactive examples and code samples.",
@@ -269,6 +298,7 @@
                 "Processing",
                 "Interaction",
                 "Creative Coding",
+                "Tuto",
                 "EN"
             ],
             "desc": "Daniel Shiffman's nature of code online book. Learn how to code with maths, physics system and even neural networks. ",
@@ -282,6 +312,7 @@
             "tags": [
                 "Arduino",
                 "Interaction",
+                "Tuto",
                 "EN"
             ],
             "desc": "Arduino official learning center",
@@ -295,6 +326,7 @@
             "tags": [
                 "Unity",
                 "C#",
+                "Tuto",
                 "EN"
             ],
             "desc": "Beginners and advanced untity ressources",
@@ -308,6 +340,7 @@
             "tags": [
                 "Shaders",
                 "Creative Coding",
+                "Tuto",
                 "EN"
             ],
             "desc": "Learn how to code powefull fragment shaders",
@@ -322,6 +355,7 @@
                 "Shaders",
                 "Creative Coding",
                 "P5js",
+                "Tuto",
                 "EN"
             ],
             "desc": "Learn how to code fragment shaders for the web with p5js",
@@ -335,6 +369,7 @@
             "tags": [
                 "Processing",
                 "Creative Coding",
+                "Tuto",
                 "EN"
             ],
             "desc": "Creative coding courses by Tim Rodenbroeker",

@@ -1,6 +1,20 @@
 {
     "projects": [
         {
+            "name": "Projet Yearbook 2020",
+            "id": "projet_yearbook_2020",
+            "tags": [
+                "P5js",
+                "Graphisme",
+                "FR"
+            ],
+            "desc": "En utilisant p5js était demandé de produire un portrait d'eux même et une image libre en manipulant les pixels d'une image source.",
+            "url": "https://raw.githubusercontent.com/AtelierNum/projet_Yearbook_2020/master/README.md",
+            "thumbnail": "https://raw.githubusercontent.com/AtelierNum/projet_Yearbook_2020/master/assets/rendus/Myriam_portrait.png",
+            "last_update": "09/06/20",
+            "author": "étudiants en design graphique"
+        },
+        {
             "name": "Workshop Intallations Interactives 2020",
             "id": "workshop_installation_interactive_2020",
             "tags": [
