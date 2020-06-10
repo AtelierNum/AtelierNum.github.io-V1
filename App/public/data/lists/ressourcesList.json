@@ -1,7 +1,19 @@
 
 {
     "ressources": [
-
+        {
+            "name": "Prototyping with fabrication",
+            "id": "prototypin_with_fab",
+            "tags": [
+                "Fabrication",
+                "Tuto",
+                "EN"
+            ],
+            "desc": "Un cours d'introduction aux techniques de prototypage pour la fabrication numérique, via le maker lab de l'EM Lyon.",
+            "url": "https://prototyping-with-fab.gitlab.io/",
+            "thumbnail": "http://www.lofirobot.com/wp-content/uploads/pojazd-1.jpg",
+            "last_update": "10/06/20"
+        },
         {
             "name": "Règle des bases de l'ux design",
             "id": "regles_ux_desig",
