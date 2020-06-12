@@ -13,7 +13,7 @@ cd ../../..
 
 
 #move everything to the right place
-git add .
+git add ./App/public/data/*
 git commit -m "new ressource"
 git push origin `git subtree split --prefix App/dist src`:master --force  
 
