@@ -9,11 +9,12 @@ echo 'Starting building ...'
 #cd ./App && yarn run build
 #cd ..
 cd ./App/public/data && node getContent.js
+cp ./globaList.json ../../dist/data 
 cd ../../..
 
 
 #move everything to the right place
-git add ./App/public/data/*
+git add App/dist/data/*
 git commit -m "new ressource"
 git push origin `git subtree split --prefix App/dist src`:master --force  
 
