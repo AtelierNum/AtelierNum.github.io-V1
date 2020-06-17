@@ -9,9 +9,8 @@ echo 'Starting building ...'
 #cd ./App && yarn run build
 #cd ..
 cd ./App/public/data && node getContent.js
-cp ./globaList.json ../../dist/data 
 cd ../../..
-
+cp ./App/public/data/globalList.json ./App/dist/data/
 
 #move everything to the right place
 git add App/dist/data/*
