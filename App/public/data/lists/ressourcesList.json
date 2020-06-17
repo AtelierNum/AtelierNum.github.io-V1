@@ -2,6 +2,21 @@
 {
     "ressources": [
         {
+            "name": "ThreeJS + ARJS examples",
+            "id": "ar_examples",
+            "tags": [
+                "Web",
+                "AR",
+                "Threejs",
+                "Exemples",
+                "EN"
+            ],
+            "desc": "Une collection d'exemples la réalité augmentée avec des technologies web !",
+            "url": "https://stemkoski.github.io/AR-Examples/",
+            "thumbnail": "https://stemkoski.github.io/AR-Examples/images/demo/hole-box.png",
+            "last_update": "17/06/20"
+        },
+        {
             "name": "Prototyping with fabrication",
             "id": "prototypin_with_fab",
             "tags": [
