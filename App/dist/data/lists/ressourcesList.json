@@ -1,6 +1,37 @@
 
 {
     "ressources": [
+
+        {
+            "name": "The coding train",
+            "id": "coding_train",
+            "tags": [
+                "Code",
+                "Processing",
+                "P5js",
+                "Tuto",
+                "EN"
+            ],
+            "desc": "Une collection de tutos vidéos divers et variés sur la programmation par Daniel Shiffman & Co",
+            "url": "https://thecodingtrain.com/",
+            "thumbnail": "https://thecodingtrain.com/assets/images/header.jpg",
+            "last_update": "24/06/20"
+        },
+        {
+            "name": "ThreeJS + ARJS examples",
+            "id": "ar_examples",
+            "tags": [
+                "Web",
+                "AR",
+                "Threejs",
+                "Exemples",
+                "EN"
+            ],
+            "desc": "Une collection d'exemples la réalité augmentée avec des technologies web !",
+            "url": "https://stemkoski.github.io/AR-Examples/",
+            "thumbnail": "https://stemkoski.github.io/AR-Examples/images/demo/hole-box.png",
+            "last_update": "17/06/20"
+        },
         {
             "name": "Prototyping with fabrication",
             "id": "prototypin_with_fab",

@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "6966730ded9612d77c48",
+    "revision": "5c8477c9144decc1f188",
     "url": "css/app.4ea030eb.css"
   },
   {
-    "revision": "6966730ded9612d77c48",
-    "url": "js/app.83d9881c.js"
+    "revision": "5c8477c9144decc1f188",
+    "url": "js/app.d39541a0.js"
   },
   {
     "revision": "1d1bc433000f219dcfb0",
@@ -68,12 +68,12 @@ self.__precacheManifest = [
     "url": "js/chunk-vendors.0627a868.js"
   },
   {
-    "revision": "3d157415ea0c23e91ee6efe5200f3fc1",
-    "url": "img/top_content_mask.3d157415.svg"
-  },
-  {
     "revision": "c7650c55df622ba608fded77b81b4d0e",
     "url": "img/mask_1.c7650c55.svg"
+  },
+  {
+    "revision": "3d157415ea0c23e91ee6efe5200f3fc1",
+    "url": "img/top_content_mask.3d157415.svg"
   },
   {
     "revision": "1932da3071bff29228ccd96223cd865b",
@@ -84,23 +84,23 @@ self.__precacheManifest = [
     "url": "img/burgerLineNum.6efbd150.svg"
   },
   {
-    "revision": "4df16443e4c08c5dc2d8fd844d0bab45",
-    "url": "img/footer_back_mask.4df16443.svg"
-  },
-  {
     "revision": "3277cee66f2ae27c7d5c99cc2c8387c4",
     "url": "img/footer_front_mask.3277cee6.svg"
+  },
+  {
+    "revision": "4df16443e4c08c5dc2d8fd844d0bab45",
+    "url": "img/footer_back_mask.4df16443.svg"
   },
   {
     "revision": "647f8b7373430ceb069732d6fa3892aa",
     "url": "img/logo_edna_white.647f8b73.png"
   },
   {
-    "revision": "59b82170145561d7399794c613be6e65",
+    "revision": "84584e78a9a57be453e9eb749fd20f3a",
     "url": "index.html"
   },
   {
-    "revision": "ccf13b2071bdcaca483772ab43546d5b",
+    "revision": "ab31c2de3bb95e3f9666fee1bdcc67f2",
     "url": "data/globalList.json"
   },
   {
@@ -120,36 +120,36 @@ self.__precacheManifest = [
     "url": "data/lists/projectsList.json"
   },
   {
-    "revision": "02b1bb32a2cb2f4ba1db08b8a702bab7",
-    "url": "js/sketch.js"
-  },
-  {
     "revision": "c6577c1b42dc0a1730c3fe6dcd3724a3",
     "url": "data/lists/coursesList.json"
   },
   {
-    "revision": "54641dbc98a55256215ee01367408c42",
+    "revision": "3d8014cf1b631765896a42eac8492ca8",
     "url": "data/lists/ressourcesList.json"
-  },
-  {
-    "revision": "379c45b4d621033ff2f8537f4ef6a916",
-    "url": "icons/logo/logo@1x.png"
   },
   {
     "revision": "dd9a232522671d0d2937ac12a901a032",
     "url": "data/lists/tagsList.json"
   },
   {
-    "revision": "1c8a54f25d101bdc607cec7228247a9a",
-    "url": "icons/socials/discord_logo.svg"
+    "revision": "02b1bb32a2cb2f4ba1db08b8a702bab7",
+    "url": "js/sketch.js"
   },
   {
     "revision": "a574348589bf998ac3e3767bdabbd80c",
     "url": "icons/logo/lgo@2x.png"
   },
   {
+    "revision": "379c45b4d621033ff2f8537f4ef6a916",
+    "url": "icons/logo/logo@1x.png"
+  },
+  {
     "revision": "4df7f120f2d9952d54911aaf89042cb6",
     "url": "icons/socials/github_logo.svg"
+  },
+  {
+    "revision": "1c8a54f25d101bdc607cec7228247a9a",
+    "url": "icons/socials/discord_logo.svg"
   },
   {
     "revision": "5b5846090d932223c9d39ec4d32133c9",
