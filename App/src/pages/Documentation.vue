@@ -20,6 +20,7 @@
       <v-scrollSlider 
         ref="sliderScroll" 
         v-if="loaded" 
+        :windowScroll="true"
         v-show="windowWidth < 880" 
         :scrollingContentRect="contentRect"
         :scrolling.sync="scrollingIndex"></v-scrollSlider>
@@ -92,29 +93,24 @@ export default {
           copycode.innerText = '<> Copy the code' ;
           copycode.classList.add('copycode');
 
-          // copycode.addEventListener('click', () => {
-          //   console.log(codesections[w].children[0], document.querySelector('code'))
-          //   // document.querySelector('code').select();
-          //   // document.execCommand('copy');
+          copycode.addEventListener('click', () => {
+            console.log(codesections[w].children[0], document.querySelector('code'))
+            // document.querySelector('code').select();
+            // document.execCommand('copy');
 
-          //   this.$copyText(codesections[w].children[0].innerText).then(function (e) {
-          //     alert('Copied')
-          //     console.log(e)
-          //   }, function (e) {
-          //     alert('Can not copy')
-          //     console.log(e)
-          //   })
-          // })
+            this.$copyText(codesections[w].children[0].innerText).then(function (e) {
+              alert('Copied')
+              console.log(e)
+            }, function (e) {
+              alert('Can not copy')
+              console.log(e)
+            })
+          })
 
           codesections[w].appendChild(copycode);
         }
     }
   },
-  // watch: {
-  //   scrollingIndex(newval, oldval){
-  //     console.log(newval)
-  //   }
-  // },
   mounted(){
     window.addEventListener('resize', () => {
       this.windowWidth = window.innerWidth;
@@ -272,24 +268,24 @@ export default {
   }
 }
 
-/deep/
-.copycode{
-  position:absolute;
-  bottom: 20px;
-  right:20px;
-  // content: '<> Copy the code';
-  padding: 10px 20px;
-  border-radius: 8px;
-  border:none;
+// /deep/
+// .copycode{
+//   position:absolute;
+//   bottom: 20px;
+//   right:20px;
+//   content: '<> Copy the code';
+//   padding: 10px 20px;
+//   border-radius: 8px;
+//   border:none;
 
-  text-align: center;
-  font-family:'Rubik';
-  font-size: 1em;
-  color: #F8F8F8;
-  background-color: #373D4A;
+//   text-align: center;
+//   font-family:'Rubik';
+//   font-size: 1em;
+//   color: #F8F8F8;
+//   background-color: #373D4A;
 
-  &:hover{
-    cursor:pointer;
-  }
-}
+//   &:hover{
+//     cursor:pointer;
+//   }
+// }
 </style>

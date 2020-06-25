@@ -16,6 +16,11 @@ export default {
             default: () => 100,
             required : false
         },
+        windowScroll:{
+            type: Boolean,
+            default : () => false,
+            required: false
+        },
         scrollingContentRect : {
             type: DOMRect,
             default : () => new DOMRect(),
@@ -50,8 +55,13 @@ export default {
     watch: {
         sliderValue(newval, oldval){
             if(this.beingDragged){
-                let scrollHeight = this.map(newval, 0, 100, this.scrollingContentRect.top + (window.innerHeight / 2), this.scrollingContentRect.bottom + (window.innerHeight / 2));
-                window.scrollTo(0,scrollHeight);
+                if (this.windowScroll){
+                    let scrollHeight = this.map(newval, this.min, this.max, this.scrollingContentRect.top + (window.innerHeight / 2), this.scrollingContentRect.bottom + (window.innerHeight / 2));
+                    window.scrollTo(0,scrollHeight);
+                } else {
+                    let scrollHeight = this.map(newval, this.min, this.max, this.scrollingContentRect.top, this.scrollingContentRect.bottom);
+                    this.scrollingContentRect.top = scrollHeight
+                }
                 this.$emit('update:scrolling', true);
             } else {
                 this.$emit('update:scrolling', false);
@@ -59,7 +69,7 @@ export default {
         },
         windowTop(newval, oldval){
             if(newval > this.scrollingContentRect.top && !this.beingDragged){
-                this.sliderValue = this.map(newval, this.scrollingContentRect.top,  this.scrollingContentRect.bottom, 0, 100);
+                this.sliderValue = this.map(newval, this.scrollingContentRect.top,  this.scrollingContentRect.bottom, this.min, this.max);
             }
         }
     }

@@ -1,23 +1,38 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import listJSON from '../../public/data/globalList.json'
+import axios from 'axios'
+
+axios.get('/data/globalList.json').then(response => {
+                // console.log(response.data);
+                state.list = response.data ;
+                state.tagsFilters = response.data.tags ;
+              })
+              .catch(error => console.log(error))
 
 
 Vue.use(Vuex)
 
 const state = {
-  list : Object.assign({}, listJSON),
+  list : {
+    'projects':[],
+    'ressources':[],
+    'courses':[],
+    'tags':[]
+  },
   current_content : {},
   filters: {
     courses : [],
     ressources : [],
     projects : []
   },
-  tagsFilters : Object.assign({}, listJSON.tags)
+  tagsFilters : []
 }
 
 
 const mutations = {
+  generateJSON(state, payload){
+    state.list = Object.assign({}, payload);
+  },
   setContent(state, payload){
     for (let type of [state.list.projects, state.list.courses]) {
       let plop = type.find( content => content.id == payload );
@@ -86,6 +101,9 @@ const mutations = {
 }
 
 const actions = {
+  generateJSON(context, payload){
+    context.commit('generateJSON', payload);
+  },
   setContent(context, payload){
     context.commit('setContent', payload);
   },

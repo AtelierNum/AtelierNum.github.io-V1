@@ -8,14 +8,22 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Rubik:300,400,500,500i,700&display=swap');
 /* global variables */
 #q-app{
-
+  --background : rgb(254, 254, 253);
   --color-dark01 : #1C1C1C;
   --color-dark02 : #373D4A;
   
   --color-gray01 : #F7F7F7 ;
 
+  // @media(prefers-color-scheme: dark){
+  //   --color-dark01 : #F7F7F7;
+  //   --color-dark02 : rgb(84, 91, 104);
+  
+  //   --color-gray01 : rgb(27, 26, 26) ;
+  //   --background : #373D4A;
+  // }
+
   max-width:100vw;  
-  // overflow-x:hidden;
+  background-color:var(--background);
 }
 
 * {

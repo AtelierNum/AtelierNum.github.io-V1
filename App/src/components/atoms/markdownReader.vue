@@ -5,6 +5,7 @@
 
 <script>
 import VueMarkdown from 'vue-markdown'
+import VueClipboard from 'vue-clipboard2'
 import Prism from 'prismjs';
 
 import {mapGetters, mapActions} from 'vuex'
@@ -58,7 +59,7 @@ export default {
             Prism.highlightAll();
             _vue.routerLinks(Array.from(_vue.$children[0].$el.childNodes));
             _vue.transformMainTitle(Array.from(_vue.$children[0].$el.childNodes));
-            // _vue.createCopyCode(Array.from(_vue.$children[0].$el.childNodes));
+            _vue.createCopyCode(Array.from(_vue.$children[0].$el.childNodes));
 
             if (_vue.$route.params.subcontent != undefined){
               let firstTitle = _vue.readme.slice(
@@ -267,16 +268,16 @@ export default {
         let copyCodeButton = document.createElement('div');
         copyCodeButton.classList.add('copyCode')
         copyCodeButton.innerHTML = `<p> Copy code </p>`;
-        copyCodeButton.addEventListener('click', function(event){
-          let copyCodeNode = this.parentNode.children[0];
-          let correspondingCodeNodes = document.querySelectorAll('code.' + copyCodeNode.className.trim());
-          // Array.from(correspondingCodeNodes)
-          //     .find( (codeNode) => codeNode.innerText == copyCodeNode.innerText)
-          //     .select();
-          document.querySelector('code.' + copyCodeNode.className.trim()).select()
-          document.execCommand('copy');
-
-
+        copyCodeButton.addEventListener('click', function(e){
+          let copyCodeNode = this.parentNode.children[0].textContent;
+          
+          this.$copyText(copyCodeNode).then(function (e) {
+            alert('Copied', copyCodeNode)
+            console.log(e)
+          }, function (e) {
+            alert('Can not copy')
+            console.log(e)
+          })
         })
 
         preNode.appendChild(copyCodeButton);

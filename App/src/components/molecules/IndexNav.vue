@@ -15,12 +15,21 @@
         </ul>  
     </li>
     </ul>
+    <!-- <v-scrollslider
+        :scrollingContentRect="contentRect"
+        :scrolling.sync="scrollingIndex">
+    </v-scrollslider> -->
 </div>    
 </template>
 
 <script>
+import scrollSlider from '@/components/atoms/scrollSlider'
+
 export default {
     name: 'NavIndex',
+    components:{
+        'v-scrollslider': scrollSlider
+    },
     props: {
         parentChilds: {
             type: Array,
@@ -41,7 +50,10 @@ export default {
                     offsetTop : 0,
                 }
             },
-            openedSections : []
+            openedSections : [],
+            contentRect: new DOMRect(),
+            scrollingIndex : false,
+            heightRect: 0
         }
     },
     methods : {

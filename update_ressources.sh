@@ -12,7 +12,7 @@ cd ./App/public/data && node getContent.js
 cd ../../..
 cp ./App/public/data/globalList.json ./App/dist/data/
 
-#move everything to the right place
+# add new files in the build
 git add App/dist/data/*
 git commit -m "new ressource"
 git push origin `git subtree split --prefix App/dist src`:master --force  

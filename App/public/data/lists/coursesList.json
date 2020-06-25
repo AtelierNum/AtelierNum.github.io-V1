@@ -1,6 +1,21 @@
 {
     "courses": [
         {
+            "name": "Projet test",
+            "id": "test_project-arduino",
+            "tags": [
+                "test",
+                "Creative Coding",
+                "Arduino",
+                "EN"
+            ],
+            "desc": "Processing and arduino together. This projects explores genetic algorithms to create flowers that can bread together, and bloom with a certain amount of light",
+            "url": "https://raw.githubusercontent.com/b2renger/workshop_entomologik_processing-arduino/master/README.MD",
+            "thumbnail": "https://raw.githubusercontent.com/b2renger/workshop_entomologik_processing-arduino/master/images/flower1.png",
+            "last_update": "21/06/20",
+            "author": "r4ph3rd"
+        },
+        {
             "name": "Introduction Touch Designer",
             "id": "introduction_touch_designer",
             "tags": [

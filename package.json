@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "axios": "^0.19.2",
     "core-js": "^2.6.5",
     "markdown-it": "^10.0.0",
     "markdown-it-vue": "^1.0.11",
