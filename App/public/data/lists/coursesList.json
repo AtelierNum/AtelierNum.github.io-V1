@@ -1,12 +1,12 @@
 {
     "courses": [
         {
-            "name": "Projet test",
-            "id": "test_project-arduino",
+            "name": "Course test",
+            "id": "course_project",
             "tags": [
                 "test",
                 "Creative Coding",
-                "Arduino",
+                "course",
                 "EN"
             ],
             "desc": "Processing and arduino together. This projects explores genetic algorithms to create flowers that can bread together, and bloom with a certain amount of light",
