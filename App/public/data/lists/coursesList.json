@@ -1,6 +1,21 @@
 {
     "courses": [
         {
+            "name": "Introduction Unity",
+            "id": "introduction_unity",
+            "tags": [
+                "Unity",
+                "Game",
+                "Interaction",
+                "FR"
+            ],
+            "desc": "Introduction à Unity sous la forme d'un projet visant à créer un instrument musical et visuel. Utilisant la physique et des scripts pour générer du son..",
+            "url": "https://raw.githubusercontent.com/MartinCailleau/SoundTower/master/README.md",
+            "thumbnail": "https://raw.githubusercontent.com/MartinCailleau/SoundTower/master/img/image12.gif",
+            "last_update": "14/09/20",
+            "author": "Martin Cailleau"
+        },
+        {
             "name": "Introduction Touch Designer",
             "id": "introduction_touch_designer",
             "tags": [

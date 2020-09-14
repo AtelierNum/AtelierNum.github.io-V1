@@ -1,19 +1,19 @@
 {
     "courses": [
         {
-            "name": "Projet test",
-            "id": "test_project-arduino",
+            "name": "Introduction Unity",
+            "id": "introduction_unity",
             "tags": [
-                "test",
-                "Creative Coding",
-                "Arduino",
-                "EN"
+                "Unity",
+                "Game",
+                "Interaction",
+                "FR"
             ],
-            "desc": "Processing and arduino together. This projects explores genetic algorithms to create flowers that can bread together, and bloom with a certain amount of light",
-            "url": "https://raw.githubusercontent.com/b2renger/workshop_entomologik_processing-arduino/master/README.MD",
-            "thumbnail": "https://raw.githubusercontent.com/b2renger/workshop_entomologik_processing-arduino/master/images/flower1.png",
-            "last_update": "21/06/20",
-            "author": "r4ph3rd"
+            "desc": "Introduction à Unity sous la forme d'un projet visant à créer un instrument musical et visuel. Utilisant la physique et des scripts pour générer du son..",
+            "url": "https://raw.githubusercontent.com/MartinCailleau/SoundTower/master/README.md",
+            "thumbnail": "https://raw.githubusercontent.com/MartinCailleau/SoundTower/master/img/image12.gif",
+            "last_update": "14/09/20",
+            "author": "Martin Cailleau"
         },
         {
             "name": "Introduction Touch Designer",

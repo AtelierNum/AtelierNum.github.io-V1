@@ -1,6 +1,46 @@
 
 {
     "ressources": [
+        {
+            "name": "Pose Animator",
+            "id": "pose_animator",
+            "tags": [
+                "Outil",
+                "Machine Learning",
+                "EN"
+            ],
+            "desc": "Pose Animator takes a 2D vector illustration and animates its containing curves in real-time based on the recognition result from PoseNet and FaceMesh. It borrows the idea of skeleton-based animation from computer graphics and applies it to vector characters. Check out the demo !",
+            "url": "https://github.com/yemount/pose-animator/",
+            "thumbnail": "https://github.com/yemount/pose-animator/raw/master/resources/gifs/avatar-new-full-body.gif?raw=true",
+            "last_update": "25/06/20"
+        },
+        {
+            "name": "The teachable machine",
+            "id": "the_teachable_machine",
+            "tags": [
+                "Outil",
+                "Machine Learning",
+                "EN"
+            ],
+            "desc": "Train a computer to recognize your own images, sounds, & poses.",
+            "url": "https://teachablemachine.withgoogle.com/",
+            "thumbnail": "https://teachablemachine.withgoogle.com/assets/img/contentpage/home/teach-images.png",
+            "last_update": "25/06/20"
+        },
+        {
+            "name": "Processing with AI",
+            "id": "processing_with_ai",
+            "tags": [
+                "Code",
+                "Machine Learning",
+                "Tuto",
+                "EN"
+            ],
+            "desc": "Un module de découverte de l'intelligence artificielle enseigné à l'EM Lyon. Natural Language Processing, Computer Vision, Chatbot, Classigication etc.",
+            "url": "https://makerslab.em-lyon.com/pwai/",
+            "thumbnail": "https://1.cms.s81c.com/sites/default/files/2019-12-23/2019_12_16_ProductPage_ABV_NLU_LeadSpace%20%281%29.jpg",
+            "last_update": "25/06/20"
+        },
 
         {
             "name": "The coding train",
