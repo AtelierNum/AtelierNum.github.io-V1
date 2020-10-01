@@ -81,7 +81,6 @@ const mutations = {
       }
   },
   filterContent(state, payload){ // update LIST of tag
-    // console.log(payload)
     if (!state.filters[payload.category].includes(payload.tag)){
       state.filters[payload.category].push(payload.tag) ;
     } else {
@@ -98,7 +97,7 @@ const mutations = {
       state.list[payload.category] = state.list[payload.category].filter( content => content.tags.includes(filter))
     }
   },
-  resetFilter(state, payload){
+  resetFilter(state){
     state.filters = {
       courses : [],
       ressources : [],

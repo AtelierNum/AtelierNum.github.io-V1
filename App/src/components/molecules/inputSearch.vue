@@ -57,8 +57,10 @@ export default {
         typingInSearch(inputValue){
             if (inputValue.length >= 1){
                 let filteredTags = this.getTagsList.filter( tag => {
-                    return tag.split(inputValue).length > 1
+                    let chaine = tag.toLowerCase().split(inputValue.toLowerCase()) ;
+                    return chaine.length > 1 && chaine[0] == '' ;
                 })
+                
 
                 //add new tags to the list
                 filteredTags.forEach( tag => {
