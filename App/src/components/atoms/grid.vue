@@ -40,7 +40,7 @@ export default {
   .grid{
     grid-gap:20px;
     height:max-content;
-    max-width: 90vw;
+    max-width: 80vw;
 
     &.grid-3{
         grid-template-columns: repeat(1,1fr) !important;
