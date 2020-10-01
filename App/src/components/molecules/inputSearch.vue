@@ -142,6 +142,16 @@ export default {
     box-shadow: 0 0 8px 4px rgba(0,0,0,.12); 
     border-radius:8px;
 
+    @media (max-width: 850px) {
+        max-width:80vw;
+
+        input {
+            min-width: unset !important;
+            overflow-x:hidden;
+            text-overflow: ellipsis;
+        }
+    }
+
     input{
         position:relative;
         z-index: 2;
