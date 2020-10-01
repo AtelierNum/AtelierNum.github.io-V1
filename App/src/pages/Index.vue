@@ -25,9 +25,10 @@
       </router-link>
     </h2>
 
-    <v-tag-list>
+    <input-search name="projectSearch" category="projects"></input-search>
+    <!-- <v-tag-list>
       <v-tag v-for="tag in getTagsList" :key="'projects-' + tag" category="projects">{{tag}}</v-tag>
-    </v-tag-list>
+    </v-tag-list> -->
     
 
     <v-grid :cols="3">
@@ -108,6 +109,7 @@ import card_project from '@/components/molecules/card_project'
 import svgCurved from '@/components/atoms/svgCurved'
 import Button from '@/components/atoms/button'
 import spacer from '@/components/atoms/spacer'
+import inputSearch from '@/components/atoms/inputSearch'
 import {mapGetters} from 'vuex'
 
 export default {
@@ -115,7 +117,8 @@ export default {
         'v-projectCard' : card_project,
         'svg-curved' : svgCurved,
         'v-button' : Button,
-        'v-spacer' : spacer
+        'v-spacer' : spacer,
+        'input-search' : inputSearch
   },
   data(){
     return {

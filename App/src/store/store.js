@@ -115,7 +115,7 @@ const actions = {
   },
   filterContent(context, payload){
     context.commit('filterContent', payload);
-    context.commit('updateFilteredContent', payload.category);
+    // context.commit('updateFilteredContent', payload);
   },
   resetFilter(context, payload){
     context.commit('resetFilter', payload);
