@@ -80,22 +80,29 @@ const mutations = {
         state.current_content = payload ;
       }
   },
-  filterContent(state, payload){
+  filterContent(state, payload){ // update LIST of tag
+    // console.log(payload)
     if (!state.filters[payload.category].includes(payload.tag)){
       state.filters[payload.category].push(payload.tag) ;
+    } else {
+      state.filters[payload.category].splice(
+        state.filters[payload.category].findIndex(filter => filter == payload.tag),
+        1
+      );
     }
   },
-  updateFilteredContent(state, payload){
-    state.list[payload] = listJSON[payload] ;
+  updateFilteredContent(state, payload){ // update CONTENT synch to list of tags
+    state.list[payload.category] = listJSON[payload.category] ;
 
-      for (let filter of state.filters[payload]){
-        state.list[payload] = state.list[payload].filter( content => content.tags.includes(filter))
+      for (let filter of state.filters[payload.category]){
+        state.list[payload.category] = state.list[payload.category].filter( content => content.tags.includes(filter))
       }
   },
   resetFilter(state, payload){
-    if (state.filters[payload.category].includes(payload.tag)){
-      let i = state.filters[payload.category].findIndex( filter => filter == payload.tag);
-      state.filters[payload.category].splice(i,1);
+    state.filters = {
+      courses : [],
+      ressources : [],
+      projects : []
     }
   }
 }
@@ -155,6 +162,28 @@ const getters = {
   },
   getTagsList(state){
     return state.tagsFilters;
+  },
+  getFilters(state){
+    return state.filters;
+  },
+  getCategoryContentsFiltered(state){
+    let filteredContents = {}
+    for (let category in state.list){
+      if (category != 'tags'){
+        filteredContents[category] = state.list[category].filter( content => {
+          return content.tags.some( tag => state.filters[category].includes(tag))
+        })
+
+        //order by date 
+        filteredContents[category].sort((a,b) => {
+          let dateA = a.last_update.split('/').reverse() ; // last_update est écrite comme suit : dd/mm/yy
+          let dateB = b.last_update.split('/').reverse();
+          return new Date(dateB[0] + 2000, dateB[1], dateB[2]).valueOf() - new Date(dateA[0] + 2000, dateA[1], dateA[2]).valueOf();
+        })
+      }
+    }
+
+    return filteredContents ;
   }
 }
 

@@ -32,7 +32,7 @@
     
 
     <v-grid :cols="3">
-      <v-projectCard v-for="(project, i) in getListByDate.projects.slice(0, max.projects)" :key="i" 
+      <v-projectCard v-for="(project, i) in sortedContentOrNot('projects')" :key="i" 
         class="tall"
         r_action="projects"
         :title="project.name"
@@ -54,12 +54,14 @@
       </router-link>
     </h2>
 
-    <v-tag-list>
+    <!-- <v-tag-list>
       <v-tag v-for="tag in getTagsList" :key="'courses-' + tag" category="courses">{{tag}}</v-tag>
-    </v-tag-list>
+    </v-tag-list> -->
+
+    <input-search name="projectSearch" category="courses"></input-search>
 
     <v-grid :cols=" windowWidth > 800 ? 1 : 3">
-      <v-projectCard v-for="(course, i) in getListByDate.courses.slice(0, max.courses)" :key="i" 
+      <v-projectCard v-for="(course, i) in sortedContentOrNot('courses')" :key="i" 
         :class=" windowWidth > 620 ? 'long' : 'tall'"
         r_action="courses"
         :title="course.name"
@@ -82,12 +84,14 @@
       </router-link>
     </h2>
 
-    <v-tag-list>
+    <!-- <v-tag-list>
       <v-tag v-for="tag in getTagsList" :key="'ressources-' +tag" category="courses">{{tag}}</v-tag>
-    </v-tag-list>
+    </v-tag-list> -->
+
+    <input-search name="projectSearch" category="ressources"></input-search>
 
     <v-grid :cols="3" class="smallGrid">
-      <v-projectCard v-for="(ressource, i) in getListByDate.ressources.slice(0, max.ressources)" :key="i" 
+      <v-projectCard v-for="(ressource, i) in sortedContentOrNot('ressources')" :key="i" 
         class="small"
         r_action="ressources"
         :title="ressource.name"
@@ -109,7 +113,7 @@ import card_project from '@/components/molecules/card_project'
 import svgCurved from '@/components/atoms/svgCurved'
 import Button from '@/components/atoms/button'
 import spacer from '@/components/atoms/spacer'
-import inputSearch from '@/components/atoms/inputSearch'
+import inputSearch from '@/components/molecules/inputSearch'
 import {mapGetters} from 'vuex'
 
 export default {
@@ -136,7 +140,8 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['getListByDate', 'getTagsList'])
+    ...mapGetters(['getListByDate', 'getTagsList', 'getCategoryContentsFiltered', 'getFilters']),
+    
   },
   methods: {
     more(type){     
@@ -147,6 +152,13 @@ export default {
     },
     githubAteliernum(){
       window.open('https://github.com/AtelierNum', '_blank');
+    },
+    sortedContentOrNot(category){
+      if (this.getFilters[category].length >= 1){
+        return this.getCategoryContentsFiltered[category];
+      } else {
+        return this.getListByDate[category].slice(0, this.max[category])
+      }
     }
   },
   mounted(){

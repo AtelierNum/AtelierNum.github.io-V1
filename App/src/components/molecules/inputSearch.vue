@@ -2,19 +2,20 @@
 <div class="search">
   <input type="text" :placeholder="placeholderText" :name="name">
   <ul class="predict" v-show="isThereAnyResult" >
-      <li v-for="(value, key) in results" :key="reactiveKeys + key" class="tagPin" >
-          <p>{{key}}</p>
-          <p>{{value}}</p>
-      </li>
+      <tag-pin v-for="(value, key) in results" :key="reactiveKeys + key" :tagName="key" :occurences="value" :category="category"></tag-pin>
   </ul>
 </div>
 </template>
 
 <script>
 import {mapGetters, mapActions} from 'vuex';
+import tagPin from '../atoms/tagPin'
 
 export default {
     name: 'InputSearch',
+    components: {
+        'tag-pin' : tagPin
+    },
     data(){
         return {
             results: {},
@@ -44,7 +45,10 @@ export default {
                 //add new tags to the list
                 filteredTags.forEach( tag => {
                     if(!Object.keys(this.results).includes(tag)){
-                        this.$set(this.results, tag, 3);
+                        let qte = this.howManyContent(tag)
+                        if (qte > 0){ // inutile d'afficher un tag qui n'a pas de contenus
+                            this.$set(this.results, tag, qte); // set a property through vue otherwise it does not watch the change
+                        }
                     }
                 })
 
@@ -53,7 +57,7 @@ export default {
                     Object.keys(this.results).forEach( key => {
                         if(!filteredTags.includes(key)){
                             delete this.results[key];
-                            this.updateComponent();
+                            this.updateComponent(); // force change after deleting by changing the key of the component
                         }
                     })
                 }
@@ -61,17 +65,17 @@ export default {
                 this.results = {}
             }
         },
-        filterTag(result, i){
-            console.log(result, i)
+        howManyContent(tag){            
+            return this.getList[this.category].filter( content => content.tags.includes(tag)).length
         },
         updateComponent(){
             this.reactiveKeys = Object.keys(this.results).reduce( (acc, curr) => acc += curr.toString(), '');
         }
     },
     computed:{
-        ...mapGetters(['getTagsList']),
+        ...mapGetters(['getTagsList', 'getList', 'getCategoryContentsFiltered']),
         placeholderText(){
-            if (this.$slots) return 'Dessiner une blanquette avec Processing' ;
+            if (this.$slots) return 'Dessiner une blanquette avec Processing...' ;
             return this.$slots.default[0].text ;
         },
         isThereAnyResult(){
@@ -79,7 +83,6 @@ export default {
         },
     },
     mounted(){
-        console.log(this)
         this.$el.children[0].oninput = (e) => {
             this.typingInSearch(e, this.$el.children[0].value);
         }
@@ -133,37 +136,6 @@ export default {
         // box-shadow: 0 3px 8px 4px rgba(0,0,0,.12); 
         border: none;
         border-radius: 1px 1px 8px 8px;
-    }
-
-    .tagPin{
-        width:max-content;
-        height:max-content;
-        padding: 15px 20px;
-        margin-right:30px;
-        margin-bottom:30px;
-
-        box-shadow: 0 0 8px 4px rgba(0,0,0,.04); 
-        border: none;
-        border-radius: 8px;
-        background-color:var(--color-gray01);
-
-        &:hover{
-            cursor:pointer;
-            box-shadow: 0 0 8px 4px rgba(0,0,0,.08); 
-        }
-        
-
-        p{
-            display: inline;
-            color:var(--color-dark01);
-            font-weight:600;
-            font-family: 'Open Sans', sans-serif;
-
-            &:last-child{
-                margin-left:20px;
-                color:#9ea2aa;
-            }
-        }
     }
 }
 </style>
