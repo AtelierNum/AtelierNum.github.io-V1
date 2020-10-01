@@ -94,9 +94,9 @@ const mutations = {
   updateFilteredContent(state, payload){ // update CONTENT synch to list of tags
     state.list[payload.category] = listJSON[payload.category] ;
 
-      for (let filter of state.filters[payload.category]){
-        state.list[payload.category] = state.list[payload.category].filter( content => content.tags.includes(filter))
-      }
+    for (let filter of state.filters[payload.category]){
+      state.list[payload.category] = state.list[payload.category].filter( content => content.tags.includes(filter))
+    }
   },
   resetFilter(state, payload){
     state.filters = {

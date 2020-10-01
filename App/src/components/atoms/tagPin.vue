@@ -1,5 +1,5 @@
 <template>
-    <li class="tagPin" @click="filterTag(tagName)">
+    <li class="tagPin" @click="filterTag(tagName)" v-if="isAlreadyChecked">
           <p>{{tagName}}</p>
           <p>{{occurences}}</p>
     </li>
@@ -22,6 +22,9 @@ export default {
         category: {
             type: String,
             required: true
+        },
+        inputPin: {
+            type: Boolean
         }
     },
     methods:{
@@ -30,11 +33,14 @@ export default {
         }),
         filterTag(tag){
             this.filterContent({category: this.category, tag: tag});
-            console.log(this.getCategoryContentsFiltered);
+            this.$emit('select');
         }
     },
     computed: {
-        ...mapGetters(['getCategoryContentsFiltered'])
+        ...mapGetters(['getCategoryContentsFiltered', 'getFilters']),
+        isAlreadyChecked(){
+            return !this.getFilters[this.category].includes(this.tagName) ; // hiding it if it's already checked because it's displayed elsewhere
+        }
     }
 }
 </script>
