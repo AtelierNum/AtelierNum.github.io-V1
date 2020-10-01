@@ -16,7 +16,7 @@
 
     <div class="faces">
         <div class="perso_card superpromaster"> 
-            <a href="http://b2renger.github.io/">
+            <a href="http://b2renger.github.io/" target="blank">
                 <img src="" alt="">
                 <h4>Bérenger Recoules</h4>
                 <span>aka b2renger</span>
@@ -26,7 +26,7 @@
         </div>
         
         <div class="perso_card petitefourmi"> 
-            <a href="www.raphaelperraud.com">
+            <a href="http://www.raphaelperraud.com" target="blank">
                 <img src="" alt="">
                 <h4>Raphaël Perraud</h4>
                 <span>Squatteur invétéré</span>
@@ -36,7 +36,7 @@
         </div>
         
         <div class="perso_card petitefourmi"> 
-            <a href="www.simon-renault.com">
+            <a href="https://www.simon-renault.com" target="blank">
                 <img src="" alt="">
                 <h4>Simon Renault</h4>
                 <span>@Palantir</span>

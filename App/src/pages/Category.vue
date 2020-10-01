@@ -8,9 +8,11 @@
 
     <!-- <input type="text" v-model="keyterms" placeholder="This feature will be avalaible soon "> -->
 
-    <v-tag-list>
+    <!-- <v-tag-list>
       <v-tag v-for="tag in getTagsList" :key="$route.name + tag" :category="$route.name">{{tag}}</v-tag>
-    </v-tag-list>
+    </v-tag-list> -->
+
+    <input-search name="projectSearch" :category="$route.name"></input-search>
 
     <v-grid :cols=" windowWidth < 800 ? 1 : 3">
       <v-projectCard
@@ -41,13 +43,16 @@
 import card_project from "@/components/molecules/card_project";
 import svgCurved from "@/components/atoms/svgCurved";
 import Button from "@/components/atoms/button";
+import inputSearch from '@/components/molecules/inputSearch'
+
 import { mapGetters } from 'vuex';
 
 export default {
   components: {
     "v-projectCard": card_project,
     "svg-curved": svgCurved,
-    "v-button": Button
+    "v-button": Button,
+    'input-search' : inputSearch
   },
   data() {
     return {
@@ -183,7 +188,7 @@ a {
 
   & + p {
     display: block;
-    margin: 30px auto 230px auto;
+    margin: 30px auto 50px auto;
     width: 70%;
     max-width: 900px;
     text-align: center;

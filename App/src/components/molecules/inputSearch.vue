@@ -48,6 +48,11 @@ export default {
         category: {
             type: String,
             required: true
+        },
+        maxWidth: {
+            type: [Number, String],
+            required: false,
+            default: () => 800
         }
     },
     methods:{
@@ -60,7 +65,7 @@ export default {
                     let chaine = tag.toLowerCase().split(inputValue.toLowerCase()) ;
                     return chaine.length > 1 && chaine[0] == '' ;
                 })
-                
+
 
                 //add new tags to the list
                 filteredTags.forEach( tag => {
@@ -145,7 +150,7 @@ export default {
     border-radius:8px;
 
     @media (max-width: 850px) {
-        max-width:80vw;
+        max-width:80vw !important;
 
         input {
             min-width: unset !important;
