@@ -7,7 +7,7 @@
       <div class="alternativeShape">
         <h1>AtelierNum</h1>
         <h2>L’	&#201;cole de design Nantes Atlantique</h2>
-        <p>AtelierNum regroupe des travaux d’étudiants de l’ &#201;cole de design et quelques ressources à leur disposition.</p>
+        <p>{{personalized_message}}</p>
       </div>
       <svg class="scroll"  width="77" height="77" viewBox="0 0 77 77">
         <g transform="translate(-922 -945)">
@@ -136,7 +136,8 @@ export default {
         ressources: false,
         projects: false
       },
-      windowWidth: window.innerWidth
+      windowWidth: window.innerWidth,
+      personalized_message : 'AtelierNum regroupe des travaux d’étudiants de l’ École de design et quelques ressources à leur disposition.'
     }
   },
   computed: {
