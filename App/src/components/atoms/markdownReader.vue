@@ -270,14 +270,12 @@ export default {
         copyCodeButton.innerHTML = `<p> Copy code </p>`;
         copyCodeButton.addEventListener('click', function(e){
           let copyCodeNode = this.parentNode.children[0].textContent;
-          
-          this.$copyText(copyCodeNode).then(function (e) {
-            alert('Copied', copyCodeNode)
-            console.log(e)
-          }, function (e) {
-            alert('Can not copy')
-            console.log(e)
-          })
+          const el = document.createElement('textarea');
+          el.value = copyCodeNode;
+          document.body.appendChild(el);
+          el.select();
+          document.execCommand('copy');
+          document.body.removeChild(el);
         })
 
         preNode.appendChild(copyCodeButton);
