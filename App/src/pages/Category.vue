@@ -5,13 +5,8 @@
     <h2 class="section-title">{{category_resume[$route.name].title}}</h2>
 
     <p>{{category_resume[$route.name].excerpt}}</p>
-
-    <!-- <input type="text" v-model="keyterms" placeholder="This feature will be avalaible soon "> -->
-
-    <!-- <v-tag-list>
-      <v-tag v-for="tag in getTagsList" :key="$route.name + tag" :category="$route.name">{{tag}}</v-tag>
-    </v-tag-list> -->
-
+    <p v-if="$route.name == 'courses'"><strong>Contributeurs : </strong> {{contributors}}</p>
+}}
     <input-search name="projectSearch" :category="$route.name"></input-search>
 
     <v-grid :cols=" windowWidth < 800 ? 1 : 3">
@@ -72,7 +67,8 @@ export default {
       },
       max: 12,
       isDisplayed : true,
-      windowWidth: window.innerWidth
+      windowWidth: window.innerWidth,
+      contributors : "Bérenger Recoules, "
     };
   },
   computed: {
@@ -93,57 +89,13 @@ export default {
     window.addEventListener('resize', () => {
       this.windowWidth = window.innerWidth;
     })
+
+    console.log(this.$route)
   }
 };
 </script>
 
 <style lang="scss">
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Rubik:300,400,500,500i,700&display=swap");
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-.test_desc {
-  position: absolute;
-  top: 340px;
-  left: 50px;
-}
-
-.spacerY {
-  height: 20%;
-  min-height: 450px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  .scroll {
-    display: block;
-    margin: 0;
-  }
-}
-
-.grid {
-  max-width: 1150px;
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-gap: 45px;
-  margin: 120px auto 300px auto;
-  &.grid-3 {
-    grid-template-columns: repeat(3, 1fr);
-    @media screen and (max-width: 600px) {
-      grid-template-columns: repeat(1, 1fr);
-      max-width: 80vw;
-    }
-  }
-  &.grid-2 {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 .placeholder_nocards{
   margin-left:auto;
   margin-right:auto;
@@ -186,7 +138,7 @@ a {
 
   text-transform: capitalize;
 
-  & + p {
+  & + p , & + p + p{
     display: block;
     margin: 30px auto 50px auto;
     width: 70%;
