@@ -170,8 +170,10 @@ const getters = {
     for (let category in state.list){
       if (category != 'tags'){
         filteredContents[category] = state.list[category].filter( content => {
-          return content.tags.some( tag => state.filters[category].includes(tag))
+          //return content.tags.some( tag => state.filters[category].includes(tag))
+          return state.filters[category].every(tag => content.tags.includes(tag));
         })
+        console.log(filteredContents[category])
 
         //order by date 
         filteredContents[category].sort((a,b) => {
