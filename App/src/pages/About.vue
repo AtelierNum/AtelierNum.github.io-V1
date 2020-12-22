@@ -21,7 +21,7 @@
                 <h4>Bérenger Recoules</h4>
                 <span>aka b2renger</span>
                 <p>Responsable de l'Atelier Numérique</p>
-                <p class="roles">Prof - Responsable - Semi-Croustillant</p>
+                <p class="roles">Prof - Responsable</p>
             </a>
         </div>
         
@@ -31,7 +31,7 @@
                 <h4>Raphaël Perraud</h4>
                 <span>Squatteur invétéré</span>
                 <p>Etudiant de l'Ecole de design</p>
-                <p class="roles">Habitué - Semi-Croustillant</p>
+                <p class="roles">Habitué</p>
             </a>
         </div>
         
