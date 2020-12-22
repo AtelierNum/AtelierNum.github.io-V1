@@ -104,7 +104,7 @@ export default {
     computed:{
         ...mapGetters(['getTagsList', 'getList', 'getCategoryContentsFiltered', 'getFilters']),
         placeholderText(){
-            if (this.$slots) return 'Dessiner une blanquette avec Processing...' ;
+            if (this.$slots) return 'Recherche par tags, par exemple "arduino", "processing" etc.' ;
             return this.$slots.default[0].text ;
         },
         isThereAnyResult(){
