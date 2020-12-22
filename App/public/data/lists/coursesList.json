@@ -7,6 +7,7 @@
                 "Unity",
                 "Game",
                 "Interaction",
+                "Débutant",
                 "FR"
             ],
             "desc": "Introduction à Unity sous la forme d'un projet visant à créer un instrument musical et visuel. Utilisant la physique et des scripts pour générer du son..",
@@ -21,6 +22,8 @@
             "tags": [
                 "Touch Designer",
                 "Interaction",
+                "Motion",
+                "Débutant",
                 "FR"
             ],
             "desc": "Introduction à Touch designer sous la forme d'une playlist de vidéos.",
@@ -35,6 +38,7 @@
             "tags": [
                 "Arduino",
                 "Interaction",
+                "Débutant",
                 "FR"
             ],
             "desc": "Ressource arduino sous forme de cookbook : connecter des capteurs, faire bouger des choses et alumer des lumières",
@@ -49,6 +53,7 @@
             "tags": [
                 "Arduino",
                 "Interaction",
+                "Débutant",
                 "EN"
             ],
             "desc": "Cookbook style resssource for arduino, learn how to connect sensors, move and lights up things !",
@@ -64,6 +69,7 @@
                 "P5js",
                 "Creative Coding",
                 "Web",
+                "Débutant",
                 "FR"
             ],
             "desc": "Une découverte de p5js allant du dessin à la souris à la 3D, en passant par l'apprentissage de la programmation objet, des websockets ainsi que des exemples audio assez avancés et tout cela dans votre navigateur !",
@@ -78,6 +84,7 @@
             "tags": [
                 "Pure-Data",
                 "Sound Design",
+                "Débutant",
                 "FR"
             ],
             "desc": "Une introduction à Pure-Data réalisée avec Pure-data. Pure-Data est le couteau suisse de l'audio temps réel et plus aussi.",
@@ -94,6 +101,7 @@
                 "Creative Coding",
                 "Interaction",
                 "Graphisme",
+                "Débutant",
                 "FR"
             ],
             "desc": "Une introduction à la programmation java avec Processing.",
@@ -112,6 +120,7 @@
                 "Interaction",
                 "Print",
                 "Web",
+                "Intermédiaire",
                 "FR"
             ],
             "desc": "Transformer une image en manipulant ses pixels. Utilisation de boutons et de sliders et exports svg / png",
@@ -129,6 +138,7 @@
                 "Typographie",
                 "Web",
                 "Interaction",
+                "Intermédiaire",
                 "EN"
             ],
             "desc": "Some example on how to work with typography in p5js",
@@ -146,6 +156,7 @@
                 "Interaction",
                 "Graphisme",
                 "Web",
+                "Débutant",
                 "FR"
             ],
             "desc": "Utiliser des règles simples pour créer des motifs qui se répétent. Ce cours comporte une étude assez poussée des techniques de noise.",
@@ -162,6 +173,7 @@
                 "Creative Coding",
                 "Interaction",
                 "Motion",
+                "Débutant",
                 "Web",
                 "FR"
             ],
@@ -180,6 +192,7 @@
                 "Arduino",
                 "Graphisme",
                 "Print",
+                "Intermédiaire",
                 "FR"
             ],
             "desc": "Identifier, enregister et visualiser les gestes de l'ennui avec arduino, processing et p5js. La finalité étant de produire une image imprimmable par sérigraphie",
@@ -195,6 +208,7 @@
                 "Processing",
                 "Creative Coding",
                 "Interaction",
+                "Débutant",
                 "FR"
             ],
             "desc": "Un workshop d'une demie-journée donné à Stereolux par des étudiants pour découvrir le code créatif",
@@ -210,6 +224,7 @@
                 "P5js",
                 "Creative Coding",
                 "Interaction",
+                "Débutant",
                 "Web",
                 "FR"
             ],
@@ -239,6 +254,7 @@
             "tags": [
                 "Processing",
                 "Interaction",
+                "Débutant",
                 "Game",
                 "FR"
             ],
@@ -256,6 +272,7 @@
                 "Creative Coding",
                 "Arduino",
                 "Interaction",
+                "Intermédiaire",
                 "EN"
             ],
             "desc": "Processing and arduino together. This projects explores genetic algorithms to create flowers that can bread together, and bloom with a certain amount of light",
