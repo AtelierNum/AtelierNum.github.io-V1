@@ -1,7 +1,8 @@
 <template>
 <div id ="page">
 
-  <svg-curved class="mask_thumbnail" content="image" :src="getContent.thumbnail"></svg-curved>
+   <svg-curved content="p5"></svg-curved>
+
 
   <section class="introCourse">
     <h1>{{getContent.name}}</h1>
