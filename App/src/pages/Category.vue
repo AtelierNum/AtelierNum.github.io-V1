@@ -5,7 +5,7 @@
     <h2 class="section-title">{{category_resume[$route.name].title}}</h2>
 
     <p>{{category_resume[$route.name].excerpt}}</p>
-    <p v-if="$route.name == 'courses'"><strong>Contributeurs : </strong> {{contributors}}</p>
+   
 }}
     <input-search name="projectSearch" :category="$route.name"></input-search>
 
@@ -67,8 +67,8 @@ export default {
       },
       max: 12,
       isDisplayed : true,
-      windowWidth: window.innerWidth,
-      contributors : "Bérenger Recoules, "
+      windowWidth: window.innerWidth
+      
     };
   },
   computed: {
