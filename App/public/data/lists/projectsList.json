@@ -1,6 +1,20 @@
 {
     "projects": [
         {
+            "name": "Projet motifs d'expression 2020",
+            "id": "projet_motifs_d_expression_2020",
+            "tags": [
+                "Arduino",
+                "Motion",
+                "FR"
+            ],
+            "desc": "Projet réalisé par les étudiant en troisième année de motion design @lecolededesign. Introduction au code et aux mécanismes permettant le mouvement tangible.",
+            "url": "https://raw.githubusercontent.com/AtelierNum/projet_motifs_d_expression_2020/master/README.md",
+            "thumbnail": "https://raw.githubusercontent.com/AtelierNum/projet_motifs_d_expression_2020/main/Anaelle_et_Pierre/gif.gif",
+            "last_update": "23/12/20",
+            "author": "étudiants en motion design"
+        },
+        {
             "name": "Workshop game from scratch 2020",
             "id": "workshop_gamefromscratch_2020",
             "tags": [
@@ -10,8 +24,8 @@
             ],
             "desc": "Projet réalisé par les étudiant en deuxième année de game design @lecolededesign. Introduction au code.",
             "url": "https://raw.githubusercontent.com/AtelierNum/workshop_gamefromscratch_2020/master/README.md",
-            "thumbnail": "https://raw.githubusercontent.com/b2renger/workshop_gamefromscratch_2020/master/Amelie_Conoir/gif.gif",
-            "last_update": "26/09/19",
+            "thumbnail": "https://raw.githubusercontent.com/AtelierNum/workshop_gamefromscratch_2020/master/Amelie_Conoir/gif.gif",
+            "last_update": "22/12/20",
             "author": "étudiants en game design"
         },
         {
