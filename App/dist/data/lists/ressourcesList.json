@@ -1,4 +1,3 @@
-
 {
     "ressources": [
         {
@@ -7,6 +6,7 @@
             "tags": [
                 "Outil",
                 "Machine Learning",
+                "Débutant",
                 "EN"
             ],
             "desc": "Pose Animator takes a 2D vector illustration and animates its containing curves in real-time based on the recognition result from PoseNet and FaceMesh. It borrows the idea of skeleton-based animation from computer graphics and applies it to vector characters. Check out the demo !",
@@ -20,6 +20,7 @@
             "tags": [
                 "Outil",
                 "Machine Learning",
+                "Débutant",
                 "EN"
             ],
             "desc": "Train a computer to recognize your own images, sounds, & poses.",
@@ -33,6 +34,7 @@
             "tags": [
                 "Code",
                 "Machine Learning",
+                "Débutant",
                 "Tuto",
                 "EN"
             ],
@@ -41,7 +43,6 @@
             "thumbnail": "https://1.cms.s81c.com/sites/default/files/2019-12-23/2019_12_16_ProductPage_ABV_NLU_LeadSpace%20%281%29.jpg",
             "last_update": "25/06/20"
         },
-
         {
             "name": "The coding train",
             "id": "coding_train",
@@ -50,6 +51,9 @@
                 "Processing",
                 "P5js",
                 "Tuto",
+                "Débutant",
+                "Intermédiaire",
+                "Avancé",
                 "EN"
             ],
             "desc": "Une collection de tutos vidéos divers et variés sur la programmation par Daniel Shiffman & Co",
@@ -64,6 +68,7 @@
                 "Web",
                 "AR",
                 "Threejs",
+                "Avancé",
                 "Exemples",
                 "EN"
             ],
@@ -78,6 +83,7 @@
             "tags": [
                 "Fabrication",
                 "Tuto",
+                "Débutant",
                 "EN"
             ],
             "desc": "Un cours d'introduction aux techniques de prototypage pour la fabrication numérique, via le maker lab de l'EM Lyon.",
@@ -92,6 +98,7 @@
                 "Interaction",
                 "UX/UI",
                 "Web",
+                "Débutant",
                 "Theorie",
                 "FR"
             ],
@@ -108,6 +115,9 @@
                 "3D",
                 "Game",
                 "Tuto",
+                "Débutant",
+                "Intermédiaire",
+                "Avancé",
                 "EN"
             ],
             "desc": "Tutorials and ressources on how to get started with unreal engine",
@@ -121,6 +131,8 @@
             "tags": [
                 "Blender",
                 "3D",
+                "Débutant",
+                "Intermédiaire",
                 "Tuto",
                 "EN"
             ],
@@ -135,6 +147,8 @@
             "tags": [
                 "Blender",
                 "3D",
+                "Débutant",
+                "Intermédiaire",
                 "Tuto",
                 "EN"
             ],
@@ -149,6 +163,7 @@
             "tags": [
                 "Interaction",
                 "Tuto",
+                "Débutant",
                 "EN"
             ],
             "desc": "Tutorials and ressources on how to get started with coding in java (processing), js etc.",
@@ -177,6 +192,7 @@
             "tags": [
                 "Sound Design",
                 "Theorie",
+                "Débutant",
                 "Tuto",
                 "EN"
             ],
@@ -190,6 +206,7 @@
             "id": "learning_music",
             "tags": [
                 "Sound Design",
+                "Débutant",
                 "Theorie",
                 "Tuto",
                 "EN"
@@ -219,6 +236,7 @@
             "tags": [
                 "3D",
                 "Fabrication",
+                "Débutant",
                 "Tuto",
                 "EN"
             ],
@@ -245,6 +263,8 @@
             "id": "runwayml",
             "tags": [
                 "Machine Learning",
+                "Débutant",
+                "Intermédiaire",
                 "Outil",
                 "EN"
             ],
@@ -261,6 +281,8 @@
                 "Interaction",
                 "Machine Learning",
                 "Creative Coding",
+                "Débutant",
+                "Intermédiaire",
                 "Exemples",
                 "EN"
             ],
@@ -276,6 +298,7 @@
                 "Interaction",
                 "Machine Learning",
                 "Creative Coding",
+                "Avancé",
                 "Outil",
                 "EN"
             ],
@@ -293,6 +316,7 @@
                 "Print",
                 "Creative Coding",
                 "Tuto",
+                "Débutant",
                 "EN"
             ],
             "desc": "A tutorial on how to use a axidraw with processing to print beautiful generative artworks.",
@@ -307,6 +331,7 @@
                 "Processing",
                 "Interaction",
                 "Creative Coding",
+                "Débutant",
                 "Tuto",
                 "EN"
             ],
@@ -336,6 +361,7 @@
                 "Web",
                 "Graphisme",
                 "Creative Coding",
+                "Intermédiaire",
                 "Exemples",
                 "EN"
             ],
@@ -350,6 +376,7 @@
             "tags": [
                 "Web",
                 "Graphisme",
+                "Débutant",
                 "Creative Coding",
                 "Tuto",
                 "EN"
@@ -366,6 +393,7 @@
                 "P5js",
                 "Interaction",
                 "Creative Coding",
+                "Intermédiaire",
                 "Exemples",
                 "EN"
             ],
@@ -381,6 +409,7 @@
                 "Processing",
                 "Interaction",
                 "Creative Coding",
+                "Intermédiaire",
                 "Tuto",
                 "EN"
             ],
@@ -395,6 +424,7 @@
             "tags": [
                 "Arduino",
                 "Interaction",
+                "Débutant",
                 "Tuto",
                 "EN"
             ],
@@ -410,6 +440,9 @@
                 "Unity",
                 "C#",
                 "Tuto",
+                "Débutant",
+                "Intermédiaire",
+                "Avancé",
                 "EN"
             ],
             "desc": "Beginners and advanced untity ressources",
@@ -424,6 +457,8 @@
                 "Shaders",
                 "Creative Coding",
                 "Tuto",
+                "Intermédiaire",
+                "Avancé",
                 "EN"
             ],
             "desc": "Learn how to code powefull fragment shaders",
@@ -437,6 +472,8 @@
             "tags": [
                 "Shaders",
                 "Creative Coding",
+                "Intermédiaire",
+                "Avancé",
                 "P5js",
                 "Tuto",
                 "EN"
@@ -452,6 +489,7 @@
             "tags": [
                 "Processing",
                 "Creative Coding",
+                "Débutant",
                 "Tuto",
                 "EN"
             ],
