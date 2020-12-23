@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "a182fd8bbc20fedcbbdd",
+    "revision": "41f16dd69913b94b4afc",
     "url": "css/app.29ea6776.css"
   },
   {
-    "revision": "a182fd8bbc20fedcbbdd",
-    "url": "js/app.b015dff3.js"
+    "revision": "41f16dd69913b94b4afc",
+    "url": "js/app.90b2babe.js"
   },
   {
     "revision": "e604797346b797b6689b",
@@ -112,11 +112,11 @@ self.__precacheManifest = [
     "url": "img/x-circle.ec3741bd.svg"
   },
   {
-    "revision": "0abe9f0c0f1954413c7e90313c6c62e5",
+    "revision": "143499da977f33d67d305c17fce57876",
     "url": "index.html"
   },
   {
-    "revision": "51a8bf1a5db5bd3c612feac20bab16ef",
+    "revision": "42fb784df83c4b40613de419099b8c18",
     "url": "data/globalList.json"
   },
   {
@@ -128,6 +128,10 @@ self.__precacheManifest = [
     "url": "img/roi_loth_gif.gif"
   },
   {
+    "revision": "02b1bb32a2cb2f4ba1db08b8a702bab7",
+    "url": "js/sketch.js"
+  },
+  {
     "revision": "32094c4b41910839d87d85a1424da59a",
     "url": "data/getContent.js"
   },
@@ -136,11 +140,7 @@ self.__precacheManifest = [
     "url": "data/lists/coursesList.json"
   },
   {
-    "revision": "02b1bb32a2cb2f4ba1db08b8a702bab7",
-    "url": "js/sketch.js"
-  },
-  {
-    "revision": "9b7ed0b25f3fb63e2b751b6b030ce647",
+    "revision": "11db255292773c360cea76d0cb8ec899",
     "url": "data/lists/projectsList.json"
   },
   {
@@ -152,20 +152,20 @@ self.__precacheManifest = [
     "url": "data/lists/tagsList.json"
   },
   {
-    "revision": "1c8a54f25d101bdc607cec7228247a9a",
-    "url": "icons/socials/discord_logo.svg"
-  },
-  {
     "revision": "a574348589bf998ac3e3767bdabbd80c",
     "url": "icons/logo/lgo@2x.png"
   },
   {
-    "revision": "4df7f120f2d9952d54911aaf89042cb6",
-    "url": "icons/socials/github_logo.svg"
+    "revision": "1c8a54f25d101bdc607cec7228247a9a",
+    "url": "icons/socials/discord_logo.svg"
   },
   {
     "revision": "379c45b4d621033ff2f8537f4ef6a916",
     "url": "icons/logo/logo@1x.png"
+  },
+  {
+    "revision": "4df7f120f2d9952d54911aaf89042cb6",
+    "url": "icons/socials/github_logo.svg"
   },
   {
     "revision": "5b5846090d932223c9d39ec4d32133c9",
