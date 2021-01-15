@@ -1,5 +1,20 @@
 {
     "ressources": [
+
+        {
+            "name": "Last minute engineers",
+            "id": "Last_minute_engineers",
+            "tags": [
+                "Outil",
+                "Machine Learning",
+                "Débutant",
+                "EN"
+            ],
+            "desc": "Pose Animator takes a 2D vector illustration and animates its containing curves in real-time based on the recognition result from PoseNet and FaceMesh. It borrows the idea of skeleton-based animation from computer graphics and applies it to vector characters. Check out the demo !",
+            "url": "https://github.com/yemount/pose-animator/",
+            "thumbnail": "https://github.com/yemount/pose-animator/raw/master/resources/gifs/avatar-new-full-body.gif?raw=true",
+            "last_update": "25/06/20"
+        },
         {
             "name": "Pose Animator",
             "id": "pose_animator",

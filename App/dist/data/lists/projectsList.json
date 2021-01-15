@@ -1,5 +1,35 @@
 {
-    "projects": [
+    "projects": [    
+        {
+            "name": "Workshop Game VR 2020",
+            "id": "workshop_game_VR_2020",
+            "tags": [
+                "Unity",
+                "Game",
+                "FR"
+            ],
+            "desc": "Projets réalisés par les étudiant en troisième année de game expérience design @lecolededesign. Workshop dédié à la réalité virtuelle",
+            "url": "https://raw.githubusercontent.com/AtelierNum/workshop_game_VR_2020/main/README.md",
+            "thumbnail": "https://raw.githubusercontent.com/AtelierNum/workshop_game_VR_2020/main/Rendu_Groupe2_Screen_VideoNoire.png",
+            "last_update": "14/01/21",
+            "author": "étudiants en game expérience design"
+        },
+        {
+            "name": "Workshop Lumière 2020",
+            "id": "workshop_diorama_lumiere_2020",
+            "tags": [
+                "Arduino",
+                "Scénographie",
+                "Maquettage",
+                "FR"
+            ],
+            "desc": "Projets réalisés par les étudiant en deuxième année d'espaces scénographiés @lecolededesign. Workshop de vidéo mapping.",
+            "url": "https://raw.githubusercontent.com/AtelierNum/workshop_diorama_lumiere_2020/main/README.md",
+            "thumbnail": "https://raw.githubusercontent.com/AtelierNum/workshop_diorama_lumiere_2020/main/01_LaForetMysterieuse_Groupe01/Photos_Videos/05.jpg",
+            "last_update": "14/01/21",
+            "author": "étudiants en espaces scénographiéss"
+        },
+    
         {
             "name": "Workshop Mapping Cinétique 2020",
             "id": "workshop_mapping_cinetique_2020",
@@ -9,7 +39,7 @@
                 "Mapping",
                 "FR"
             ],
-            "desc": "Projet réalisé par les étudiant en troisième année de motion design @lecolededesign. Workshop de vidéo mapping.",
+            "desc": "Projets réalisés par les étudiant en troisième année de motion design @lecolededesign. Workshop de vidéo mapping.",
             "url": "https://raw.githubusercontent.com/AtelierNum/workshop_mapping_cinetique_2020/master/README.md",
             "thumbnail": "https://raw.githubusercontent.com/AtelierNum/workshop_mapping_cinetique_2020/main/Nebuleuse/teaser.gif",
             "last_update": "23/12/20",

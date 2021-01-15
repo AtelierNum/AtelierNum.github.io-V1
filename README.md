@@ -1,4 +1,4 @@
-# Website of AtelierNum 
+   # Website of AtelierNum 
 
 AtelierNum showcases works by students at l'Ecole de design Nantes Atlantique, and some ressources available to them. AtelierNum is the digital part of the physical place where students can experiment with creative coding, DIY electronics, virtual reality, machine learning and all kinds of digital goodness !
 
