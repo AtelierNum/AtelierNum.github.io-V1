@@ -1,19 +1,92 @@
 {
     "ressources": [
-
         {
-            "name": "Last minute engineers",
-            "id": "Last_minute_engineers",
+            "name": "Face Tracking for creative coding",
+            "id": "face_tracking_p5js",
             "tags": [
-                "Outil",
-                "Machine Learning",
+                "Ressource",
+                "Code",
+                "Web", 
+                "P5js",
+                "Intermédiaire",
+                "EN"
+            ],
+            "desc": "How to do face tracking, emotion recognition with web technologies",
+            "url": "https://github.com/stc/face-tracking-p5js",
+            "thumbnail": "https://user-images.githubusercontent.com/270431/40185787-c0e67830-59f3-11e8-9b94-5e619b195f57.jpg",
+            "last_update": "22/01/21"
+        },
+        {
+            "name": "Template Maker",
+            "id": "template_maker",
+            "tags": [
+                "Outils",
+                "Fabrication",
                 "Débutant",
                 "EN"
             ],
-            "desc": "Pose Animator takes a 2D vector illustration and animates its containing curves in real-time based on the recognition result from PoseNet and FaceMesh. It borrows the idea of skeleton-based animation from computer graphics and applies it to vector characters. Check out the demo !",
-            "url": "https://github.com/yemount/pose-animator/",
-            "thumbnail": "https://github.com/yemount/pose-animator/raw/master/resources/gifs/avatar-new-full-body.gif?raw=true",
-            "last_update": "25/06/20"
+            "desc": "Design patterns to create boxes in carboard or wood with a laser cutter or not...",
+            "url": "https://www.templatemaker.nl/en/",
+            "thumbnail": "https://www.templatemaker.nl/assets/images/example/boxlid.jpeg",
+            "last_update": "22/01/21"
+        },
+        {
+            "name": "Getting started with github pages",
+            "id": "gh-pages-how-tp",
+            "tags": [
+                "Ressources",
+                "Code",
+                "Web",
+                "Intermédiaire",
+                "EN"
+            ],
+            "desc": "How to configure gh-pages to host free static pages",
+            "url": "https://guides.github.com/features/pages/",
+            "thumbnail": "https://guides.github.com/features/pages/pages-home-page.png",
+            "last_update": "22/01/21"
+        },
+        {
+            "name": "Is it Code ? ",
+            "id": "is it code",
+            "tags": [
+                "Ressources",
+                "Code",
+                "Débutant",
+                "EN",
+                "FR"
+            ],
+            "desc": "Ressources for creative coding and website creation",
+            "url": "https://www.isitcode.net/%C3%A0-propos",
+            "thumbnail": "https://blot.im/cdn/blog_6c2a597018924596b0e0e6ba6b3b8724/_image_cache/a47e4b9d-e233-485d-84ed-6a650666f9ec.png",
+            "last_update": "22/01/21"
+        },
+        {
+            "name": "Fruition ",
+            "id": "fruition",
+            "tags": [
+                "Ressources",
+                "Web",
+                "Débutant",
+                "EN"
+            ],
+            "desc": "Build websites with Notion and no code !",
+            "url": "https://fruitionsite.com/",
+            "thumbnail": "https://fruitionsite.com/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F4c44874f-e60d-4d55-a6cd-6c9e0fdb6c6d%2FIcon.png?table=block&id=771ef386-5724-4c27-b938-9734a9cbff44&width=250&userId=&cache=v2",
+            "last_update": "22/01/21"
+        },
+        {
+            "name": "Last Minut Engineers",
+            "id": "Last_minute_engineers",
+            "tags": [
+                "Ressources",
+                "Electronique",
+                "Avancé",
+                "EN"
+            ],
+            "desc": "Electronics projects for arduino and esp32 boards",
+            "url": "https://lastminuteengineers.com/",
+            "thumbnail": "https://lastminuteengineers.com/wp-content/uploads/2019/12/Project-Interfacing-Passive-Infrared-PIR-Sensor-with-Arduino-Uno.jpg",
+            "last_update": "22/01/21"
         },
         {
             "name": "Pose Animator",
