@@ -205,6 +205,14 @@ export default {
   color: #1c1c1c;
 }
 
+.svgCurved{
+  @media (max-width: 1000px) {
+    background:#191a1a;
+    position:relative;
+    z-index: 1;
+  }
+}
+
 section {
   position: absolute;
   top: 20vw;
@@ -257,10 +265,16 @@ section {
     @media (max-width: 1220px) {
       padding: 15vw 20vw 180px 14vw;
     }
-
+    
     @media (min-width: 800px) {
       h1 {
         font-size: 78px;
+      }
+    }
+
+    @media (min-width: 800px) {
+      h1 {
+        font-size: 68px;
       }
       h2 {
         font-size: 24px;
@@ -273,15 +287,16 @@ section {
 
   @media (max-width: 1000px) {
     top: 0;
-    z-index: -999;
+    z-index: 0;
 
     .alternativeShape {
       margin-left: 0;
       width: 100%;
       mask: url("../assets/masks/top_content_mask.svg");
-      mask-position-y: bottom;
-      -webkit-mask-position-y: bottom;
-      -ms-mask-position-y: bottom;
+      mask-position:center bottom ;
+      -webkit-mask-mask-position:center bottom ;
+      -ms-mask-mask-position:center bottom ;
+
       mask-size: cover;
       -webkit-mask-size: cover;
       -ms-mask-size: cover;
