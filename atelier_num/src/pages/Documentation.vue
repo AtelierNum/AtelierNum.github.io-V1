@@ -121,6 +121,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.svgCurved{
+  background:#f7f7f7;
+}
 
 .mask_thumbnail{
   background-color: #f7f7f7;

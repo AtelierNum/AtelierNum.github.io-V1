@@ -3,7 +3,10 @@
     <ul>
     <li v-for="(section, i) in index" :key="i" :class="sectionClasses(i)" >        
         <a @click="moveToSection(i, section.section)">{{section.section}}</a>
-        <div v-if="section.children.length > 0" class="toggleSection" @click="openSection(i)">+</div>
+        <div v-if="section.children.length > 0" class="toggleSection" @click="openSection(i)">
+            <span v-show="!openedSections.includes(i)"></span>
+            <span></span>
+        </div>
 
         <ul v-if="section.children.length > 0">
             <li 
@@ -251,15 +254,31 @@ export default {
         position: absolute;
         right:5px;
         top:0;
-        // width:22px;
-        // height:22px;
+        width:12px;
+        height:12px;
         transition: .2s ease-out;
-        font-weight:700;
-        font-size:24px;
+
+        margin-top:.35em;
+        // font-weight:700;
+        // font-size:24px;
         transform-origin: center;
         display:inline;
         line-height:22px;
         text-align:center;
+
+        span{
+            position:absolute;
+            top:calc(50% - 1px);
+            left:0;
+            display: inline-block;
+            width:100%;
+            height:2px;
+            background:#373D4A;
+
+            &:last-child{
+                transform: rotate(90deg);
+            }
+        }
     }
 
     & > ul {
