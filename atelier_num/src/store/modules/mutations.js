@@ -8,7 +8,8 @@ export default {
   
         if (plop != undefined){
           state.current_content = plop;
-          return ;
+        } else if (typeof state.current_content != 'string'){
+          state.current_content = payload;
         }
       }
     },

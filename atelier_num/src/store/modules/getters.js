@@ -39,7 +39,6 @@ export default {
           //return content.tags.some( tag => state.filters[category].includes(tag))
           return state.filters[category].every(tag => content.tags.includes(tag));
         })
-        console.log(filteredContents[category])
 
         //order by date 
         filteredContents[category].sort((a,b) => {

@@ -40,4 +40,25 @@
   margin:0;
 }
 
+.notif{
+  position: fixed;
+  bottom:0;
+  left: calc(50% - 3em);
+  color:#F7F7F7;
+  background:#373D4A;
+  padding: 20px 30px;
+  border-radius:8px;
+
+  animation: appear 1s ease-out;
+}
+
+@keyframes appear{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+    bottom: calc(70px + 1em);
+  }
+}
 </style>

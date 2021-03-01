@@ -276,6 +276,15 @@ export default {
           el.select();
           document.execCommand('copy');
           document.body.removeChild(el);
+
+          const notif = document.createElement('div');
+          notif.innerText = 'Copied !';
+          notif.classList.add('notif');
+          document.body.appendChild(notif);
+
+          setTimeout(() => {
+            document.body.removeChild(notif)
+          },2000);
         })
 
         preNode.appendChild(copyCodeButton);
@@ -298,10 +307,12 @@ export default {
     } else {
       if (this.$route.params.subcontent != undefined){
         this.setSubContent({'id' : this.$route.params.content, 'subcontent' : this.$route.params.subcontent}).then( () => {
+          console.log('is thaht if ', this.getContent.url)
           this.getReadmeFromExternal(this.getContent.url);
         })
       } else {
-        this.setContent(this.$route.params.content).then( () => {
+        this.setContent(this.$route.params.content).then( rep => {
+          console.log('is thah else t', this.getContent.url, rep)
           this.getReadmeFromExternal(this.getContent.url);
         })
       }
@@ -510,6 +521,11 @@ export default {
     //   // background-color: #373D4A;
     // }
 
+    &:hover .copyCode{
+      opacity: 1;
+      transition: .1s ease-in;
+    }
+
     & .copyCode {
       position: absolute;
       top:20px;
@@ -519,6 +535,9 @@ export default {
       background-color:#373D4A;
       border-radius:8px;
       padding:14px 30px;
+
+      opacity: 0;
+      transition: .1s ease-out;
 
       & p {
         color:var(--color-gray01);
