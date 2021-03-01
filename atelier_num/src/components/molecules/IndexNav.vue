@@ -181,6 +181,7 @@ export default {
   position: -webkit-sticky;
   position: sticky;
   top: 20vh;
+  left: -50px;
   max-height:75vh;
   overflow-y:scroll;
   // scrollbar-width: none;
@@ -201,15 +202,15 @@ export default {
   // }
 
   /* invert side of scrollbar */
-  transform:rotateY(180deg);
-  -ms-transform:rotateY(180deg); /* IE 9 */
-  -webkit-transform:rotateY(180deg); /* Safari and Chrome */
+  -webkit-transform:rotateY(180deg) translateX(16px); /* Safari and Chrome */
+  -ms-transform:rotateY(180deg) translateX(6px); /* IE 9 */
+  transform:rotateY(180deg) translateX(6px);
 
   
 
   & > ul{
     min-width:70%;
-    width:95%;
+    width: 95%;
     height:min-content;
     position:relative;
     transform:rotateY(-180deg);
