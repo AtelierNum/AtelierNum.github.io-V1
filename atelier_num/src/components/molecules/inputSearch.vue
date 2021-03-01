@@ -1,6 +1,6 @@
 <template>
 <div class="search">
-  <input type="text" :placeholder="placeholderText" :name="name" :style="'padding-left:' + paddingPins">
+  <input type="text" :placeholder="placeholderText" :name="name" :style="'padding-left:' + paddingPins" @click="focus()">
 
     <div class="flexPins" v-show="filters.length > 0">
         <input-pin
@@ -59,6 +59,14 @@ export default {
         ...mapActions({
             filterContent : 'filterContent'
         }),
+        focus(){
+            this.$el.classList.add('focus');
+            document.addEventListener('click', (e) => {
+                if (document.activeElement != this.$el.children[0]){
+                    this.$el.classList.remove('focus');
+                }
+            })
+        },
         typingInSearch(inputValue){
             if (inputValue.length >= 1){
                 let filteredTags = this.getTagsList.filter( tag => {
@@ -145,9 +153,12 @@ export default {
     margin-left:auto;
     margin-right:auto;
     max-width:800px;
-
-    box-shadow: 0 0 8px 4px rgba(0,0,0,.12); 
+    
     border-radius:8px;
+
+    &.focus{
+        box-shadow: 0 0 8px 4px rgba(0,0,0,.12); 
+    }
 
     @media (max-width: 850px) {
         max-width:80vw !important;
@@ -175,11 +186,16 @@ export default {
         background-color: white;
         background: url('../../assets/icons/search.svg') no-repeat center left 16px;
         
-        border: none;
+        // border: none;
         border-radius: 8px;
+        border: 1px solid #2c2c2e;
 
         color:var(--color-dark02);
         font-weight:500;
+
+        &:focus{ 
+            outline: none;
+        }
     }
 
     ul {
