@@ -1,0 +1,44 @@
+{
+  "name": "ateliernum",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "axios": "^0.20.0",
+    "core-js": "^2.6.5",
+    "p5": "^0.10.2",
+    "prismjs": "^1.20.0",
+    "register-service-worker": "^1.6.2",
+    "require": "^2.4.20",
+    "vue": "^2.6.10",
+    "vue-content-loader": "^0.2.2",
+    "vue-loader": "^15.7.1",
+    "vue-markdown": "^2.2.4",
+    "vue-markdown-loader": "^2.4.1",
+    "vue-router": "^3.0.3",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.11.0",
+    "@vue/cli-plugin-pwa": "^3.11.0",
+    "@vue/cli-service": "^3.11.0",
+    "babel-plugin-prismjs": "^2.0.1",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.1.0",
+    "vue-clipboard2": "^0.3.1",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
+}

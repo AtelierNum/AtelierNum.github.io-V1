@@ -1,0 +1,320 @@
+{
+    "projects": [
+        {
+            "name": "Workshop Code Créatif 2021",
+            "id": "workshop_code_creatif_2021",
+            "tags": [
+                "Processing",
+                "Interaction",
+                "Creative Coding",
+                "FR"
+            ],
+            "desc": "code et documentation du workshop code créatif @lecolededesign. Projets réalisé par des étudiants en deuxième année en bacholor interaction design.",
+            "url": "https://raw.githubusercontent.com/AtelierNum/workshop_code_creatif_2021/main/README.md",
+            "thumbnail": "https://raw.githubusercontent.com/AtelierNum/workshop_code_creatif_2021/main/FeelTheUniverse/output.gif",
+            "last_update": "26/01/21",
+            "author": "étudiants en design d'interaction"
+        },
+        {
+            "name": "Workshop Game VR 2020",
+            "id": "workshop_game_VR_2020",
+            "tags": [
+                "Unity",
+                "Game",
+                "FR"
+            ],
+            "desc": "Projets réalisés par les étudiant en troisième année de game expérience design @lecolededesign. Workshop dédié à la réalité virtuelle",
+            "url": "https://raw.githubusercontent.com/AtelierNum/workshop_game_VR_2020/main/README.md",
+            "thumbnail": "https://raw.githubusercontent.com/AtelierNum/workshop_game_VR_2020/main/Rendu_Groupe2_Screen_VideoNoire.png",
+            "last_update": "14/01/21",
+            "author": "étudiants en game expérience design"
+        },
+        {
+            "name": "Workshop Lumière 2020",
+            "id": "workshop_diorama_lumiere_2020",
+            "tags": [
+                "Arduino",
+                "Scénographie",
+                "Maquettage",
+                "FR"
+            ],
+            "desc": "Projets réalisés par les étudiant en deuxième année d'espaces scénographiés @lecolededesign. Workshop de vidéo mapping.",
+            "url": "https://raw.githubusercontent.com/AtelierNum/workshop_diorama_lumiere_2020/main/README.md",
+            "thumbnail": "https://raw.githubusercontent.com/AtelierNum/workshop_diorama_lumiere_2020/main/01_LaForetMysterieuse_Groupe01/Photos_Videos/05.jpg",
+            "last_update": "14/01/21",
+            "author": "étudiants en espaces scénographiéss"
+        },
+        {
+            "name": "Workshop Mapping Cinétique 2020",
+            "id": "workshop_mapping_cinetique_2020",
+            "tags": [
+                "Arduino",
+                "Motion",
+                "Mapping",
+                "FR"
+            ],
+            "desc": "Projets réalisés par les étudiant en troisième année de motion design @lecolededesign. Workshop de vidéo mapping.",
+            "url": "https://raw.githubusercontent.com/AtelierNum/workshop_mapping_cinetique_2020/master/README.md",
+            "thumbnail": "https://raw.githubusercontent.com/AtelierNum/workshop_mapping_cinetique_2020/main/Nebuleuse/teaser.gif",
+            "last_update": "23/12/20",
+            "author": "étudiants en motion design"
+        },
+        {
+            "name": "Projet motifs d'expression 2020",
+            "id": "projet_motifs_d_expression_2020",
+            "tags": [
+                "Arduino",
+                "Motion",
+                "FR"
+            ],
+            "desc": "Projet réalisé par les étudiant en troisième année de motion design @lecolededesign. Introduction au code et aux mécanismes permettant le mouvement tangible.",
+            "url": "https://raw.githubusercontent.com/AtelierNum/projet_motifs_d_expression_2020/master/README.md",
+            "thumbnail": "https://raw.githubusercontent.com/AtelierNum/projet_motifs_d_expression_2020/main/Anaelle_et_Pierre/gif.gif",
+            "last_update": "23/12/20",
+            "author": "étudiants en motion design"
+        },
+        {
+            "name": "Workshop game from scratch 2020",
+            "id": "workshop_gamefromscratch_2020",
+            "tags": [
+                "Processing",
+                "Game",
+                "FR"
+            ],
+            "desc": "Projet réalisé par les étudiant en deuxième année de game design @lecolededesign. Introduction au code.",
+            "url": "https://raw.githubusercontent.com/AtelierNum/workshop_gamefromscratch_2020/master/README.md",
+            "thumbnail": "https://raw.githubusercontent.com/AtelierNum/workshop_gamefromscratch_2020/master/Amelie_Conoir/gif.gif",
+            "last_update": "22/12/20",
+            "author": "étudiants en game design"
+        },
+        {
+            "name": "Projet Yearbook 2020",
+            "id": "projet_yearbook_2020",
+            "tags": [
+                "P5js",
+                "Graphisme",
+                "FR"
+            ],
+            "desc": "En utilisant p5js était demandé de produire un portrait d'eux même et une image libre en manipulant les pixels d'une image source.",
+            "url": "https://raw.githubusercontent.com/AtelierNum/projet_Yearbook_2020/master/README.md",
+            "thumbnail": "https://raw.githubusercontent.com/AtelierNum/projet_Yearbook_2020/master/assets/rendus/Myriam_portrait.png",
+            "last_update": "09/06/20",
+            "author": "étudiants en design graphique"
+        },
+        {
+            "name": "Workshop Intallations Interactives 2020",
+            "id": "workshop_installation_interactive_2020",
+            "tags": [
+                "Touch Designer",
+                "Interaction",
+                "Scénographie",
+                "FR"
+            ],
+            "desc": "Workshop orienté sur l'apprentissage de Touch Designer @lecolededesign. L'objectif est de concevoir en 4 jours, une installation interactive, d'imaginer ses usages et sa scénographie et de prototyper le rendu visuel. Code et documentation. ",
+            "url": "https://raw.githubusercontent.com/AtelierNum/workshop_installation_interactive_2020/master/README.md",
+            "thumbnail": "https://github.com/AtelierNum/workshop_installation_interactive_2020/raw/master/Scratch_massive/scratch_massive.gif",
+            "last_update": "18/05/20",
+            "author": "étudiants en design d'interaction"
+        },
+        {
+            "name": "Workshop ALT-CTRL 2019-2020",
+            "id": "workshop_alt_ctrl_1920",
+            "tags": [
+                "Arduino",
+                "Interaction",
+                "Game",
+                "Unity",
+                "Processing",
+                "FR"
+            ],
+            "desc": "Workshop transdisciplinaire entre filières Game et Interaction @lecolededesign. L'objectif est de concevoir en 5 jours un controleur alternatif et un jeu d'arcade de l'idéation à la réalisation ! Code et documentation. ",
+            "url": "https://raw.githubusercontent.com/AtelierNum/workshop_alt_ctrl_1920/master/README.md",
+            "thumbnail": "https://raw.githubusercontent.com/AtelierNum/workshop_alt_ctrl_1920/master/Shaolin_Dragon/gif.gif",
+            "last_update": "30/04/20",
+            "author": "étudiants game design et en design d'interaction"
+        },
+        {
+            "name": "Projet jeux électroniques 2019-2020",
+            "id": "projet_jeu_electronique_1920",
+            "tags": [
+                "Arduino",
+                "Interaction",
+                "Game",
+                "FR"
+            ],
+            "desc": "Projets réalisés par les étudiants en troisième année de design d'interaction @lecolededesign. Code et documentation. ",
+            "url": "https://raw.githubusercontent.com/AtelierNum/projet_jeu_electronique_1920/master/README.md",
+            "thumbnail": "https://raw.githubusercontent.com/AtelierNum/projet_jeu_electronique_1920/master/Witching_Hour/gif.gif",
+            "last_update": "22/04/20",
+            "author": "étudiants en design d'interaction"
+        },
+        {
+            "name": "Workshop Code Créatif 2020",
+            "id": "workshop_code_creatif_1920",
+            "tags": [
+                "Processing",
+                "Interaction",
+                "Creative Coding",
+                "FR"
+            ],
+            "desc": "code et documentation du workshop code créatif @lecolededesign. Projets réalisé par des étudiants en deuxième année en bacholor interaction design.",
+            "url": "https://raw.githubusercontent.com/AtelierNum/workshop_code_creatif_1920/master/README.md",
+            "thumbnail": "https://raw.githubusercontent.com/AtelierNum/workshop_code_creatif_1920/master/Groupe6_Nuance/gif.gif",
+            "last_update": "20/03/20",
+            "author": "étudiants en design d'interaction"
+        },
+        {
+            "name": "Projet gestes de l'ennui 2019-2020",
+            "id": "projet_gestes_de_l_ennui_1920",
+            "tags": [
+                "P5js",
+                "Graphisme",
+                "Risographie",
+                "Arduino",
+                "FR"
+            ],
+            "desc": "Projets réalisés par les étudiants en 3ème année de design graphique @lecolededesign.",
+            "url": "https://raw.githubusercontent.com/AtelierNum/projet_gestes_de_l_ennui_1920/master/README.MD",
+            "thumbnail": "https://raw.githubusercontent.com/AtelierNum/projet_gestes_de_l_ennui_1920/master/CORNIER_VICTOR_KAAN_NICOLAS/screen.png",
+            "last_update": "23/03/20",
+            "author": "étudiants en design graphique"
+        },
+        {
+            "name": "Projet patatap 2019-2020",
+            "id": "projet_patatap_1920",
+            "tags": [
+                "P5js",
+                "Creative Coding",
+                "Interaction",
+                "Motion",
+                "FR"
+            ],
+            "desc": "Projets réalisés par les étudiants en deuxième année de design d'interaction @lecolededesign.",
+            "url": "https://raw.githubusercontent.com/AtelierNum/projet_patatap_1920/master/README.md",
+            "thumbnail": "https://raw.githubusercontent.com/AtelierNum/projet_patatap_1920/master/Lison_Guignard/gif.gif",
+            "last_update": "23/03/20",
+            "author": "étudiants en design d'interaction"
+        },
+        {
+            "name": "Workshop game from scratch 2019",
+            "id": "workshop_gamefromscratch_2019",
+            "tags": [
+                "Processing",
+                "Game",
+                "FR"
+            ],
+            "desc": "Projet réalisé par les étudiant en deuxième année de game design @lecolededesign. Introduction au code.",
+            "url": "https://raw.githubusercontent.com/AtelierNum/workshop_gamefromscratch_2019/master/README.md",
+            "thumbnail": "https://raw.githubusercontent.com/AtelierNum/workshop_gamefromscratch_2019/master/Steeve_Dossou/gif.gif",
+            "last_update": "26/09/19",
+            "author": "étudiants en game design"
+        },
+        {
+            "name": "Projet motifs génératifs 2019",
+            "id": "projet_generative-patterns_2019",
+            "tags": [
+                "P5js",
+                "Creative Coding",
+                "Graphisme",
+                "Interaction",
+                "FR"
+            ],
+            "desc": "Projets réalisés par les étudiants en 3ème année de design graphique @lecolededesign.",
+            "url": "https://raw.githubusercontent.com/AtelierNum/projet_generative-patterns_2019/master/README.md",
+            "thumbnail": "https://raw.githubusercontent.com/AtelierNum/projet_generative-patterns_2019/master/Gillet_Pauline/GIF.gif",
+            "last_update": "12/09/19",
+            "author": "étudiants en design graphique"
+        },
+        {
+            "name": "Workshop Code Créatif 2019",
+            "id": "workshop_code_creatif_1819",
+            "tags": [
+                "Processing",
+                "Creative Coding",
+                "Interaction",
+                "FR"
+            ],
+            "desc": "code et documentation du workshop code créatif @lecolededesign. Projets réalisé par des étudiants en deuxième année en bacholor interaction design.",
+            "url": "https://raw.githubusercontent.com/AtelierNum/workshop_code_creatif_1819/master/README.md",
+            "thumbnail": "https://raw.githubusercontent.com/AtelierNum/workshop_code_creatif_1819/master/Void/VOID.gif",
+            "last_update": "14/03/19",
+            "author": "étudiants en design d'interaction"
+        },
+        {
+            "name": "Workshop ALT-CTRL 2018-2019",
+            "id": "workshop_alt-ctrl_1819",
+            "tags": [
+                "Arduino",
+                "Interaction",
+                "Game",
+                "Processing",
+                "FR"
+            ],
+            "desc": "Workshop transdisciplinaire entre filières Game et Interaction @lecolededesign. L'objetctif est de concevoir en 5 jour un controleur alternatif et un jeu d'arcade de l'idéation à la réalisation ! Code et documentation. ",
+            "url": "https://raw.githubusercontent.com/AtelierNum/workshop_alt_ctrl_1819/master/README.md",
+            "thumbnail": "https://raw.githubusercontent.com/AtelierNum/workshop_alt_ctrl_1819/master/Splateau/gif.gif",
+            "last_update": "30/04/20",
+            "author": "étudiants game design et en design d'interaction"
+        },
+        {
+            "name": "Projet jeux électroniques 2018-2019",
+            "id": "projet_jeu_electronique_1819",
+            "tags": [
+                "Arduino",
+                "Interaction",
+                "Game",
+                "FR"
+            ],
+            "desc": "Projets réalisés par les étudiants en troisième année de design d'interaction @lecolededesign. Code et documentation. ",
+            "url": "https://raw.githubusercontent.com/AtelierNum/projet_jeu_electronique_1819/master/README.md",
+            "thumbnail": "https://raw.githubusercontent.com/AtelierNum/projet_jeu_electronique_1819/master/Punchers/images/PUNCHERS.gif",
+            "last_update": "14/02/19",
+            "author": "étudiants en design d'interaction"
+        },
+        {
+            "name": "Projet patatap 2018-2019",
+            "id": "projet_patatap_1819",
+            "tags": [
+                "P5js",
+                "Creative Coding",
+                "Motion",
+                "Interaction",
+                "FR"
+            ],
+            "desc": "Projets réalisés par les étudiants en deuxième année de design d'interaction @lecolededesign.",
+            "url": "https://raw.githubusercontent.com/AtelierNum/projet_patatap_1819/master/README.md",
+            "thumbnail": "https://raw.githubusercontent.com/AtelierNum/projet_patatap_1819/master/Heurtebise_Simon/patatap.gif",
+            "last_update": "01/02/19",
+            "author": "étudiants en design d'interaction"
+        },
+        {
+            "name": "Dis-information signal 2018",
+            "id": "projet_dis-information_signals_1819",
+            "tags": [
+                "Arduino",
+                "Interaction",
+                "Graphisme",
+                "FR"
+            ],
+            "desc": "Projet réalisé par les étudiant en troisième année de design graphique @lecolededesign. Introduction au code et à arduino.",
+            "url": "https://raw.githubusercontent.com/AtelierNum/projet_dis-information_signals_1819/master/README.md",
+            "thumbnail": "https://raw.githubusercontent.com/AtelierNum/projet_dis-information_signals_1819/master/Papy-raleur/papy-raleur.gif",
+            "last_update": "28/01/19",
+            "author": "étudiants en design graphique"
+        },
+        {
+            "name": "Workshop game from scratch 2018",
+            "id": "workshop_gamefromscratch_2018",
+            "tags": [
+                "Processing",
+                "Game",
+                "FR"
+            ],
+            "desc": "Projet réalisé par les étudiant en deuxième année de game design @lecolededesign. Introduction au code.",
+            "url": "https://raw.githubusercontent.com/AtelierNum/workshop_gamefromscratch_2018/master/README.md",
+            "thumbnail": "https://raw.githubusercontent.com/AtelierNum/workshop_gamefromscratch_2018/master/assets/gifs/gamefromscratch_Riwan_Majidate.gif",
+            "last_update": "30/11/18",
+            "author": "étudiants en game design"
+        }
+    ]
+}
