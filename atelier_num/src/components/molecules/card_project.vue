@@ -293,6 +293,35 @@ import {mapActions} from 'vuex' ;
     max-width: 100%;
     overflow:auto;
 
+    .top{height:380px}
+    .title{ font-size:20px }
+    .desc{ font-size:16px }
+    .bottom{ padding: 10px 3px 0 3px}
+    .tags{
+      font-size:17px;
+      position:relative !important;
+      bottom:0 !important;
+      left:0 !important;
+    }
+  }
+
+  .small{
+    width:100% !important;
+    overflow:auto;
+
+    .desc{
+      white-space: unset !important;
+    }
+  }
+}
+
+@media (max-width:900px){
+  .tall{
+    width:unset !important;
+    height:unset !important;
+    max-width: 100%;
+    overflow:auto;
+
     .top{height:650px}
     .title{ font-size:20px }
     .desc{ font-size:16px }
