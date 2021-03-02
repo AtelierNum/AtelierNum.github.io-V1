@@ -475,7 +475,7 @@ export default {
     position:relative;
     word-break:break-word;
 
-    &::after{
+    &::after, &::before{
       content: ' ';
       position: absolute;
       bottom : -4px;
@@ -484,6 +484,24 @@ export default {
       height : 3px;
       border-radius:2px;
       background-color:#373D4A;
+      transition: .2s ease-out;
+    }
+
+    &::before{
+      content: ' ';
+      position: absolute;
+      bottom : -4px;
+      left : 0;
+      width:100%;
+      height:0;
+      border-radius:2px;
+      background-color:#373D4A30;
+      transition: .2s ease-out;
+    }
+
+    &:hover::before{
+      height:calc(100% + 4px);
+      transition: .2s ease-out;
     }
 
   }
@@ -505,21 +523,6 @@ export default {
     margin : 50px 0;
     overflow-x: scroll;
     scrollbar-color:#1C1C1C rgb(73, 80, 95);
-
-    // &::after{
-    //   // position:absolute;
-    //   // bottom: 20px;
-    //   // right:20px;
-    //   // content: '<> Copy the code';
-    //   // padding: 10px 20px;
-    //   // border-radius: 8px;
-
-    //   // text-align: center;
-    //   // font-family:'Rubik';
-    //   // font-size: 1em;
-    //   // color: #F8F8F8;
-    //   // background-color: #373D4A;
-    // }
 
     &:hover .copyCode{
       opacity: 1;
