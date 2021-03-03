@@ -128,16 +128,8 @@ self.__precacheManifest = [
     "url": "img/roi_loth_gif.gif"
   },
   {
-    "revision": "7af4785382f55863632bcb8d8864780d",
-    "url": "data/lists/projectsList.json"
-  },
-  {
-    "revision": "b4bf18153d4b84b6a2b6eb00c7ca0336",
-    "url": "data/lists/ressourcesList.json"
-  },
-  {
-    "revision": "7abc94edfbedf1904d23b477ec32f0c7",
-    "url": "data/lists/tagsList.json"
+    "revision": "b07911137df1c69ec9d8a5d5b0b6e6ad",
+    "url": "data/getContent.js"
   },
   {
     "revision": "2a065a9cf0765375f4b68b84020ce3f1",
@@ -148,20 +140,36 @@ self.__precacheManifest = [
     "url": "js/sketch.js"
   },
   {
-    "revision": "b07911137df1c69ec9d8a5d5b0b6e6ad",
-    "url": "data/getContent.js"
+    "revision": "7abc94edfbedf1904d23b477ec32f0c7",
+    "url": "data/lists/tagsList.json"
+  },
+  {
+    "revision": "7af4785382f55863632bcb8d8864780d",
+    "url": "data/lists/projectsList.json"
+  },
+  {
+    "revision": "b4bf18153d4b84b6a2b6eb00c7ca0336",
+    "url": "data/lists/ressourcesList.json"
   },
   {
     "revision": "1c8a54f25d101bdc607cec7228247a9a",
     "url": "icons/socials/discord_logo.svg"
   },
   {
-    "revision": "5b5846090d932223c9d39ec4d32133c9",
-    "url": "icons/socials/instagram.svg"
+    "revision": "379c45b4d621033ff2f8537f4ef6a916",
+    "url": "icons/logo/logo@1x.png"
   },
   {
     "revision": "a574348589bf998ac3e3767bdabbd80c",
     "url": "icons/logo/lgo@2x.png"
+  },
+  {
+    "revision": "5b5846090d932223c9d39ec4d32133c9",
+    "url": "icons/socials/instagram.svg"
+  },
+  {
+    "revision": "4df7f120f2d9952d54911aaf89042cb6",
+    "url": "icons/socials/github_logo.svg"
   },
   {
     "revision": "084e6118b7302c403739be96c6c194ac",
@@ -172,28 +180,16 @@ self.__precacheManifest = [
     "url": "icons/triangle_right.svg"
   },
   {
-    "revision": "4df7f120f2d9952d54911aaf89042cb6",
-    "url": "icons/socials/github_logo.svg"
-  },
-  {
-    "revision": "379c45b4d621033ff2f8537f4ef6a916",
-    "url": "icons/logo/logo@1x.png"
+    "revision": "43e8d9795392ee7d5c730ae6941cff89",
+    "url": "img/logo_edna.png"
   },
   {
     "revision": "532b58c73e9345e8466ac2766b8e9093",
     "url": "img/logo_ateliernum.jpg"
   },
   {
-    "revision": "43e8d9795392ee7d5c730ae6941cff89",
-    "url": "img/logo_edna.png"
-  },
-  {
     "revision": "02531b99e14fafd9b3e7afcc4c98bbca",
     "url": "img/logo_ateliernum.png"
-  },
-  {
-    "revision": "bc9c71d4d774beb1959eb38429889342",
-    "url": "js/sketchs/index.html"
   },
   {
     "revision": "b6216d61c03e6ce0c9aea6ca7808f7ca",
@@ -202,6 +198,10 @@ self.__precacheManifest = [
   {
     "revision": "df84ac63d2e2aa9a1194acdd10a1aeac",
     "url": "js/sketchs/sketch.js"
+  },
+  {
+    "revision": "bc9c71d4d774beb1959eb38429889342",
+    "url": "js/sketchs/index.html"
   },
   {
     "revision": "b4653a5fac810b436dd985c5569116fa",

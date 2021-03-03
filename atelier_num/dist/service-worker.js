@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "precache-manifest.93a649d4ebe43fda530040d5f3800f2a.js"
+  "precache-manifest.d1a59d50854b322e27cb99cb2aa01731.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "ateliernum"});
