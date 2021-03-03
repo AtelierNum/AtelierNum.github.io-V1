@@ -11,7 +11,7 @@ cd ..
 
 git add .
 git commit -m "new build"
-git push origin `git subtree split --prefix atelierr_num/dist src`:master --force  
+git push origin `git subtree split --prefix atelier_num/dist src`:master --force  
 
 
 
