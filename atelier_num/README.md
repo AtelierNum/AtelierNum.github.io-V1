@@ -14,7 +14,7 @@ See [documentation](app_doc.md)
 The **API** is not functional for now, so we just need to install the **App** part. This project is build with webpack, so it needs NPM ( and Nodes.js for few actions on alpha).
 
 ```
-cd App
+cd atelier_num
 npm install
 ```
 
@@ -22,7 +22,7 @@ Markdowns files of courses, projects, ressources repos are not imported from the
 Update the list of markdowns you want to display in json files stored in **./lists**  :
 
 ``` 
-cd atelier_num/public/data/lists/
+cd public/data/lists/
 ```
 Then execute the script **getContent.js** to  update the list of markdowns in **globalList.json** :
 
