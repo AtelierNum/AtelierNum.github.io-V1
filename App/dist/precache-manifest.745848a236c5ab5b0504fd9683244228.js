@@ -132,6 +132,10 @@ self.__precacheManifest = [
     "url": "data/getContent.js"
   },
   {
+    "revision": "7af4785382f55863632bcb8d8864780d",
+    "url": "data/lists/projectsList.json"
+  },
+  {
     "revision": "02b1bb32a2cb2f4ba1db08b8a702bab7",
     "url": "js/sketch.js"
   },
@@ -140,36 +144,32 @@ self.__precacheManifest = [
     "url": "data/lists/coursesList.json"
   },
   {
-    "revision": "7af4785382f55863632bcb8d8864780d",
-    "url": "data/lists/projectsList.json"
+    "revision": "b4bf18153d4b84b6a2b6eb00c7ca0336",
+    "url": "data/lists/ressourcesList.json"
   },
   {
     "revision": "7abc94edfbedf1904d23b477ec32f0c7",
     "url": "data/lists/tagsList.json"
   },
   {
-    "revision": "b4bf18153d4b84b6a2b6eb00c7ca0336",
-    "url": "data/lists/ressourcesList.json"
-  },
-  {
     "revision": "a574348589bf998ac3e3767bdabbd80c",
     "url": "icons/logo/lgo@2x.png"
-  },
-  {
-    "revision": "4df7f120f2d9952d54911aaf89042cb6",
-    "url": "icons/socials/github_logo.svg"
   },
   {
     "revision": "379c45b4d621033ff2f8537f4ef6a916",
     "url": "icons/logo/logo@1x.png"
   },
   {
-    "revision": "1c8a54f25d101bdc607cec7228247a9a",
-    "url": "icons/socials/discord_logo.svg"
-  },
-  {
     "revision": "084e6118b7302c403739be96c6c194ac",
     "url": "icons/socials/twitter_logo.svg"
+  },
+  {
+    "revision": "4df7f120f2d9952d54911aaf89042cb6",
+    "url": "icons/socials/github_logo.svg"
+  },
+  {
+    "revision": "1c8a54f25d101bdc607cec7228247a9a",
+    "url": "icons/socials/discord_logo.svg"
   },
   {
     "revision": "5b5846090d932223c9d39ec4d32133c9",
@@ -184,16 +184,12 @@ self.__precacheManifest = [
     "url": "img/logo_ateliernum.jpg"
   },
   {
-    "revision": "bc9c71d4d774beb1959eb38429889342",
-    "url": "js/sketchs/index.html"
+    "revision": "43e8d9795392ee7d5c730ae6941cff89",
+    "url": "img/logo_edna.png"
   },
   {
     "revision": "02531b99e14fafd9b3e7afcc4c98bbca",
     "url": "img/logo_ateliernum.png"
-  },
-  {
-    "revision": "43e8d9795392ee7d5c730ae6941cff89",
-    "url": "img/logo_edna.png"
   },
   {
     "revision": "df84ac63d2e2aa9a1194acdd10a1aeac",
@@ -202,6 +198,10 @@ self.__precacheManifest = [
   {
     "revision": "b6216d61c03e6ce0c9aea6ca7808f7ca",
     "url": "robots.txt"
+  },
+  {
+    "revision": "bc9c71d4d774beb1959eb38429889342",
+    "url": "js/sketchs/index.html"
   },
   {
     "revision": "b4653a5fac810b436dd985c5569116fa",
