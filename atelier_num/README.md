@@ -22,7 +22,7 @@ Markdowns files of courses, projects, ressources repos are not imported from the
 Update the list of markdowns you want to display in json files stored in **./lists**  :
 
 ``` 
-cd public/data/lists/
+cd atelier_num/public/data/lists/
 ```
 Then execute the script **getContent.js** to  update the list of markdowns in **globalList.json** :
 
