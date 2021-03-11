@@ -1,5 +1,6 @@
 export default {
   getContent(state){
+    // console.log(state.current_content)
       return state.current_content ;
   },
   getList(state){

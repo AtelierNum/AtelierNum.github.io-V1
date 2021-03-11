@@ -307,12 +307,12 @@ export default {
     } else {
       if (this.$route.params.subcontent != undefined){
         this.setSubContent({'id' : this.$route.params.content, 'subcontent' : this.$route.params.subcontent}).then( () => {
-          console.log('is thaht if ', this.getContent.url)
+          // console.log('is thaht if ', this.getContent.url)
           this.getReadmeFromExternal(this.getContent.url);
         })
       } else {
         this.setContent(this.$route.params.content).then( rep => {
-          console.log('is thah else t', this.getContent.url, rep)
+          // console.log('is thah else t', this.$route.params.content, this.getContent.url, rep)
           this.getReadmeFromExternal(this.getContent.url);
         })
       }

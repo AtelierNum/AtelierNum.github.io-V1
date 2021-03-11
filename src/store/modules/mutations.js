@@ -8,9 +8,7 @@ export default {
   
         if (plop != undefined){
           state.current_content = plop;
-        } else if (typeof state.current_content != 'string'){
-          state.current_content = payload;
-        }
+        } 
       }
     },
     setByUrl(state, payload){
