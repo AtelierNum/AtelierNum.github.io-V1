@@ -1,10 +1,13 @@
-   # Website of AtelierNum 
+# Website of AtelierNum 
 
 AtelierNum showcases works by students at l'Ecole de design Nantes Atlantique, and some ressources available to them. AtelierNum is the digital part of the physical place where students can experiment with creative coding, DIY electronics, virtual reality, machine learning and all kinds of digital goodness !
 
 Created by [Simon Renault](http://www.simon-renault.com), [Raphaël Perraud](http://www.raphaelperraud.com) and [Bérenger Recoules](http://b2renger.github.io/)
 
 Everything happens codewise in the "src" branch and all the instructions below should happe with this branch checkedout. The master branch only holds the last build of the website.
+
+## App documention
+See [documentation](app_doc.md)
 
 ## To test locally the project
 
@@ -19,7 +22,7 @@ Markdowns files of courses, projects, ressources repos are not imported from the
 Update the list of markdowns you want to display in json files stored in **./lists**  :
 
 ``` 
-cd atelier_num/data/lists/
+cd public/data/lists/
 ```
 Then execute the script **getContent.js** to  update the list of markdowns in **globalList.json** :
 

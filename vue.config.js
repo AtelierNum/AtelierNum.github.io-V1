@@ -1,8 +1,4 @@
 module.exports = {
-    
-    
-}
-module.exports = {
     publicPath: "",
     chainWebpack(config){
       config.module.rule('md')
@@ -17,18 +13,3 @@ module.exports = {
         })
     }
   }
-
-// module: {
-//     rules: [
-//       {
-//         test: /\.md$/,
-//         loader: 'vue-markdown-loader'
-//       }
-//     ]
-//   }
-// chainWebpack: config => {
-//   config.module
-//     .rule('md')
-//       .use('vue-markdown')
-//         .loader('vue-markdown')
-// },
