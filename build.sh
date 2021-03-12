@@ -7,7 +7,7 @@ echo 'Starting building ...'
 cd ./public/data && node getContent.js
 cd ../..
 npm run build
-cd ..
+
 
 git add .
 git commit -m "new build"
