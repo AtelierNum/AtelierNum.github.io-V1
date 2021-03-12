@@ -4,14 +4,14 @@ echo 'Starting building ...'
 
 
 
-cd ./atelier_num/public/data && node getContent.js
+cd ./public/data && node getContent.js
 cd ../..
 npm run build
 cd ..
 
 git add .
 git commit -m "new build"
-git push origin `git subtree split --prefix atelier_num/dist src`:master --force  
+git push origin `git subtree split --prefix dist src`:master --force  
 
 
 
