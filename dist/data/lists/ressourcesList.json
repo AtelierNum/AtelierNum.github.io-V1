@@ -1,6 +1,105 @@
 {
     "ressources": [
         {
+            "name": "OpenMV and arduino",
+            "id": "openmv_and_arduino",
+            "tags": [
+                "Ressource",
+                "Creative Coding",
+                "Arduino",
+                "Computer Vison",
+                "Electronique",
+                "Intermédiaire",
+                "EN"
+            ],
+            "desc": "Connect the openMV cam to arduino and detect april tags!",
+            "url": "https://github.com/emoc/openmv_utile/tree/master/communication_serie_openmv_arduino",
+            "thumbnail": "https://raw.githubusercontent.com/emoc/openmv_utile/master/communication_serie_openmv_arduino/communication_serie_openmv_arduino_bb.png",
+            "last_update": "05/05/21"
+        },
+        {
+            "name": "Processing OSC controller",
+            "id": "processing_osc_controller",
+            "tags": [
+                "Ressource",
+                "Creative Coding",
+                "Processing",
+                "Code",
+                "Electronique",
+                "Débutant",
+                "EN"
+            ],
+            "desc": "Streamlining the process of creating osc application with processing for desktop and android",
+            "url": "https://github.com/b2renger/processing_osc_controller",
+            "thumbnail": "https://raw.githubusercontent.com/b2renger/processing_osc_controller/main/assets/p5_2.png",
+            "last_update": "05/05/21"
+        },  
+        {
+            "name": "Noise in creative coding",
+            "id": "noise_in_creative_coding",
+            "tags": [
+                "Ressource",
+                "Creative Coding",
+                "Code",
+                "Web",
+                "Débutant",
+                "EN"
+            ],
+            "desc": "In depth explanation about noise",
+            "url": "https://varun.ca/noise/",
+            "thumbnail": "https://raw.githubusercontent.com/b2renger/p5js-designing-interactive-patterns/master/images/joydivision.jpg",
+            "last_update": "05/05/21"
+        },  
+        {
+            "name": "Scan the world",
+            "id": "myminifactory_scan_the_world",
+            "tags": [
+                "Ressource",
+                "3D",
+                "Fabrication",
+                "Débutant",
+                "EN"
+            ],
+            "desc": "3D models of sculptures and cultural artefacts",
+            "url": "https://www.myminifactory.com/scantheworld/",
+            "thumbnail": "https://cdn.myminifactory.com/assets/object-assets/5a34065096e57/images/230X230-head-of-david.jpg",
+            "last_update": "05/05/21"
+        },
+        {
+            "name": "Creative coding algorithms & techniques",
+            "id": "creative_coding_algorithms",
+            "tags": [
+                "Ressource",
+                "Code",
+                "Creative Coding",
+                "Débutant",
+                "EN"
+            ],
+            "desc": "Encyclopedia of algorithms",
+            "url": "https://www.notion.so/Creative-coding-algorithms-techniques-c5550ef2f7574126bdc77b09ed76651b",
+            "thumbnail": "https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fc555e08b-b0ab-4175-8220-df4d5fdaf44f%2F42c37c87011633.5daaf6257b791.png?table=block&id=c5550ef2-f757-4126-bdc7-7b09ed76651b&width=3840&userId=&cache=v2",
+            "last_update": "05/05/21"
+        },
+        {
+            "name": "RunwayML and Cables.gl",
+            "id": "runway_n_cables",
+            "tags": [
+                "Ressource",
+                "Code",
+                "Web", 
+                "Cables.gl",
+                "Creative Coding",
+                "Machine Learning",
+                "RunwayML",
+                "Intermédiaire",
+                "EN"
+            ],
+            "desc": "Getting started with RunwayML inside Cables.gl",
+            "url": "https://www.notion.so/RunwayML-in-Cables-74be201bbfde4e30b0e599cef7c32541",
+            "thumbnail": "https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F056653fe-1ddf-402b-a0ff-b6de1832bedb%2FAttnGAN_banana.jpeg?table=block&id=20c9222e-35ec-484a-973d-554fc5a1b928&width=510&userId=&cache=v2",
+            "last_update": "05/05/21"
+        },
+        {
             "name": "Face Tracking for creative coding",
             "id": "face_tracking_p5js",
             "tags": [
