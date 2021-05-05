@@ -83,9 +83,13 @@ import {mapActions} from 'vuex' ;
         }
       },
       card_action(){
+
+        //console.log(this.r_action)
         if (this.r_action != ''){
 
-          if (this.externalLink){
+         // if (this.externalLink){
+           if (this.r_action == "ressources" || this.r_action == "courses"){
+             console.log(this.externalLink)
             window.open(this.externalLink, '_blank');
           } else {
             this.setContent(this.id);

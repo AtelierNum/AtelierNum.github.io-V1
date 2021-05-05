@@ -81,6 +81,7 @@
         :id="course.id"
         :desc="course.desc"
         :thumbnailUrl="course.thumbnail"
+        :externalLink="course.url"
         :tags="course.tags"
       ></v-projectCard>
     </v-grid>
@@ -174,7 +175,7 @@ export default {
       this.max[type] += 3;
       if (this.max[type] > this.getListByDate[type].length) {
         this.disabled[type] = true;
-      }
+      } 
     },
     githubAteliernum() {
       window.open("https://github.com/AtelierNum", "_blank");

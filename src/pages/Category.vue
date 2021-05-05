@@ -17,10 +17,10 @@
         :r_action="$route.name"
         :title="content.name"
         :id="content.id"
-        :desc="content.desc"
+        :desc="content.desc"  
         :thumbnailUrl="content.thumbnail"
         :tags="content.tags"
-        :externalLink=" $route.name == 'ressources' ? content.url : ''"
+        :externalLink=" ($route.name == 'ressources' || $route.name =='courses') ? content.url : ''"
       ></v-projectCard>
     </v-grid>
 
