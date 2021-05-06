@@ -59,7 +59,7 @@
                 "FR"
             ],
             "desc": "Ressource arduino sous forme de cookbook : connecter des capteurs, faire bouger des choses et alumer des lumières",
-            "url": "https://github.com.com/b2renger/Introduction_Arduino",
+            "url": "https://github.com/b2renger/Introduction_Arduino",
             "thumbnail": "https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/assets/set_neopixels_rgb.gif",
             "last_update": "28/10/19",
             "author": "b2renger"
