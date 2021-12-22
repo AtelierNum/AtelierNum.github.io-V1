@@ -27,8 +27,8 @@
     "@vue/cli-plugin-pwa": "^3.11.0",
     "@vue/cli-service": "^3.11.0",
     "babel-plugin-prismjs": "^2.0.1",
-    "node-sass": "^4.9.0",
-    "sass-loader": "^7.1.0",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^8.0.2",
     "vue-clipboard2": "^0.3.1",
     "vue-template-compiler": "^2.6.10"
   },
