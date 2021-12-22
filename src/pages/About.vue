@@ -37,6 +37,16 @@
           </a>
         </div>
 
+        <div class="perso_card superpromaster">
+          <a href="https://luciemrc.com/" target="blank">
+            <img src alt />
+            <h4>Lucie Marécaille</h4>
+            <span>aka Lucie Mrc</span>
+            <p>Apprentie de l'Atelier Numérique</p>
+            <p class="roles">Assistante super douée</p>
+          </a>
+        </div>
+
         <div class="perso_card petitefourmi">
           <a href="http://www.raphaelperraud.com" target="blank">
             <img src alt />
