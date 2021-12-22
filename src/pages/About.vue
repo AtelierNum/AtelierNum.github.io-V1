@@ -71,7 +71,7 @@ export default {
   },
   data() {
     return {
-      contributors: "Bérenger Recoules, Martin Cailleau, Benjamin Carrier ",
+      contributors: "Bérenger Recoules, Martin Cailleau, Benjamin Carrier, Lucie Marécaille ",
     };
   },
 };
