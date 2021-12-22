@@ -1,6 +1,65 @@
 {
     "courses": [
-
+        {
+            "name": "Video Mapping et Madmapper",
+            "id": "Madmapper_2spi",
+            "tags": [
+                "Mapping",
+                "Madmapper",
+                "Débutant",
+                "FR"
+            ],
+            "desc": "Une introduction à madmapper pour réaliser du video mapping",
+            "url": "https://github.com/LucieMrc/Madmapper_2spi  ",
+            "thumbnail": "https://github.com/LucieMrc/Madmapper_2spi/raw/main/images/screen1.png",
+            "last_update": "22/12/21",
+            "author": "Lucie Mrc"
+        },
+        {
+            "name": "Touch Designer et Kantan Mapper",
+            "id": "TD_KantanMapper",
+            "tags": [
+                "Mapping",
+                "Touch Designer",
+                "Débutant",
+                "EN"
+            ],
+            "desc": "An introduction to use the video mapping tool in Touch Designer",
+            "url": "https://github.com/LucieMrc/TD_KantanMapper",
+            "thumbnail": "https://github.com/LucieMrc/TD_KantanMapper/raw/main/images/screen10.png",
+            "last_update": "22/12/21",
+            "author": "Lucie Mrc"
+        },
+        {
+            "name": "Arduino et animation leds",
+            "id": "arduino_led_animation",
+            "tags": [
+                "Electronique",
+                "Débutant",
+                "FR"
+            ],
+            "desc": "Introduction à arduino via l'animation de leds; centrée sur les couleurs et l'écriture d'un scénario lumière",
+            "url": "https://github.com/b2renger/arduino_led_animation",
+            "thumbnail": "https://github.com/b2renger/arduino_led_animation/raw/main/assets/exemple_05_noise.gif",
+            "last_update": "22/12/21",
+            "author": "b2renger"
+        },       
+        {
+            "name": "Augmenta et Touch Designer",
+            "id": "TD_Augmenta",
+            "tags": [
+                "Tracking",
+                "Interaction",
+                "Mapping",
+                "Intermédiaire",
+                "EN"
+            ],
+            "desc": "Introduction to the augmenta technology to make interactive mapping with person tracking",
+            "url": "https://github.com/LucieMrc/TD_Augmenta",
+            "thumbnail": "https://raw.githubusercontent.com/LucieMrc/TD_Augmenta/ef925a80306f750ed75f5e74beecfce7a732263e/images/screen5.png",
+            "last_update": "22/12/21",
+            "author": "Lucie Mrc"
+        },
         {
             "name": "Introduction Photon",
             "id": "introduction_photon",
