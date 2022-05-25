@@ -1,6 +1,68 @@
 {
     "courses": [
         {
+            "name": "Introduction Arduino",
+            "id": "introduction_arduino",
+            "tags": [
+                "Arduino",
+                "Interaction",
+                "Débutant",
+                "FR"
+            ],
+            "desc": "Ressource arduino sous forme de cookbook : connecter des capteurs, faire bouger des choses et alumer des lumières",
+            "url": "https://github.com/b2renger/Introduction_Arduino",
+            "thumbnail": "https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/assets/set_neopixels_rgb.gif",
+            "last_update": "26/05/22",
+            "author": "b2renger"
+        },
+        {
+            "name": "Introduction Arduino",
+            "id": "introduction_arduino",
+            "tags": [
+                "Arduino",
+                "Interaction",
+                "Débutant",
+                "EN"
+            ],
+            "desc": "Cookbook style resssource for arduino, learn how to connect sensors, move and lights up things !",
+            "url": "https://github.com/b2renger/Introduction_Arduino/tree/english",
+            "thumbnail": "https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/assets/set_neopixels_rgb.gif",
+            "last_update": "26/05/22",
+            "author": "b2renger"
+        },
+        {
+            "name": "Introduction à la Réalité Augmentée",
+            "id": "introduction_A-Frame",
+            "tags": [
+                "HTML",
+                "JS",
+                "A-Frame",
+                "Interaction",
+                "Débutant",
+                "EN"
+            ],
+            "desc": "Getting started with web based AR using A-Frame for cross platforme WebXR",
+            "url": "https://github.com/b2renger/Introduction_A-frame#introduction_a-frame",
+            "thumbnail": "https://raw.githubusercontent.com/b2renger/Introduction_A-frame/main/assets/snowAR.gif",
+            "last_update": "25/05/22",
+            "author": "b2renger"
+        },
+        {
+            "name": "Utiliser une découpe Vinyle",
+            "id": "tuto_silhouette_cameo",
+            "tags": [
+                "Stickers",
+                "Cutter",
+                "Débutant",
+                "FR"
+            ],
+            "desc": "Utiliser la silhouette cameo : faire des découpe de vinyle, stickers cuivrés etc.",
+            "url": "https://github.com/LucieMrc/Tuto_Silhouette_Cameo",
+            "thumbnail": "https://raw.githubusercontent.com/LucieMrc/Tuto_Silhouette_Cameo/main/images/screen5.png",
+            "last_update": "25/05/22",
+            "author": "Lucie Mrc"
+        },
+        {
             "name": "Video Mapping et Madmapper",
             "id": "Madmapper_2spi",
             "tags": [
@@ -108,36 +170,7 @@
             "last_update": "18/05/20",
             "author": "Benjamin Carrier"
         },
-        {
-            "name": "Introduction Arduino",
-            "id": "introduction_arduino",
-            "tags": [
-                "Arduino",
-                "Interaction",
-                "Débutant",
-                "FR"
-            ],
-            "desc": "Ressource arduino sous forme de cookbook : connecter des capteurs, faire bouger des choses et alumer des lumières",
-            "url": "https://github.com/b2renger/Introduction_Arduino",
-            "thumbnail": "https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/assets/set_neopixels_rgb.gif",
-            "last_update": "28/10/19",
-            "author": "b2renger"
-        },
-        {
-            "name": "Introduction Arduino",
-            "id": "introduction_arduino",
-            "tags": [
-                "Arduino",
-                "Interaction",
-                "Débutant",
-                "EN"
-            ],
-            "desc": "Cookbook style resssource for arduino, learn how to connect sensors, move and lights up things !",
-            "url": "https://github.com/b2renger/Introduction_Arduino/english/README.md",
-            "thumbnail": "https://raw.githubusercontent.com/b2renger/Introduction_Arduino/master/assets/set_neopixels_rgb.gif",
-            "last_update": "28/10/19",
-            "author": "b2renger"
-        },
+        
         {
             "name": "Introduction à p5js",
             "id": "introduction_p5js",

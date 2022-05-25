@@ -1,6 +1,20 @@
 {
     "ressources": [
         {
+            "name": "Replit Curriculum",
+            "id": "replit_curriculum",
+            "tags": [
+                "Ressource",
+                "Code",
+                "Débutant",
+                "EN"
+            ],
+            "desc": "Coding ressources for many langages !",
+            "url": "https://replit.com/curriculum",
+            "thumbnail": "https://raw.githubusercontent.com/b2renger/Introduction_A-frame/main/assets/replit.png",
+            "last_update": "05/05/21"
+        },
+        {
             "name": "OpenMV and arduino",
             "id": "openmv_and_arduino",
             "tags": [
