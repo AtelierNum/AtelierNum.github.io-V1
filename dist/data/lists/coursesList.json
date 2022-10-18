@@ -31,6 +31,19 @@
             "author": "b2renger"
         },
         {
+            "name": "Utiliser la brodeuse numérique",
+            "id": "emroidery",
+            "tags": [
+                "Débutant",
+                "FR"
+            ],
+            "desc": "Utiliser la brodeuse numérique",
+            "url": "https://github.com/LucieMrc/BrodeuseNum_2spi",
+            "thumbnail": "https://raw.githubusercontent.com/LucieMrc/BrodeuseNum_2spi/main/images/img0_13.jpg",
+            "last_update": "24/05/22",
+            "author": "Lucie Mrc"
+        },
+        {
             "name": "Introduction à la Réalité Augmentée",
             "id": "introduction_A-Frame",
             "tags": [
@@ -44,7 +57,7 @@
             "desc": "Getting started with web based AR using A-Frame for cross platforme WebXR",
             "url": "https://github.com/b2renger/Introduction_A-frame#introduction_a-frame",
             "thumbnail": "https://raw.githubusercontent.com/b2renger/Introduction_A-frame/main/assets/snowAR.gif",
-            "last_update": "25/05/22",
+            "last_update": "23/05/22",
             "author": "b2renger"
         },
         {
@@ -59,7 +72,7 @@
             "desc": "Utiliser la silhouette cameo : faire des découpe de vinyle, stickers cuivrés etc.",
             "url": "https://github.com/LucieMrc/Tuto_Silhouette_Cameo",
             "thumbnail": "https://raw.githubusercontent.com/LucieMrc/Tuto_Silhouette_Cameo/main/images/screen5.png",
-            "last_update": "25/05/22",
+            "last_update": "23/05/22",
             "author": "Lucie Mrc"
         },
         {

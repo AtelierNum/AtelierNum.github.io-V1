@@ -1,6 +1,46 @@
 {
     "ressources": [
         {
+            "name": "Ateliernum's code templates",
+            "id": "templates",
+            "tags": [
+                "Ressource",
+                "Code",
+                "EN"
+            ],
+            "desc": "Our templates to get started with several tasks",
+            "url": "https://github.com/AtelierNum/templates",
+            "thumbnail": "https://avatars.githubusercontent.com/u/43267915?s=400&u=b10be47a0c3fea1ecc3c01eac901d87c82c3e342&v=4",
+            "last_update": "18/10/22"
+        },    
+        {
+            "name": "TD templates",
+            "id": "td_templates",
+            "tags": [
+                "Ressource",
+                "Creative Coding",
+                "EN"
+            ],
+            "desc": "A bunch of templates for Touch Designer by Mael Pinard aka dr pinarson",
+            "url": "https://github.com/pinarson/TD",
+            "thumbnail": "https://raw.githubusercontent.com/pinarson/TD/master/POETIC_PARTICLE/Capture.PNG",
+            "last_update": "17/10/22"
+        }, 
+        {
+            "name": "Photogramétrie avec Reality Capture",
+            "id": "photogrametry",
+            "tags": [
+                "Ressource",
+                "3D",
+                "FR"
+            ],
+            "desc": "Un tuto pour réaliser de la photogramétrie et sortir des modèles 3D à partir de photos.",
+            "url": "https://github.com/LucieMrc/Photogrammetrie",
+            "thumbnail": "https://raw.githubusercontent.com/LucieMrc/Photogrammetrie/main/images/capture6.png?token=GHSAT0AAAAAAB2ADYR5MVRGCBOM5O7H3HNIY2OLLQQ",
+            "last_update": "16/10/22"
+        }, 
+
+        {
             "name": "Replit Curriculum",
             "id": "replit_curriculum",
             "tags": [

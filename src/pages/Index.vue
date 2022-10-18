@@ -7,58 +7,28 @@
         <h1>AtelierNum</h1>
         <h2>L’ &#201;cole de design Nantes Atlantique</h2>
         <p>{{personalized_message}}</p>
-        <a
+        <p> You can check a detailed explanation of <a
+            href="https://ateliernum.notion.site/Digital-Workshop-What-s-what-42d9f432b1ed4bc290180c22bb05e8e8"
+            target="blank"> what we actually do </a> and our areas of expertise </p>
+        <!--<a
           href="https://tourmkr.com/F1X7Gbtak3/16205064p&230.32h&74.66t"
           target="blank"
-        >Visite à 360 des espaces de travail</a>
+        >Visite à 360 des espaces de travail</a>-->
       </div>
       <svg class="scroll" width="77" height="77" viewBox="0 0 77 77">
         <g transform="translate(-922 -945)">
           <path
             d="M38.5,0C8.692,0,0,8.692,0,38.5H0C0,68.308,8.692,77,38.5,77h0C68.308,77,77,68.308,77,38.5h0C77,8.692,68.308,0,38.5,0Z"
-            transform="translate(922 945)"
-            fill="#f7f7f7"
-          />
+            transform="translate(922 945)" fill="#f7f7f7" />
           <path
             d="M17.71,11.29l-5-5a1.034,1.034,0,0,0-1.42,0l-5,5a1,1,0,0,0,1.42,1.42L11,9.41V17a1,1,0,0,0,2,0V9.41l3.29,3.3a1,1,0,1,0,1.42-1.42Z"
-            transform="translate(972.006 996) rotate(180)"
-          />
+            transform="translate(972.006 996) rotate(180)" />
         </g>
       </svg>
     </section>
 
-    <v-spacer height="5%" class="spacerY"></v-spacer>
 
-    <h2 class="section-title">
-      <router-link to="/projects">Projets</router-link>
-    </h2>
-
-    <input-search name="projectSearch" category="projects"></input-search>
-    <!-- <v-tag-list>
-      <v-tag v-for="tag in getTagsList" :key="'projects-' + tag" category="projects">{{tag}}</v-tag>
-    </v-tag-list>-->
-
-    <v-grid :cols="3">
-      <v-projectCard
-        v-for="(project, i) in sortedContentOrNot('projects')"
-        :key="i"
-        class="tall"
-        r_action="projects"
-        :title="project.name"
-        :id="project.id"
-        :desc="project.desc"
-        :thumbnailUrl="project.thumbnail"
-        :tags="project.tags"
-      ></v-projectCard>
-    </v-grid>
-
-    <v-button
-      :outlined="true"
-      label="projects"
-      :disabled="disabled.projects"
-      @click.native="more('projects')"
-    >Plus</v-button>
-
+    <v-spacer width="100%" height="300px"></v-spacer>
     <v-spacer width="100%" height="300px"></v-spacer>
 
     <h2 class="section-title">
@@ -72,26 +42,14 @@
     <input-search name="projectSearch" category="courses"></input-search>
 
     <v-grid :cols=" windowWidth > 800 ? 1 : 3">
-      <v-projectCard
-        v-for="(course, i) in sortedContentOrNot('courses')"
-        :key="i"
-        :class=" windowWidth > 620 ? 'long' : 'tall'"
-        r_action="courses"
-        :title="course.name"
-        :id="course.id"
-        :desc="course.desc"
-        :thumbnailUrl="course.thumbnail"
-        :externalLink="course.url"
-        :tags="course.tags"
-      ></v-projectCard>
+      <v-projectCard v-for="(course, i) in sortedContentOrNot('courses')" :key="i"
+        :class=" windowWidth > 620 ? 'long' : 'tall'" r_action="courses" :title="course.name" :id="course.id"
+        :desc="course.desc" :thumbnailUrl="course.thumbnail" :externalLink="course.url" :tags="course.tags">
+      </v-projectCard>
     </v-grid>
 
-    <v-button
-      label="courses"
-      :outlined="true"
-      :disabled="disabled.courses"
-      @click.native="more('courses')"
-    >Plus</v-button>
+    <v-button label="courses" :outlined="true" :disabled="disabled.courses" @click.native="more('courses')">Plus
+    </v-button>
 
     <v-spacer width="100%" height="300px"></v-spacer>
 
@@ -106,26 +64,38 @@
     <input-search name="projectSearch" category="ressources"></input-search>
 
     <v-grid :cols="3" class="smallGrid">
-      <v-projectCard
-        v-for="(ressource, i) in sortedContentOrNot('ressources')"
-        :key="i"
-        class="small"
-        r_action="ressources"
-        :title="ressource.name"
-        :id="ressource.id"
-        :desc="ressource.desc"
-        :thumbnailUrl="ressource.thumbnail"
-        :externalLink="ressource.url"
-        :tags="ressource.tags"
-      ></v-projectCard>
+      <v-projectCard v-for="(ressource, i) in sortedContentOrNot('ressources')" :key="i" class="small"
+        r_action="ressources" :title="ressource.name" :id="ressource.id" :desc="ressource.desc"
+        :thumbnailUrl="ressource.thumbnail" :externalLink="ressource.url" :tags="ressource.tags"></v-projectCard>
     </v-grid>
 
-    <v-button
-      label="ressources"
-      :outlined="true"
-      :disabled="disabled.ressources"
-      @click.native="more('ressources')"
-    >Plus</v-button>
+    <v-button label="ressources" :outlined="true" :disabled="disabled.ressources" @click.native="more('ressources')">
+      Plus</v-button>
+
+    <v-spacer height="5%" class="spacerY"></v-spacer>
+
+    <h2 class="section-title">
+      <router-link to="/projects">Projets</router-link>
+    </h2>
+
+    <input-search name="projectSearch" category="projects"></input-search>
+    <!-- <v-tag-list>
+      <v-tag v-for="tag in getTagsList" :key="'projects-' + tag" category="projects">{{tag}}</v-tag>
+    </v-tag-list>-->
+
+    <v-grid :cols="3">
+      <v-projectCard v-for="(project, i) in sortedContentOrNot('projects')" :key="i" class="tall" r_action="projects"
+        :title="project.name" :id="project.id" :desc="project.desc" :thumbnailUrl="project.thumbnail"
+        :tags="project.tags"></v-projectCard>
+    </v-grid>
+
+    <v-button :outlined="true" label="projects" :disabled="disabled.projects" @click.native="more('projects')">Plus
+    </v-button>
+
+
+
+
+
   </div>
 </template>
 
@@ -148,8 +118,8 @@ export default {
   data() {
     return {
       max: {
-        courses: 3,
-        ressources: 3,
+        courses: 6,
+        ressources: 6,
         projects: 3,
       },
       disabled: {
@@ -175,7 +145,7 @@ export default {
       this.max[type] += 3;
       if (this.max[type] > this.getListByDate[type].length) {
         this.disabled[type] = true;
-      } 
+      }
     },
     githubAteliernum() {
       window.open("https://github.com/AtelierNum", "_blank");
@@ -206,10 +176,10 @@ export default {
   color: #1c1c1c;
 }
 
-.svgCurved{
+.svgCurved {
   @media (max-width: 1000px) {
-    background:#191a1a;
-    position:relative;
+    background: #191a1a;
+    position: relative;
     z-index: 1;
   }
 }
@@ -231,6 +201,7 @@ section {
     width: 70vw;
     max-width: 1028px;
     max-height: 697px;
+    color: #fff;
 
     h1 {
       font-family: "Rubik";
@@ -238,35 +209,51 @@ section {
       font-size: 11vw;
       color: #fff;
 
-      & + h2 {
+      &+h2 {
         font-family: "Open Sans";
         font-weight: 300;
         font-size: 1.2em;
         font-style: italic;
         color: #fff;
 
-        & + p {
-          margin-top: 50px;
+        &+p {
+          margin-top: 40px;
           font-family: "Open Sans";
           font-weight: 300;
           font-size: 1.2em;
           color: #fff;
 
-          & + a {
-            margin-top: 50px;
+          &+a {
+            margin-top: 40px;
             font-family: "Open Sans";
             font-weight: 300;
             font-size: 1.2em;
-            color: rgb(0, 108, 250);
+            color: rgb(106, 170, 255);
           }
         }
       }
     }
 
+    p {
+          margin-top: 18px;
+          font-family: "Open Sans";
+          font-weight: 100;
+          font-size: 1em;
+          color: #fff;
+    }
+
+    a {
+      margin-top: 18px;
+      font-family: "Open Sans";
+      font-weight: 100;
+      font-size: 1em;
+      color: rgb(106, 170, 255);
+    }
+
     @media (max-width: 1220px) {
       padding: 15vw 20vw 180px 14vw;
     }
-    
+
     @media (min-width: 800px) {
       h1 {
         font-size: 78px;
@@ -277,9 +264,11 @@ section {
       h1 {
         font-size: 68px;
       }
+
       h2 {
         font-size: 24px;
       }
+
       p {
         font-size: 22px;
       }
@@ -294,9 +283,9 @@ section {
       margin-left: 0;
       width: 100%;
       mask: url("../assets/masks/top_content_mask.svg");
-      mask-position:center bottom ;
-      -webkit-mask-mask-position:center bottom ;
-      -ms-mask-mask-position:center bottom ;
+      mask-position: center bottom;
+      -webkit-mask-mask-position: center bottom;
+      -ms-mask-mask-position: center bottom;
 
       mask-size: cover;
       -webkit-mask-size: cover;
@@ -333,9 +322,11 @@ section {
   @media (max-width: 880px) {
     min-height: 60vh;
   }
+
   @media (max-width: 520px) {
     min-height: 70vh;
   }
+
   @media (max-width: 5420px) {
     min-height: 90vh;
   }

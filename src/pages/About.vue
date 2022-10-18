@@ -33,7 +33,7 @@
             <h4>Bérenger Recoules</h4>
             <span>aka b2renger</span>
             <p>Responsable de l'Atelier Numérique</p>
-            <p class="roles">Prof - Responsable</p>
+            <!--<p class="roles">Prof - Responsable</p>-->
           </a>
         </div>
 
@@ -42,8 +42,19 @@
             <img src alt />
             <h4>Lucie Marécaille</h4>
             <span>aka Lucie Mrc</span>
-            <p>Apprentie de l'Atelier Numérique</p>
-            <p class="roles">Assistante super douée</p>
+            <p>Monitrice technique de l'Atelier Numérique / Designer</p>
+            <!--<p class="roles">Assistante super douée</p>-->
+          </a>
+        </div>
+
+        <div class="perso_card superpromaster">
+          <!--<a href="https://luciemrc.com/" target="blank">-->
+            <a>
+            <img src alt />
+            <h4>Valentin Dupas</h4>
+            <span>aka Valentin Dupas</span>
+            <p>Moniteur Technique de l'Atelier Numérique / Developpeur</p>
+            <!--<p class="roles">01001001 00100000 01110111 01110010 01101001 01110100 01100101 00100000 01100011 01101111 01100100 01100101</p>-->
           </a>
         </div>
 
