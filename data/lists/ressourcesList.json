@@ -26,19 +26,7 @@
             "thumbnail": "https://raw.githubusercontent.com/pinarson/TD/master/POETIC_PARTICLE/Capture.PNG",
             "last_update": "17/10/22"
         }, 
-        {
-            "name": "Photogramétrie avec Reality Capture",
-            "id": "photogrametry",
-            "tags": [
-                "Ressource",
-                "3D",
-                "FR"
-            ],
-            "desc": "Un tuto pour réaliser de la photogramétrie et sortir des modèles 3D à partir de photos.",
-            "url": "https://github.com/LucieMrc/Photogrammetrie",
-            "thumbnail": "https://raw.githubusercontent.com/LucieMrc/Photogrammetrie/main/images/capture6.png?token=GHSAT0AAAAAAB2ADYR5MVRGCBOM5O7H3HNIY2OLLQQ",
-            "last_update": "16/10/22"
-        }, 
+     
 
         {
             "name": "Replit Curriculum",

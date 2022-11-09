@@ -7,6 +7,7 @@
                 "Arduino",
                 "Interaction",
                 "Débutant",
+                "Cookbook",
                 "FR"
             ],
             "desc": "Ressource arduino sous forme de cookbook : connecter des capteurs, faire bouger des choses et alumer des lumières",
@@ -22,6 +23,7 @@
                 "Arduino",
                 "Interaction",
                 "Débutant",
+                "Cookbook",
                 "EN"
             ],
             "desc": "Cookbook style resssource for arduino, learn how to connect sensors, move and lights up things !",
@@ -31,14 +33,79 @@
             "author": "b2renger"
         },
         {
+            "name": "Arduino from the ground up",
+            "id": "arduino_from_the_ground_up",
+            "tags": [
+                "Arduino",
+                "Interaction",
+                "Débutant",
+                "EN"
+            ],
+            "desc": "Learning the basics of arduino, connecting, programming and having fun :)",
+            "url": "https://ateliernum.notion.site/Arduino-from-the-ground-up-bcf1a01b24e74afaa1aea52defcec1f6",
+            "thumbnail": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/2b6eb06e-4540-4a28-bc2c-363c7e1af9dc/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221109%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221109T090932Z&X-Amz-Expires=86400&X-Amz-Signature=6b4cbc1424ac26ec65727200d8a27049e77b4f4519068b61d62794bdf00faaeb&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject",
+            "last_update": "09/11/22",
+            "author": "Valentin Dupas"
+        },
+        {
+            "name": "Photogramétrie avec Reality Capture",
+            "id": "photogrametry",
+            "tags": [
+                "Ressource",
+                "3D",
+                "Tuto",
+                "FR"
+            ],
+            "desc": "Un tuto pour réaliser de la photogramétrie et sortir des modèles 3D à partir de photos.",
+            "url": "https://github.com/LucieMrc/Photogrammetrie",
+            "thumbnail": "https://raw.githubusercontent.com/LucieMrc/Photogrammetrie/main/images/capture6.png?token=GHSAT0AAAAAAB2ADYR5MVRGCBOM5O7H3HNIY2OLLQQ",
+            "last_update": "16/10/22",
+            "author": "Lucie Mrc"
+        }, 
+        {
+            "name": "Pixel Mapping",
+            "id": "pixel_mapping",
+            "tags": [
+                "Tuto",
+                "Leds",
+                "Madmapper",
+                "Artnet",
+                "Intermédiaire",
+                "Tuto",
+                "FR"
+            ],
+            "desc": "Apprendre les bases du protocole artnet pour faire des installation de pixel mapping ou comment controller des leds avec de la vidéo",
+            "url": "https://github.com/LucieMrc/Madmapper_PixelMapping",
+            "thumbnail": "https://raw.githubusercontent.com/LucieMrc/Madmapper_PixelMapping/main/images/gif1.gif",
+            "last_update": "16/10/22",
+            "author": "Lucie Mrc"
+        }, 
+        {
             "name": "Utiliser la brodeuse numérique",
-            "id": "emroidery",
+            "id": "embroidery",
             "tags": [
                 "Débutant",
+                "Tuto",
+                "Machine",
                 "FR"
             ],
             "desc": "Utiliser la brodeuse numérique",
             "url": "https://github.com/LucieMrc/BrodeuseNum_2spi",
+            "thumbnail": "https://raw.githubusercontent.com/LucieMrc/BrodeuseNum_2spi/main/images/img0_13.jpg",
+            "last_update": "24/05/22",
+            "author": "Lucie Mrc"
+        },
+        {
+            "name": "Use the embroidery machine",
+            "id": "embroidery",
+            "tags": [
+                "Débutant",
+                "Tuto",
+                "Machine",
+                "EN"
+            ],
+            "desc": "How to use the embroidery machine !",
+            "url": "https://github.com/LucieMrc/EmbroideryMachine_sp33d",
             "thumbnail": "https://raw.githubusercontent.com/LucieMrc/BrodeuseNum_2spi/main/images/img0_13.jpg",
             "last_update": "24/05/22",
             "author": "Lucie Mrc"
@@ -61,11 +128,13 @@
             "author": "b2renger"
         },
         {
-            "name": "Utiliser une découpe Vinyle",
+            "name": "Silhouette cameo découpe Vinyle",
             "id": "tuto_silhouette_cameo",
             "tags": [
                 "Stickers",
                 "Cutter",
+                "Tuto",
+                "Machine",
                 "Débutant",
                 "FR"
             ],
@@ -75,6 +144,58 @@
             "last_update": "23/05/22",
             "author": "Lucie Mrc"
         },
+        {
+            "name": "Silhouette Cameo cutter",
+            "id": "tuto_silhouette_cameo_eng",
+            "tags": [
+                "Stickers",
+                "Cutter",
+                "Tuto",
+                "Machine",
+                "Débutant",
+                "EN"
+            ],
+            "desc": "How to use the silhouette cameo to cut stickers",
+            "url": "https://github.com/LucieMrc/EmbroideryMachine_sp33d",
+            "thumbnail": "https://raw.githubusercontent.com/LucieMrc/Tuto_Silhouette_Cameo/main/images/screen5.png",
+            "last_update": "23/05/22",
+            "author": "Lucie Mrc"
+        },
+        {
+            "name": "How to use the sound studio",
+            "id": "sound_recording_sp33d",
+            "tags": [
+                "Sound",
+                "Tuto",
+                "Débutant",
+                "EN"
+            ],
+            "desc": "How to get started in the studio and record some sound for voice over etc.",
+            "url": "https://github.com/LucieMrc/SoundRecording_sp33d",
+            "thumbnail": "https://raw.githubusercontent.com/LucieMrc/SoundRecording_sp33d/762d88fbcefb19f3b558cc856c927e615cb0eb7d/images/img3.jpg  ",
+            "last_update": "23/05/22",
+            "author": "Lucie Mrc"
+        },
+        {
+            "name": "Enregistrer dans le studio son",
+            "id": "sound_recording_2spi",
+            "tags": [
+                "Sound",
+                "Tuto",
+                "Débutant",
+                "FR"
+            ],
+            "desc": "Comment s'installer et démarrer un enregistrement dans le studio son",
+            "url": "https://github.com/LucieMrc/Prise2son_2spi",
+            "thumbnail": "https://raw.githubusercontent.com/LucieMrc/SoundRecording_sp33d/762d88fbcefb19f3b558cc856c927e615cb0eb7d/images/img3.jpg  ",
+            "last_update": "23/05/22",
+            "author": "Lucie Mrc"
+        },
+
+
+
+
+        
         {
             "name": "Video Mapping et Madmapper",
             "id": "Madmapper_2spi",
