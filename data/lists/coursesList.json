@@ -43,7 +43,7 @@
             ],
             "desc": "Learning the basics of arduino, connecting, programming and having fun :)",
             "url": "https://ateliernum.notion.site/Arduino-from-the-ground-up-bcf1a01b24e74afaa1aea52defcec1f6",
-            "thumbnail": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/2b6eb06e-4540-4a28-bc2c-363c7e1af9dc/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221109%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221109T090932Z&X-Amz-Expires=86400&X-Amz-Signature=6b4cbc1424ac26ec65727200d8a27049e77b4f4519068b61d62794bdf00faaeb&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject",
+            "thumbnail": "https://ateliernum.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F2b6eb06e-4540-4a28-bc2c-363c7e1af9dc%2FUntitled.png?table=block&id=95d36c9f-4011-4b84-ae6f-1d1e9cd6f0ab&spaceId=0f8ab01b-d503-485d-9a00-a0fcf5895288&width=1030&userId=&cache=v2",
             "last_update": "09/11/22",
             "author": "Valentin Dupas"
         },
@@ -156,7 +156,7 @@
                 "EN"
             ],
             "desc": "How to use the silhouette cameo to cut stickers",
-            "url": "https://github.com/LucieMrc/EmbroideryMachine_sp33d",
+            "url": "https://github.com/LucieMrc/SilhouetteCameo_sp33d",
             "thumbnail": "https://raw.githubusercontent.com/LucieMrc/Tuto_Silhouette_Cameo/main/images/screen5.png",
             "last_update": "23/05/22",
             "author": "Lucie Mrc"
